@@ -109,7 +109,7 @@ class CommentAdmin(admin.ModelAdmin):
         super().save_model(request, obj, form, change)
 
     def display_blog(self, obj):
-        url = reverse("admin:blogs_blog_change", args=[obj.blog.id])
+        url = reverse("admin:blog_blog_change", args=[obj.blog.id])
         link = '<a style="color: blue;" href="%s">%s</a>' % (
             url, 
             obj.blog.title

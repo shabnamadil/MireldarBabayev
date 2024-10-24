@@ -6,7 +6,8 @@ from utils.models.base_model import BaseModel
 class Tag(BaseModel):
     name = models.CharField(
         'Tag', 
-        max_length=150
+        max_length=150,
+        unique=True
     )
 
     class Meta:

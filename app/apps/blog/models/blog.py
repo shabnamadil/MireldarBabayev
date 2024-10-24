@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.utils.text import slugify
+from django.utils import timezone
 
 from ckeditor_uploader.fields import RichTextUploadingField
 
@@ -21,7 +22,8 @@ class Blog(BaseModel):
 
     title = models.CharField(
         'Məqalə başlığı', 
-        max_length=100
+        max_length=100,
+        unique=True
     )
     short_description = models.CharField(
         'Qısa məzmun',
@@ -77,14 +79,19 @@ class Blog(BaseModel):
     class Meta:
         verbose_name = ('Məqalə')
         verbose_name_plural = ('Məqalələr')
-        ordering = ['-created_at']
+        ordering = ['-published_at']
         indexes = [
-            models.Index(fields=['-created_at'])
+            models.Index(fields=['-published_at'])
         ]
         
     @property
     def view_count(self):
         return self.viewed_ips.count() if self.viewed_ips else 0
+    
+    @property
+    def published_date(self):
+        local_published_time = timezone.localtime(self.published_at)
+        return local_published_time.strftime('%d/%m/%Y, %H:%M')
     
     def __str__(self) -> str:
         return self.title
@@ -92,5 +99,7 @@ class Blog(BaseModel):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug=slugify(self.title)
+        if self.status == self.Status.PUBLISHED and self.published_at is None:
+            self.published_at = timezone.now()
         super().save(*args, **kwargs)
     
