@@ -35,6 +35,7 @@ class CommentPostSerializer(serializers.ModelSerializer):
             'content',
             'author',
             'blog',
+            'parent_comment'
         )
 
     def validate(self, attrs):
