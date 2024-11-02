@@ -1,0 +1,8 @@
+{% for category in categories %}
+<li>
+    <a href="{% url 'blogs' %}?category={{ category.slug }}" class="category-link" data-category-slug="{{ category.slug }}" data-category-name="{{ category.name }}">
+        {{ category.name }}
+    </a> 
+    <span>{{ category.blogs.count }}</span>
+</li>
+{% endfor %}

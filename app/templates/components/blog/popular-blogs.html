@@ -1,0 +1,15 @@
+{% for blog in popular_blogs %} 
+<div class="blog-sidebar_content">
+    <a href="{{blog.get_absolute_url}}" class="thumbnail-wrap">
+        <img src="{{blog.image.url}}" alt="{{blog.title}}">
+        <div class="thumbnail-hover">
+            <i class="fas fa-external-link-alt"></i>
+        </div>
+    </a>
+    <div class="thumbnail-text_wrap">
+        <p>{{blog.title|truncatechars:60}}
+        </p>
+        <span>{{blog.published_date}}</span>
+    </div>
+</div>
+{% endfor %}

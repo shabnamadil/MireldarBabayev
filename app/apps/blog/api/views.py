@@ -29,7 +29,9 @@ class BlogListAPIView(ListAPIView):
         repo = self.repo()
         return {
             'category' : repo.get_by_category,
-            'tag' : repo.get_by_tag
+            'tag' : repo.get_by_tag,
+            'q' : repo.get_by_query,
+            'p' : repo.get_by_page
         }
 
     def get_queryset(self, **kwargs):

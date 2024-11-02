@@ -1,0 +1,22 @@
+<div class="media">
+    <img src="{{comment.author.image.url}}" class="mr-3 img-fluid" alt="{{comment.author.get_full_name}}">
+    <div class="media-body">
+        <!-- <h5 class="mt-0">{{comment.author.get_full_name}}</h5> -->
+        <p>{{comment.content}}</p>
+        <span><i class="far fa-user"></i> {{comment.author.get_full_name}} </span><a href="#leave-comment">Reply<i class="fas fa-long-arrow-alt-right"></i></a>
+        <hr>
+        {% for reply in comment.replies.all %}
+        <div class="media mt-3">
+            <a class="mr-3" href="#">
+                <img src="{{reply.author.image.url}}" class="mr-3 img-fluid" alt="{{reply.author.get_full_name}}">
+            </a>
+            <div class="media-body">
+                <!-- <h5 class="mt-0">Media heading</h5> -->
+                <p> {{comment.content}} </p>
+                <span><i class="far fa-user"></i> {{reply.author.get_full_name}} </span><a href="#leave-comment">Reply<i class="fas fa-long-arrow-alt-right"></i></a>
+            </div>
+        </div>
+        {% endfor %}
+        <hr>
+    </div>
+</div>

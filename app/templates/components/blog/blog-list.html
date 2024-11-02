@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block subheader%}
+<section class="space sub-header">
+    <div class="container container-custom">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="sub-header_content">
+                    <p>BLOQLAR</p>
+                    <h3>Lorem ipsum dolor sit ametco nse<br> ctetur adipisicing elitsed.</h3>
+                    <span><i>Home / Bloqlar</i></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="sub-header_main">
+                    <h2>Bloq</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock subheader %}
+
+{% block content %}
+<section class="space">
+    <div class="container container-custom">
+        <div class="row align-items-center space-between gap-2 w-100">
+            <h2 class="mb-4" id="filterResults"></h2> 
+            <span class="small clear-filter d-none" id="clearfilter">(Təmizlə)</span>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div id="blogs">
+                    <!-- Dynamically loaded blogs will go here -->
+                </div>
+                <!-- Load More Button -->
+                <div class="tag-block">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="tags">
+                                <a href="#" class="blog-arrows-left"><i class="fas fa-long-arrow-alt-left"></i>Pre</a>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="share">
+                                <a href="#blogs" id="loadMoreBtn" class="blog-arrows-right">Next<i class="fas fa-long-arrow-alt-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="blog-sidebar">
+                    <div class="blog-sidebar_heading">
+                        <h4>Search</h4>
+                    </div>
+                    <div class="blog-sidebar_wrap">
+                        <div class="blog-sidebar_content blog-sidebar_search">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Search here" id="query-word">
+                                    <i class="fas fa-search" id="searchIcon"></i>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-sidebar">
+                    <div class="blog-sidebar_heading">
+                        <h4>Popular Posts</h4>
+                    </div>
+                    <div class="blog-sidebar_wrap">
+                        {% include 'components/blog/popular-blogs.html' %}
+                    </div>
+                </div>
+                <div class="blog-sidebar">
+                    <div class="blog-sidebar_heading">
+                        <h4>Categories</h4>
+                    </div>
+                    <div class="blog-sidebar_wrap">
+                        <ul class="blog-sidebar_category">
+                            {% include 'components/blog/category.html' %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="blog-sidebar">
+                    <div class="blog-sidebar_heading">
+                        <h4>Tags</h4>
+                    </div>
+                    <div class="blog-sidebar_wrap">
+                        <ul class="blog-sidebar_tags">
+                            {% for tag in tags %}
+                            {% include 'components/blog/tag.html' with tag=tag %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="blog-sidebar">
+                    <div class="blog-sidebar_heading">
+                        <h4>Follow Us</h4>
+                    </div>
+                    <div class="blog-sidebar_wrap">
+                        <ul class="blog-sidebar_social">
+                            <li>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="blog-join_us">
+                    <div class="blog-join_us-content">
+                        <h6>AD BANNER</h6>
+                        <h3>JOIN US</h3>
+                        <p>Lorem ipsum dolor sit amet conse</p>
+                        <a href="#" class="btn btn-dark">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+{% block js %}
+<script src="{% static 'js/api/blog-list.js' %}"></script>
+{% endblock js %}
+

@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.utils.text import slugify
 from django.utils import timezone
+from django.urls import reverse_lazy
 
 from ckeditor_uploader.fields import RichTextUploadingField
 
@@ -27,7 +28,7 @@ class Blog(BaseModel):
     )
     short_description = models.CharField(
         'Qısa məzmun',
-        max_length=100
+        max_length=200
     )
     content = RichTextUploadingField(
         'Məqalə mətni'
@@ -64,6 +65,7 @@ class Blog(BaseModel):
         verbose_name='Məqalənin görüntüləndiyi IP ünvanları',
         editable=False
     )
+    view_count = models.IntegerField(default=0, editable=False)
     status = models.CharField(
         max_length=2,
         choices=Status.choices,
@@ -84,14 +86,19 @@ class Blog(BaseModel):
             models.Index(fields=['-published_at'])
         ]
         
-    @property
-    def view_count(self):
-        return self.viewed_ips.count() if self.viewed_ips else 0
+    def increment_view_count(self, ip_instance):
+        if not self.viewed_ips.filter(id=ip_instance.id).exists():
+            self.viewed_ips.add(ip_instance)
+            self.view_count += 1
+            self.save()
     
     @property
     def published_date(self):
         local_published_time = timezone.localtime(self.published_at)
-        return local_published_time.strftime('%d/%m/%Y, %H:%M')
+        return local_published_time.strftime('%d %b, %Y')
+    
+    def get_absolute_url(self):
+        return reverse_lazy('blog-detail', args=[self.slug])
     
     def __str__(self) -> str:
         return self.title
