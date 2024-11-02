@@ -1,0 +1,5 @@
+<li>
+    <a  href="{% url 'blogs' %}?tag={{ tag.slug }}" value="{{tag.name}}" class="tag-link" data-tag-slug="{{ tag.slug }}" data-tag-name="{{ tag.name }}">
+        {{ tag.name }}
+    </a> 
+</li>

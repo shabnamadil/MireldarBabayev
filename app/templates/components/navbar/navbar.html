@@ -1,0 +1,105 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto nav-sub">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Home <i class="fas fa-plus"></i>
+            </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="index.html">Home Page One</a>
+                    <a class="dropdown-item" href="index-2.html">Home Page Two</a>
+                    <a class="dropdown-item" href="index-3.html">Home Page Three</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Department <i class="fas fa-plus"></i>
+            </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="services.html">Dental Care</a>
+                    <a class="dropdown-item" href="services-2.html">Cardiology</a>
+                    <a class="dropdown-item" href="services-3.html">Neurology </a>
+                    <a class="dropdown-item" href="services-detail.html">Eye Care</a>
+                </div>
+            </li>
+                    <!-- Sub Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Patients <i class="fas fa-plus"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown">
+                                <a class="dropdown-item dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false" href="#">Services <i class="fas fa-plus"></i></a>
+                                <ul class="dropdown-menu dropdown-menu1">
+                                    <li><a class="dropdown-item" href="services.html">Services
+                                            One</a></li>
+                                    <li><a class="dropdown-item" href="services-2.html">Services
+                                            Two</a></li>
+                                    <li><a class="dropdown-item" href="services-3.html">Services
+                                            Three</a></li>
+                                            <li><a class="dropdown-item" href="services-detail.html">Service
+                                                Detail</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="dropdown-item" href="appointment.html">Appointment</a>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-item dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false" href="#">Our Doctors <i class="fas fa-plus"></i></a>
+                                <ul class="dropdown-menu dropdown-menu1">
+                                    <li><a class="dropdown-item" href="doctors.html">Doctors One</a></li>
+                                    <li><a class="dropdown-item" href="doctors-2.html">Doctors Two</a></li>
+                                    <li><a class="dropdown-item" href="doctors-3.html">Doctors Three</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="dropdown-item" href="pricing.html">Pricing</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--//End Sub Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{% url 'blogs' %}"
+                            role="button"
+                            aria-expanded="false"> Bloq </a>
+                    </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                pages <i class="fas fa-plus"></i>
+            </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="about.html">About</a>
+                    <a class="dropdown-item" href="contact-us.html">Contact One</a>
+                    <a class="dropdown-item" href="contact-us-2.html">Contact Two</a>
+                    <a class="dropdown-item" href="error.html">Error 404</a>
+                </div>
+            </li>
+        </ul>
+        <ul class="nav-icon-wrap">
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fab fa-google-plus-g"></i></a>
+            </li>
+            <li class="nav-item cart-seperate">
+                <a class="nav-link" href="#"><i class="fas fa-shopping-cart fa-top-search"></i> <span>2</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-bars"></i></a>
+            </li>
+        </ul>
+    </div>
+</nav>

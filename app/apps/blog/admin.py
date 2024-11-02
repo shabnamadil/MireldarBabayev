@@ -130,6 +130,15 @@ class CommentAdmin(admin.ModelAdmin):
         return obj.truncated_comment
     get_comment.short_description = 'Comment'
 
-admin.site.register(Category)
-admin.site.register(Tag)
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    readonly_fields = ('slug', )
+
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    readonly_fields = ('slug', )
+
+
 admin.site.register(IP)

@@ -1,0 +1,212 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section class="space">
+        <div class="container container-custom">
+            <div class="row">
+                <div class="col-md-8">
+                    <form action="#">
+                        <div class="blog-list blog-deatil">
+                            <img src="{{blog.image.url}}" class="img-fluid" alt="{{blog.title}}">
+                            <div class="blog-date">
+                                <h3>05</h3>
+                                <span>JUN</span>
+                            </div>
+                            <div class="blog-text-wrap border-0 pl-0 pr-0">
+                                <div class="blog-comment-top">
+                                    <p><i class="far fa-user"></i>{{blog.author.get_full_name}} <span>|</span> 
+                                    <i class="far fa-eye"></i>{{blog.view_count}} <span>|</span> 
+                                    <i class="far fa-comment"></i>{{blog.comments.count}}</p>
+                                </div>
+                                <h2>{{blog.title}}</h2>
+                                <h5>{{blog.short_description}}</h5>
+                                <p>{{blog.content|safe}}</p>
+                                <div class="tag-block">
+                                    <div class="row">
+                                        <div class="col-md-12 col-lg-6">
+                                            <div class="tags">
+                                                <span>tags:</span>
+                                                <ul>
+                                                    {% for tag in blog.tag.all %}
+                                                        {% include 'components/blog/tag.html' with tag=tag %}
+                                                    {% endfor %}
+                                                </ul>                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-lg-6">
+                                            <div class="share">
+                                                <span>Share:</span>
+                                                <ul>
+                                                    <li>
+                                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-pre-next">
+                            <img src="images/doctors-img1.jpg" class="img-fluid" alt="#">
+                            <div class="blog-pre-next_content">
+                                <h4>Lisa mary</h4>
+                                <p>SInteger bibendum. Curabitur a magna mi. Cras facilisis lacus a magna luctus, nec pharetra ex varius. Sed placerat suscipit massa, sed lobo rtis ex sollicitudin non. Lorem ipsum dolor sit amet, consectetur adipis cing elit.</p>
+                                <ul>
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="tag-block">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="tags">
+                                        <a href="#" class="blog-arrows-left"><i class="fas fa-long-arrow-alt-left"></i>Pre</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="share">
+                                        <a href="#" class="blog-arrows-right">Next<i class="fas fa-long-arrow-alt-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment-wrap">
+                            <h3>Comment ({{blog.comments.count}})</h3>
+                            {% for comment in blog.comments.all %}
+                            {% include 'components/blog/comments.html' with comment=comment %}
+                            {% endfor %}
+                        </div>
+                        <hr>
+                        <div class="blog-comment-wrap" id="leave-comment">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3>Leave Your Comment</h3>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="First Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="First Name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" placeholder="Your Message" id="exampleFormControlTextarea1" rows="3" spellcheck="false"></textarea>
+                                        <a href="#" class="btn btn-success mt-4">BOOK NOW</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-sidebar">
+                        <div class="blog-sidebar_heading">
+                            <h4>Search</h4>
+                        </div>
+                        <div class="blog-sidebar_wrap">
+                            <div class="blog-sidebar_content blog-sidebar_search">
+                                <form action="#">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Search here">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-sidebar">
+                        <div class="blog-sidebar_heading">
+                            <h4>Popular Posts</h4>
+                        </div>
+                        <div class="blog-sidebar_wrap">
+                            {% include 'components/blog/popular-blogs.html' %}
+                        </div>
+                    </div>
+                    <div class="blog-sidebar">
+                        <div class="blog-sidebar_heading">
+                            <h4>Categories</h4>
+                        </div>
+                        <div class="blog-sidebar_wrap">
+                            <ul class="blog-sidebar_category">
+                                {% include 'components/blog/category.html' %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="blog-sidebar">
+                        <div class="blog-sidebar_heading">
+                            <h4>Tags</h4>
+                        </div>
+                        <div class="blog-sidebar_wrap">
+                            <ul class="blog-sidebar_tags">
+                                {% for tag in tags %}
+                                {% include 'components/blog/tag.html' with tag=tag %}
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="blog-sidebar">
+                        <div class="blog-sidebar_heading">
+                            <h4>Follow Us</h4>
+                        </div>
+                        <div class="blog-sidebar_wrap">
+                            <ul class="blog-sidebar_social">
+                                <li>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="blog-join_us">
+                        <div class="blog-join_us-content">
+                            <h6>AD BANNER</h6>
+                            <h3>JOIN US</h3>
+                            <p>Lorem ipsum dolor sit amet conse</p>
+                            <a href="#" class="btn btn-dark">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+{% endblock content %}

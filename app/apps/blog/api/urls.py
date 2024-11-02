@@ -8,7 +8,7 @@ from .views import (
 
 
 urlpatterns = [
-    path('blogs/', BlogListAPIView.as_view(), name='blogs'),
+    path('blogs/', BlogListAPIView.as_view()),
     path('comment/', CommentPostAPIView.as_view(), name='comment'),
     path('comment/<int:pk>/', CommentRetrieveUpdateDestroyAPIView.as_view(), name='comment-update-destroy')
 ]

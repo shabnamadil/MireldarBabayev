@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <!-- Slick Slider CSS -->
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick-theme.css' %}">
+    <!-- Magnific popup CSS -->
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" />
+    <title>Mireldar Babayev</title>
+</head>
+
+<body>
+    <!--==================== Header ====================-->
+    <!-- top bar -->
+    {% include 'components/header/top-bar.html' %}
+    <!--//End top bar -->
+    <div class="light nav-big">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Nav menu -->
+                    {% include 'components/navbar/navbar.html' %}
+                    <!--//End Nav menu -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Sub header -->
+    {% block subheader %}
+    {% endblock subheader %}
+    <!--//End Sub header -->
+    <!--//End Header -->
+
+    {% block content %}
+    {% endblock content %}
+
+    <!--==================== Counter ====================-->
+    {% include 'components/core/counter.html' %}
+    <!--//End Counter -->
+    <!--==================== Footer ====================-->
+    {% include 'components/footer/footer.html' %}
+    <!--//End Footer -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- Script Js -->
+    <script src="{% static 'js/script.js' %}"></script>
+        <!-- Slick Slider Js -->
+        <script src="{% static 'js/slick.min.js' %}"></script>
+        <!-- Magnific popup Js -->
+        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    {% block js %}
+    {% endblock %}
+</body>
+
+</html>
