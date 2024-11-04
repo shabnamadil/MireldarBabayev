@@ -4197,3 +4197,20 @@ SERVICE DETAIL
   color: #4d72d0;
   cursor: pointer;
 }
+
+.alert-success {
+  color: #28a745 !important;
+  background-color: #e6ffed;
+  border-color: #c3e6cb;
+}
+
+.alert-success::after {
+  content: "✔";
+  font-size: 1.2rem;
+  color: #28a745;
+  margin-left: 10px;
+}
+
+.error-border {
+  border-color: red;
+}

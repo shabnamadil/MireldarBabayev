@@ -21,9 +21,9 @@ class ContactPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
         fields = (
-            'full_name',
+            'first_name',
+            'last_name',
             'email',
-            'subject',
             'phone',
             'message'
         )

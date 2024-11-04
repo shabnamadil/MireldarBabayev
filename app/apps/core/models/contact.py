@@ -4,8 +4,12 @@ from utils.models.base_model import BaseModel
 
 
 class Contact(BaseModel):
-    full_name = models.CharField(
-        'Ad, Soyad', 
+    first_name = models.CharField(
+        'Ad', 
+        max_length=200
+    )
+    last_name = models.CharField(
+        'Soyad', 
         max_length=200
     )
     email = models.EmailField(
@@ -15,11 +19,6 @@ class Contact(BaseModel):
         'Telefon nömrəsi',
         max_length=20,
         help_text='Yalnız rəqəm daxil edin'
-    )
-    subject = models.CharField(
-        'Mövzu',
-        max_length=20,
-        null=True, blank=True
     )
     message = models.TextField(
         'Mesaj'
@@ -32,4 +31,4 @@ class Contact(BaseModel):
         ordering = ('-created_at',)
 
     def __str__(self) -> str:
-        return f'{self.full_name}-dən mesaj'
+        return f'{self.first_name} {self.last_name}-dən mesaj'

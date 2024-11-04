@@ -26,12 +26,15 @@ class FaqAdmin(admin.ModelAdmin):
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ('subject', 'full_name', 'email', 'phone')
+    list_display = ('full_name', 'email', 'phone', 'created_date')
     list_filter = ('created_at', )
     date_hierarchy = 'created_at'
     list_per_page = 20
-    search_fields = ('full_name', 'email', 'message', 'subject')
+    search_fields = ('first_name', 'last_name', 'email', 'message', 'subject')
     form = ContactForm
+
+    def full_name(self, obj):
+        return f'{obj.first_name} {obj.last_name}'
 
 
 class SingletonModelAdmin(admin.ModelAdmin):

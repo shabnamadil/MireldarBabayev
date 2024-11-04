@@ -10,10 +10,10 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = (
-            'full_name',
+            'first_name',
+            'last_name',
             'email',
             'phone',
-            'subject',
             'message'
         )
 
