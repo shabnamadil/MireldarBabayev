@@ -1,0 +1,11 @@
+<ul>
+    {% for service in services %}
+    <li>
+        <a href="{% url 'service-detail' service.slug %}">
+            <img src="{{service.png.url}}" alt="{{service.name}}">
+            <span>{{service.name}}</span>
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </li>
+    {% endfor %}
+</ul>

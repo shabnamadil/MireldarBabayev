@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block subheader %}
+<!-- Sub header -->
+{% include 'components/service/partials/subheader.html' %}
+<!--//End Sub header -->
+{% endblock subheader%}
+
+{% block content %}
+<!--==================== Services ====================-->
+<section class="space light">
+    <div class="container container-custom">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="sub-title_center">
+                    <span>---- Our Services ----</span>
+                    <h2>High Quality Services for You</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for service in services %}
+            {% include 'components/service/partials/service-item.html' %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!--//End Services -->
+<!--==================== Appointment ====================-->
+<section class="space background-bg4">
+    <div class="container container-custom">
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <div class="appointment-form_wrap">
+                    <div class="heading-style1">
+                        <span>Online Booking</span>
+                        <h2>Make an Appointment</h2>
+                    </div>
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group form-group-cutom">
+                                    <input type="email" class="form-control form-custom" placeholder="Enter Your Name">
+                                    <i class="far fa-user"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-cutom">
+                                    <input type="number" class="form-control form-custom" placeholder="Date and time">
+                                    <i class="far fa-clock"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group form-group-cutom">
+                                    <input type="number" class="form-control form-custom"
+                                        placeholder="Enter phone number">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-cutom">
+                                    <input type="text" class="form-control form-custom" placeholder="Select location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group form-group-cutom">
+                                    <input type="text" class="form-control form-custom" placeholder="Choose department">
+                                    <i class="far fa-circle"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-cutom">
+                                    <input type="text" class="form-control form-custom" placeholder="Select doctor">
+                                    <i class="far fa-user"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group form-group-cutom">
+                                    <label for="exampleFormControlTextarea1">Your Message</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="#" class="btn btn-success">BOOK NOW</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6">
+                <div class="why-choose_block">
+                    <div class="heading-style1 mb-0">
+                        <span>Why Us</span>
+                        <h2>Why Choose Us</h2>
+                        <p>We’re committed to a patient-centered approach, ensuring you feel supported and cared for every step of the way.</p>
+                        <hr>
+                    </div>
+                    {% for item in why_choose_us %}
+                    {% include 'components/service/partials/why-choose-us.html' %}
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--//End Appointment -->
+<!--==================== Testimonial Style 2 ====================-->
+<div class="light">
+    <div class="container container-custom">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="testi-slider-style2">
+                    {% for testimonial in testimonials %}
+                    <div class="testimonial-style2">
+                        <img src="{{testimonial.client_image.url}}" alt="{{testimonial.client_full_name}}">
+                        <ul>
+                            {% for star in testimonial.star_range %}
+                            <li><i class="fas fa-star"></i></li>
+                            {% endfor %}
+                        </ul>
+                        <p> {{testimonial.client_comment}}</p>
+                        <span>{{testimonial.client_full_name}} ({{testimonial.client_profession}})</span>
+                    </div>
+                    {% endfor %}
+                </div>
+                <hr>
+                <div class="testi-slider-style2-nav">
+                    {% for worker in coworkers %}
+                    <div><img src="{{worker.png.url}}" class="img-fluid" alt="{{coworker.name}}"></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//End Testimonial Style 2 -->
+{% endblock content %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block subheader %}
+<!-- Sub header -->
+{% include 'components/service/partials/subheader-detail.html' %}
+<!--//End Sub header -->
+{% endblock subheader %}
+<!--//End Header -->
+{% block content %}
+<!--==================== Service Detail ====================-->
+<section class="light">
+    <div class="container container-custom">
+        <div class="row">
+            <div class="col-md-12 col-lg-4">
+                <div class="sidebar-category">
+                    {% include 'components/service/partials/service-sidebar.html' %}
+                </div>
+                {% include 'components/service/partials/contact.html' %}
+
+                {% if downloads %}
+                <div class="contact-box mb-4">
+                    <h4>Files</h4>
+                    <hr>
+                    {% include 'components/service/partials/downloads.html' %}
+                </div>
+                {% endif %}
+                <div class="contact-box mb-4">
+                    <h4>Latest News</h4>
+                    {% for blog in latest_blogs %}
+                    {% include 'components/blog/popular-blogs.html' %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-8">
+                <div class="service-detail_wrap">
+                    <div class="service-detail_img">
+                        <img src="{{service.image.url}}" class="img-fluid" alt="{{service.name}}">
+                        <h2>{{service.title}}</h2>
+                        <p>{{service.content|safe}}</p>                 
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//End Service Detail -->
+{% endblock content %}

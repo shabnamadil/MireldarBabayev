@@ -1,0 +1,15 @@
+{% load static %}
+<div class="contact-title">
+    {% for download in downloads %}
+        <div class="alert {% if download.type == 'pdf' %} alert-success {% else %} alert-warning {% endif %}" 
+             role="alert" style="cursor: pointer;" 
+             data-toggle="modal" 
+             data-target="#modal-{{ download.id }}">
+            <img src="{% static 'images/002-pdf.svg' %}" class="img-fluid" alt="{{ download.title }}" />
+            <p>{{ download.title }}</p>
+            <span>{{ download.file_size_formatted }}</span>
+        </div>
+
+        {% include 'components/service/modals/download-modal.html' %}
+    {% endfor %}
+</div>

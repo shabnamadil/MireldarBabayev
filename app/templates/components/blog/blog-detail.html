@@ -151,7 +151,9 @@
                             <h4>Popular Posts</h4>
                         </div>
                         <div class="blog-sidebar_wrap">
+                            {% for blog in popular_blogs %}
                             {% include 'components/blog/popular-blogs.html' %}
+                            {% endfor %}
                         </div>
                     </div>
                     <div class="blog-sidebar">

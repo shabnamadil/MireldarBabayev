@@ -36,6 +36,6 @@ class AboutUsPageView(DetailView):
         cx.update({
             'paired_statistics': paired_statistics,
             'who_we_are' : WhoWeAre.objects.first(),
-            'testimonials' : Testimoinal.objects.all()[:8]
+            'testimonials' : Testimoinal.objects.all()[:4]
         })
         return cx
