@@ -4,7 +4,11 @@ from .models import (
     Newsletter,
     Contact,
     Faq,
-    SiteSettings
+    SiteSettings,
+    StatisticalIndicator,
+    AboutUs,
+    WhoWeAre,
+    Testimoinal
 )
 from .forms import (
     ContactForm,
@@ -51,3 +55,17 @@ class SingletonModelAdmin(admin.ModelAdmin):
 class SiteSettingsAdmin(SingletonModelAdmin):
     list_display = ('site_name',)
     form = SiteSettingsForm
+
+
+@admin.register(StatisticalIndicator)
+class StatisticsAdmin(admin.ModelAdmin):
+    list_display = ('name', 'value')
+    list_filter = ('created_at', )
+    list_per_page = 20
+    date_hierarchy = 'created_at'
+    search_fields = ('name', 'value')
+
+
+admin.site.register(AboutUs)
+admin.site.register(WhoWeAre)
+admin.site.register(Testimoinal)

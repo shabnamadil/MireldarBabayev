@@ -1,0 +1,17 @@
+{% load static %}
+<div class="newsletter-subscribe">
+    <h4>Subscribe to our Newsletter</h4>
+    <form action="" id="newsletterForm">
+        {% csrf_token %}
+        <div class="newsletter-subscribe_form">
+            <input type="text" class="form-control" name="email" placeholder="Enter Your Email" />
+            <a href="#" id="newslettersubmit"><i class="fas fa-chevron-right"></i></a>
+        </div>
+    </form>
+    <h6 style="color: green; margin-top: 10px;" class="d-none" id="successSubscribeMessage">You subscribed successfuly!!!</h6>
+    <h6 style="color: red; margin-top: 10px;" class="d-none" id="alertSubscribeMessage"></h6>
+</div>
+
+{% block js %}
+<script src="{% static 'js/api/newsletter.js' %}"></script>
+{% endblock js %}

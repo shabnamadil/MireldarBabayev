@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block subheader %}
+<!-- Sub header -->
+{% include 'components/about/partials/subheader.html' %}
+<!--//End Sub header -->
+{% endblock subheader%}
+
+{% block content %}
+<!--==================== About Section ====================-->
+{% include 'components/about/partials/about.html' %}
+<!--//End About Section -->
+
+<!--==================== Who We Are ====================-->
+{% include 'components/about/partials/who-we-are.html' %}
+<!--//End Who We Are -->
+<!--==================== Our Mission ====================-->
+{% include 'components/about/partials/mission.html' %}
+<!--//End Our Mission -->
+<!--==================== Testimonials ====================-->
+{% include 'components/about/partials/testimonial.html' %}
+<!--//End Testimonials -->
+{% endblock content %}

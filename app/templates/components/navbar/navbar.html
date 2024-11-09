@@ -15,75 +15,24 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Department <i class="fas fa-plus"></i>
-            </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="services.html">Dental Care</a>
-                    <a class="dropdown-item" href="services-2.html">Cardiology</a>
-                    <a class="dropdown-item" href="services-3.html">Neurology </a>
-                    <a class="dropdown-item" href="services-detail.html">Eye Care</a>
-                </div>
+                <a class="nav-link dropdown-toggle" href="{% url 'services' %}"
+                    role="button"
+                    aria-expanded="false"> Services </a>
             </li>
-                    <!-- Sub Menu -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Patients <i class="fas fa-plus"></i>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown">
-                                <a class="dropdown-item dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false" href="#">Services <i class="fas fa-plus"></i></a>
-                                <ul class="dropdown-menu dropdown-menu1">
-                                    <li><a class="dropdown-item" href="services.html">Services
-                                            One</a></li>
-                                    <li><a class="dropdown-item" href="services-2.html">Services
-                                            Two</a></li>
-                                    <li><a class="dropdown-item" href="services-3.html">Services
-                                            Three</a></li>
-                                            <li><a class="dropdown-item" href="services-detail.html">Service
-                                                Detail</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="appointment.html">Appointment</a>
-                            </li>
-                            <li class="dropdown">
-                                <a class="dropdown-item dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false" href="#">Our Doctors <i class="fas fa-plus"></i></a>
-                                <ul class="dropdown-menu dropdown-menu1">
-                                    <li><a class="dropdown-item" href="doctors.html">Doctors One</a></li>
-                                    <li><a class="dropdown-item" href="doctors-2.html">Doctors Two</a></li>
-                                    <li><a class="dropdown-item" href="doctors-3.html">Doctors Three</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="dropdown-item" href="pricing.html">Pricing</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!--//End Sub Menu -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="{% url 'blogs' %}"
-                            role="button"
-                            aria-expanded="false"> Bloq </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="{% url 'contact' %}"
-                            role="button"
-                            aria-expanded="false"> Contact </a>
-                    </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                pages <i class="fas fa-plus"></i>
-            </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="about.html">About</a>
-                    <a class="dropdown-item" href="contact-us.html">Contact One</a>
-                    <a class="dropdown-item" href="contact-us-2.html">Contact Two</a>
-                    <a class="dropdown-item" href="error.html">Error 404</a>
-                </div>
+                <a class="nav-link dropdown-toggle" href="{% url 'blogs' %}"
+                    role="button"
+                    aria-expanded="false"> Bloq </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="{% url 'contact' %}"
+                    role="button"
+                    aria-expanded="false"> Contact </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="{% url 'about' %}"
+                    role="button"
+                    aria-expanded="false"> About </a>
             </li>
         </ul>
         <ul class="nav-icon-wrap">

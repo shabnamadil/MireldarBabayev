@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 {% load static %}
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -13,12 +14,15 @@
     <link rel="stylesheet" href="{% static 'css/all.css' %}">
     <!-- Style CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-        <!-- Slick Slider CSS -->
+    <!-- Slick Slider CSS -->
     <link rel="stylesheet" href="{% static 'css/slick.css' %}">
     <link rel="stylesheet" href="{% static 'css/slick-theme.css' %}">
     <!-- Magnific popup CSS -->
     <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" />
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Mireldar Babayev</title>
 </head>
 
@@ -48,7 +52,7 @@
     {% endblock content %}
 
     <!--==================== Counter ====================-->
-    {% include 'components/core/counter.html' %}
+    {% include 'components/core/statistics.html' %}
     <!--//End Counter -->
     <!--==================== Footer ====================-->
     {% include 'components/footer/footer.html' %}
@@ -60,10 +64,10 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <!-- Script Js -->
     <script src="{% static 'js/script.js' %}"></script>
-        <!-- Slick Slider Js -->
-        <script src="{% static 'js/slick.min.js' %}"></script>
-        <!-- Magnific popup Js -->
-        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <!-- Slick Slider Js -->
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <!-- Magnific popup Js -->
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
     {% block js %}
     {% endblock %}
 </body>

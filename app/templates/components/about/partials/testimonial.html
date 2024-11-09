@@ -1,0 +1,31 @@
+{% load static %}
+<section class="testimonial">
+    <div class="container container-custom">
+        <div class="col-md-12">
+            <div class="heading-style1">
+                <span>Testimonials</span>
+                <h2>What Our Clients Say</h2>
+            </div>
+            <div class="testi-slider">
+                {% for testimonial in testimonials %}
+                <div class="testimonial-wrap">
+                    <img src="{{testimonial.client_image.url}}" class="img-fluid testi-img-icon"
+                        alt="{{testimonial.client_full_name}}" />
+                    <ul>
+                        {% for star in testimonial.star_range %}
+                        <li><i class="fas fa-star"></i></li>
+                        {% endfor %}
+                    </ul>
+                    <p>
+                        {{testimonial.client_comment}}
+                    </p>
+                    <span class="testi-name">{{testimonial.client_full_name}} ({{testimonial.client_profession}})</span>
+                    <div class="testi-styled-bg">
+                        <img src="{% static 'images/testi-side-img_05.png' %}" class="img-fluid" alt="#" />
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

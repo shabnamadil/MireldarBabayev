@@ -1,3 +1,5 @@
+{% load static %}
+
 <section>
     <div class="container">
         <div class="row">
@@ -5,22 +7,22 @@
                 <div class="top-bar">
                     <div class="row">
                         <div class="col-lg-3 col-md-12">
-                            <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="#"></a>
+                            <a class="navbar-brand" href="index.html"><img src="{{settings.logo.url}}" alt="{{settings.site_name}}"></a>
                         </div>
                         <div class="col-md-9 d-flex align-items-end">
                             <ul class="ml-auto">
                                 <li>
-                                    <img src="images/mail-icon.png" alt="#">
+                                    <img src="{% static 'images/mail-icon.png' %}" alt="{{settings.email}}">
                                     <div>
                                         <span>Mail us</span>
-                                        <h4>info@medenin</h4>
+                                        <h4>{{settings.email}}</h4>
                                     </div>
                                 </li>
                                 <li>
-                                    <img src="images/call-icon.png" alt="#">
+                                    <img src="{% static 'images/call-icon.png' %}" alt="{{settings.number}}">
                                     <div>
-                                        <span>Toll Free</span>
-                                        <h4>+123 456 7890</h4>
+                                        <span>Call anytime</span>
+                                        <h4>{{settings.number}}</h4>
                                     </div>
                                 </li>
                                 <li class="appointment-btn">

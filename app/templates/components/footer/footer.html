@@ -3,16 +3,15 @@
         <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-4">
                 <div class="foot-contact-block">
-                    <img src="images/foot-logo.png" class="img-fluid" alt="#" />
+                    <img src="{{settings.logo.url}}" class="img-fluid" alt="{{settings.site_name}}" />
                     <p>
-                        Lorem ipsum dolor sit amet, consect <br /> etur adipisicing elit, sed do eius mod <br />
-                        tempor incididunt ut labore et dolore<br /> magna aliqua. Ut enim ad minim
+                        {{settings.footer_description}}
                     </p>
-                    <a href="tel:31234567890">
-                        <h4><i class="fas fa-phone"></i>3123 456 7890</h4>
+                    <a href="tel:{{settings.number}}">
+                        <h4><i class="fas fa-phone"></i>{{settings.number}}</h4>
                     </a>
-                    <a href="mailto:info@mededin.com">
-                        <h4><i class="far fa-envelope"></i>info@mededin.com</h4>
+                    <a href="mailto:{{settings.email}}">
+                        <h4><i class="far fa-envelope"></i>{{settings.email}}</h4>
                     </a>
                 </div>
             </div>
@@ -72,18 +71,36 @@
                     <a href="#" class="btn btn-outline-success">Career</a>
                     <a href="#" class="btn btn-outline-success">Newsletter</a>
                     <ul>
+                        {% if settings.facebook %}
                         <li>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="{{settings.facebook}}" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         </li>
+                        {% endif %}
+                        {% if settings.twitter %}
                         <li>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="{{settings.twitter}}" target="_blank"><i class="fab fa-twitter"></i></a>
                         </li>
+                        {% endif %}
+                        {% if settings.instagram %}
                         <li>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="{{settings.instagram}}" target="_blank"><i class="fab fa-instagram"></i></a>
                         </li>
+                        {% endif %}
+                        {% if settings.linkedin %}
                         <li>
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="{{settings.linkedin}}" target="_blank"><i class="fab fa-linkedin"></i></a>
                         </li>
+                        {% endif %}
+                        {% if settings.youtube %}
+                        <li>
+                            <a href="{{settings.youtube}}" target="_blank"><i class="fab fa-youtube"></i></a>
+                        </li>
+                        {% endif %}
+                        {% if settings.tiktok %}
+                        <li>
+                            <a href="{{settings.tiktok}}" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -91,7 +108,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="copyright">
-                    <p>© Medenin 2020 Allright Reserved</p>
+                    <p>© {{settings.site_name}} {{current_year}} Allright Reserved</p>
                     <a href="#" id="scroll"><i class="fas fa-angle-double-up"></i></a>
                 </div>
             </div>

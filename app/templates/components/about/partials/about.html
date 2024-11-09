@@ -1,0 +1,43 @@
+<section class="about-section space-mt">
+    <div class="container container-custom">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- About -->
+                <div class="about-video_block">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6">
+                            <a href="{{about.video_link}}" class="video-play-img popup-youtube">
+                                <img src="{{about.image.url}}" class="img-fluid w-100" alt="{{settings.site_name}}" />
+                                <div class="video-play-btn">
+                                    <div class="video-play-icon">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                    <span>PLAY VIDEO</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-12 col-lg-6">
+                            <div class="video-play-text">
+                                <h2>Short Story About {{settings.site_name}}.</h2>
+                                <p id="aboutContent">
+                                    {{ about.content|safe }}
+                                </p>
+                                <div class="row">
+                                    {% for indicator, color in paired_statistics %}
+                                    <div class="col-md-6">
+                                        <div class="facilities {{ color }}">
+                                            <h3>{{ indicator.value }}+</h3>
+                                            <span>{{ indicator.name }}</span>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--//End About -->
+            </div>
+        </div>
+    </div>
+</section>

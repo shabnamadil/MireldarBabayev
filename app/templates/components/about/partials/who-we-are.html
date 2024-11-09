@@ -1,0 +1,29 @@
+{% load static %}
+<section class="space-mb">
+    <div class="container container-custom">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="video-play-text">
+                    <span>Who we are -----</span>
+                    <h2>{{who_we_are.title}}</h2>
+                    <p>
+                        {{who_we_are.content|safe}}
+                    </p>
+                    <hr />
+                    {% include 'components/about/partials/newsletter.html' %}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="news-img-block">
+                    <img src="{% static 'images/play-img.png' %}" class="img-fluid" alt="{{who_we_are.title}}" />
+                    <a class="video-play-button popup-youtube" href="{{who_we_are.video_link}}">
+                        <span></span>
+                    </a>
+                    <div id="video-overlay" class="video-overlay">
+                        <a class="video-overlay-close">&times;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

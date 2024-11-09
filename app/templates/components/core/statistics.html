@@ -1,0 +1,22 @@
+<section class="counter">
+    <div class="container container-custom">
+        <div class="row">
+            {% for indicator in indicators %}
+            <div class="col-sm-4 col-md-3 col-lg-3">
+                <div class="counter-block">
+                    <img src="{{indicator.png.url}}" alt="{{indicator.name}}" style="width: 57px; height: 63px;">
+                    <div class="counter-text">
+                        <h2>{{indicator.value}}+</h2>
+                        <p>{{indicator.name}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="col-sm-12 col-md-3 col-lg-3 d-flex align-items-center justify-content-end">
+                <div class="counter-btn_block">
+                    <a href="{% url 'contact' %}" class="btn btn-success">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

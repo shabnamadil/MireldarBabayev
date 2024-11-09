@@ -21,6 +21,11 @@ class SiteSettings(BaseModel, SingletonModel):
         'İş saatları',
         max_length=200
     )
+    map_url = models.CharField(
+        'Xəritə',
+        max_length=500,
+        help_text='Zəhmət olmasa, google məkanınızın "iframe" contentindən "src" attributunu daxil edin.'
+    )
     facebook = models.URLField(
         'Facebook hesab linki',
         null=True, blank=True
@@ -33,6 +38,10 @@ class SiteSettings(BaseModel, SingletonModel):
         'Instagram hesab linki',
         null=True, blank=True
     )
+    twitter = models.URLField(
+        'Twitter hesab linki',
+        null=True, blank=True
+    )
     linkedin = models.URLField(
         'Linkedin hesab linki',
         null=True, blank=True
@@ -42,7 +51,7 @@ class SiteSettings(BaseModel, SingletonModel):
         null=True, blank=True
     )
     footer_description = models.TextField(
-        'Footer description'
+        'Footer hissədə göstəriləcək mətn'
     )
     
     class Meta:

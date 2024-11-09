@@ -495,7 +495,7 @@ a:focus {
 }
 
 .container {
-  max-width: 1260px;
+  max-width: 1300px;
 }
 
 .container-custom {
@@ -4212,5 +4212,5 @@ SERVICE DETAIL
 }
 
 .error-border {
-  border-color: red;
+  border-color: red !important;
 }
