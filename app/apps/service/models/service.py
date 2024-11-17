@@ -24,7 +24,7 @@ class Service(BaseModel):
     png = models.FileField(
         'PNG',
         upload_to='services/',
-        help_text='PNG formatda daxil edin'
+        help_text='PNG formatda daxil edin. Ölçü: 94x74px'
     )
     image = models.ImageField(
         'Əsas foto',

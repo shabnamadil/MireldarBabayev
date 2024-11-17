@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!--==================== Banner Section ====================-->
+<header>
+    <div class="banner--wrap">
+        <div class="container">
+            <div class="banner-slider">
+                {% for banner in banners %}
+                {% include 'components/home/partials/banner.html' %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</header>
+<!--==================== End Banner Section ====================-->
+<!--==================== About Section ====================-->
+<section class="about-section">
+    <div class="container container-custom">
+        <div class="row space">
+            <!-- Service Icon -->
+            {% include 'components/home/partials/service-icon.html' %}
+            <!--//End Service Icon -->
+        </div>
+        {% include 'components/home/partials/about.html' %}
+    </div>
+</section>
+<!--//End About Section -->
+<!--==================== Our Services ====================-->
+<section class="space light">
+    <div class="container container-custom">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="heading-style1">
+                    <span>Our Services</span>
+                    <h2>High Quality Services for You</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="service-slider">
+                    {% for service in services %}
+                    <div class="service-block {{service.background_color}}">
+                        <img src="{{service.png.url}}" alt="{{service.name}}">
+                        <h3>{{service.name}}</h3>
+                        <p>{{service.short_description}}</p>
+                        <a href="{{service.get_absolute_url}}" class="btn btn-dark">READ MORE</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-center service-help_link">
+                    Contact us for better help and services.
+                    <a href="{% url 'contact' %}">Let’s get started</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//End Our Services -->
+<!--==================== Appointment ====================-->
+<section class="space background-bg4">
+    <div class="container container-custom">
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <div class="appointment-form_wrap">
+                    <div class="heading-style1">
+                        <span>Online Booking</span>
+                        <h2>Make an Appointment</h2>
+                    </div>
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group form-group-cutom">
+                                    <input type="email" class="form-control form-custom" placeholder="Enter Your Name">
+                                    <i class="far fa-user"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-cutom">
+                                    <input type="number" class="form-control form-custom" placeholder="Date and time">
+                                    <i class="far fa-clock"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group form-group-cutom">
+                                    <input type="number" class="form-control form-custom"
+                                        placeholder="Enter phone number">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-cutom">
+                                    <input type="text" class="form-control form-custom" placeholder="Select location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group form-group-cutom">
+                                    <input type="text" class="form-control form-custom" placeholder="Choose department">
+                                    <i class="far fa-circle"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-cutom">
+                                    <input type="text" class="form-control form-custom" placeholder="Select doctor">
+                                    <i class="far fa-user"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group form-group-cutom">
+                                    <label for="exampleFormControlTextarea1">Your Message</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="#" class="btn btn-success">BOOK NOW</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6">
+                <div class="why-choose_block">
+                    <div class="heading-style1 mb-0">
+                        <span>Why Us</span>
+                        <h2>Why Choose Us</h2>
+                        <p>We’re committed to a patient-centered approach, ensuring you feel supported and cared for
+                            every step of the way.</p>
+                        <hr>
+                    </div>
+                    {% for item in why_choose_us %}
+                    {% include 'components/service/partials/why-choose-us.html' %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//End Appointment -->
+<!--==================== Testimonials ====================-->
+{% include 'components/about/partials/testimonial.html' %}
+<!--//End Testimonials -->
+<!--==================== Emergency ====================-->
+<section class="emergency">
+    <div class="container container-custom">
+        <div class="row">
+            <div class="col-md-7 offset-md-5 col-lg-5 offset-lg-7">
+                <div class="emergency-box">
+                    <h2>Emergency? Contact Us Now.</h2>
+                    <p>Facing an emergency? Don’t wait—reach out to us immediately for prompt assistance. Our team is
+                        available 24/7 to provide support and address your urgent needs. Call or message us now to
+                        ensure you get the help you need when it matters most.</p>
+                    <div class="emergency-block">
+                        <i class="fas fa-phone-volume"></i>
+                        <div class="emergency-text">
+                            <p>Call anytime</p>
+                            <h4>{{settings.number}}</h4>
+                        </div>
+                    </div>
+                    <div class="emergency-block">
+                        <i class="far fa-envelope-open yellow-bg"></i>
+                        <div class="emergency-text">
+                            <p>Email us</p>
+                            <h4>{{settings.email}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//End Emergency -->
+<!--==================== Blog Grid ====================-->
+<section class="space light">
+    <div class="container container-custom">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="heading-style1">
+                    <span>Blog ----</span>
+                    <h2>Latest News & Events</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="service-slider blog-slider">
+                    {% for blog in blogs %}
+                    {% include 'components/home/partials/blog-item.html' %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//End Blog Grid -->
+{% endblock content %}

@@ -12,9 +12,10 @@ class AboutUs(BaseModel, SingletonModel):
         upload_to='about/',
         help_text='Haqqımızda səhifəsində göstərilməsi üçün foto yükləyin'
     )
-    video_link = models.URLField(
-        'Video linki',
-        help_text='Haqqımızda səhifəsində göstərilməsi üçün video link'
+    video_id= models.CharField(
+        'Video link id',
+        help_text='Nümunə: "https://www.youtube.com/watch?v=MKG_6BqnhpI" linkindən  "MKG_6BqnhpI" daxil edilməlidir',
+        max_length=11
     )
     content = RichTextUploadingField(
         'Haqqımızda məlumat',

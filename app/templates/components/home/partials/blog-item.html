@@ -1,0 +1,23 @@
+{% load static %}
+<div class="blog-grid-wrap">
+    <div class="blog-grid-img">
+        <img src="{{blog.image.url}}" class="img-fluid" alt="{{blog.title}}">
+        <div class="blog-grid-date">
+            <h5>{{ blog.published_at|date:"j" }}</h5>
+            <p>{{blog.published_at|date:"F"}}</p>
+        </div>
+    </div>
+    <div class="blog-grid_content">
+        <div class="blog-grid-top_icon">
+            <label>{{blog.category.first}}</label>
+            <p><i class="far fa-eye"></i>{{blog.view_count}} <span>|</span> <i class="far fa-comment"></i>{{blog.comments.count}}</p>
+        </div>
+        <div class="blog-grid_text">
+            <a href="{{blog.get_absolute_url}}">
+                <h4>{{blog.title|truncatechars:30}}</h4>
+            </a>
+            <p>{{blog.short_description|truncatechars:100}}
+            </p>
+        </div>
+    </div>
+</div>

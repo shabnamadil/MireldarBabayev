@@ -747,7 +747,7 @@ a:focus {
 }
 
 .banner1 {
-  background: url(../images/banner-2.jpg) center no-repeat;
+  background: url(../images/banner-bg.jpg) center no-repeat;
   background-size: cover;
 }
 .banner1:focus {

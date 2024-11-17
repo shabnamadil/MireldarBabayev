@@ -8,7 +8,8 @@ from .models import (
     StatisticalIndicator,
     AboutUs,
     WhoWeAre,
-    Testimoinal
+    Testimoinal,
+    Banner
 )
 from .forms import (
     ContactForm,
@@ -69,3 +70,4 @@ class StatisticsAdmin(admin.ModelAdmin):
 admin.site.register(AboutUs)
 admin.site.register(WhoWeAre)
 admin.site.register(Testimoinal)
+admin.site.register(Banner)
