@@ -2,7 +2,8 @@ from typing import Any
 from django.shortcuts import render
 from django.views.generic import (
     TemplateView,
-    DetailView
+    DetailView,
+    ListView
 )
 
 from .models import (
@@ -11,6 +12,7 @@ from .models import (
     WhoWeAre,
     Testimoinal,
     Banner,
+    Faq
 )
 
 from apps.service.models import (
@@ -70,3 +72,9 @@ class HomePageView(TemplateView):
             'blogs': Blog.published.all()[:4]
         })
         return cx
+    
+
+class FaqListView(ListView):
+    model = Faq
+    template_name = 'components/core/faq.html'
+    context_object_name = 'faqs'

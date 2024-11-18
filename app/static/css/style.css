@@ -4214,3 +4214,72 @@ SERVICE DETAIL
 .error-border {
   border-color: red !important;
 }
+
+.accordion-item {
+  margin-bottom: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-button {
+  font-size: 18px;
+  font-weight: bold;
+  color: #28a745;
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  padding: 15px;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  border-radius: 3px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.accordion-body {
+  padding: 15px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
+
+.accordion-button:after {
+  content: '\002B'; /* Plus sign */
+  font-family: 'Arial';
+  font-weight: bold;
+  float: right;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+}
+
+.accordion-button:not(.collapsed):after {
+  content: '\2212'; /* Minus sign */
+  transform: rotate(180deg);
+}
+
+.accordion-item .accordion-button {
+  border-bottom: none;
+}
+
+.accordion-item:first-child {
+  margin-top: 10px;
+}
+
+.accordion-button:hover {
+  cursor: pointer;
+  background-color: #fff;
+  color: #28a745;
+}

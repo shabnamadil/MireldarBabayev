@@ -8,14 +8,17 @@ from utils.models.base_model import BaseModel
 class Banner(BaseModel):
     title = models.CharField(
         'Başlıq', 
-        max_length=200
+        max_length=200,
+        unique=True
     )
     subtitle = models.CharField(
         'Alt başlıq', 
-        max_length=100
+        max_length=100,
+        unique=True
     )
     description = models.TextField(
-        'Qısa izah'
+        'Qısa izah',
+        unique=True
     )
     png = models.ImageField(
         'Banner foto',

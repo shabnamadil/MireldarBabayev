@@ -1,0 +1,18 @@
+<div class="faq-section">
+    <div class="accordion" id="faqAccordion">
+        {% for faq in faqs %}
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="heading-{{faq.id}}">
+                <button class="accordion-button {% if faq.id != 1 %}  collapsed {% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{faq.id}}" aria-expanded="true" aria-controls="collapse-{{faq.id}}">
+                {{faq.question}}
+                </button>
+            </h2>
+            <div id="collapse-{{faq.id}}" class="accordion-collapse collapse {% if faq.id == 1 %}  show {% endif %}" aria-labelledby="heading-{{faq.id}}" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    {{faq.response}}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

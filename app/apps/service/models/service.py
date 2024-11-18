@@ -16,7 +16,8 @@ class Service(BaseModel):
     )
     name = models.CharField(
         'Servisin adı',
-        max_length=200
+        max_length=200,
+        unique=True
     )
     short_description = models.TextField(
         'Qısa məlumat'

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block subheader %}
+<!-- Sub header -->
+{% include 'components/core/partials/faq-subheader.html' %}
+<!--//End Sub header -->
+{% endblock subheader %}
+
+{% block content %}
+<!--==================== Faq ====================-->
+<section class="space">
+    <div class="container container-custom">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="sub-title_center">
+                    <span><i>---- Faq ----</i></span>
+                    <h2> Frequently Asked Questions </h2>
+                </div>
+            </div>
+        </div>
+        {% include 'components/core/partials/faq-item.html' %}
+    </div>
+</section>
+<!--//End Faq -->
+{% endblock content %}

@@ -7,10 +7,12 @@ from utils.models.base_model import BaseModel
 class WhyChooseUs(BaseModel):
     title = models.CharField(
         'Başlıq',
-        max_length=200
+        max_length=200,
+        unique=True
     )
     short_description = models.TextField(
-        'Qısa məlumat'
+        'Qısa məlumat',
+        unique=True
     )
     png = models.FileField(
         'PNG',

@@ -15,6 +15,11 @@
                     aria-expanded="false"> Services </a>
             </li>
             <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="{% url 'about' %}"
+                    role="button"
+                    aria-expanded="false"> About </a>
+            </li>
+            <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="{% url 'blogs' %}"
                     role="button"
                     aria-expanded="false"> Bloq </a>
@@ -24,31 +29,7 @@
                     role="button"
                     aria-expanded="false"> Contact </a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="{% url 'about' %}"
-                    role="button"
-                    aria-expanded="false"> About </a>
-            </li>
         </ul>
-        <ul class="nav-icon-wrap">
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fab fa-facebook-f"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fab fa-twitter"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fab fa-instagram"></i></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fab fa-google-plus-g"></i></a>
-            </li>
-            <li class="nav-item cart-seperate">
-                <a class="nav-link" href="#"><i class="fas fa-shopping-cart fa-top-search"></i> <span>2</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-bars"></i></a>
-            </li>
-        </ul>
+        {% include 'components/navbar/partials/icons.html' %}
     </div>
 </nav>
