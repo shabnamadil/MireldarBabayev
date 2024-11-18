@@ -24,32 +24,19 @@
                 <div class="foot-link-box">
                     <h4>Our Services</h4>
                     <ul>
+                        {% for service in footer_services %}
                         <li>
-                            <a href="#"><i class="fas fa-angle-double-right"></i>Pediatrics</a>
+                            <a href="{{service.get_absolute_url}}"><i class="fas fa-angle-double-right"></i>{{service.name}}</a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fas fa-angle-double-right"></i>Dermatology</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-angle-double-right"></i>Cardiology</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-angle-double-right"></i>Psychological</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-angle-double-right"></i>Surgery</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fas fa-angle-double-right"></i>Family Medicine</a>
-                        </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
             <div class="col-md-4 col-lg-2 offset-lg-1">
                 <div class="foot-link-box footlink-box_btn">
-                    <a href="#" class="btn btn-outline-success">Find a Doctor</a>
-                    <a href="#" class="btn btn-outline-success">Career</a>
-                    <a href="#" class="btn btn-outline-success">Newsletter</a>
+                    <a href="#" class="btn btn-outline-success">Appointment</a>
+                    <a href="{% url 'faq' %}" class="btn btn-outline-success">Faq</a>
+                    <a href="{% url 'about' %}#newsletter" class="btn btn-outline-success">Newsletter</a>
                     <ul>
                         {% include 'components/core/icons.html' %}
                     </ul>

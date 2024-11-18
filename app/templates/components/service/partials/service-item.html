@@ -3,7 +3,7 @@
     <div class="service-block {{service.background_color}}">
         <img src="{{service.png.url}}" alt="{{service.name}}">
         <h3>{{service.name}}</h3>
-        <p>{{service.short_description}}</p>
+        <p>{{service.short_description|truncatechars:150}}</p>
         <a href="{{service.get_absolute_url}}" class="btn btn-dark">READ MORE</a>
     </div>
 </div>
