@@ -354,6 +354,13 @@ textarea {
   border-left: 0;
   padding-left: 3px;
   font-size: 13px;
+  color: #fff;
+  font-weight: 300;
+}
+
+.form-cutom {
+    color: #fff;
+    font-weight: 300;
 }
 
 .form-group-cutom {

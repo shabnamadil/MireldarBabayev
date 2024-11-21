@@ -1,5 +1,5 @@
 from typing import Any
-from django.shortcuts import render
+from django.utils import timezone
 from django.views.generic import (
     ListView,
     DetailView
@@ -12,8 +12,9 @@ from .models import (
     Coworker
 )
 
-from apps.blog.models import Blog
-from apps.core.models import Testimoinal
+from ..blog.models import Blog
+from ..core.models import Testimoinal
+from ..appointment.models import Timetable
 
 class ServiceListView(ListView):
     model = Service
@@ -22,10 +23,17 @@ class ServiceListView(ListView):
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         cx = super().get_context_data(**kwargs)
+        
+        local_time = timezone.localtime(timezone.now())
+
         cx.update({
             'testimonials' : Testimoinal.objects.all()[:3],
             'why_choose_us' : WhyChooseUs.objects.all(),
-            'coworkers' : Coworker.objects.all()
+            'coworkers' : Coworker.objects.all(),
+            'available_times' : Timetable.objects.filter(
+                start_time__gte=local_time,
+                appointment=None
+                )
         })
         return cx
 

@@ -1,5 +1,5 @@
 from typing import Any
-from django.shortcuts import render
+from django.utils import timezone
 from django.views.generic import (
     TemplateView,
     DetailView,
@@ -14,13 +14,13 @@ from .models import (
     Banner,
     Faq
 )
-
-from apps.service.models import (
+from ..service.models import (
     Service,
     WhyChooseUs
 )
+from ..blog.models import Blog
+from ..appointment.models import Timetable
 
-from apps.blog.models import Blog
 
 class ContactPageView(TemplateView):
     template_name = 'components/contact/contact.html'
@@ -59,9 +59,10 @@ class HomePageView(TemplateView):
 
         statistics = StatisticalIndicator.objects.all()[:4]
         colors = ['yellow', 'blue', 'green', 'gray']
-        
-        # Pair each statistic with a color
         paired_statistics = zip(statistics, colors)
+        
+        local_time = timezone.localtime(timezone.now())
+
         cx.update({
             'banners': Banner.objects.all(),
             'about': AboutUs.objects.first(),
@@ -69,7 +70,11 @@ class HomePageView(TemplateView):
             'services': Service.objects.all()[:4],
             'why_choose_us': WhyChooseUs.objects.all()[:4],
             'testimonials' : Testimoinal.objects.all()[:4],
-            'blogs': Blog.published.all()[:4]
+            'blogs': Blog.published.all()[:4],
+            'available_times' : Timetable.objects.filter(
+                start_time__gte=local_time,
+                appointment=None
+                )
         })
         return cx
     

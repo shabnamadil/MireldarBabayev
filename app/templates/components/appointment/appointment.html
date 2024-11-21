@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- Sub header -->
+{% block subheader %}
+{% include 'components/appointment/partials/subheader.html' %}
+{% endblock subheader%}
+<!--//End Sub header -->
+{% block content %}
+
+<!--==================== Who We Are ====================-->
+{% include 'components/appointment/partials/who-we-are.html' %}
+<!--//End Who We Are  -->
+<!--==================== Appointment ====================-->
+<section class="space background-bg4">
+    <div class="container container-custom">
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <div class="appointment-form_wrap">
+                    <div class="heading-style1">
+                        <span>Online Booking</span>
+                        <h2>Make an Appointment</h2>
+                    </div>
+                    {% include 'components/appointment/partials/form.html' %}
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6">
+                <div class="why-choose_block">
+                    <div class="heading-style1">
+                        <span>Why Us</span>
+                        <h2>Why Choose Us</h2>
+                        <p>We’re committed to a patient-centered approach, ensuring you feel supported and cared for every step of the way.</p>
+                        <hr>
+                    </div>
+                    {% for item in why_choose_us %}
+                    {% include 'components/service/partials/why-choose-us.html' %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//End Appointment -->
+<!--==================== Testimonials ====================-->
+{% include 'components/about/partials/testimonial.html' %}
+<!--//End Testimonials -->
+{% endblock content %}

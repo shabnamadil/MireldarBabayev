@@ -1,0 +1,59 @@
+{% load static %}
+
+<form method="post" id="appointmentPostForm">
+    {% csrf_token %}
+    <h4 id="successMessage" class="alert alert-success d-none" role="alert">
+        Rezervasiya tamamlandı. Tezliklə sizinlə əlaqə saxlanılacaq.
+    </h4>
+    <h4 id="alertMessage" class="alert alert-danger d-none" role="alert"></h4>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group form-group-cutom">
+                <input type="text" class="form-control form-custom" required name="full_name" placeholder="Enter Your Name, Surname">
+                <i class="far fa-user"></i>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group form-group-cutom">
+                <select class="form-control form-custom" required name="available_time">
+                    <option value="" disabled selected>Enter Available Time</option>
+                    {% for time in available_times %}
+                    <option value="{{time.id}}">{{time}}</option>
+                    {% endfor %}
+                </select>                
+                <i class="far fa-clock"></i>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group form-group-cutom">
+                <input type="text" name="phone" required class="form-control form-custom" placeholder="Enter phone number">
+                <i class="fas fa-phone"></i>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group form-group-cutom">
+                <input type="text" class="form-control form-custom" name="location" placeholder="Enter location">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group form-group-cutom">
+                <label for="exampleFormControlTextarea1">Your Message</label>
+                <textarea class="form-control form-cutom" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-success">BOOK NOW</button>
+        </div>
+    </div>
+</form>
+
+{% block js %}
+<script src="{% static 'js/api/appointment.js' %}"></script>
+{% endblock js %}

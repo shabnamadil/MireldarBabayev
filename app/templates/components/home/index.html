@@ -73,64 +73,7 @@
                         <span>Online Booking</span>
                         <h2>Make an Appointment</h2>
                     </div>
-                    <form action="#">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group form-group-cutom">
-                                    <input type="email" class="form-control form-custom" placeholder="Enter Your Name">
-                                    <i class="far fa-user"></i>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-group-cutom">
-                                    <input type="number" class="form-control form-custom" placeholder="Date and time">
-                                    <i class="far fa-clock"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group form-group-cutom">
-                                    <input type="number" class="form-control form-custom"
-                                        placeholder="Enter phone number">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-group-cutom">
-                                    <input type="text" class="form-control form-custom" placeholder="Select location">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group form-group-cutom">
-                                    <input type="text" class="form-control form-custom" placeholder="Choose department">
-                                    <i class="far fa-circle"></i>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group form-group-cutom">
-                                    <input type="text" class="form-control form-custom" placeholder="Select doctor">
-                                    <i class="far fa-user"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group form-group-cutom">
-                                    <label for="exampleFormControlTextarea1">Your Message</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <a href="#" class="btn btn-success">BOOK NOW</a>
-                            </div>
-                        </div>
-                    </form>
+                    {% include 'components/appointment/partials/form.html' %}
                 </div>
             </div>
             <div class="col-md-12 col-lg-6">

@@ -19,7 +19,8 @@ class Testimoinal(BaseModel):
         max_length=200
     )
     client_comment = models.TextField(
-        'Müştəri rəyi'
+        'Müştəri rəyi',
+        max_length=255
     )
     star = models.IntegerField(
         'Müştərinin verdiyi qiymət',

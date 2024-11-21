@@ -23,10 +23,11 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('api/', include('apps.blog.api.urls')),
     path('api/', include('apps.core.api.urls')),
+    path('api/', include('apps.appointment.api.urls')),
     path('', include('apps.blog.urls')),
     path('', include('apps.core.urls')),
-    path('', include('apps.service.urls'))
-
+    path('', include('apps.service.urls')),
+    path('', include('apps.appointment.urls'))
 
 ]
 
