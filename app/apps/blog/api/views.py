@@ -1,16 +1,24 @@
 from rest_framework.generics import (
     ListAPIView,
     CreateAPIView,
-    RetrieveUpdateDestroyAPIView
+    RetrieveUpdateDestroyAPIView,
+    ListCreateAPIView
 )
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import (
+    IsAuthenticatedOrReadOnly,
+    IsAuthenticated
+)
 
 from .serializers import (
     BlogListSerializer,
     CommentPostSerializer,
-    CommentUpdateDestroySerializer
+    CommentUpdateDestroySerializer,
+    CommentListSerializer
 )
-from .repositories import BlogRepository
+from .repositories import (
+    BlogRepository,
+    CommentRepository
+)
 from ..models import (
     Blog,
     Comment
@@ -44,9 +52,32 @@ class BlogListAPIView(ListAPIView):
         return qs
     
 
-class CommentPostAPIView(CreateAPIView):
-    serializer_class = CommentPostSerializer
-    permission_classes = (IsAuthenticated, )
+class CommentListPostAPIView(ListCreateAPIView):
+    serializer_class = CommentListSerializer
+    permission_classes = (IsAuthenticatedOrReadOnly, )
+    queryset = Comment.objects.all()
+    repo = CommentRepository
+
+    def get_serializer_class(self):
+        if self.request.method == 'POST':
+            self.serializer_class = CommentPostSerializer
+        return super().get_serializer_class()
+    
+    def get_filter_methods(self):
+        repo = self.repo()
+        return {
+            'blog' : repo.get_by_blog
+        }
+
+    def get_queryset(self, **kwargs):
+        qs = Comment.objects.all()
+        filters = self.get_filter_methods()
+        
+        for key, value in self.request.query_params.items():
+            if key in filters:
+                qs = filters[key](value, qs)
+        return qs
+    
 
 
 class CommentRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):

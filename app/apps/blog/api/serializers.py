@@ -15,18 +15,20 @@ class TagListSerializer(serializers.ModelSerializer):
 
 
 class CommentListSerializer(serializers.ModelSerializer):
-    author = serializers.CharField(
+    author_full_name = serializers.CharField(
         source='author.get_full_name', 
         default='Admin User'
     )
 
     class Meta:
         model = Comment
-        fields = ('id', 'content', 'author', 'created_date')
+        fields = ('id', 'content', 'author_full_name', 'created_date')
 
 
 class CommentPostSerializer(serializers.ModelSerializer):
+    author_full_name = serializers.SerializerMethodField(read_only=True)
     author = serializers.PrimaryKeyRelatedField(read_only=True)
+    created_date = serializers.ReadOnlyField()
 
     class Meta:
         model = Comment
@@ -34,8 +36,9 @@ class CommentPostSerializer(serializers.ModelSerializer):
             'id',
             'content',
             'author',
+            'author_full_name',
             'blog',
-            'parent_comment'
+            'created_date'
         )
 
     def validate(self, attrs):
@@ -44,6 +47,10 @@ class CommentPostSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError('You have to log in')
         attrs['author'] = request.user
         return attrs
+
+    def get_author_full_name(self, obj):
+        return obj.author.get_full_name() if obj.author else 'Anonymous'
+
     
 
 class CommentUpdateDestroySerializer(serializers.ModelSerializer):

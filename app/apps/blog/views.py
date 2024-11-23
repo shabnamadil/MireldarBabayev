@@ -43,10 +43,15 @@ class BlogDetailView(DetailView):
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         obj = self.get_object()
         cx =  super().get_context_data(**kwargs)
+        previous_blog_id = obj.id - 1 if obj.id > 1 else None
+        next_blog_id = obj.id + 1
         cx['popular_blogs'] = Blog.published.annotate(
             comment_count=Count('comments')
             ).exclude(id=obj.id).order_by(
                 '-comment_count', '-view_count')[:3]
         cx['categories'] = Category.objects.all()
         cx['tags'] = Tag.objects.all()
+        cx['previous_blog'] = Blog.objects.filter(id=previous_blog_id).first() if previous_blog_id else None
+        cx['next_blog'] = Blog.objects.filter(id=next_blog_id).first()
         return cx
+                                                   

@@ -5,7 +5,9 @@ const filterResults = document.getElementById('filterResults');
 const searchQuery = document.getElementById('query-word');
 const searchIcon = document.getElementById('searchIcon');
 const clearFilterButton = document.getElementById('clearfilter');
-const loadMoreBtn = document.getElementById('loadMoreBtn');
+const nextBlogs = document.getElementById('nextBlogs');
+const previousBlogs = document.getElementById('previousBlogs');
+
 
 let currentPage = 1;
 
@@ -30,7 +32,9 @@ document.addEventListener('DOMContentLoaded', async function () {
     searchIcon.addEventListener('click', handleSearch);
     searchQuery.addEventListener('keypress', handleSearchOnEnter);
     clearFilterButton.addEventListener('click', clearFilter);
-    loadMoreBtn.addEventListener('click', handleLoadMore)
+    nextBlogs.addEventListener('click', handleNextBlogs)
+    previousBlogs.addEventListener('click', handlePreviousBlogs)
+
 
     // Category filter event listeners
     document.querySelectorAll('.category-link').forEach(link => {
@@ -79,28 +83,65 @@ async function handleSearchOnEnter(event) {
     }
 }
 
-// Handle load more
-async function handleLoadMore() {
-    currentPage++;  // Increment the page number
-    const moreBlogs = await fetchBlogs(currentPage);
-    if (moreBlogs && moreBlogs.length > 0) {
-        appendBlogs(moreBlogs);
-    } else {
-        loadMoreBtn.style.display = 'none';  // Hide button if no more blogs
+// Handle next blogs
+async function handleNextBlogs() {
+    try {
+        const moreBlogs = await fetchBlogs(currentPage + 1); // Check the next page directly
+        if (moreBlogs && moreBlogs.length > 0) {
+            currentPage++; // Increment the page only if valid data is fetched
+            renderBlogs(moreBlogs); // Render blogs for the next page
+            previousBlogs.style.display = 'block'; // Ensure the previous button is visible
+        } else {
+            nextBlogs.style.display = 'none'; // Hide the next button if no more blogs
+        }
+    } catch (error) {
+        console.error('Error fetching next blogs:', error);
     }
 }
 
+// Handle previous blogs
+async function handlePreviousBlogs() {
+    if (currentPage > 1) { // Ensure we don't go below the first page
+        try {
+            const moreBlogs = await fetchBlogs(currentPage - 1); // Check the previous page
+            if (moreBlogs && moreBlogs.length > 0) {
+                currentPage--; // Decrement the page only if valid data is fetched
+                renderBlogs(moreBlogs); // Render blogs for the previous page
+                nextBlogs.style.display = 'block'; // Ensure the next button is visible
+            } else {
+                previousBlogs.style.display = 'none'; // Hide the previous button if no more blogs
+            }
+        } catch (error) {
+            console.error('Error fetching previous blogs:', error);
+        }
+    } else {
+        previousBlogs.style.display = 'none'; // Hide the previous button on the first page
+    }
+}
+
+
 // Fetch blogs function
+
 async function fetchBlogs(currentPage) {
     try {
         const response = await fetch(`${BASE_URL}?p=${currentPage}`);
         if (!response.ok) throw new Error('Failed to fetch blogs');
-        return await response.json();
+
+        const data = await response.json();
+        
+        // Example of API response containing pagination info
+        if (currentPage == 1) {
+            // nextBlogs.style.display = data.meta.has_next ? 'block' : 'none';
+            previousBlogs.style.display = 'none';
+        } 
+
+        return data // Assuming `blogs` is the array of blogs in the API response
     } catch (error) {
         console.error('Error fetching blogs:', error);
         return null;
     }
 }
+
 
 // Filter blogs by category
 async function filterBlogsByCategory(category) {

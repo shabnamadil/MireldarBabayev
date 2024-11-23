@@ -1,6 +1,9 @@
 from django.db.models import Q
 
-from ..models import Blog
+from ..models import (
+    Blog,
+    Comment
+)
 
 
 class BlogRepository:
@@ -31,3 +34,13 @@ class BlogRepository:
         start = (int(page) - 1) * items_per_page
         end = start + items_per_page
         return qs[start:end]
+
+
+class CommentRepository:
+    DEFAULT_QS = Comment.objects.all()
+    
+    def __init__(self):
+        self.model = Comment
+
+    def get_by_blog(self, blog_id, qs=DEFAULT_QS):
+        return qs.filter(blog__id=blog_id)

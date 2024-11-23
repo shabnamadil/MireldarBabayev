@@ -23,13 +23,6 @@ class Comment(BaseModel):
         related_name='comments',
         verbose_name='Rəy müəllifi'
     )
-    parent_comment = models.ForeignKey(
-        'self',
-        verbose_name='Əsas rəy',
-        null=True, blank=True,
-        on_delete=models.CASCADE,
-        related_name='replies'
-    )
 
     class Meta:
           verbose_name = ('Məqalə rəyi')
