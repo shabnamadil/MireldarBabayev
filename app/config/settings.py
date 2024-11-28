@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,6 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'user.CustomUser'
 
 # Application definition
 
@@ -49,7 +51,8 @@ INSTALLED_APPS = [
     'apps.blog',
     'apps.core',
     'apps.service',
-    'apps.appointment'
+    'apps.appointment',
+    'apps.user'
 ]
 
 MIDDLEWARE = [
@@ -155,4 +158,20 @@ CKEDITOR_CONFIGS = {
                 'codesnippet',
             ]),
         },
+}
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=5),
+    "TOKEN_OBTAIN_SERIALIZER": "apps.user.api.serializers.CustomTokenObtainPairSerializer",
+    'REFRESH_TOKEN_LIFETIME': timedelta(minutes=2),
 }

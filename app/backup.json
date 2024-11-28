@@ -1,1 +1,1091 @@
-[{"model": "admin.logentry", "pk": 1, "fields": {"action_time": "2024-10-24T20:32:17.031Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "Development", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 2, "fields": {"action_time": "2024-10-24T20:32:31.591Z", "user": 1, "content_type": 10, "object_id": "1", "object_repr": "tgrrtg", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 3, "fields": {"action_time": "2024-10-24T21:56:00.869Z", "user": 1, "content_type": 12, "object_id": "1", "object_repr": "sebnemadil1999@gmail.com", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 4, "fields": {"action_time": "2024-10-25T18:08:29.812Z", "user": 1, "content_type": 11, "object_id": "1", "object_repr": "hg7h9u9", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 5, "fields": {"action_time": "2024-10-25T18:08:41.966Z", "user": 1, "content_type": 11, "object_id": "2", "object_repr": "][pjiubgy", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 6, "fields": {"action_time": "2024-10-30T16:39:40.216Z", "user": 1, "content_type": 7, "object_id": "2", "object_repr": "SMM", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 7, "fields": {"action_time": "2024-10-30T16:39:42.155Z", "user": 1, "content_type": 10, "object_id": "1", "object_repr": "tgrrtg", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Kateqoriya\"]}}]"}}, {"model": "admin.logentry", "pk": 8, "fields": {"action_time": "2024-10-30T16:40:29.877Z", "user": 1, "content_type": 10, "object_id": "1", "object_repr": "tgrrtg", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Kateqoriya\"]}}]"}}, {"model": "admin.logentry", "pk": 9, "fields": {"action_time": "2024-10-30T16:40:49.877Z", "user": 1, "content_type": 10, "object_id": "1", "object_repr": "tgrrtg", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Kateqoriya\"]}}]"}}, {"model": "admin.logentry", "pk": 10, "fields": {"action_time": "2024-10-30T16:45:52.790Z", "user": 1, "content_type": 10, "object_id": "1", "object_repr": "Things you may not know about medicaid den..", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u0259qal\\u0259 ba\\u015fl\\u0131\\u011f\\u0131\", \"Q\\u0131sa m\\u0259zmun\"]}}]"}}, {"model": "admin.logentry", "pk": 11, "fields": {"action_time": "2024-10-30T16:56:54.268Z", "user": 1, "content_type": 4, "object_id": "1", "object_repr": "sebnemadil1999@gmail.com", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Username\", \"First name\", \"Last name\"]}}]"}}, {"model": "admin.logentry", "pk": 12, "fields": {"action_time": "2024-10-30T17:12:46.751Z", "user": 1, "content_type": 7, "object_id": "3", "object_repr": "Health tips", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 13, "fields": {"action_time": "2024-10-30T17:12:50.949Z", "user": 1, "content_type": 10, "object_id": "2", "object_repr": "tThings you may not know about medicaid den..", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 14, "fields": {"action_time": "2024-10-30T19:53:01.204Z", "user": 1, "content_type": 10, "object_id": "2", "object_repr": "tThings you may not know about medicaid den..", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u0259qal\\u0259 m\\u0259tni\"]}}]"}}, {"model": "admin.logentry", "pk": 15, "fields": {"action_time": "2024-10-30T20:13:48.706Z", "user": 1, "content_type": 10, "object_id": "3", "object_repr": "Things you may not know about medicaid fdbdfbden..", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 16, "fields": {"action_time": "2024-10-30T20:15:40.540Z", "user": 1, "content_type": 10, "object_id": "3", "object_repr": "Things you may not know about medicaid fdbdfbden..", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Cover foto\"]}}]"}}, {"model": "admin.logentry", "pk": 17, "fields": {"action_time": "2024-10-30T21:39:27.014Z", "user": 1, "content_type": 10, "object_id": "4", "object_repr": "cx['popular_blogs'] = Blog.published.annotate(comment_count=Count('comments')).exclude(id).o", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 18, "fields": {"action_time": "2024-10-30T21:41:44.134Z", "user": 1, "content_type": 10, "object_id": "5", "object_repr": "rgehetjtvgbdb", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 19, "fields": {"action_time": "2024-10-31T18:46:52.812Z", "user": 1, "content_type": 9, "object_id": "1", "object_repr": "health", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 20, "fields": {"action_time": "2024-10-31T18:46:59.359Z", "user": 1, "content_type": 9, "object_id": "2", "object_repr": "Development", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 21, "fields": {"action_time": "2024-10-31T19:12:39.868Z", "user": 1, "content_type": 9, "object_id": "2", "object_repr": "Development", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 22, "fields": {"action_time": "2024-10-31T19:12:42.687Z", "user": 1, "content_type": 9, "object_id": "1", "object_repr": "health", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 23, "fields": {"action_time": "2024-10-31T19:12:53.764Z", "user": 1, "content_type": 7, "object_id": "3", "object_repr": "Health tips", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 24, "fields": {"action_time": "2024-10-31T19:12:57.445Z", "user": 1, "content_type": 7, "object_id": "2", "object_repr": "SMM", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 25, "fields": {"action_time": "2024-10-31T19:12:59.921Z", "user": 1, "content_type": 7, "object_id": "1", "object_repr": "Development", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 26, "fields": {"action_time": "2024-10-31T19:27:57.241Z", "user": 1, "content_type": 10, "object_id": "5", "object_repr": "rgehetjtvgbdb", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Teq\"]}}]"}}, {"model": "admin.logentry", "pk": 27, "fields": {"action_time": "2024-10-31T22:56:53.974Z", "user": 1, "content_type": 10, "object_id": "5", "object_repr": "rgehetjtvgbdb", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Teq\"]}}]"}}, {"model": "admin.logentry", "pk": 28, "fields": {"action_time": "2024-11-02T09:21:56.573Z", "user": 1, "content_type": 11, "object_id": "7", "object_repr": "Lorem ipsum dolor ...", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Bloq r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 29, "fields": {"action_time": "2024-11-02T10:32:28.448Z", "user": 1, "content_type": 10, "object_id": "5", "object_repr": "rgehetjtvgbdb", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Q\\u0131sa m\\u0259zmun\"]}}]"}}, {"model": "admin.logentry", "pk": 30, "fields": {"action_time": "2024-11-02T19:50:36.480Z", "user": 1, "content_type": 10, "object_id": "6", "object_repr": "frer", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 31, "fields": {"action_time": "2024-11-02T20:46:26.557Z", "user": 1, "content_type": 10, "object_id": "7", "object_repr": "errrrrrrrrrrrrr", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 32, "fields": {"action_time": "2024-11-04T17:42:04.423Z", "user": 1, "content_type": 15, "object_id": "1", "object_repr": "Mireldar Babayev", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 33, "fields": {"action_time": "2024-11-04T18:59:18.986Z", "user": 1, "content_type": 15, "object_id": "1", "object_repr": "Mireldar Babayev", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"X\\u0259rit\\u0259\"]}}]"}}, {"model": "admin.logentry", "pk": 34, "fields": {"action_time": "2024-11-04T19:10:57.182Z", "user": 1, "content_type": 16, "object_id": "1", "object_repr": "pasient", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 35, "fields": {"action_time": "2024-11-04T19:27:26.665Z", "user": 1, "content_type": 17, "object_id": "1", "object_repr": "Development", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 36, "fields": {"action_time": "2024-11-04T19:28:06.590Z", "user": 1, "content_type": 17, "object_id": "1", "object_repr": "Development", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 37, "fields": {"action_time": "2024-11-04T19:28:53.535Z", "user": 1, "content_type": 17, "object_id": "1", "object_repr": "Development", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 38, "fields": {"action_time": "2024-11-04T19:29:52.506Z", "user": 1, "content_type": 17, "object_id": "1", "object_repr": "Development", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 39, "fields": {"action_time": "2024-11-04T19:31:35.951Z", "user": 1, "content_type": 17, "object_id": "1", "object_repr": "Development", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 40, "fields": {"action_time": "2024-11-04T19:32:47.950Z", "user": 1, "content_type": 17, "object_id": "2", "object_repr": "err", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 41, "fields": {"action_time": "2024-11-04T19:33:06.103Z", "user": 1, "content_type": 17, "object_id": "2", "object_repr": "err", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"}}, {"model": "admin.logentry", "pk": 42, "fields": {"action_time": "2024-11-04T19:33:52.896Z", "user": 1, "content_type": 17, "object_id": "3", "object_repr": "Development", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 43, "fields": {"action_time": "2024-11-04T19:34:37.359Z", "user": 1, "content_type": 17, "object_id": "4", "object_repr": "IT", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 44, "fields": {"action_time": "2024-11-04T19:37:56.140Z", "user": 1, "content_type": 17, "object_id": "4", "object_repr": "IT", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Png\"]}}]"}}, {"model": "admin.logentry", "pk": 45, "fields": {"action_time": "2024-11-04T19:39:22.815Z", "user": 1, "content_type": 17, "object_id": "4", "object_repr": "IT", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Png\"]}}]"}}, {"model": "admin.logentry", "pk": 46, "fields": {"action_time": "2024-11-04T19:40:54.861Z", "user": 1, "content_type": 17, "object_id": "3", "object_repr": "Development", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Png\"]}}]"}}, {"model": "admin.logentry", "pk": 47, "fields": {"action_time": "2024-11-04T19:49:21.888Z", "user": 1, "content_type": 15, "object_id": "1", "object_repr": "Mireldar Babayev", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Footer hiss\\u0259d\\u0259 g\\u00f6st\\u0259ril\\u0259c\\u0259k m\\u0259tn\"]}}]"}}, {"model": "admin.logentry", "pk": 48, "fields": {"action_time": "2024-11-05T11:12:44.558Z", "user": 1, "content_type": 15, "object_id": "1", "object_repr": "Mireldar Babayev", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Tiktok hesab linki\"]}}]"}}, {"model": "admin.logentry", "pk": 49, "fields": {"action_time": "2024-11-05T11:13:14.815Z", "user": 1, "content_type": 15, "object_id": "1", "object_repr": "Mireldar Babayev", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Linkedin hesab linki\"]}}]"}}, {"model": "admin.logentry", "pk": 50, "fields": {"action_time": "2024-11-05T11:23:52.756Z", "user": 1, "content_type": 15, "object_id": "1", "object_repr": "Mireldar Babayev", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Youtube hesab linki\"]}}]"}}, {"model": "admin.logentry", "pk": 51, "fields": {"action_time": "2024-11-05T11:33:18.265Z", "user": 1, "content_type": 15, "object_id": "1", "object_repr": "Mireldar Babayev", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Site Logo\"]}}]"}}, {"model": "admin.logentry", "pk": 52, "fields": {"action_time": "2024-11-05T12:07:46.514Z", "user": 1, "content_type": 18, "object_id": "1", "object_repr": "Haqqımızda məlumat", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 53, "fields": {"action_time": "2024-11-05T12:15:52.830Z", "user": 1, "content_type": 18, "object_id": "1", "object_repr": "Haqqımızda məlumat", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Haqq\\u0131m\\u0131zda m\\u0259lumat\"]}}]"}}, {"model": "admin.logentry", "pk": 54, "fields": {"action_time": "2024-11-05T12:22:25.642Z", "user": 1, "content_type": 18, "object_id": "1", "object_repr": "Haqqımızda məlumat", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 55, "fields": {"action_time": "2024-11-05T12:58:31.075Z", "user": 1, "content_type": 19, "object_id": "1", "object_repr": "Biz kimik?", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 56, "fields": {"action_time": "2024-11-05T13:06:31.886Z", "user": 1, "content_type": 18, "object_id": "1", "object_repr": "Haqqımızda məlumat", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Video linki\"]}}]"}}, {"model": "admin.logentry", "pk": 57, "fields": {"action_time": "2024-11-05T13:06:32.232Z", "user": 1, "content_type": 18, "object_id": "1", "object_repr": "Haqqımızda məlumat", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 58, "fields": {"action_time": "2024-11-05T15:51:45.933Z", "user": 1, "content_type": 18, "object_id": "1", "object_repr": "Haqqımızda məlumat", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Missiyam\\u0131z\", \"G\\u00f6r\\u00fc\\u015f\\u00fcm\\u00fcz\", \"D\\u0259y\\u0259rl\\u0259rimiz\"]}}]"}}, {"model": "admin.logentry", "pk": 59, "fields": {"action_time": "2024-11-05T16:07:32.254Z", "user": 1, "content_type": 18, "object_id": "1", "object_repr": "Haqqımızda məlumat", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Missiyam\\u0131z\"]}}]"}}, {"model": "admin.logentry", "pk": 60, "fields": {"action_time": "2024-11-05T16:10:44.120Z", "user": 1, "content_type": 18, "object_id": "1", "object_repr": "Haqqımızda məlumat", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"G\\u00f6r\\u00fc\\u015f\\u00fcm\\u00fcz\", \"D\\u0259y\\u0259rl\\u0259rimiz\"]}}]"}}, {"model": "admin.logentry", "pk": 61, "fields": {"action_time": "2024-11-05T20:00:02.073Z", "user": 1, "content_type": 20, "object_id": "1", "object_repr": "Mary Fame-in rəyi", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 62, "fields": {"action_time": "2024-11-05T20:00:51.179Z", "user": 1, "content_type": 20, "object_id": "2", "object_repr": "Mehran Babayev-in rəyi", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 63, "fields": {"action_time": "2024-11-05T20:14:08.880Z", "user": 1, "content_type": 20, "object_id": "3", "object_repr": "Mary Fame-in rəyi", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 64, "fields": {"action_time": "2024-11-09T10:57:32.298Z", "user": 2, "content_type": 20, "object_id": "1", "object_repr": "Sebnem adil-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259rinin ad, soyad\\u0131\"]}}]"}}, {"model": "admin.logentry", "pk": 65, "fields": {"action_time": "2024-11-09T10:57:48.453Z", "user": 2, "content_type": 20, "object_id": "3", "object_repr": "orxan babayev-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259rinin ad, soyad\\u0131\"]}}]"}}, {"model": "admin.logentry", "pk": 66, "fields": {"action_time": "2024-11-09T10:59:54.871Z", "user": 2, "content_type": 20, "object_id": "2", "object_repr": "Mehran Babayev-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 67, "fields": {"action_time": "2024-11-09T11:00:00.787Z", "user": 2, "content_type": 20, "object_id": "1", "object_repr": "Sebnem adil-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 68, "fields": {"action_time": "2024-11-09T12:27:35.313Z", "user": 2, "content_type": 21, "object_id": "1", "object_repr": "Professional Dental Care Services", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 69, "fields": {"action_time": "2024-11-09T12:32:15.400Z", "user": 2, "content_type": 21, "object_id": "1", "object_repr": "Dental Care", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"PNG\"]}}]"}}, {"model": "admin.logentry", "pk": 70, "fields": {"action_time": "2024-11-09T12:33:24.129Z", "user": 2, "content_type": 21, "object_id": "1", "object_repr": "Dental Care", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"PNG\"]}}]"}}, {"model": "admin.logentry", "pk": 71, "fields": {"action_time": "2024-11-09T12:36:35.558Z", "user": 2, "content_type": 21, "object_id": "1", "object_repr": "Dental Care", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Arxa plan PNG\"]}}]"}}, {"model": "admin.logentry", "pk": 72, "fields": {"action_time": "2024-11-09T12:37:54.298Z", "user": 2, "content_type": 21, "object_id": "1", "object_repr": "Dental Care", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Arxa plan PNG\"]}}]"}}, {"model": "admin.logentry", "pk": 73, "fields": {"action_time": "2024-11-09T12:39:39.982Z", "user": 2, "content_type": 21, "object_id": "2", "object_repr": "Eye Care", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 74, "fields": {"action_time": "2024-11-09T12:40:50.697Z", "user": 2, "content_type": 21, "object_id": "2", "object_repr": "Eye Care", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"PNG\"]}}]"}}, {"model": "admin.logentry", "pk": 75, "fields": {"action_time": "2024-11-09T12:52:15.950Z", "user": 2, "content_type": 21, "object_id": "2", "object_repr": "Eye Care", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 76, "fields": {"action_time": "2024-11-09T12:52:21.422Z", "user": 2, "content_type": 21, "object_id": "1", "object_repr": "Dental Care", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 77, "fields": {"action_time": "2024-11-09T13:27:03.236Z", "user": 2, "content_type": 22, "object_id": "1", "object_repr": "Our Brouchure", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 78, "fields": {"action_time": "2024-11-09T16:49:23.053Z", "user": 2, "content_type": 22, "object_id": "1", "object_repr": "Our Brouchure", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"File\"]}}]"}}, {"model": "admin.logentry", "pk": 79, "fields": {"action_time": "2024-11-09T17:48:48.059Z", "user": 2, "content_type": 22, "object_id": "2", "object_repr": "aegbdfff", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 80, "fields": {"action_time": "2024-11-09T18:00:56.001Z", "user": 2, "content_type": 10, "object_id": "7", "object_repr": "errrrrrrrrrrrrr", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Cover foto\"]}}]"}}, {"model": "admin.logentry", "pk": 81, "fields": {"action_time": "2024-11-09T18:07:18.308Z", "user": 2, "content_type": 21, "object_id": "1", "object_repr": "Dental Care", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Servis haqq\\u0131nda geni\\u015f m\\u0259lumat\"]}}]"}}, {"model": "admin.logentry", "pk": 82, "fields": {"action_time": "2024-11-09T18:09:48.476Z", "user": 2, "content_type": 21, "object_id": "1", "object_repr": "Dental Care", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"\\u018fsas foto\"]}}]"}}, {"model": "admin.logentry", "pk": 83, "fields": {"action_time": "2024-11-09T18:35:44.806Z", "user": 2, "content_type": 23, "object_id": "1", "object_repr": "Fastest Growing Clinic", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 84, "fields": {"action_time": "2024-11-09T18:46:07.530Z", "user": 2, "content_type": 20, "object_id": "1", "object_repr": "Sebnem adil-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri fotosu\"]}}]"}}, {"model": "admin.logentry", "pk": 85, "fields": {"action_time": "2024-11-09T18:46:52.973Z", "user": 2, "content_type": 20, "object_id": "1", "object_repr": "Sebnem adil-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 86, "fields": {"action_time": "2024-11-09T18:57:44.308Z", "user": 2, "content_type": 24, "object_id": "1", "object_repr": "VR", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 87, "fields": {"action_time": "2024-11-16T17:29:51.971Z", "user": 2, "content_type": 25, "object_id": "1", "object_repr": "bgfxfgx", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 88, "fields": {"action_time": "2024-11-16T20:41:41.108Z", "user": 2, "content_type": 25, "object_id": "1", "object_repr": "bgfxfgx", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Banner foto\"]}}]"}}, {"model": "admin.logentry", "pk": 89, "fields": {"action_time": "2024-11-16T20:42:10.112Z", "user": 2, "content_type": 25, "object_id": "1", "object_repr": "bgfxfgx", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Banner foto\"]}}]"}}, {"model": "admin.logentry", "pk": 90, "fields": {"action_time": "2024-11-16T20:42:46.688Z", "user": 2, "content_type": 25, "object_id": "1", "object_repr": "bgfxfgx", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Banner foto\"]}}]"}}, {"model": "admin.logentry", "pk": 91, "fields": {"action_time": "2024-11-16T20:43:37.410Z", "user": 2, "content_type": 25, "object_id": "1", "object_repr": "bgfxfgx", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Banner foto\"]}}]"}}, {"model": "admin.logentry", "pk": 92, "fields": {"action_time": "2024-11-16T20:45:21.593Z", "user": 2, "content_type": 25, "object_id": "1", "object_repr": "bgfxfgx", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Banner foto\"]}}]"}}, {"model": "admin.logentry", "pk": 93, "fields": {"action_time": "2024-11-16T22:34:48.705Z", "user": 2, "content_type": 25, "object_id": "1", "object_repr": "bgfxfgx", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Banner foto\"]}}]"}}, {"model": "admin.logentry", "pk": 94, "fields": {"action_time": "2024-11-16T22:35:00.204Z", "user": 2, "content_type": 25, "object_id": "2", "object_repr": "ewrr", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 95, "fields": {"action_time": "2024-11-16T22:41:05.257Z", "user": 2, "content_type": 25, "object_id": "2", "object_repr": "ewrr", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Video linki\"]}}]"}}, {"model": "admin.logentry", "pk": 96, "fields": {"action_time": "2024-11-16T22:41:44.833Z", "user": 2, "content_type": 25, "object_id": "2", "object_repr": "ewrr", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Video linki\"]}}]"}}, {"model": "admin.logentry", "pk": 97, "fields": {"action_time": "2024-11-16T22:42:33.582Z", "user": 2, "content_type": 25, "object_id": "2", "object_repr": "ewrr", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Video linki\"]}}]"}}, {"model": "admin.logentry", "pk": 98, "fields": {"action_time": "2024-11-16T22:46:14.077Z", "user": 2, "content_type": 25, "object_id": "2", "object_repr": "ewrr", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Video link id\"]}}]"}}, {"model": "admin.logentry", "pk": 99, "fields": {"action_time": "2024-11-16T22:46:19.570Z", "user": 2, "content_type": 25, "object_id": "1", "object_repr": "bgfxfgx", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Video link id\"]}}]"}}, {"model": "admin.logentry", "pk": 100, "fields": {"action_time": "2024-11-17T09:46:28.083Z", "user": 2, "content_type": 18, "object_id": "1", "object_repr": "Haqqımızda məlumat", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Video link id\", \"Haqq\\u0131m\\u0131zda m\\u0259lumat\"]}}]"}}, {"model": "admin.logentry", "pk": 101, "fields": {"action_time": "2024-11-17T10:00:33.413Z", "user": 2, "content_type": 21, "object_id": "3", "object_repr": "vreer", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 102, "fields": {"action_time": "2024-11-17T10:04:29.927Z", "user": 2, "content_type": 21, "object_id": "4", "object_repr": "23rf23fr", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 103, "fields": {"action_time": "2024-11-17T14:30:00.583Z", "user": 2, "content_type": 15, "object_id": "1", "object_repr": "Mireldar Babayev", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"\\u018flaq\\u0259 n\\u00f6mr\\u0259si\", \"Email \\u00fcnvan\\u0131\", \"Youtube hesab linki\", \"Linkedin hesab linki\", \"Tiktok hesab linki\"]}}]"}}, {"model": "admin.logentry", "pk": 104, "fields": {"action_time": "2024-11-17T14:51:45.754Z", "user": 2, "content_type": 25, "object_id": "2", "object_repr": "What Makes Us Better, Makes You Better.", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Ba\\u015fl\\u0131q\", \"Alt ba\\u015fl\\u0131q\", \"Q\\u0131sa izah\"]}}]"}}, {"model": "admin.logentry", "pk": 105, "fields": {"action_time": "2024-11-17T14:52:04.577Z", "user": 2, "content_type": 25, "object_id": "2", "object_repr": "What Makes Us Better, Makes You Better.", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Banner foto\"]}}]"}}, {"model": "admin.logentry", "pk": 106, "fields": {"action_time": "2024-11-17T14:52:19.616Z", "user": 2, "content_type": 25, "object_id": "2", "object_repr": "What Makes Us Better, Makes You Better.", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Banner foto\"]}}]"}}, {"model": "admin.logentry", "pk": 107, "fields": {"action_time": "2024-11-17T14:53:25.551Z", "user": 2, "content_type": 25, "object_id": "1", "object_repr": "What Makes Us Better, Makes You Better. -2", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Ba\\u015fl\\u0131q\", \"Alt ba\\u015fl\\u0131q\", \"Q\\u0131sa izah\", \"Banner foto\"]}}]"}}, {"model": "admin.logentry", "pk": 108, "fields": {"action_time": "2024-11-17T15:10:36.792Z", "user": 2, "content_type": 17, "object_id": "4", "object_repr": "Happy Patients", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Statistik g\\u00f6st\\u0259ricinin ad\\u0131\"]}}]"}}, {"model": "admin.logentry", "pk": 109, "fields": {"action_time": "2024-11-17T15:11:34.884Z", "user": 2, "content_type": 17, "object_id": "4", "object_repr": "Happy Patients", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Png\"]}}]"}}, {"model": "admin.logentry", "pk": 110, "fields": {"action_time": "2024-11-17T15:12:18.688Z", "user": 2, "content_type": 17, "object_id": "3", "object_repr": "Expert Doctors", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Png\", \"Statistik g\\u00f6st\\u0259ricinin d\\u0259y\\u0259ri\", \"Statistik g\\u00f6st\\u0259ricinin ad\\u0131\"]}}]"}}, {"model": "admin.logentry", "pk": 111, "fields": {"action_time": "2024-11-17T15:13:10.726Z", "user": 2, "content_type": 17, "object_id": "2", "object_repr": "Hospital Rooms", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Png\", \"Statistik g\\u00f6st\\u0259ricinin d\\u0259y\\u0259ri\", \"Statistik g\\u00f6st\\u0259ricinin ad\\u0131\"]}}]"}}, {"model": "admin.logentry", "pk": 112, "fields": {"action_time": "2024-11-17T15:14:01.843Z", "user": 2, "content_type": 17, "object_id": "1", "object_repr": "Award winner", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Png\", \"Statistik g\\u00f6st\\u0259ricinin d\\u0259y\\u0259ri\", \"Statistik g\\u00f6st\\u0259ricinin ad\\u0131\"]}}]"}}, {"model": "admin.logentry", "pk": 113, "fields": {"action_time": "2024-11-17T15:16:40.991Z", "user": 2, "content_type": 21, "object_id": "1", "object_repr": "Dental Care", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 114, "fields": {"action_time": "2024-11-17T15:17:57.764Z", "user": 2, "content_type": 21, "object_id": "3", "object_repr": "Allergic issue", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Servisin ad\\u0131\", \"Q\\u0131sa m\\u0259lumat\", \"PNG\", \"Servis haqq\\u0131nda geni\\u015f m\\u0259lumat\"]}}]"}}, {"model": "admin.logentry", "pk": 115, "fields": {"action_time": "2024-11-17T15:18:53.885Z", "user": 2, "content_type": 21, "object_id": "4", "object_repr": "Eye Care -2", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Servisin ad\\u0131\", \"Q\\u0131sa m\\u0259lumat\", \"PNG\", \"Ba\\u015fl\\u0131q\", \"Servis haqq\\u0131nda geni\\u015f m\\u0259lumat\", \"Background color\"]}}]"}}, {"model": "admin.logentry", "pk": 116, "fields": {"action_time": "2024-11-17T15:23:41.448Z", "user": 2, "content_type": 23, "object_id": "1", "object_repr": "Fastest Growing Clinic", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"PNG\"]}}]"}}, {"model": "admin.logentry", "pk": 117, "fields": {"action_time": "2024-11-17T15:24:25.194Z", "user": 2, "content_type": 23, "object_id": "2", "object_repr": "Free Ambulance Servcice", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 118, "fields": {"action_time": "2024-11-17T15:26:18.855Z", "user": 2, "content_type": 23, "object_id": "3", "object_repr": "24/7 Working Time", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 119, "fields": {"action_time": "2024-11-17T15:27:16.658Z", "user": 2, "content_type": 23, "object_id": "4", "object_repr": "5 Star Customer Rating", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 120, "fields": {"action_time": "2024-11-17T15:32:52.370Z", "user": 2, "content_type": 20, "object_id": "1", "object_repr": "Sebnem adil-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 121, "fields": {"action_time": "2024-11-17T15:33:01.137Z", "user": 2, "content_type": 20, "object_id": "2", "object_repr": "Mehran Babayev-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 122, "fields": {"action_time": "2024-11-17T15:33:05.804Z", "user": 2, "content_type": 20, "object_id": "3", "object_repr": "orxan babayev-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 123, "fields": {"action_time": "2024-11-17T15:35:40.267Z", "user": 2, "content_type": 20, "object_id": "1", "object_repr": "Sebnem adil-in rəyi", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 124, "fields": {"action_time": "2024-11-17T15:43:20.208Z", "user": 2, "content_type": 10, "object_id": "7", "object_repr": "errrrrrrrrrrrrr", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Cover foto\"]}}]"}}, {"model": "admin.logentry", "pk": 125, "fields": {"action_time": "2024-11-17T15:43:43.618Z", "user": 2, "content_type": 10, "object_id": "6", "object_repr": "frer", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Cover foto\"]}}]"}}, {"model": "admin.logentry", "pk": 126, "fields": {"action_time": "2024-11-17T15:43:58.391Z", "user": 2, "content_type": 10, "object_id": "5", "object_repr": "rgehetjtvgbdb", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Cover foto\"]}}]"}}, {"model": "admin.logentry", "pk": 127, "fields": {"action_time": "2024-11-17T15:44:12.745Z", "user": 2, "content_type": 10, "object_id": "4", "object_repr": "cx['popular_blogs'] = Blog.published.annotate(comment_count=Count('comments')).exclude(id).o", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Cover foto\"]}}]"}}, {"model": "admin.logentry", "pk": 128, "fields": {"action_time": "2024-11-17T15:44:22.558Z", "user": 2, "content_type": 10, "object_id": "3", "object_repr": "Things you may not know about medicaid fdbdfbden..", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Cover foto\"]}}]"}}, {"model": "admin.logentry", "pk": 129, "fields": {"action_time": "2024-11-17T15:44:35.087Z", "user": 2, "content_type": 10, "object_id": "2", "object_repr": "tThings you may not know about medicaid den..", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Cover foto\"]}}]"}}, {"model": "admin.logentry", "pk": 130, "fields": {"action_time": "2024-11-17T15:44:43.572Z", "user": 2, "content_type": 10, "object_id": "1", "object_repr": "Things you may not know about medicaid den..", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Cover foto\"]}}]"}}, {"model": "admin.logentry", "pk": 131, "fields": {"action_time": "2024-11-17T15:45:36.854Z", "user": 2, "content_type": 10, "object_id": "1", "object_repr": "Things you may not know about medicaid den..", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u0259qal\\u0259 m\\u0259tni\"]}}]"}}, {"model": "admin.logentry", "pk": 132, "fields": {"action_time": "2024-11-17T15:46:05.899Z", "user": 2, "content_type": 10, "object_id": "4", "object_repr": "Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u0259qal\\u0259 ba\\u015fl\\u0131\\u011f\\u0131\", \"M\\u0259qal\\u0259 m\\u0259tni\"]}}]"}}, {"model": "admin.logentry", "pk": 133, "fields": {"action_time": "2024-11-17T15:46:20.766Z", "user": 2, "content_type": 10, "object_id": "5", "object_repr": "blog test", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u0259qal\\u0259 ba\\u015fl\\u0131\\u011f\\u0131\", \"M\\u0259qal\\u0259 m\\u0259tni\"]}}]"}}, {"model": "admin.logentry", "pk": 134, "fields": {"action_time": "2024-11-17T15:46:33.462Z", "user": 2, "content_type": 10, "object_id": "6", "object_repr": "blog new", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u0259qal\\u0259 ba\\u015fl\\u0131\\u011f\\u0131\", \"Q\\u0131sa m\\u0259zmun\", \"M\\u0259qal\\u0259 m\\u0259tni\"]}}]"}}, {"model": "admin.logentry", "pk": 135, "fields": {"action_time": "2024-11-17T15:46:45.367Z", "user": 2, "content_type": 10, "object_id": "7", "object_repr": "blog", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u0259qal\\u0259 ba\\u015fl\\u0131\\u011f\\u0131\", \"Q\\u0131sa m\\u0259zmun\", \"M\\u0259qal\\u0259 m\\u0259tni\"]}}]"}}, {"model": "admin.logentry", "pk": 136, "fields": {"action_time": "2024-11-17T17:00:36.657Z", "user": 2, "content_type": 14, "object_id": "1", "object_repr": "What is an academic medical center?", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 137, "fields": {"action_time": "2024-11-17T17:00:59.856Z", "user": 2, "content_type": 14, "object_id": "2", "object_repr": "My physician is a faculty member—what does that mean?", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 138, "fields": {"action_time": "2024-11-18T13:55:38.062Z", "user": 2, "content_type": 20, "object_id": "1", "object_repr": "Sebnem adil-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 139, "fields": {"action_time": "2024-11-18T13:55:53.576Z", "user": 2, "content_type": 20, "object_id": "2", "object_repr": "Mehran Babayev-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri fotosu\", \"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 140, "fields": {"action_time": "2024-11-18T13:56:05.750Z", "user": 2, "content_type": 20, "object_id": "3", "object_repr": "orxan babayev-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri fotosu\", \"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 141, "fields": {"action_time": "2024-11-18T13:57:00.125Z", "user": 2, "content_type": 20, "object_id": "2", "object_repr": "Mehran Babayev-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri fotosu\"]}}]"}}, {"model": "admin.logentry", "pk": 142, "fields": {"action_time": "2024-11-18T13:57:18.491Z", "user": 2, "content_type": 20, "object_id": "3", "object_repr": "orxan babayev-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri fotosu\"]}}]"}}, {"model": "admin.logentry", "pk": 143, "fields": {"action_time": "2024-11-18T13:58:36.786Z", "user": 2, "content_type": 20, "object_id": "2", "object_repr": "Mehran Babayev-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri fotosu\"]}}]"}}, {"model": "admin.logentry", "pk": 144, "fields": {"action_time": "2024-11-18T13:58:45.937Z", "user": 2, "content_type": 20, "object_id": "3", "object_repr": "orxan babayev-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri fotosu\"]}}]"}}, {"model": "admin.logentry", "pk": 145, "fields": {"action_time": "2024-11-18T14:04:59.911Z", "user": 2, "content_type": 19, "object_id": "1", "object_repr": "Biz kimik?", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"Video linki\"]}}]"}}, {"model": "admin.logentry", "pk": 146, "fields": {"action_time": "2024-11-18T14:28:24.651Z", "user": 2, "content_type": 20, "object_id": "3", "object_repr": "orxan babayev-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 147, "fields": {"action_time": "2024-11-18T14:28:29.157Z", "user": 2, "content_type": 20, "object_id": "2", "object_repr": "Mehran Babayev-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 148, "fields": {"action_time": "2024-11-18T14:28:33.940Z", "user": 2, "content_type": 20, "object_id": "1", "object_repr": "Sebnem adil-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 149, "fields": {"action_time": "2024-11-18T14:29:57.793Z", "user": 2, "content_type": 20, "object_id": "3", "object_repr": "orxan babayev-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 150, "fields": {"action_time": "2024-11-18T14:30:02.346Z", "user": 2, "content_type": 20, "object_id": "2", "object_repr": "Mehran Babayev-in rəyi", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 151, "fields": {"action_time": "2024-11-18T14:30:08.070Z", "user": 2, "content_type": 20, "object_id": "1", "object_repr": "Sebnem adil-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 152, "fields": {"action_time": "2024-11-18T14:30:24.242Z", "user": 2, "content_type": 20, "object_id": "1", "object_repr": "Sebnem adil-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 153, "fields": {"action_time": "2024-11-18T14:30:31.232Z", "user": 2, "content_type": 20, "object_id": "1", "object_repr": "Sebnem adil-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 154, "fields": {"action_time": "2024-11-18T14:30:38.240Z", "user": 2, "content_type": 20, "object_id": "1", "object_repr": "Sebnem adil-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 155, "fields": {"action_time": "2024-11-18T14:30:43.534Z", "user": 2, "content_type": 20, "object_id": "1", "object_repr": "Sebnem adil-in rəyi", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 156, "fields": {"action_time": "2024-11-18T14:30:58.120Z", "user": 2, "content_type": 20, "object_id": "1", "object_repr": "Sebnem adil-in rəyi", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 157, "fields": {"action_time": "2024-11-18T14:31:03.855Z", "user": 2, "content_type": 20, "object_id": "1", "object_repr": "Sebnem adil-in rəyi", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 158, "fields": {"action_time": "2024-11-18T14:31:08.102Z", "user": 2, "content_type": 20, "object_id": "2", "object_repr": "Mehran Babayev-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 159, "fields": {"action_time": "2024-11-18T14:31:17.373Z", "user": 2, "content_type": 20, "object_id": "3", "object_repr": "orxan babayev-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 160, "fields": {"action_time": "2024-11-18T14:32:12.068Z", "user": 2, "content_type": 20, "object_id": "2", "object_repr": "Mehran Babayev-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 161, "fields": {"action_time": "2024-11-18T14:32:31.150Z", "user": 2, "content_type": 20, "object_id": "2", "object_repr": "Mehran Babayev-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 162, "fields": {"action_time": "2024-11-18T14:32:35.291Z", "user": 2, "content_type": 20, "object_id": "3", "object_repr": "orxan babayev-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 163, "fields": {"action_time": "2024-11-18T14:32:40.097Z", "user": 2, "content_type": 20, "object_id": "1", "object_repr": "Sebnem adil-in rəyi", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"M\\u00fc\\u015ft\\u0259ri r\\u0259yi\"]}}]"}}, {"model": "admin.logentry", "pk": 164, "fields": {"action_time": "2024-11-19T17:18:05.798Z", "user": 2, "content_type": 27, "object_id": "1", "object_repr": "19 Nov 2024 => 21:18:55 - 21:19:59", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 165, "fields": {"action_time": "2024-11-19T17:18:07.870Z", "user": 2, "content_type": 26, "object_id": "1", "object_repr": "Şebnem Bayramlı-19 Nov 2024 => 21:18:55 - 21:19:59", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 166, "fields": {"action_time": "2024-11-20T10:43:53.191Z", "user": 2, "content_type": 27, "object_id": "2", "object_repr": "20 Nov 2024 => 14:44:45 - 14:45:49", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 167, "fields": {"action_time": "2024-11-20T10:43:54.744Z", "user": 2, "content_type": 26, "object_id": "2", "object_repr": "re-20 Nov 2024 => 14:44:45 - 14:45:49", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 168, "fields": {"action_time": "2024-11-20T10:47:05.159Z", "user": 2, "content_type": 26, "object_id": "1", "object_repr": "Şebnem Bayramlı-19 Nov 2024 => 21:18:55 - 21:19:59", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 169, "fields": {"action_time": "2024-11-20T10:47:13.087Z", "user": 2, "content_type": 26, "object_id": "2", "object_repr": "re-20 Nov 2024 => 14:44:45 - 14:45:49", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"\\u018flaq\\u0259 n\\u00f6mr\\u0259si\"]}}]"}}, {"model": "admin.logentry", "pk": 170, "fields": {"action_time": "2024-11-20T10:47:41.821Z", "user": 2, "content_type": 26, "object_id": "2", "object_repr": "re-20 Nov 2024 => 14:44:45 - 14:45:49", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 171, "fields": {"action_time": "2024-11-20T10:47:54.035Z", "user": 2, "content_type": 26, "object_id": "2", "object_repr": "re-20 Nov 2024 => 14:44:45 - 14:45:49", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"\\u018flaq\\u0259 n\\u00f6mr\\u0259si\"]}}]"}}, {"model": "admin.logentry", "pk": 172, "fields": {"action_time": "2024-11-20T10:48:26.290Z", "user": 2, "content_type": 26, "object_id": "2", "object_repr": "re-20 Nov 2024 => 14:44:45 - 14:45:49", "action_flag": 2, "change_message": "[]"}}, {"model": "admin.logentry", "pk": 173, "fields": {"action_time": "2024-11-20T10:48:33.819Z", "user": 2, "content_type": 26, "object_id": "2", "object_repr": "re-20 Nov 2024 => 14:44:45 - 14:45:49", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"\\u018flaq\\u0259 n\\u00f6mr\\u0259si\"]}}]"}}, {"model": "admin.logentry", "pk": 174, "fields": {"action_time": "2024-11-20T10:49:10.486Z", "user": 2, "content_type": 27, "object_id": "3", "object_repr": "20 Nov 2024 => 14:49:58 - 14:50:00", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 175, "fields": {"action_time": "2024-11-20T10:49:12.704Z", "user": 2, "content_type": 26, "object_id": "3", "object_repr": "Şebnem Bayramlı-20 Nov 2024 => 14:49:58 - 14:50:00", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 176, "fields": {"action_time": "2024-11-20T10:50:00.151Z", "user": 2, "content_type": 26, "object_id": "2", "object_repr": "re-20 Nov 2024 => 14:44:45 - 14:45:49", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"\\u018flaq\\u0259 n\\u00f6mr\\u0259si\"]}}]"}}, {"model": "admin.logentry", "pk": 177, "fields": {"action_time": "2024-11-20T10:52:40.756Z", "user": 2, "content_type": 26, "object_id": "2", "object_repr": "re-20 Nov 2024 => 14:44:45 - 14:45:49", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"\\u018flaq\\u0259 n\\u00f6mr\\u0259si\"]}}]"}}, {"model": "admin.logentry", "pk": 178, "fields": {"action_time": "2024-11-20T10:53:03.420Z", "user": 2, "content_type": 26, "object_id": "2", "object_repr": "re-20 Nov 2024 => 14:44:45 - 14:45:49", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"\\u018flaq\\u0259 n\\u00f6mr\\u0259si\"]}}]"}}, {"model": "admin.logentry", "pk": 179, "fields": {"action_time": "2024-11-20T10:55:11.391Z", "user": 2, "content_type": 27, "object_id": "3", "object_repr": "20 Nov 2024 => 14:49:58 - 14:50:00", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 180, "fields": {"action_time": "2024-11-20T13:25:56.865Z", "user": 2, "content_type": 27, "object_id": "4", "object_repr": "20 Nov 2024 => 17:26:46 - 17:28:50", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 181, "fields": {"action_time": "2024-11-20T13:27:01.780Z", "user": 2, "content_type": 27, "object_id": "4", "object_repr": "20 Nov 2024 => 18:26:46 - 18:28:50", "action_flag": 2, "change_message": "[{\"changed\": {\"fields\": [\"G\\u00f6r\\u00fc\\u015f\\u00fcn ba\\u015flama saat\\u0131\", \"G\\u00f6r\\u00fc\\u015f\\u00fcn bitm\\u0259 saat\\u0131\"]}}]"}}, {"model": "admin.logentry", "pk": 182, "fields": {"action_time": "2024-11-20T14:03:13.005Z", "user": 2, "content_type": 27, "object_id": "5", "object_repr": "21 Nov 2024 => 18:06 - 18:08", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 183, "fields": {"action_time": "2024-11-21T17:56:01.409Z", "user": 2, "content_type": 27, "object_id": "6", "object_repr": "22:55 - 21:55", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 184, "fields": {"action_time": "2024-11-21T18:19:33.187Z", "user": 2, "content_type": 27, "object_id": "7", "object_repr": "22 Nov 2024, 22:18 - 22 Nov 2024, 22:19", "action_flag": 1, "change_message": "[{\"added\": {}}]"}}, {"model": "admin.logentry", "pk": 185, "fields": {"action_time": "2024-11-21T22:37:13.059Z", "user": 2, "content_type": 26, "object_id": "6", "object_repr": "Şebnem Bayramlı-22 Nov 2024, 18:18 - 22 Nov 2024, 18:19", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 186, "fields": {"action_time": "2024-11-21T22:37:13.169Z", "user": 2, "content_type": 26, "object_id": "5", "object_repr": "Şebnem Bayramlı-21 Nov 2024, 18:55 - 22 Nov 2024, 17:55", "action_flag": 3, "change_message": ""}}, {"model": "admin.logentry", "pk": 187, "fields": {"action_time": "2024-11-21T22:51:03.390Z", "user": 2, "content_type": 26, "object_id": "7", "object_repr": "bccf bf-22 Nov 2024, 18:18 - 22 Nov 2024, 18:19", "action_flag": 3, "change_message": ""}}, {"model": "auth.permission", "pk": 1, "fields": {"name": "Can add log entry", "content_type": 1, "codename": "add_logentry"}}, {"model": "auth.permission", "pk": 2, "fields": {"name": "Can change log entry", "content_type": 1, "codename": "change_logentry"}}, {"model": "auth.permission", "pk": 3, "fields": {"name": "Can delete log entry", "content_type": 1, "codename": "delete_logentry"}}, {"model": "auth.permission", "pk": 4, "fields": {"name": "Can view log entry", "content_type": 1, "codename": "view_logentry"}}, {"model": "auth.permission", "pk": 5, "fields": {"name": "Can add permission", "content_type": 2, "codename": "add_permission"}}, {"model": "auth.permission", "pk": 6, "fields": {"name": "Can change permission", "content_type": 2, "codename": "change_permission"}}, {"model": "auth.permission", "pk": 7, "fields": {"name": "Can delete permission", "content_type": 2, "codename": "delete_permission"}}, {"model": "auth.permission", "pk": 8, "fields": {"name": "Can view permission", "content_type": 2, "codename": "view_permission"}}, {"model": "auth.permission", "pk": 9, "fields": {"name": "Can add group", "content_type": 3, "codename": "add_group"}}, {"model": "auth.permission", "pk": 10, "fields": {"name": "Can change group", "content_type": 3, "codename": "change_group"}}, {"model": "auth.permission", "pk": 11, "fields": {"name": "Can delete group", "content_type": 3, "codename": "delete_group"}}, {"model": "auth.permission", "pk": 12, "fields": {"name": "Can view group", "content_type": 3, "codename": "view_group"}}, {"model": "auth.permission", "pk": 13, "fields": {"name": "Can add user", "content_type": 4, "codename": "add_user"}}, {"model": "auth.permission", "pk": 14, "fields": {"name": "Can change user", "content_type": 4, "codename": "change_user"}}, {"model": "auth.permission", "pk": 15, "fields": {"name": "Can delete user", "content_type": 4, "codename": "delete_user"}}, {"model": "auth.permission", "pk": 16, "fields": {"name": "Can view user", "content_type": 4, "codename": "view_user"}}, {"model": "auth.permission", "pk": 17, "fields": {"name": "Can add content type", "content_type": 5, "codename": "add_contenttype"}}, {"model": "auth.permission", "pk": 18, "fields": {"name": "Can change content type", "content_type": 5, "codename": "change_contenttype"}}, {"model": "auth.permission", "pk": 19, "fields": {"name": "Can delete content type", "content_type": 5, "codename": "delete_contenttype"}}, {"model": "auth.permission", "pk": 20, "fields": {"name": "Can view content type", "content_type": 5, "codename": "view_contenttype"}}, {"model": "auth.permission", "pk": 21, "fields": {"name": "Can add session", "content_type": 6, "codename": "add_session"}}, {"model": "auth.permission", "pk": 22, "fields": {"name": "Can change session", "content_type": 6, "codename": "change_session"}}, {"model": "auth.permission", "pk": 23, "fields": {"name": "Can delete session", "content_type": 6, "codename": "delete_session"}}, {"model": "auth.permission", "pk": 24, "fields": {"name": "Can view session", "content_type": 6, "codename": "view_session"}}, {"model": "auth.permission", "pk": 25, "fields": {"name": "Can add Məqalə kateqoriyası", "content_type": 7, "codename": "add_category"}}, {"model": "auth.permission", "pk": 26, "fields": {"name": "Can change Məqalə kateqoriyası", "content_type": 7, "codename": "change_category"}}, {"model": "auth.permission", "pk": 27, "fields": {"name": "Can delete Məqalə kateqoriyası", "content_type": 7, "codename": "delete_category"}}, {"model": "auth.permission", "pk": 28, "fields": {"name": "Can view Məqalə kateqoriyası", "content_type": 7, "codename": "view_category"}}, {"model": "auth.permission", "pk": 29, "fields": {"name": "Can add IP ünvanı", "content_type": 8, "codename": "add_ip"}}, {"model": "auth.permission", "pk": 30, "fields": {"name": "Can change IP ünvanı", "content_type": 8, "codename": "change_ip"}}, {"model": "auth.permission", "pk": 31, "fields": {"name": "Can delete IP ünvanı", "content_type": 8, "codename": "delete_ip"}}, {"model": "auth.permission", "pk": 32, "fields": {"name": "Can view IP ünvanı", "content_type": 8, "codename": "view_ip"}}, {"model": "auth.permission", "pk": 33, "fields": {"name": "Can add Məqalə teqi", "content_type": 9, "codename": "add_tag"}}, {"model": "auth.permission", "pk": 34, "fields": {"name": "Can change Məqalə teqi", "content_type": 9, "codename": "change_tag"}}, {"model": "auth.permission", "pk": 35, "fields": {"name": "Can delete Məqalə teqi", "content_type": 9, "codename": "delete_tag"}}, {"model": "auth.permission", "pk": 36, "fields": {"name": "Can view Məqalə teqi", "content_type": 9, "codename": "view_tag"}}, {"model": "auth.permission", "pk": 37, "fields": {"name": "Can add Məqalə", "content_type": 10, "codename": "add_blog"}}, {"model": "auth.permission", "pk": 38, "fields": {"name": "Can change Məqalə", "content_type": 10, "codename": "change_blog"}}, {"model": "auth.permission", "pk": 39, "fields": {"name": "Can delete Məqalə", "content_type": 10, "codename": "delete_blog"}}, {"model": "auth.permission", "pk": 40, "fields": {"name": "Can view Məqalə", "content_type": 10, "codename": "view_blog"}}, {"model": "auth.permission", "pk": 41, "fields": {"name": "Can add Məqalə rəyi", "content_type": 11, "codename": "add_comment"}}, {"model": "auth.permission", "pk": 42, "fields": {"name": "Can change Məqalə rəyi", "content_type": 11, "codename": "change_comment"}}, {"model": "auth.permission", "pk": 43, "fields": {"name": "Can delete Məqalə rəyi", "content_type": 11, "codename": "delete_comment"}}, {"model": "auth.permission", "pk": 44, "fields": {"name": "Can view Məqalə rəyi", "content_type": 11, "codename": "view_comment"}}, {"model": "auth.permission", "pk": 45, "fields": {"name": "Can add newsletter", "content_type": 12, "codename": "add_newsletter"}}, {"model": "auth.permission", "pk": 46, "fields": {"name": "Can change newsletter", "content_type": 12, "codename": "change_newsletter"}}, {"model": "auth.permission", "pk": 47, "fields": {"name": "Can delete newsletter", "content_type": 12, "codename": "delete_newsletter"}}, {"model": "auth.permission", "pk": 48, "fields": {"name": "Can view newsletter", "content_type": 12, "codename": "view_newsletter"}}, {"model": "auth.permission", "pk": 49, "fields": {"name": "Can add Mesaj", "content_type": 13, "codename": "add_contact"}}, {"model": "auth.permission", "pk": 50, "fields": {"name": "Can change Mesaj", "content_type": 13, "codename": "change_contact"}}, {"model": "auth.permission", "pk": 51, "fields": {"name": "Can delete Mesaj", "content_type": 13, "codename": "delete_contact"}}, {"model": "auth.permission", "pk": 52, "fields": {"name": "Can view Mesaj", "content_type": 13, "codename": "view_contact"}}, {"model": "auth.permission", "pk": 53, "fields": {"name": "Can add Tez-tez verilən sual", "content_type": 14, "codename": "add_faq"}}, {"model": "auth.permission", "pk": 54, "fields": {"name": "Can change Tez-tez verilən sual", "content_type": 14, "codename": "change_faq"}}, {"model": "auth.permission", "pk": 55, "fields": {"name": "Can delete Tez-tez verilən sual", "content_type": 14, "codename": "delete_faq"}}, {"model": "auth.permission", "pk": 56, "fields": {"name": "Can view Tez-tez verilən sual", "content_type": 14, "codename": "view_faq"}}, {"model": "auth.permission", "pk": 57, "fields": {"name": "Can add Site Setting", "content_type": 15, "codename": "add_sitesettings"}}, {"model": "auth.permission", "pk": 58, "fields": {"name": "Can change Site Setting", "content_type": 15, "codename": "change_sitesettings"}}, {"model": "auth.permission", "pk": 59, "fields": {"name": "Can delete Site Setting", "content_type": 15, "codename": "delete_sitesettings"}}, {"model": "auth.permission", "pk": 60, "fields": {"name": "Can view Site Setting", "content_type": 15, "codename": "view_sitesettings"}}, {"model": "auth.permission", "pk": 61, "fields": {"name": "Can add Statistika", "content_type": 16, "codename": "add_statistics"}}, {"model": "auth.permission", "pk": 62, "fields": {"name": "Can change Statistika", "content_type": 16, "codename": "change_statistics"}}, {"model": "auth.permission", "pk": 63, "fields": {"name": "Can delete Statistika", "content_type": 16, "codename": "delete_statistics"}}, {"model": "auth.permission", "pk": 64, "fields": {"name": "Can view Statistika", "content_type": 16, "codename": "view_statistics"}}, {"model": "auth.permission", "pk": 65, "fields": {"name": "Can add Statistika", "content_type": 17, "codename": "add_statisticalindicator"}}, {"model": "auth.permission", "pk": 66, "fields": {"name": "Can change Statistika", "content_type": 17, "codename": "change_statisticalindicator"}}, {"model": "auth.permission", "pk": 67, "fields": {"name": "Can delete Statistika", "content_type": 17, "codename": "delete_statisticalindicator"}}, {"model": "auth.permission", "pk": 68, "fields": {"name": "Can view Statistika", "content_type": 17, "codename": "view_statisticalindicator"}}, {"model": "auth.permission", "pk": 69, "fields": {"name": "Can add Haqqımızda", "content_type": 18, "codename": "add_aboutus"}}, {"model": "auth.permission", "pk": 70, "fields": {"name": "Can change Haqqımızda", "content_type": 18, "codename": "change_aboutus"}}, {"model": "auth.permission", "pk": 71, "fields": {"name": "Can delete Haqqımızda", "content_type": 18, "codename": "delete_aboutus"}}, {"model": "auth.permission", "pk": 72, "fields": {"name": "Can view Haqqımızda", "content_type": 18, "codename": "view_aboutus"}}, {"model": "auth.permission", "pk": 73, "fields": {"name": "Can add Biz kimik", "content_type": 19, "codename": "add_whoweare"}}, {"model": "auth.permission", "pk": 74, "fields": {"name": "Can change Biz kimik", "content_type": 19, "codename": "change_whoweare"}}, {"model": "auth.permission", "pk": 75, "fields": {"name": "Can delete Biz kimik", "content_type": 19, "codename": "delete_whoweare"}}, {"model": "auth.permission", "pk": 76, "fields": {"name": "Can view Biz kimik", "content_type": 19, "codename": "view_whoweare"}}, {"model": "auth.permission", "pk": 77, "fields": {"name": "Can add Müştəri rəyi", "content_type": 20, "codename": "add_testimoinal"}}, {"model": "auth.permission", "pk": 78, "fields": {"name": "Can change Müştəri rəyi", "content_type": 20, "codename": "change_testimoinal"}}, {"model": "auth.permission", "pk": 79, "fields": {"name": "Can delete Müştəri rəyi", "content_type": 20, "codename": "delete_testimoinal"}}, {"model": "auth.permission", "pk": 80, "fields": {"name": "Can view Müştəri rəyi", "content_type": 20, "codename": "view_testimoinal"}}, {"model": "auth.permission", "pk": 81, "fields": {"name": "Can add Xidmət", "content_type": 21, "codename": "add_service"}}, {"model": "auth.permission", "pk": 82, "fields": {"name": "Can change Xidmət", "content_type": 21, "codename": "change_service"}}, {"model": "auth.permission", "pk": 83, "fields": {"name": "Can delete Xidmət", "content_type": 21, "codename": "delete_service"}}, {"model": "auth.permission", "pk": 84, "fields": {"name": "Can view Xidmət", "content_type": 21, "codename": "view_service"}}, {"model": "auth.permission", "pk": 85, "fields": {"name": "Can add Endirmə", "content_type": 22, "codename": "add_download"}}, {"model": "auth.permission", "pk": 86, "fields": {"name": "Can change Endirmə", "content_type": 22, "codename": "change_download"}}, {"model": "auth.permission", "pk": 87, "fields": {"name": "Can delete Endirmə", "content_type": 22, "codename": "delete_download"}}, {"model": "auth.permission", "pk": 88, "fields": {"name": "Can view Endirmə", "content_type": 22, "codename": "view_download"}}, {"model": "auth.permission", "pk": 89, "fields": {"name": "Can add Nə üçün biz?", "content_type": 23, "codename": "add_whychooseus"}}, {"model": "auth.permission", "pk": 90, "fields": {"name": "Can change Nə üçün biz?", "content_type": 23, "codename": "change_whychooseus"}}, {"model": "auth.permission", "pk": 91, "fields": {"name": "Can delete Nə üçün biz?", "content_type": 23, "codename": "delete_whychooseus"}}, {"model": "auth.permission", "pk": 92, "fields": {"name": "Can view Nə üçün biz?", "content_type": 23, "codename": "view_whychooseus"}}, {"model": "auth.permission", "pk": 93, "fields": {"name": "Can add Əməkdaş", "content_type": 24, "codename": "add_coworker"}}, {"model": "auth.permission", "pk": 94, "fields": {"name": "Can change Əməkdaş", "content_type": 24, "codename": "change_coworker"}}, {"model": "auth.permission", "pk": 95, "fields": {"name": "Can delete Əməkdaş", "content_type": 24, "codename": "delete_coworker"}}, {"model": "auth.permission", "pk": 96, "fields": {"name": "Can view Əməkdaş", "content_type": 24, "codename": "view_coworker"}}, {"model": "auth.permission", "pk": 97, "fields": {"name": "Can add Banner", "content_type": 25, "codename": "add_banner"}}, {"model": "auth.permission", "pk": 98, "fields": {"name": "Can change Banner", "content_type": 25, "codename": "change_banner"}}, {"model": "auth.permission", "pk": 99, "fields": {"name": "Can delete Banner", "content_type": 25, "codename": "delete_banner"}}, {"model": "auth.permission", "pk": 100, "fields": {"name": "Can view Banner", "content_type": 25, "codename": "view_banner"}}, {"model": "auth.permission", "pk": 101, "fields": {"name": "Can add Rezervasiya", "content_type": 26, "codename": "add_appointment"}}, {"model": "auth.permission", "pk": 102, "fields": {"name": "Can change Rezervasiya", "content_type": 26, "codename": "change_appointment"}}, {"model": "auth.permission", "pk": 103, "fields": {"name": "Can delete Rezervasiya", "content_type": 26, "codename": "delete_appointment"}}, {"model": "auth.permission", "pk": 104, "fields": {"name": "Can view Rezervasiya", "content_type": 26, "codename": "view_appointment"}}, {"model": "auth.permission", "pk": 105, "fields": {"name": "Can add timetable", "content_type": 27, "codename": "add_timetable"}}, {"model": "auth.permission", "pk": 106, "fields": {"name": "Can change timetable", "content_type": 27, "codename": "change_timetable"}}, {"model": "auth.permission", "pk": 107, "fields": {"name": "Can delete timetable", "content_type": 27, "codename": "delete_timetable"}}, {"model": "auth.permission", "pk": 108, "fields": {"name": "Can view timetable", "content_type": 27, "codename": "view_timetable"}}, {"model": "auth.user", "pk": 1, "fields": {"password": "pbkdf2_sha256$870000$Im1uATZWs7eskPlrvu2sMK$zP4EQJRrnIo0ypUVeRwR0dXqy9wmfOtOgM/RrTELTS8=", "last_login": "2024-10-24T20:31:55Z", "is_superuser": true, "username": "sebnemadil1999@gmail.com", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "", "is_staff": true, "is_active": true, "date_joined": "2024-10-24T20:31:40Z", "groups": [], "user_permissions": []}}, {"model": "auth.user", "pk": 2, "fields": {"password": "pbkdf2_sha256$600000$LFIFkmhQG6IewwQTgRZNI8$znXRdSGO/3xkFJHoHDFXhFcreeJM1tdnaBx7QL5qcOY=", "last_login": "2024-11-19T17:17:42.537Z", "is_superuser": true, "username": "admin", "first_name": "", "last_name": "", "email": "", "is_staff": true, "is_active": true, "date_joined": "2024-11-09T10:56:15.329Z", "groups": [], "user_permissions": []}}, {"model": "contenttypes.contenttype", "pk": 1, "fields": {"app_label": "admin", "model": "logentry"}}, {"model": "contenttypes.contenttype", "pk": 2, "fields": {"app_label": "auth", "model": "permission"}}, {"model": "contenttypes.contenttype", "pk": 3, "fields": {"app_label": "auth", "model": "group"}}, {"model": "contenttypes.contenttype", "pk": 4, "fields": {"app_label": "auth", "model": "user"}}, {"model": "contenttypes.contenttype", "pk": 5, "fields": {"app_label": "contenttypes", "model": "contenttype"}}, {"model": "contenttypes.contenttype", "pk": 6, "fields": {"app_label": "sessions", "model": "session"}}, {"model": "contenttypes.contenttype", "pk": 7, "fields": {"app_label": "blog", "model": "category"}}, {"model": "contenttypes.contenttype", "pk": 8, "fields": {"app_label": "blog", "model": "ip"}}, {"model": "contenttypes.contenttype", "pk": 9, "fields": {"app_label": "blog", "model": "tag"}}, {"model": "contenttypes.contenttype", "pk": 10, "fields": {"app_label": "blog", "model": "blog"}}, {"model": "contenttypes.contenttype", "pk": 11, "fields": {"app_label": "blog", "model": "comment"}}, {"model": "contenttypes.contenttype", "pk": 12, "fields": {"app_label": "core", "model": "newsletter"}}, {"model": "contenttypes.contenttype", "pk": 13, "fields": {"app_label": "core", "model": "contact"}}, {"model": "contenttypes.contenttype", "pk": 14, "fields": {"app_label": "core", "model": "faq"}}, {"model": "contenttypes.contenttype", "pk": 15, "fields": {"app_label": "core", "model": "sitesettings"}}, {"model": "contenttypes.contenttype", "pk": 16, "fields": {"app_label": "core", "model": "statistics"}}, {"model": "contenttypes.contenttype", "pk": 17, "fields": {"app_label": "core", "model": "statisticalindicator"}}, {"model": "contenttypes.contenttype", "pk": 18, "fields": {"app_label": "core", "model": "aboutus"}}, {"model": "contenttypes.contenttype", "pk": 19, "fields": {"app_label": "core", "model": "whoweare"}}, {"model": "contenttypes.contenttype", "pk": 20, "fields": {"app_label": "core", "model": "testimoinal"}}, {"model": "contenttypes.contenttype", "pk": 21, "fields": {"app_label": "service", "model": "service"}}, {"model": "contenttypes.contenttype", "pk": 22, "fields": {"app_label": "service", "model": "download"}}, {"model": "contenttypes.contenttype", "pk": 23, "fields": {"app_label": "service", "model": "whychooseus"}}, {"model": "contenttypes.contenttype", "pk": 24, "fields": {"app_label": "service", "model": "coworker"}}, {"model": "contenttypes.contenttype", "pk": 25, "fields": {"app_label": "core", "model": "banner"}}, {"model": "contenttypes.contenttype", "pk": 26, "fields": {"app_label": "appointment", "model": "appointment"}}, {"model": "contenttypes.contenttype", "pk": 27, "fields": {"app_label": "appointment", "model": "timetable"}}, {"model": "sessions.session", "pk": "0qgda1qh1qe4dfoo1etsk0aboagykogg", "fields": {"session_data": ".eJxVjEsOAiEQBe_C2hBo2gZcuvcMpPkoowaS-ayMd1eSWej2VdV7icDbWsO2lDlMWZwEiMPvFjk9Shsg37nduky9rfMU5VDkThd56bk8z7v7d1B5qd8avSVG9s4VKDYqp6E4Y4B08smarJDYGkoekJ0aMlM-EoO9IhJo8f4AuUw2lA:1tDRrC:oQDmLSoeH5f2iBulB4rF6IEw8VzQEDEkbQHXdWNMLJg", "expire_date": "2024-12-03T17:17:42.627Z"}}, {"model": "sessions.session", "pk": "vuhdfzsp21y59l5olfw2ms1at4yn4b0a", "fields": {"session_data": ".eJxVjMsOwiAQRf-FtSFTGF4u3fsNBBiQqoGktCvjv2uTLnR7zzn3xXzY1uq3kRc_EzuziZ1-txjSI7cd0D20W-ept3WZI98VftDBr53y83K4fwc1jPqtjTRog0jRFJDGQVSKEKW2xTkC0gKUlWgSOm0wS5dFjkWAhikKXaiw9we2CTb3:1t44Ut:TYdlr156HHkT_zBSfdKd728Hi6RCs_yAz0v5JXBrBEY", "expire_date": "2024-11-07T20:31:55.354Z"}}, {"model": "sessions.session", "pk": "w5t4oeut7zx953xgry0jjv7gby3w8679", "fields": {"session_data": ".eJxVjMsKwyAUBf_FdZH4uCpddt9vEE-u1rRFIY9V6L-XQBbtdmaYXcS0rTVuS57jxOIqtLj8MqTxldsh-Jnao8uxt3WeII9EnnaR9875fTvbv0FNSz22tqC4oDOGoQRmWxxrh8GTL6TJKaiRAQKpDKDAkDcmBFijkFiJzxf6ejh-:1t9j8v:UDFo-adXf1tyRqG8n-ZwvuMGvZ9aMHblVVwAq3fHfRo", "expire_date": "2024-11-23T10:56:37.947Z"}}, {"model": "blog.category", "pk": 1, "fields": {"created_at": "2024-10-24T20:32:17.029Z", "updated_at": "2024-10-31T19:12:59.919Z", "name": "Development", "slug": "development"}}, {"model": "blog.category", "pk": 2, "fields": {"created_at": "2024-10-30T16:39:40.214Z", "updated_at": "2024-10-31T19:12:57.443Z", "name": "SMM", "slug": "smm"}}, {"model": "blog.category", "pk": 3, "fields": {"created_at": "2024-10-30T17:12:46.749Z", "updated_at": "2024-10-31T19:12:53.761Z", "name": "Health tips", "slug": "health-tips"}}, {"model": "blog.ip", "pk": 1, "fields": {"created_at": "2024-10-30T19:47:51.240Z", "updated_at": "2024-10-30T19:47:51.240Z", "view_ip": "127.0.0.1"}}, {"model": "blog.tag", "pk": 1, "fields": {"created_at": "2024-10-31T18:46:52.810Z", "updated_at": "2024-10-31T19:12:42.684Z", "name": "health", "slug": "health"}}, {"model": "blog.tag", "pk": 2, "fields": {"created_at": "2024-10-31T18:46:59.356Z", "updated_at": "2024-10-31T19:12:39.865Z", "name": "Development", "slug": "development"}}, {"model": "blog.blog", "pk": 1, "fields": {"created_at": "2024-10-24T20:32:31.575Z", "updated_at": "2024-11-17T15:45:36.843Z", "title": "Things you may not know about medicaid den..", "short_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore", "content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>", "image": "blogs/blog-grid3_V46onc6.jpg", "slug": "tgrrtg", "author": 1, "view_count": 0, "status": "PB", "published_at": "2024-10-24T20:32:31.574Z", "category": [1, 2], "tag": [], "viewed_ips": [1]}}, {"model": "blog.blog", "pk": 2, "fields": {"created_at": "2024-10-30T17:12:50.933Z", "updated_at": "2024-11-17T15:44:35.076Z", "title": "tThings you may not know about medicaid den..", "short_description": "Lorem ipsum dolor sit amet, constetur adipiscing elit, sed do eiusmod tempor incididunt.", "content": "<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</h5>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer bibendum, sem at condimentum sceleri sque, odio eros vestibulum tortor, non posuere sapien elit at velit. Vestibulum ac porttitor dolor, ac feugiat nunc. Nulla eleifend massa tortor, nec laoreet lectus varius ac. Fusce scelerisque consequat eros, non venenatis turpis ultricies id. Etiam nec sagittis diam, a tempor risus. Nunc nisl felis, congue non euismod dignissim id eros. Maecenas eu molestie purus, in digni ssim nequeo nsectetur adipiscing elit.</p>\r\n\r\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt pariatur.</p>\r\n\r\n<p>&nbsp;John Doe</p>\r\n\r\n<p><img alt=\"#\" src=\"http://127.0.0.1:8000/blogs/2/images/blog-comment1.jpg\" /></p>\r\n\r\n<p><img alt=\"#\" src=\"http://127.0.0.1:8000/blogs/2/images/blog-comment2.jpg\" /></p>\r\n\r\n<h3>Lorem ipsum dolor sit amet</h3>\r\n\r\n<p>SInteger bibendum. Curabitur a magna mi. Cras facilisis lacus a magna luctus, nec pharetra ex varius. Sed placerat suscipit massa, sed lobo rtis ex sollicitudin non. Lorem ipsum dolor sit amet, consectetur adipis cing elit. Duis sed laoreet neque. Mauris placerat blandit accumsan. Aliquam efficitur dictum eros.Maec enas eu molestie purus, in dignissim neque.</p>", "image": "blogs/blog-grid2_fT1PsyY.jpg", "slug": "tthings-you-may-not-know-about-medicaid-den", "author": 1, "view_count": 0, "status": "PB", "published_at": "2024-10-30T17:12:50.933Z", "category": [3], "tag": [], "viewed_ips": [1]}}, {"model": "blog.blog", "pk": 3, "fields": {"created_at": "2024-10-30T20:13:48.694Z", "updated_at": "2024-11-17T15:44:22.546Z", "title": "Things you may not know about medicaid fdbdfbden..", "short_description": "Lorem ipsum dolor sit amet, constetur adipiscing elit, sed do eiusmod tempor incididunt.", "content": "<h3>Things you may not know about medicaid den..</h3>\r\n\r\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudt.</p>", "image": "blogs/blog-grid1_llBPN2F.jpg", "slug": "things-you-may-not-know-about-medicaid-fdbdfbden", "author": 1, "view_count": 0, "status": "PB", "published_at": "2024-10-30T20:13:48.693Z", "category": [2], "tag": [], "viewed_ips": [1]}}, {"model": "blog.blog", "pk": 4, "fields": {"created_at": "2024-10-30T21:39:27.001Z", "updated_at": "2024-11-17T15:46:05.890Z", "title": "Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore", "short_description": "Lorem ipsum dolor sit amet, constetur adipiscing elit, sed do eiusmod tempor incididunt.", "content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>", "image": "blogs/blog-grid4.jpg", "slug": "cxpopular_blogs-blogpublishedannotatecomment_countcountcommentsexcludeido", "author": 1, "view_count": 1, "status": "PB", "published_at": "2024-10-30T21:39:27Z", "category": [1], "tag": [], "viewed_ips": [1]}}, {"model": "blog.blog", "pk": 5, "fields": {"created_at": "2024-10-30T21:41:44.122Z", "updated_at": "2024-11-17T15:46:20.756Z", "title": "blog test", "short_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudt.", "content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>", "image": "blogs/blog-grid3.jpg", "slug": "rgehetjtvgbdb", "author": 1, "view_count": 1, "status": "PB", "published_at": "2024-10-30T21:41:44.122Z", "category": [3], "tag": [1, 2], "viewed_ips": [1]}}, {"model": "blog.blog", "pk": 6, "fields": {"created_at": "2024-11-02T19:50:36.467Z", "updated_at": "2024-11-17T15:46:33.453Z", "title": "blog new", "short_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore", "content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>", "image": "blogs/blog-grid2.jpg", "slug": "frer", "author": 1, "view_count": 1, "status": "PB", "published_at": "2024-11-02T19:50:36.467Z", "category": [2], "tag": [2], "viewed_ips": [1]}}, {"model": "blog.blog", "pk": 7, "fields": {"created_at": "2024-11-02T20:46:26.545Z", "updated_at": "2024-11-17T15:46:45.359Z", "title": "blog", "short_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore", "content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>", "image": "blogs/blog-grid1.jpg", "slug": "errrrrrrrrrrrrr", "author": 1, "view_count": 1, "status": "PB", "published_at": "2024-11-02T20:46:26.544Z", "category": [3], "tag": [1], "viewed_ips": [1]}}, {"model": "blog.comment", "pk": 1, "fields": {"created_at": "2024-10-25T18:08:29.810Z", "updated_at": "2024-10-25T18:08:29.810Z", "content": "hg7h9u9", "blog": 1, "author": 1, "parent_comment": null}}, {"model": "blog.comment", "pk": 2, "fields": {"created_at": "2024-10-25T18:08:41.964Z", "updated_at": "2024-10-25T18:08:41.964Z", "content": "][pjiubgy", "blog": 1, "author": 1, "parent_comment": 1}}, {"model": "blog.comment", "pk": 3, "fields": {"created_at": "2024-10-25T18:18:36.739Z", "updated_at": "2024-10-25T18:18:36.739Z", "content": "dtnfjfjg", "blog": 1, "author": 1, "parent_comment": null}}, {"model": "blog.comment", "pk": 4, "fields": {"created_at": "2024-10-25T18:19:18.632Z", "updated_at": "2024-10-25T18:19:18.632Z", "content": "dtnfjfjg", "blog": 1, "author": 1, "parent_comment": null}}, {"model": "blog.comment", "pk": 5, "fields": {"created_at": "2024-10-25T18:20:01.846Z", "updated_at": "2024-10-25T18:20:01.846Z", "content": "dtnfjfjgfjmfj", "blog": 1, "author": 1, "parent_comment": 2}}, {"model": "blog.comment", "pk": 6, "fields": {"created_at": "2024-10-25T18:20:06.851Z", "updated_at": "2024-10-25T18:20:06.851Z", "content": "dtnfjfjgfjmfj", "blog": 1, "author": 1, "parent_comment": null}}, {"model": "blog.comment", "pk": 7, "fields": {"created_at": "2024-10-25T18:20:12.795Z", "updated_at": "2024-11-02T09:21:56.569Z", "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.", "blog": 1, "author": 1, "parent_comment": 5}}, {"model": "core.newsletter", "pk": 1, "fields": {"created_at": "2024-10-24T21:56:00.866Z", "updated_at": "2024-10-24T21:56:00.867Z", "email": "sebnemadil1999@gmail.com"}}, {"model": "core.newsletter", "pk": 2, "fields": {"created_at": "2024-11-05T13:24:43.393Z", "updated_at": "2024-11-05T13:24:43.393Z", "email": "sebnemadil188999@gmail.com"}}, {"model": "core.newsletter", "pk": 3, "fields": {"created_at": "2024-11-05T15:25:13.552Z", "updated_at": "2024-11-05T15:25:13.552Z", "email": "sebnemadil1999hhhhhhhhg@gmail.comhg"}}, {"model": "core.newsletter", "pk": 4, "fields": {"created_at": "2024-11-05T15:37:42.866Z", "updated_at": "2024-11-05T15:37:42.866Z", "email": "sebnemadil1999@gmail.cm"}}, {"model": "core.newsletter", "pk": 5, "fields": {"created_at": "2024-11-05T15:38:23.785Z", "updated_at": "2024-11-05T15:38:23.785Z", "email": "sebnemadil1999@gmail.co"}}, {"model": "core.newsletter", "pk": 6, "fields": {"created_at": "2024-11-18T14:05:37.078Z", "updated_at": "2024-11-18T14:05:37.078Z", "email": "sebnemadil19@gmail.com"}}, {"model": "core.newsletter", "pk": 7, "fields": {"created_at": "2024-11-18T14:42:23.623Z", "updated_at": "2024-11-18T14:42:23.623Z", "email": "sebnemadil19dd99@gmail.com"}}, {"model": "core.contact", "pk": 1, "fields": {"created_at": "2024-10-25T16:08:19.913Z", "updated_at": "2024-10-25T16:08:19.913Z", "first_name": "2024-11-02 22:42:31.789103+00:00", "last_name": "2024-11-02 22:42:46.451187+00:00", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "\\jhguyfujkl["}}, {"model": "core.contact", "pk": 2, "fields": {"created_at": "2024-11-02T23:01:16.610Z", "updated_at": "2024-11-02T23:01:16.610Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "f f gfb"}}, {"model": "core.contact", "pk": 3, "fields": {"created_at": "2024-11-02T23:02:54.317Z", "updated_at": "2024-11-02T23:02:54.317Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "trgtr"}}, {"model": "core.contact", "pk": 4, "fields": {"created_at": "2024-11-02T23:05:19.613Z", "updated_at": "2024-11-02T23:05:19.613Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "rtv"}}, {"model": "core.contact", "pk": 5, "fields": {"created_at": "2024-11-02T23:06:09.643Z", "updated_at": "2024-11-02T23:06:09.643Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "4tg"}}, {"model": "core.contact", "pk": 6, "fields": {"created_at": "2024-11-04T15:11:57.247Z", "updated_at": "2024-11-04T15:11:57.248Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "erer"}}, {"model": "core.contact", "pk": 7, "fields": {"created_at": "2024-11-04T15:47:35.831Z", "updated_at": "2024-11-04T15:47:35.831Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "ewfwe"}}, {"model": "core.contact", "pk": 8, "fields": {"created_at": "2024-11-04T15:48:30.946Z", "updated_at": "2024-11-04T15:48:30.946Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "3t34"}}, {"model": "core.contact", "pk": 9, "fields": {"created_at": "2024-11-04T15:49:02.350Z", "updated_at": "2024-11-04T15:49:02.351Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "45g45t"}}, {"model": "core.contact", "pk": 10, "fields": {"created_at": "2024-11-04T15:49:25.539Z", "updated_at": "2024-11-04T15:49:25.539Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "yhy5h"}}, {"model": "core.contact", "pk": 11, "fields": {"created_at": "2024-11-04T16:07:35.050Z", "updated_at": "2024-11-04T16:07:35.050Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "er"}}, {"model": "core.contact", "pk": 12, "fields": {"created_at": "2024-11-04T16:09:09.433Z", "updated_at": "2024-11-04T16:09:09.433Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "werew"}}, {"model": "core.contact", "pk": 13, "fields": {"created_at": "2024-11-04T16:10:07.738Z", "updated_at": "2024-11-04T16:10:07.739Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "wfewr"}}, {"model": "core.contact", "pk": 14, "fields": {"created_at": "2024-11-04T16:11:11.784Z", "updated_at": "2024-11-04T16:11:11.784Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "7072951285", "message": "egeg"}}, {"model": "core.contact", "pk": 15, "fields": {"created_at": "2024-11-04T16:12:48.338Z", "updated_at": "2024-11-04T16:12:48.338Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "7072951285", "message": "ererrr"}}, {"model": "core.contact", "pk": 16, "fields": {"created_at": "2024-11-04T16:13:24.575Z", "updated_at": "2024-11-04T16:13:24.575Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "7702951285", "message": "wfwef"}}, {"model": "core.contact", "pk": 17, "fields": {"created_at": "2024-11-04T16:14:45.344Z", "updated_at": "2024-11-04T16:14:45.344Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "7702951285", "message": "wr"}}, {"model": "core.contact", "pk": 18, "fields": {"created_at": "2024-11-04T16:15:26.663Z", "updated_at": "2024-11-04T16:15:26.663Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "7072951285", "message": "yht"}}, {"model": "core.contact", "pk": 19, "fields": {"created_at": "2024-11-04T16:20:09.534Z", "updated_at": "2024-11-04T16:20:09.534Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "eg"}}, {"model": "core.contact", "pk": 20, "fields": {"created_at": "2024-11-04T16:20:39.645Z", "updated_at": "2024-11-04T16:20:39.645Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "7072951285", "message": "3434"}}, {"model": "core.contact", "pk": 21, "fields": {"created_at": "2024-11-04T16:21:26.952Z", "updated_at": "2024-11-04T16:21:26.952Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "7702951285", "message": "erer"}}, {"model": "core.contact", "pk": 22, "fields": {"created_at": "2024-11-04T16:22:35.640Z", "updated_at": "2024-11-04T16:22:35.640Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "3g35"}}, {"model": "core.contact", "pk": 23, "fields": {"created_at": "2024-11-04T16:23:23.068Z", "updated_at": "2024-11-04T16:23:23.068Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "rggr"}}, {"model": "core.contact", "pk": 24, "fields": {"created_at": "2024-11-04T16:26:17.099Z", "updated_at": "2024-11-04T16:26:17.099Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "ege"}}, {"model": "core.contact", "pk": 25, "fields": {"created_at": "2024-11-04T16:26:43.124Z", "updated_at": "2024-11-04T16:26:43.124Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "eger"}}, {"model": "core.contact", "pk": 26, "fields": {"created_at": "2024-11-04T16:26:58.510Z", "updated_at": "2024-11-04T16:26:58.510Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "34"}}, {"model": "core.contact", "pk": 27, "fields": {"created_at": "2024-11-04T16:28:10.474Z", "updated_at": "2024-11-04T16:28:10.475Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "egver"}}, {"model": "core.contact", "pk": 28, "fields": {"created_at": "2024-11-04T16:28:38.455Z", "updated_at": "2024-11-04T16:28:38.455Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "3rf3t"}}, {"model": "core.contact", "pk": 29, "fields": {"created_at": "2024-11-04T16:55:43.749Z", "updated_at": "2024-11-04T16:55:43.749Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "eco@gmail.com", "phone": "7072951285", "message": "rer"}}, {"model": "core.contact", "pk": 30, "fields": {"created_at": "2024-11-04T17:21:02.440Z", "updated_at": "2024-11-04T17:21:02.440Z", "first_name": "Şebnem", "last_name": "Bayramlı", "email": "sebnemadil1999@gmail.com", "phone": "7702951285", "message": "dwc"}}, {"model": "core.contact", "pk": 31, "fields": {"created_at": "2024-11-18T14:06:27.235Z", "updated_at": "2024-11-18T14:06:27.235Z", "first_name": "gfbn", "last_name": "fgnhgf", "email": "sebnemadil1999@gmail.com", "phone": "0772951285", "message": "ggf"}}, {"model": "core.faq", "pk": 1, "fields": {"created_at": "2024-11-17T17:00:36.654Z", "updated_at": "2024-11-17T17:00:36.654Z", "question": "What is an academic medical center?", "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan."}}, {"model": "core.faq", "pk": 2, "fields": {"created_at": "2024-11-17T17:00:59.853Z", "updated_at": "2024-11-17T17:00:59.854Z", "question": "My physician is a faculty member—what does that mean?", "response": "lorem ipsum"}}, {"model": "core.sitesettings", "pk": 1, "fields": {"created_at": "2024-11-04T17:42:04.418Z", "updated_at": "2024-11-17T14:30:00.580Z", "site_name": "Mireldar Babayev", "logo": "logos/logo.png", "favicon": "favicons/blog-img-full2.jpg", "location": "Baku", "number": "+994507655577", "email": "medenin@info.com", "work_hours": "09-00-18.00", "map_url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6079.058167769159!2d49.9602182!3d40.374965!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x403064a59f86bceb%3A0xdcb214533519ce69!2zR3VuYXNobGksIEJha8O8!5e0!3m2!1str!2saz!4v1730746685169!5m2!1str!2saz", "facebook": null, "youtube": "https://www.youtube.com/@dwespanol", "instagram": null, "twitter": null, "linkedin": "https://www.youtube.com/@dwespanol", "tiktok": "https://www.youtube.com/@dwespanol", "footer_description": "Lorem ipsum dolor sit amet, consect\r\netur adipisicing elit, sed do eius mod\r\ntempor incididunt ut labore et dolore\r\nmagna aliqua. Ut enim ad minim"}}, {"model": "core.statisticalindicator", "pk": 1, "fields": {"created_at": "2024-11-04T19:27:26.659Z", "updated_at": "2024-11-17T15:14:01.839Z", "png": "statistics/service-thumbnail03_GhORkpq.png", "value": 106, "name": "Award winner"}}, {"model": "core.statisticalindicator", "pk": 2, "fields": {"created_at": "2024-11-04T19:32:47.945Z", "updated_at": "2024-11-17T15:13:10.718Z", "png": "statistics/service-thumbnail03.png", "value": 315, "name": "Hospital Rooms"}}, {"model": "core.statisticalindicator", "pk": 3, "fields": {"created_at": "2024-11-04T19:33:52.890Z", "updated_at": "2024-11-17T15:12:18.684Z", "png": "statistics/service-thumbnail02.png", "value": 215, "name": "Expert Doctors"}}, {"model": "core.statisticalindicator", "pk": 4, "fields": {"created_at": "2024-11-04T19:34:37.355Z", "updated_at": "2024-11-17T15:11:34.880Z", "png": "statistics/service-thumbnail01.png", "value": 699, "name": "Happy Patients"}}, {"model": "core.aboutus", "pk": 1, "fields": {"created_at": "2024-11-05T12:07:46.512Z", "updated_at": "2024-11-17T09:46:28.080Z", "image": "about/about-img.jpg", "video_id": "MKG_6BqnhpI", "content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n\r\n<p>Ut enim ad minim veniam, quis nostrud exercitation. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n\r\n<p>Ut enim ad minim veniam, quis nostrud exercitation.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n\r\n<p>Ut enim ad minim veniam, quis nostrud exercitation. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n\r\n<p>Ut enim ad minim veniam, quis nostrud exercitation.</p>", "mission": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.", "vision": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua.\r\n\r\nUt enim ad minim veniam, quis nostrud exercitation. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua.\r\n\r\nUt enim ad minim veniam, quis nostrud exercitation.", "value": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua.\r\n\r\nUt enim ad minim veniam, quis nostrud exercitation. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua.\r\n\r\nUt enim ad minim veniam, quis nostrud exercitation."}}, {"model": "core.whoweare", "pk": 1, "fields": {"created_at": "2024-11-05T12:58:31.074Z", "updated_at": "2024-11-18T14:04:59.908Z", "title": "We Have Advanced Technologies", "video_link": "https://www.youtube.com/watch?v=wqfyuKiBn9s", "content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>"}}, {"model": "core.testimoinal", "pk": 1, "fields": {"created_at": "2024-11-05T20:00:02.071Z", "updated_at": "2024-11-18T14:32:40.094Z", "client_image": "testimoinals/doctors-img1.jpg", "client_full_name": "Sebnem adil", "client_profession": "pasient", "client_comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniafff. Ut enim ad minim veniafffetur adipisicing elit, sed do eius mod tempor incididunt ut labore et doloreg", "star": 1}}, {"model": "core.testimoinal", "pk": 2, "fields": {"created_at": "2024-11-05T20:00:51.175Z", "updated_at": "2024-11-18T14:32:31.147Z", "client_image": "testimoinals/doctors-img1_EsvAJ0x.jpg", "client_full_name": "Mehran Babayev", "client_profession": "pasient", "client_comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniafff. Ut enim ad minim veniafffetur adipisicing elit, sed do eius mod tempor incididunt ut labore et doloreg", "star": 4}}, {"model": "core.testimoinal", "pk": 3, "fields": {"created_at": "2024-11-05T20:14:08.876Z", "updated_at": "2024-11-18T14:32:35.287Z", "client_image": "testimoinals/doctors-img1_rBU5KNl.jpg", "client_full_name": "orxan babayev", "client_profession": "pasient", "client_comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniafff. Ut enim ad minim veniafffetur adipisicing elit, sed do eius mod tempor incididunt ut labore et doloreg", "star": 3}}, {"model": "core.banner", "pk": 1, "fields": {"created_at": "2024-11-16T17:29:51.966Z", "updated_at": "2024-11-17T14:53:25.546Z", "title": "What Makes Us Better, Makes You Better. -2", "subtitle": "We are here for you-2", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu lacus ex.\r\n                                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos\r\n                                        ipsum dolor sit amet-2", "png": "banner/hero-doctor-1_3xpOtW5.png", "video_id": "MKG_6BqnhpI"}}, {"model": "core.banner", "pk": 2, "fields": {"created_at": "2024-11-16T22:35:00.200Z", "updated_at": "2024-11-17T14:52:19.611Z", "title": "What Makes Us Better, Makes You Better.", "subtitle": "We are here for you", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu lacus ex.\r\n                                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos\r\n                                        ipsum dolor sit amet.", "png": "banner/hero-doctor-1_rqtgA4e.png", "video_id": "MKG_6BqnhpI"}}, {"model": "service.service", "pk": 1, "fields": {"created_at": "2024-11-09T12:27:35.307Z", "updated_at": "2024-11-17T15:16:40.988Z", "name": "Dental Care", "short_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore", "png": "services/service-icon1.png", "image": "services/images/download.jpeg", "title": "Professional Dental Care Services", "content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</p>\r\n\r\n<p>Voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione volupt atem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem&nbsp;</p>\r\n\r\n<h4>Teeth Fillings</h4>\r\n\r\n<p>Excepteur sint occaecat cupidatat</p>\r\n\r\n<hr />\r\n<h3>Medenin Dental Features</h3>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</p>\r\n\r\n<ul>\r\n\t<li>\r\n\t<h6>Suspendisse facilisis sollicitudin sapien</h6>\r\n\t</li>\r\n\t<li>\r\n\t<h6>Praesent metus risus, tristique at</h6>\r\n\t</li>\r\n\t<li>\r\n\t<h6>Sed commodo placerat eros id luctus</h6>\r\n\t</li>\r\n\t<li>\r\n\t<h6>Suspendisse eget tortor eget</h6>\r\n\t</li>\r\n</ul>\r\n\r\n<ul>\r\n\t<li>\r\n\t<h6>Nemo enim ipsam voluptatem voluptas.</h6>\r\n\t</li>\r\n\t<li>\r\n\t<h6>Mauris bibendum felis id nisl facilisis</h6>\r\n\t</li>\r\n\t<li>\r\n\t<h6>Donec condimentum rutrum auctor</h6>\r\n\t</li>\r\n\t<li>\r\n\t<h6>Cras a justo et dolor luctus rhoncus eu</h6>\r\n\t</li>\r\n</ul>", "background_color": "green", "slug": "professional-dental-care-services"}}, {"model": "service.service", "pk": 2, "fields": {"created_at": "2024-11-09T12:39:39.976Z", "updated_at": "2024-11-09T12:52:15.942Z", "name": "Eye Care", "short_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore", "png": "services/service-icon2.png", "image": "2024-11-09 18:09:13.662551+00:00", "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore", "content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore</p>", "background_color": "yellow", "slug": "lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eius-mod-tempor-incididunt-ut-labore"}}, {"model": "service.service", "pk": 3, "fields": {"created_at": "2024-11-17T10:00:33.407Z", "updated_at": "2024-11-17T15:17:57.758Z", "name": "Allergic issue", "short_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore", "png": "services/service-icon3.png", "image": "services/images/bg-home-form.jpg", "title": "sacdec", "content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore</p>", "background_color": "blue", "slug": "sacdec"}}, {"model": "service.service", "pk": 4, "fields": {"created_at": "2024-11-17T10:04:29.921Z", "updated_at": "2024-11-17T15:18:53.881Z", "name": "Eye Care -2", "short_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore", "png": "services/service-icon3_vRD9Q9h.png", "image": "services/images/team11.jpg", "title": "Lorem ipsum dolor sit amet, consectetur adi-2pisicing elit, sed do eius mod tempor incididunt ut labore", "content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore</p>", "background_color": "green", "slug": "2r"}}, {"model": "service.download", "pk": 1, "fields": {"created_at": "2024-11-09T13:27:03.230Z", "updated_at": "2024-11-09T16:49:23.040Z", "title": "Our Brouchure", "type": "docx", "file": "services/downloads/TaskFries_Ana_səhifə.docx"}}, {"model": "service.download", "pk": 2, "fields": {"created_at": "2024-11-09T17:48:48.051Z", "updated_at": "2024-11-09T17:48:48.051Z", "title": "aegbdfff", "type": "docx", "file": "services/downloads/Profil_digər_səhifələr_1.docx"}}, {"model": "service.whychooseus", "pk": 1, "fields": {"created_at": "2024-11-09T18:35:44.800Z", "updated_at": "2024-11-17T15:23:41.444Z", "title": "Fastest Growing Clinic", "short_description": "Excepteur sint occaecat cupidatat non proident, su", "png": "why_choose_us/icon1.png"}}, {"model": "service.whychooseus", "pk": 2, "fields": {"created_at": "2024-11-17T15:24:25.190Z", "updated_at": "2024-11-17T15:24:25.190Z", "title": "Free Ambulance Servcice", "short_description": "Ut enim ad minim veniam, quis nostrud exercitati", "png": "why_choose_us/icon2.png"}}, {"model": "service.whychooseus", "pk": 3, "fields": {"created_at": "2024-11-17T15:26:18.850Z", "updated_at": "2024-11-17T15:26:18.850Z", "title": "24/7 Working Time", "short_description": "Duis aute irure dolor in repr ehenderit in voluptate.", "png": "why_choose_us/icon3.png"}}, {"model": "service.whychooseus", "pk": 4, "fields": {"created_at": "2024-11-17T15:27:16.655Z", "updated_at": "2024-11-17T15:27:16.655Z", "title": "5 Star Customer Rating", "short_description": "Excepteur sint occaecat cupidatat non proident,", "png": "why_choose_us/icon4.png"}}, {"model": "appointment.timetable", "pk": 6, "fields": {"created_at": "2024-11-21T17:56:01.403Z", "updated_at": "2024-11-21T17:56:01.403Z", "start_time": "2024-11-21T18:55:41Z", "end_time": "2024-11-22T17:55:44Z"}}, {"model": "appointment.timetable", "pk": 7, "fields": {"created_at": "2024-11-21T18:19:33.184Z", "updated_at": "2024-11-21T18:19:33.184Z", "start_time": "2024-11-22T18:18:56Z", "end_time": "2024-11-22T18:19:58Z"}}, {"model": "appointment.appointment", "pk": 8, "fields": {"created_at": "2024-11-21T22:59:59.752Z", "updated_at": "2024-11-21T22:59:59.752Z", "full_name": "45tg45t", "phone": "0772951285", "location": "Baku", "message": "45t45t", "available_time": 7}}]
+[
+  {
+    "model": "blog.category",
+    "pk": 1,
+    "fields": {
+      "created_at": "2024-10-24T20:32:17.029Z",
+      "updated_at": "2024-10-31T19:12:59.919Z",
+      "name": "Development",
+      "slug": "development"
+    }
+  },
+  {
+    "model": "blog.category",
+    "pk": 2,
+    "fields": {
+      "created_at": "2024-10-30T16:39:40.214Z",
+      "updated_at": "2024-10-31T19:12:57.443Z",
+      "name": "SMM",
+      "slug": "smm"
+    }
+  },
+  {
+    "model": "blog.category",
+    "pk": 3,
+    "fields": {
+      "created_at": "2024-10-30T17:12:46.749Z",
+      "updated_at": "2024-10-31T19:12:53.761Z",
+      "name": "Health tips",
+      "slug": "health-tips"
+    }
+  },
+  {
+    "model": "blog.ip",
+    "pk": 1,
+    "fields": {
+      "created_at": "2024-10-30T19:47:51.240Z",
+      "updated_at": "2024-10-30T19:47:51.240Z",
+      "view_ip": "127.0.0.1"
+    }
+  },
+  {
+    "model": "blog.tag",
+    "pk": 1,
+    "fields": {
+      "created_at": "2024-10-31T18:46:52.810Z",
+      "updated_at": "2024-10-31T19:12:42.684Z",
+      "name": "health",
+      "slug": "health"
+    }
+  },
+  {
+    "model": "blog.tag",
+    "pk": 2,
+    "fields": {
+      "created_at": "2024-10-31T18:46:59.356Z",
+      "updated_at": "2024-10-31T19:12:39.865Z",
+      "name": "Development",
+      "slug": "development"
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 1,
+    "fields": {
+      "created_at": "2024-10-24T20:32:31.575Z",
+      "updated_at": "2024-11-17T15:45:36.843Z",
+      "title": "Things you may not know about medicaid den..",
+      "short_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore",
+      "content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>",
+      "image": "blogs/blog-grid3_V46onc6.jpg",
+      "slug": "tgrrtg",
+      "author": 1,
+      "view_count": 0,
+      "status": "PB",
+      "published_at": "2024-10-24T20:32:31.574Z",
+      "category": [1, 2],
+      "tag": [],
+      "viewed_ips": [1]
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 2,
+    "fields": {
+      "created_at": "2024-10-30T17:12:50.933Z",
+      "updated_at": "2024-11-17T15:44:35.076Z",
+      "title": "tThings you may not know about medicaid den..",
+      "short_description": "Lorem ipsum dolor sit amet, constetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      "content": "<h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</h5>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer bibendum, sem at condimentum sceleri sque, odio eros vestibulum tortor, non posuere sapien elit at velit. Vestibulum ac porttitor dolor, ac feugiat nunc. Nulla eleifend massa tortor, nec laoreet lectus varius ac. Fusce scelerisque consequat eros, non venenatis turpis ultricies id. Etiam nec sagittis diam, a tempor risus. Nunc nisl felis, congue non euismod dignissim id eros. Maecenas eu molestie purus, in digni ssim nequeo nsectetur adipiscing elit.</p>\r\n\r\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt pariatur.</p>\r\n\r\n<p>&nbsp;John Doe</p>\r\n\r\n<p><img alt=\"#\" src=\"http://127.0.0.1:8000/blogs/2/images/blog-comment1.jpg\" /></p>\r\n\r\n<p><img alt=\"#\" src=\"http://127.0.0.1:8000/blogs/2/images/blog-comment2.jpg\" /></p>\r\n\r\n<h3>Lorem ipsum dolor sit amet</h3>\r\n\r\n<p>SInteger bibendum. Curabitur a magna mi. Cras facilisis lacus a magna luctus, nec pharetra ex varius. Sed placerat suscipit massa, sed lobo rtis ex sollicitudin non. Lorem ipsum dolor sit amet, consectetur adipis cing elit. Duis sed laoreet neque. Mauris placerat blandit accumsan. Aliquam efficitur dictum eros.Maec enas eu molestie purus, in dignissim neque.</p>",
+      "image": "blogs/blog-grid2_fT1PsyY.jpg",
+      "slug": "tthings-you-may-not-know-about-medicaid-den",
+      "author": 1,
+      "view_count": 0,
+      "status": "PB",
+      "published_at": "2024-10-30T17:12:50.933Z",
+      "category": [3],
+      "tag": [],
+      "viewed_ips": [1]
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 3,
+    "fields": {
+      "created_at": "2024-10-30T20:13:48.694Z",
+      "updated_at": "2024-11-17T15:44:22.546Z",
+      "title": "Things you may not know about medicaid fdbdfbden..",
+      "short_description": "Lorem ipsum dolor sit amet, constetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      "content": "<h3>Things you may not know about medicaid den..</h3>\r\n\r\n<p>Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudt.</p>",
+      "image": "blogs/blog-grid1_llBPN2F.jpg",
+      "slug": "things-you-may-not-know-about-medicaid-fdbdfbden",
+      "author": 1,
+      "view_count": 0,
+      "status": "PB",
+      "published_at": "2024-10-30T20:13:48.693Z",
+      "category": [2],
+      "tag": [],
+      "viewed_ips": [1]
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 4,
+    "fields": {
+      "created_at": "2024-10-30T21:39:27.001Z",
+      "updated_at": "2024-11-17T15:46:05.890Z",
+      "title": "Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore",
+      "short_description": "Lorem ipsum dolor sit amet, constetur adipiscing elit, sed do eiusmod tempor incididunt.",
+      "content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>",
+      "image": "blogs/blog-grid4.jpg",
+      "slug": "cxpopular_blogs-blogpublishedannotatecomment_countcountcommentsexcludeido",
+      "author": 1,
+      "view_count": 1,
+      "status": "PB",
+      "published_at": "2024-10-30T21:39:27Z",
+      "category": [1],
+      "tag": [],
+      "viewed_ips": [1]
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 5,
+    "fields": {
+      "created_at": "2024-10-30T21:41:44.122Z",
+      "updated_at": "2024-11-17T15:46:20.756Z",
+      "title": "blog test",
+      "short_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudt.",
+      "content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>",
+      "image": "blogs/blog-grid3.jpg",
+      "slug": "rgehetjtvgbdb",
+      "author": 1,
+      "view_count": 1,
+      "status": "PB",
+      "published_at": "2024-10-30T21:41:44.122Z",
+      "category": [3],
+      "tag": [1, 2],
+      "viewed_ips": [1]
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 6,
+    "fields": {
+      "created_at": "2024-11-02T19:50:36.467Z",
+      "updated_at": "2024-11-17T15:46:33.453Z",
+      "title": "blog new",
+      "short_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore",
+      "content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>",
+      "image": "blogs/blog-grid2.jpg",
+      "slug": "frer",
+      "author": 1,
+      "view_count": 1,
+      "status": "PB",
+      "published_at": "2024-11-02T19:50:36.467Z",
+      "category": [2],
+      "tag": [2],
+      "viewed_ips": [1]
+    }
+  },
+  {
+    "model": "blog.blog",
+    "pk": 7,
+    "fields": {
+      "created_at": "2024-11-02T20:46:26.545Z",
+      "updated_at": "2024-11-17T15:46:45.359Z",
+      "title": "blog",
+      "short_description": "Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore",
+      "content": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>",
+      "image": "blogs/blog-grid1.jpg",
+      "slug": "errrrrrrrrrrrrr",
+      "author": 1,
+      "view_count": 1,
+      "status": "PB",
+      "published_at": "2024-11-02T20:46:26.544Z",
+      "category": [3],
+      "tag": [1],
+      "viewed_ips": [1]
+    }
+  },
+  {
+    "model": "blog.comment",
+    "pk": 1,
+    "fields": {
+      "created_at": "2024-10-25T18:08:29.810Z",
+      "updated_at": "2024-10-25T18:08:29.810Z",
+      "content": "hg7h9u9",
+      "blog": 1,
+      "author": 1,
+      "parent_comment": null
+    }
+  },
+  {
+    "model": "blog.comment",
+    "pk": 2,
+    "fields": {
+      "created_at": "2024-10-25T18:08:41.964Z",
+      "updated_at": "2024-10-25T18:08:41.964Z",
+      "content": "][pjiubgy",
+      "blog": 1,
+      "author": 1,
+      "parent_comment": 1
+    }
+  },
+  {
+    "model": "blog.comment",
+    "pk": 3,
+    "fields": {
+      "created_at": "2024-10-25T18:18:36.739Z",
+      "updated_at": "2024-10-25T18:18:36.739Z",
+      "content": "dtnfjfjg",
+      "blog": 1,
+      "author": 1,
+      "parent_comment": null
+    }
+  },
+  {
+    "model": "blog.comment",
+    "pk": 4,
+    "fields": {
+      "created_at": "2024-10-25T18:19:18.632Z",
+      "updated_at": "2024-10-25T18:19:18.632Z",
+      "content": "dtnfjfjg",
+      "blog": 1,
+      "author": 1,
+      "parent_comment": null
+    }
+  },
+  {
+    "model": "blog.comment",
+    "pk": 5,
+    "fields": {
+      "created_at": "2024-10-25T18:20:01.846Z",
+      "updated_at": "2024-10-25T18:20:01.846Z",
+      "content": "dtnfjfjgfjmfj",
+      "blog": 1,
+      "author": 1,
+      "parent_comment": 2
+    }
+  },
+  {
+    "model": "blog.comment",
+    "pk": 6,
+    "fields": {
+      "created_at": "2024-10-25T18:20:06.851Z",
+      "updated_at": "2024-10-25T18:20:06.851Z",
+      "content": "dtnfjfjgfjmfj",
+      "blog": 1,
+      "author": 1,
+      "parent_comment": null
+    }
+  },
+  {
+    "model": "blog.comment",
+    "pk": 7,
+    "fields": {
+      "created_at": "2024-10-25T18:20:12.795Z",
+      "updated_at": "2024-11-02T09:21:56.569Z",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+      "blog": 1,
+      "author": 1,
+      "parent_comment": 5
+    }
+  },
+  {
+    "model": "core.newsletter",
+    "pk": 1,
+    "fields": {
+      "created_at": "2024-10-24T21:56:00.866Z",
+      "updated_at": "2024-10-24T21:56:00.867Z",
+      "email": "sebnemadil1999@gmail.com"
+    }
+  },
+  {
+    "model": "core.newsletter",
+    "pk": 2,
+    "fields": {
+      "created_at": "2024-11-05T13:24:43.393Z",
+      "updated_at": "2024-11-05T13:24:43.393Z",
+      "email": "sebnemadil188999@gmail.com"
+    }
+  },
+  {
+    "model": "core.newsletter",
+    "pk": 3,
+    "fields": {
+      "created_at": "2024-11-05T15:25:13.552Z",
+      "updated_at": "2024-11-05T15:25:13.552Z",
+      "email": "sebnemadil1999hhhhhhhhg@gmail.comhg"
+    }
+  },
+  {
+    "model": "core.newsletter",
+    "pk": 4,
+    "fields": {
+      "created_at": "2024-11-05T15:37:42.866Z",
+      "updated_at": "2024-11-05T15:37:42.866Z",
+      "email": "sebnemadil1999@gmail.cm"
+    }
+  },
+  {
+    "model": "core.newsletter",
+    "pk": 5,
+    "fields": {
+      "created_at": "2024-11-05T15:38:23.785Z",
+      "updated_at": "2024-11-05T15:38:23.785Z",
+      "email": "sebnemadil1999@gmail.co"
+    }
+  },
+  {
+    "model": "core.newsletter",
+    "pk": 6,
+    "fields": {
+      "created_at": "2024-11-18T14:05:37.078Z",
+      "updated_at": "2024-11-18T14:05:37.078Z",
+      "email": "sebnemadil19@gmail.com"
+    }
+  },
+  {
+    "model": "core.newsletter",
+    "pk": 7,
+    "fields": {
+      "created_at": "2024-11-18T14:42:23.623Z",
+      "updated_at": "2024-11-18T14:42:23.623Z",
+      "email": "sebnemadil19dd99@gmail.com"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 1,
+    "fields": {
+      "created_at": "2024-10-25T16:08:19.913Z",
+      "updated_at": "2024-10-25T16:08:19.913Z",
+      "first_name": "2024-11-02 22:42:31.789103+00:00",
+      "last_name": "2024-11-02 22:42:46.451187+00:00",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "\\jhguyfujkl["
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 2,
+    "fields": {
+      "created_at": "2024-11-02T23:01:16.610Z",
+      "updated_at": "2024-11-02T23:01:16.610Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "f f gfb"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 3,
+    "fields": {
+      "created_at": "2024-11-02T23:02:54.317Z",
+      "updated_at": "2024-11-02T23:02:54.317Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "trgtr"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 4,
+    "fields": {
+      "created_at": "2024-11-02T23:05:19.613Z",
+      "updated_at": "2024-11-02T23:05:19.613Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "rtv"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 5,
+    "fields": {
+      "created_at": "2024-11-02T23:06:09.643Z",
+      "updated_at": "2024-11-02T23:06:09.643Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "4tg"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 6,
+    "fields": {
+      "created_at": "2024-11-04T15:11:57.247Z",
+      "updated_at": "2024-11-04T15:11:57.248Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "erer"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 7,
+    "fields": {
+      "created_at": "2024-11-04T15:47:35.831Z",
+      "updated_at": "2024-11-04T15:47:35.831Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "ewfwe"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 8,
+    "fields": {
+      "created_at": "2024-11-04T15:48:30.946Z",
+      "updated_at": "2024-11-04T15:48:30.946Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "3t34"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 9,
+    "fields": {
+      "created_at": "2024-11-04T15:49:02.350Z",
+      "updated_at": "2024-11-04T15:49:02.351Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "45g45t"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 10,
+    "fields": {
+      "created_at": "2024-11-04T15:49:25.539Z",
+      "updated_at": "2024-11-04T15:49:25.539Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "yhy5h"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 11,
+    "fields": {
+      "created_at": "2024-11-04T16:07:35.050Z",
+      "updated_at": "2024-11-04T16:07:35.050Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "er"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 12,
+    "fields": {
+      "created_at": "2024-11-04T16:09:09.433Z",
+      "updated_at": "2024-11-04T16:09:09.433Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "werew"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 13,
+    "fields": {
+      "created_at": "2024-11-04T16:10:07.738Z",
+      "updated_at": "2024-11-04T16:10:07.739Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "wfewr"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 14,
+    "fields": {
+      "created_at": "2024-11-04T16:11:11.784Z",
+      "updated_at": "2024-11-04T16:11:11.784Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "7072951285",
+      "message": "egeg"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 15,
+    "fields": {
+      "created_at": "2024-11-04T16:12:48.338Z",
+      "updated_at": "2024-11-04T16:12:48.338Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "7072951285",
+      "message": "ererrr"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 16,
+    "fields": {
+      "created_at": "2024-11-04T16:13:24.575Z",
+      "updated_at": "2024-11-04T16:13:24.575Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "7702951285",
+      "message": "wfwef"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 17,
+    "fields": {
+      "created_at": "2024-11-04T16:14:45.344Z",
+      "updated_at": "2024-11-04T16:14:45.344Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "7702951285",
+      "message": "wr"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 18,
+    "fields": {
+      "created_at": "2024-11-04T16:15:26.663Z",
+      "updated_at": "2024-11-04T16:15:26.663Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "7072951285",
+      "message": "yht"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 19,
+    "fields": {
+      "created_at": "2024-11-04T16:20:09.534Z",
+      "updated_at": "2024-11-04T16:20:09.534Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "eg"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 20,
+    "fields": {
+      "created_at": "2024-11-04T16:20:39.645Z",
+      "updated_at": "2024-11-04T16:20:39.645Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "7072951285",
+      "message": "3434"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 21,
+    "fields": {
+      "created_at": "2024-11-04T16:21:26.952Z",
+      "updated_at": "2024-11-04T16:21:26.952Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "7702951285",
+      "message": "erer"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 22,
+    "fields": {
+      "created_at": "2024-11-04T16:22:35.640Z",
+      "updated_at": "2024-11-04T16:22:35.640Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "3g35"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 23,
+    "fields": {
+      "created_at": "2024-11-04T16:23:23.068Z",
+      "updated_at": "2024-11-04T16:23:23.068Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "rggr"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 24,
+    "fields": {
+      "created_at": "2024-11-04T16:26:17.099Z",
+      "updated_at": "2024-11-04T16:26:17.099Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "ege"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 25,
+    "fields": {
+      "created_at": "2024-11-04T16:26:43.124Z",
+      "updated_at": "2024-11-04T16:26:43.124Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "eger"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 26,
+    "fields": {
+      "created_at": "2024-11-04T16:26:58.510Z",
+      "updated_at": "2024-11-04T16:26:58.510Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "34"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 27,
+    "fields": {
+      "created_at": "2024-11-04T16:28:10.474Z",
+      "updated_at": "2024-11-04T16:28:10.475Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "egver"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 28,
+    "fields": {
+      "created_at": "2024-11-04T16:28:38.455Z",
+      "updated_at": "2024-11-04T16:28:38.455Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "3rf3t"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 29,
+    "fields": {
+      "created_at": "2024-11-04T16:55:43.749Z",
+      "updated_at": "2024-11-04T16:55:43.749Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "eco@gmail.com",
+      "phone": "7072951285",
+      "message": "rer"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 30,
+    "fields": {
+      "created_at": "2024-11-04T17:21:02.440Z",
+      "updated_at": "2024-11-04T17:21:02.440Z",
+      "first_name": "Şebnem",
+      "last_name": "Bayramlı",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "7702951285",
+      "message": "dwc"
+    }
+  },
+  {
+    "model": "core.contact",
+    "pk": 31,
+    "fields": {
+      "created_at": "2024-11-18T14:06:27.235Z",
+      "updated_at": "2024-11-18T14:06:27.235Z",
+      "first_name": "gfbn",
+      "last_name": "fgnhgf",
+      "email": "sebnemadil1999@gmail.com",
+      "phone": "0772951285",
+      "message": "ggf"
+    }
+  },
+  {
+    "model": "core.faq",
+    "pk": 1,
+    "fields": {
+      "created_at": "2024-11-17T17:00:36.654Z",
+      "updated_at": "2024-11-17T17:00:36.654Z",
+      "question": "What is an academic medical center?",
+      "response": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan."
+    }
+  },
+  {
+    "model": "core.faq",
+    "pk": 2,
+    "fields": {
+      "created_at": "2024-11-17T17:00:59.853Z",
+      "updated_at": "2024-11-17T17:00:59.854Z",
+      "question": "My physician is a faculty member—what does that mean?",
+      "response": "lorem ipsum"
+    }
+  },
+  {
+    "model": "core.sitesettings",
+    "pk": 1,
+    "fields": {
+      "created_at": "2024-11-04T17:42:04.418Z",
+      "updated_at": "2024-11-17T14:30:00.580Z",
+      "site_name": "Mireldar Babayev",
+      "logo": "logos/logo.png",
+      "favicon": "favicons/blog-img-full2.jpg",
+      "location": "Baku",
+      "number": "+994507655577",
+      "email": "medenin@info.com",
+      "work_hours": "09-00-18.00",
+      "map_url": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6079.058167769159!2d49.9602182!3d40.374965!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x403064a59f86bceb%3A0xdcb214533519ce69!2zR3VuYXNobGksIEJha8O8!5e0!3m2!1str!2saz!4v1730746685169!5m2!1str!2saz",
+      "facebook": null,
+      "youtube": "https://www.youtube.com/@dwespanol",
+      "instagram": null,
+      "twitter": null,
+      "linkedin": "https://www.youtube.com/@dwespanol",
+      "tiktok": "https://www.youtube.com/@dwespanol",
+      "footer_description": "Lorem ipsum dolor sit amet, consect\r\netur adipisicing elit, sed do eius mod\r\ntempor incididunt ut labore et dolore\r\nmagna aliqua. Ut enim ad minim"
+    }
+  },
+  {
+    "model": "core.statisticalindicator",
+    "pk": 1,
+    "fields": {
+      "created_at": "2024-11-04T19:27:26.659Z",
+      "updated_at": "2024-11-17T15:14:01.839Z",
+      "png": "statistics/service-thumbnail03_GhORkpq.png",
+      "value": 106,
+      "name": "Award winner"
+    }
+  },
+  {
+    "model": "core.statisticalindicator",
+    "pk": 2,
+    "fields": {
+      "created_at": "2024-11-04T19:32:47.945Z",
+      "updated_at": "2024-11-17T15:13:10.718Z",
+      "png": "statistics/service-thumbnail03.png",
+      "value": 315,
+      "name": "Hospital Rooms"
+    }
+  },
+  {
+    "model": "core.statisticalindicator",
+    "pk": 3,
+    "fields": {
+      "created_at": "2024-11-04T19:33:52.890Z",
+      "updated_at": "2024-11-17T15:12:18.684Z",
+      "png": "statistics/service-thumbnail02.png",
+      "value": 215,
+      "name": "Expert Doctors"
+    }
+  },
+  {
+    "model": "core.statisticalindicator",
+    "pk": 4,
+    "fields": {
+      "created_at": "2024-11-04T19:34:37.355Z",
+      "updated_at": "2024-11-17T15:11:34.880Z",
+      "png": "statistics/service-thumbnail01.png",
+      "value": 699,
+      "name": "Happy Patients"
+    }
+  },
+  {
+    "model": "core.aboutus",
+    "pk": 1,
+    "fields": {
+      "created_at": "2024-11-05T12:07:46.512Z",
+      "updated_at": "2024-11-17T09:46:28.080Z",
+      "image": "about/about-img.jpg",
+      "video_id": "MKG_6BqnhpI",
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n\r\n<p>Ut enim ad minim veniam, quis nostrud exercitation. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n\r\n<p>Ut enim ad minim veniam, quis nostrud exercitation.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n\r\n<p>Ut enim ad minim veniam, quis nostrud exercitation. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua.</p>\r\n\r\n<p>Ut enim ad minim veniam, quis nostrud exercitation.</p>",
+      "mission": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+      "vision": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua.\r\n\r\nUt enim ad minim veniam, quis nostrud exercitation. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua.\r\n\r\nUt enim ad minim veniam, quis nostrud exercitation.",
+      "value": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua.\r\n\r\nUt enim ad minim veniam, quis nostrud exercitation. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua.\r\n\r\nUt enim ad minim veniam, quis nostrud exercitation."
+    }
+  },
+  {
+    "model": "core.whoweare",
+    "pk": 1,
+    "fields": {
+      "created_at": "2024-11-05T12:58:31.074Z",
+      "updated_at": "2024-11-18T14:04:59.908Z",
+      "title": "We Have Advanced Technologies",
+      "video_link": "https://www.youtube.com/watch?v=wqfyuKiBn9s",
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>"
+    }
+  },
+  {
+    "model": "core.testimoinal",
+    "pk": 1,
+    "fields": {
+      "created_at": "2024-11-05T20:00:02.071Z",
+      "updated_at": "2024-11-18T14:32:40.094Z",
+      "client_image": "testimoinals/doctors-img1.jpg",
+      "client_full_name": "Sebnem adil",
+      "client_profession": "pasient",
+      "client_comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniafff. Ut enim ad minim veniafffetur adipisicing elit, sed do eius mod tempor incididunt ut labore et doloreg",
+      "star": 1
+    }
+  },
+  {
+    "model": "core.testimoinal",
+    "pk": 2,
+    "fields": {
+      "created_at": "2024-11-05T20:00:51.175Z",
+      "updated_at": "2024-11-18T14:32:31.147Z",
+      "client_image": "testimoinals/doctors-img1_EsvAJ0x.jpg",
+      "client_full_name": "Mehran Babayev",
+      "client_profession": "pasient",
+      "client_comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniafff. Ut enim ad minim veniafffetur adipisicing elit, sed do eius mod tempor incididunt ut labore et doloreg",
+      "star": 4
+    }
+  },
+  {
+    "model": "core.testimoinal",
+    "pk": 3,
+    "fields": {
+      "created_at": "2024-11-05T20:14:08.876Z",
+      "updated_at": "2024-11-18T14:32:35.287Z",
+      "client_image": "testimoinals/doctors-img1_rBU5KNl.jpg",
+      "client_full_name": "orxan babayev",
+      "client_profession": "pasient",
+      "client_comment": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniafff. Ut enim ad minim veniafffetur adipisicing elit, sed do eius mod tempor incididunt ut labore et doloreg",
+      "star": 3
+    }
+  },
+  {
+    "model": "core.banner",
+    "pk": 1,
+    "fields": {
+      "created_at": "2024-11-16T17:29:51.966Z",
+      "updated_at": "2024-11-17T14:53:25.546Z",
+      "title": "What Makes Us Better, Makes You Better. -2",
+      "subtitle": "We are here for you-2",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu lacus ex.\r\n                                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos\r\n                                        ipsum dolor sit amet-2",
+      "png": "banner/hero-doctor-1_3xpOtW5.png",
+      "video_id": "MKG_6BqnhpI"
+    }
+  },
+  {
+    "model": "core.banner",
+    "pk": 2,
+    "fields": {
+      "created_at": "2024-11-16T22:35:00.200Z",
+      "updated_at": "2024-11-17T14:52:19.611Z",
+      "title": "What Makes Us Better, Makes You Better.",
+      "subtitle": "We are here for you",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu lacus ex.\r\n                                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos\r\n                                        ipsum dolor sit amet.",
+      "png": "banner/hero-doctor-1_rqtgA4e.png",
+      "video_id": "MKG_6BqnhpI"
+    }
+  },
+  {
+    "model": "service.service",
+    "pk": 1,
+    "fields": {
+      "created_at": "2024-11-09T12:27:35.307Z",
+      "updated_at": "2024-11-17T15:16:40.988Z",
+      "name": "Dental Care",
+      "short_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore",
+      "png": "services/service-icon1.png",
+      "image": "services/images/download.jpeg",
+      "title": "Professional Dental Care Services",
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit</p>\r\n\r\n<p>Voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione volupt atem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem&nbsp;</p>\r\n\r\n<h4>Teeth Fillings</h4>\r\n\r\n<p>Excepteur sint occaecat cupidatat</p>\r\n\r\n<hr />\r\n<h3>Medenin Dental Features</h3>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi</p>\r\n\r\n<ul>\r\n\t<li>\r\n\t<h6>Suspendisse facilisis sollicitudin sapien</h6>\r\n\t</li>\r\n\t<li>\r\n\t<h6>Praesent metus risus, tristique at</h6>\r\n\t</li>\r\n\t<li>\r\n\t<h6>Sed commodo placerat eros id luctus</h6>\r\n\t</li>\r\n\t<li>\r\n\t<h6>Suspendisse eget tortor eget</h6>\r\n\t</li>\r\n</ul>\r\n\r\n<ul>\r\n\t<li>\r\n\t<h6>Nemo enim ipsam voluptatem voluptas.</h6>\r\n\t</li>\r\n\t<li>\r\n\t<h6>Mauris bibendum felis id nisl facilisis</h6>\r\n\t</li>\r\n\t<li>\r\n\t<h6>Donec condimentum rutrum auctor</h6>\r\n\t</li>\r\n\t<li>\r\n\t<h6>Cras a justo et dolor luctus rhoncus eu</h6>\r\n\t</li>\r\n</ul>",
+      "background_color": "green",
+      "slug": "professional-dental-care-services"
+    }
+  },
+  {
+    "model": "service.service",
+    "pk": 2,
+    "fields": {
+      "created_at": "2024-11-09T12:39:39.976Z",
+      "updated_at": "2024-11-09T12:52:15.942Z",
+      "name": "Eye Care",
+      "short_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore",
+      "png": "services/service-icon2.png",
+      "image": "2024-11-09 18:09:13.662551+00:00",
+      "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore",
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore</p>",
+      "background_color": "yellow",
+      "slug": "lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eius-mod-tempor-incididunt-ut-labore"
+    }
+  },
+  {
+    "model": "service.service",
+    "pk": 3,
+    "fields": {
+      "created_at": "2024-11-17T10:00:33.407Z",
+      "updated_at": "2024-11-17T15:17:57.758Z",
+      "name": "Allergic issue",
+      "short_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore",
+      "png": "services/service-icon3.png",
+      "image": "services/images/bg-home-form.jpg",
+      "title": "sacdec",
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore</p>",
+      "background_color": "blue",
+      "slug": "sacdec"
+    }
+  },
+  {
+    "model": "service.service",
+    "pk": 4,
+    "fields": {
+      "created_at": "2024-11-17T10:04:29.921Z",
+      "updated_at": "2024-11-17T15:18:53.881Z",
+      "name": "Eye Care -2",
+      "short_description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore",
+      "png": "services/service-icon3_vRD9Q9h.png",
+      "image": "services/images/team11.jpg",
+      "title": "Lorem ipsum dolor sit amet, consectetur adi-2pisicing elit, sed do eius mod tempor incididunt ut labore",
+      "content": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eius mod tempor incididunt ut labore</p>",
+      "background_color": "green",
+      "slug": "2r"
+    }
+  },
+  {
+    "model": "service.download",
+    "pk": 1,
+    "fields": {
+      "created_at": "2024-11-09T13:27:03.230Z",
+      "updated_at": "2024-11-09T16:49:23.040Z",
+      "title": "Our Brouchure",
+      "type": "docx",
+      "file": "services/downloads/TaskFries_Ana_səhifə.docx"
+    }
+  },
+  {
+    "model": "service.download",
+    "pk": 2,
+    "fields": {
+      "created_at": "2024-11-09T17:48:48.051Z",
+      "updated_at": "2024-11-09T17:48:48.051Z",
+      "title": "aegbdfff",
+      "type": "docx",
+      "file": "services/downloads/Profil_digər_səhifələr_1.docx"
+    }
+  },
+  {
+    "model": "service.whychooseus",
+    "pk": 1,
+    "fields": {
+      "created_at": "2024-11-09T18:35:44.800Z",
+      "updated_at": "2024-11-17T15:23:41.444Z",
+      "title": "Fastest Growing Clinic",
+      "short_description": "Excepteur sint occaecat cupidatat non proident, su",
+      "png": "why_choose_us/icon1.png"
+    }
+  },
+  {
+    "model": "service.whychooseus",
+    "pk": 2,
+    "fields": {
+      "created_at": "2024-11-17T15:24:25.190Z",
+      "updated_at": "2024-11-17T15:24:25.190Z",
+      "title": "Free Ambulance Servcice",
+      "short_description": "Ut enim ad minim veniam, quis nostrud exercitati",
+      "png": "why_choose_us/icon2.png"
+    }
+  },
+  {
+    "model": "service.whychooseus",
+    "pk": 3,
+    "fields": {
+      "created_at": "2024-11-17T15:26:18.850Z",
+      "updated_at": "2024-11-17T15:26:18.850Z",
+      "title": "24/7 Working Time",
+      "short_description": "Duis aute irure dolor in repr ehenderit in voluptate.",
+      "png": "why_choose_us/icon3.png"
+    }
+  },
+  {
+    "model": "service.whychooseus",
+    "pk": 4,
+    "fields": {
+      "created_at": "2024-11-17T15:27:16.655Z",
+      "updated_at": "2024-11-17T15:27:16.655Z",
+      "title": "5 Star Customer Rating",
+      "short_description": "Excepteur sint occaecat cupidatat non proident,",
+      "png": "why_choose_us/icon4.png"
+    }
+  },
+  {
+    "model": "appointment.timetable",
+    "pk": 6,
+    "fields": {
+      "created_at": "2024-11-21T17:56:01.403Z",
+      "updated_at": "2024-11-21T17:56:01.403Z",
+      "start_time": "2024-11-21T18:55:41Z",
+      "end_time": "2024-11-22T17:55:44Z"
+    }
+  },
+  {
+    "model": "appointment.timetable",
+    "pk": 7,
+    "fields": {
+      "created_at": "2024-11-21T18:19:33.184Z",
+      "updated_at": "2024-11-21T18:19:33.184Z",
+      "start_time": "2024-11-22T18:18:56Z",
+      "end_time": "2024-11-22T18:19:58Z"
+    }
+  },
+  {
+    "model": "appointment.appointment",
+    "pk": 8,
+    "fields": {
+      "created_at": "2024-11-21T22:59:59.752Z",
+      "updated_at": "2024-11-21T22:59:59.752Z",
+      "full_name": "45tg45t",
+      "phone": "0772951285",
+      "location": "Baku",
+      "message": "45t45t",
+      "available_time": 7
+    }
+  }
+]

@@ -4587,3 +4587,55 @@ SERVICE DETAIL
 .hidden {
   display: none;
 }
+
+/* Dropdown Styling */
+.dropdown-menu {
+    min-width: 260px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+.dropdown-menu .dropdown-divider {
+    margin: 0.75rem 0;
+}
+
+.dropdown-menu .user-info {
+    padding: 1rem 1.25rem;
+    text-align: left;
+}
+
+.dropdown-menu .user-info strong {
+    font-size: 1rem;
+    color: #343a40;
+}
+
+.dropdown-menu .user-info .text-muted {
+    font-size: 0.875rem;
+}
+
+.dropdown-menu .guest-info {
+    padding: 1rem 1.25rem;
+    text-align: left;
+}
+
+.nav-icon-wrap .nav-link {
+    padding: 0.5rem;
+}
+
+.user-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}

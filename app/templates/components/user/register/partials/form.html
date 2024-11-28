@@ -1,0 +1,62 @@
+{% load static %}
+<div class="register-block">
+    <div class="row">
+        <div class="col-md-12 col-lg-6">
+            <div class="register-info">
+                <h2>Welcome to {{ settings.site_name }}!</h2>
+                <p>
+                    Join us and be part of our growing community. By registering, you gain access to exclusive features, updates, and opportunities to connect with like-minded individuals.
+                </p>
+                <img src="{{ about.image.url }}" class="img-fluid w-100" alt="{{ settings.site_name }}" />
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-6">
+            <div class="register-form">
+                <h2>Create Your Account</h2>
+                <h4 id="successRegisterMessage" class="alert alert-success d-none" role="alert">
+                    You successfully registered.
+                </h4>
+                <form method="POST" id="registerForm">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="first_name">First name</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter your first name" required>
+                        <div class="error-message" id="first_name_error" class="text-danger"></div> <!-- Placeholder for error -->
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Last name</label>
+                        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter your last name" required>
+                        <div class="error-message" id="last_name_error" class="text-danger"></div> <!-- Placeholder for error -->
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Image</label>
+                        <input type="file" class="form-control" id="image" name="image" placeholder="Enter your image" >
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                        <div class="error-message" id="email_error" class="text-danger"></div> <!-- Placeholder for error -->
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                        <div class="error-message" id="password_error" class="text-danger"></div> <!-- Placeholder for error -->
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirm-password" name="password_confirm" placeholder="Confirm your password" required>
+                        <div class="error-message" id="password_confirm_error" class="text-danger"></div> <!-- Placeholder for error -->
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Register</button>
+                </form>
+                <p class="text-center mt-3">
+                    Already have an account? <a href="{% url 'login' %}">Login here</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block js %}
+<script src="{% static 'js/api/register.js' %}"></script>
+{% endblock js %}

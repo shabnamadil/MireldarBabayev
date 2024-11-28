@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block subheader %}
+{% include 'components/user/login/partials/subheader.html' %}
+{% endblock subheader %}
+
+{% block content%}
+<section class="register-section space-mt">
+    <div class="container container-custom">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Login -->
+                {% include 'components/user/login/partials/form.html' %}
+                <!--//End Login -->
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content%}

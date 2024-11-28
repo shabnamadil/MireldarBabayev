@@ -1,35 +1,48 @@
-<ul class="nav-icon-wrap">
+<ul class="nav-icon-wrap d-flex align-items-center">
+    <!-- Social Media Icons -->
     {% if settings.facebook %}
     <li class="nav-item">
-        <a class="nav-link" target="_blank" href="{{settings.facebook}}"><i class="fab fa-facebook-f"></i></a>
+        <a class="nav-link" target="_blank" href="{{ settings.facebook }}" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
     </li>
     {% endif %}
     {% if settings.twitter %}
     <li class="nav-item">
-        <a class="nav-link" target="_blank" href="{{settings.twitter}}"><i class="fab fa-twitter"></i></a>
+        <a class="nav-link" target="_blank" href="{{ settings.twitter }}" aria-label="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
     </li>
     {% endif %}
     {% if settings.instagram %}
     <li class="nav-item">
-        <a class="nav-link" target="_blank" href="{{settings.instagram}}"><i class="fab fa-instagram"></i></a>
+        <a class="nav-link" target="_blank" href="{{ settings.instagram }}" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
     </li>
     {% endif %}
     {% if settings.linkedin %}
     <li class="nav-item">
-        <a class="nav-link" target="_blank" href="{{settings.linkedin}}"><i class="fab fa-linkedin"></i></a>
+        <a class="nav-link" target="_blank" href="{{ settings.linkedin }}" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
     </li>
     {% endif %}
     {% if settings.youtube %}
     <li class="nav-item">
-        <a class="nav-link" target="_blank" href="{{settings.youtube}}"><i class="fab fa-youtube"></i></a>
+        <a class="nav-link" target="_blank" href="{{ settings.youtube }}" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
     </li>
     {% endif %}
     {% if settings.tiktok %}
     <li class="nav-item">
-        <a class="nav-link" target="_blank" href="{{settings.tiktok}}"><i class="fab fa-tiktok"></i></a>
+        <a class="nav-link" target="_blank" href="{{ settings.tiktok }}" aria-label="TikTok">
+            <i class="fab fa-tiktok"></i>
+        </a>
     </li>
     {% endif %}
-    <li class="nav-item cart-seperate">
-        <a class="nav-link" href="#"><i class="fas fa-user"></i> </a>
-    </li>
+
+    <!-- User Dropdown -->
+    {% include 'components/navbar/partials/user-dropdown.html' %}
 </ul>
