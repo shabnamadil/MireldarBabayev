@@ -59,10 +59,11 @@ class BlogAdmin(admin.ModelAdmin):
         super().save_model(request, obj, form, change)
 
     def display_blog_author(self, obj):
-        url = reverse("admin:auth_user_change", args=[obj.author.id])
+        author_name = obj.author.get_full_name() if obj.author.get_full_name() else 'Admin'
+        url = reverse("admin:user_customuser_change", args=[obj.author.id])
         link = '<a style="color: red;" href="%s">%s</a>' % (
             url, 
-            obj.author.get_full_name()
+            author_name
         )
         return mark_safe(link)
     display_blog_author.short_description = 'Müəllif'
@@ -118,7 +119,7 @@ class CommentAdmin(admin.ModelAdmin):
     display_blog.short_description = 'Bloq'
 
     def display_comment_author(self, obj):
-        url = reverse("admin:auth_user_change", args=[obj.author.id])
+        url = reverse("admin:user_customuser_change", args=[obj.author.id])
         link = '<a style="color: red;" href="%s">%s</a>' % (
             url, 
             obj.author.get_full_name()

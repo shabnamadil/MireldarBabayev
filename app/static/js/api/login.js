@@ -22,7 +22,7 @@ loginForm.addEventListener('submit', async function(e) {
             // Store the token in a cookie
             setCookie('token', data.access, 1);
         } else {
-            displayErrors();
+            displayLoginErrors();
             return;
         }
     } catch (error) {
@@ -34,7 +34,7 @@ loginForm.addEventListener('submit', async function(e) {
     this.submit(); // Proceed with normal form submission after token-based login
 });
 
-function displayErrors() {
+function displayLoginErrors() {
     alertLoginMessage.classList.remove('d-none');
     let errorContent = 'Incorrect email or password';
     alertLoginMessage.innerText = errorContent;

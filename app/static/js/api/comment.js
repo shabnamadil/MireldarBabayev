@@ -47,10 +47,11 @@ function appendComments(comments) {
 
 // Create comment HTML
 function createCommentHTML(comment) {
+    const isAuthor = comment.is_author;
     return `
         <div class="media comment" id="comment-${comment.id}">
             <div>
-                <img src="/static/images/user.png" 
+                <img src="${comment.author_photo}" 
                     alt="${comment.author_full_name || 'Anonymous'}" 
                     class="comment-author-img">
             </div>
@@ -62,14 +63,18 @@ function createCommentHTML(comment) {
                     <p class="comment-date">${comment.created_date}</p>
                 </div>
                 <p class="comment-content">${comment.content}</p>
-                <div class="comment-actions">
-                    <button class="edit" onclick="editComment(${comment.id})">
-                        <i class="fas fa-edit"></i> Edit
-                    </button>
-                    <button class="delete" onclick="deleteComment(${comment.id})">
-                        <i class="fas fa-trash-alt"></i> Delete
-                    </button>
-                </div>
+                ${
+                    isAuthor
+                        ? `<div class="comment-actions">
+                               <button class="edit" onclick="editComment(${comment.id})">
+                                   <i class="fas fa-edit"></i> Edit
+                               </button>
+                               <button class="delete" onclick="deleteComment(${comment.id})">
+                                   <i class="fas fa-trash-alt"></i> Delete
+                               </button>
+                           </div>`
+                        : ''
+                }
             </div>
         </div>
     `;

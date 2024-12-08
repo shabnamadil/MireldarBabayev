@@ -26,7 +26,7 @@ async function register() {
 
         } else {
             const errorData = await response.json();
-            displayErrors(errorData);
+            displayRegisterErrors(errorData);
         }
     } catch (error) {
         console.error('An error occurred:', error);
@@ -38,7 +38,7 @@ registerForm.addEventListener('submit', function(e) {
     register();
 });
 
-function displayErrors(errors) {
+function displayRegisterErrors(errors) {
 
     // Loop through each field and its corresponding error messages
     for (const [fieldName, messages] of Object.entries(errors)) {

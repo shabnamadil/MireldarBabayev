@@ -1,7 +1,7 @@
 const APPOINTMENT_URL = `${location.origin}/api/appointment/`;
 const appointmentForm = document.getElementById('appointmentPostForm');
-const successMessage = document.getElementById('successMessage');
-const alertMessage = document.getElementById('alertMessage');
+const successAppointmentMessage = document.getElementById('successAppointmentMessage');
+const alertAppointmentMessage = document.getElementById('alertAppointmentMessage');
 
 async function appointment() {
     const csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
@@ -18,14 +18,14 @@ async function appointment() {
 
         if (response.ok) {
             appointmentForm.reset();
-            displaySuccessMessage();
+            displayAppointmentSuccessMessage();
         } else {
             const errorData = await response.json();
-            displayErrors(errorData);
+            displayAppointmentErrors(errorData);
         }
     } catch (error) {
         console.error('An error occurred:', error);
-        displayErrors({ error: 'An unexpected error occurred. Please try again.' });
+        displayAppointmentErrors({ error: 'An unexpected error occurred. Please try again.' });
     }
 }
 
@@ -34,14 +34,14 @@ appointmentForm.addEventListener('submit', function(e) {
     appointment();
 });
 
-function displayErrors(errors) {
-    alertMessage.classList.remove('d-none');
+function displayAppointmentErrors(errors) {
+    alertAppointmentMessage.classList.remove('d-none');
     let errorContent = '';
 
     for (const [fieldName, messages] of Object.entries(errors)) {
         const translatedMessages = Array.isArray(messages) 
-            ? messages.map(translateMessage).join('<br>')
-            : translateMessage(messages);
+            ? messages.map(translateAppointmentMessage).join('<br>')
+            : translateAppointmentMessage(messages);
         
         errorContent += `${translatedMessages}<br>`;
         
@@ -54,22 +54,22 @@ function displayErrors(errors) {
         }
     }
 
-    alertMessage.innerHTML = errorContent;
+    alertAppointmentMessage.innerHTML = errorContent;
 
     setTimeout(() => {
-        alertMessage.classList.add('d-none');
+        alertAppointmentMessage.classList.add('d-none');
     }, 10000); // 10 seconds
 }
 
-function displaySuccessMessage() {
-    successMessage.classList.remove('d-none');
+function displayAppointmentSuccessMessage() {
+    successAppointmentMessage.classList.remove('d-none');
 
     setTimeout(() => {
-        successMessage.classList.add('d-none');
+        successAppointmentMessage.classList.add('d-none');
     }, 10000); // 10 seconds
 }
 
-function translateMessage(message) {
+function translateAppointmentMessage(message) {
     const translations = {
         "This field may not be blank.": "Bu sahə tələb edilir.",
     };

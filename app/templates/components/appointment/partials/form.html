@@ -2,10 +2,10 @@
 
 <form method="post" id="appointmentPostForm">
     {% csrf_token %}
-    <h4 id="successMessage" class="alert alert-success d-none" role="alert">
+    <h4 id="successAppointmentMessage" class="alert alert-success d-none" role="alert">
         Rezervasiya tamamlandı. Tezliklə sizinlə əlaqə saxlanılacaq.
     </h4>
-    <h4 id="alertMessage" class="alert alert-danger d-none" role="alert"></h4>
+    <h4 id="alertAppointmentMessage" class="alert alert-danger d-none" role="alert"></h4>
     <div class="row">
         <div class="col-md-6">
             <div class="form-group form-group-cutom">

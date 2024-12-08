@@ -15,20 +15,31 @@ class TagListSerializer(serializers.ModelSerializer):
 
 
 class CommentListSerializer(serializers.ModelSerializer):
-    author_full_name = serializers.CharField(
-        source='author.get_full_name', 
-        default='Admin User'
-    )
+    author_full_name = serializers.SerializerMethodField()
+    author_photo = serializers.SerializerMethodField()
+    is_author = serializers.SerializerMethodField()
 
     class Meta:
         model = Comment
-        fields = ('id', 'content', 'author_full_name', 'created_date')
+        fields = ('id', 'content', 'author_full_name', 'author_photo', 'is_author', 'created_date')
+
+    def get_author_full_name(self, obj):
+        return obj.author.get_full_name() if obj.author and obj.author.get_full_name() else 'Admin User'
+    
+    def get_author_photo(self, obj):
+        return obj.author.image.url if obj.author and obj.author.image else '/static/images/user.png'
+    
+    def get_is_author(self, obj):
+        request = self.context.get('request', None)
+        return request.user == obj.author if request else False
 
 
 class CommentPostSerializer(serializers.ModelSerializer):
     author_full_name = serializers.SerializerMethodField(read_only=True)
     author = serializers.PrimaryKeyRelatedField(read_only=True)
     created_date = serializers.ReadOnlyField()
+    author_photo = serializers.SerializerMethodField()
+    is_author = serializers.SerializerMethodField()
 
     class Meta:
         model = Comment
@@ -38,7 +49,8 @@ class CommentPostSerializer(serializers.ModelSerializer):
             'author',
             'author_full_name',
             'blog',
-            'created_date'
+            'created_date',
+            'author_photo', 'is_author',
         )
 
     def validate(self, attrs):
@@ -50,6 +62,13 @@ class CommentPostSerializer(serializers.ModelSerializer):
 
     def get_author_full_name(self, obj):
         return obj.author.get_full_name() if obj.author else 'Anonymous'
+    
+    def get_author_photo(self, obj):
+        return obj.author.image.url if obj.author and obj.author.image else '/static/images/user.png'
+    
+    def get_is_author(self, obj):
+        request = self.context.get('request', None)
+        return request.user == obj.author if request else False
 
     
 

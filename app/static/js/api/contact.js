@@ -1,7 +1,7 @@
 const CONTACT_URL = `${location.origin}/api/contact/`;
 const contactForm = document.getElementById('contactPostForm');
-const successMessage = document.getElementById('successMessage');
-const alertMessage = document.getElementById('alertMessage');
+const successContactMessage = document.getElementById('successContactMessage');
+const alertContactMessage = document.getElementById('alertContactMessage');
 
 async function contact() {
     const csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
@@ -18,14 +18,14 @@ async function contact() {
 
         if (response.ok) {
             contactForm.reset();
-            displaySuccessMessage();
+            displayContactSuccessMessage();
         } else {
             const errorData = await response.json();
-            displayErrors(errorData);
+            displayContactErrors(errorData);
         }
     } catch (error) {
         console.error('An error occurred:', error);
-        displayErrors({ error: 'An unexpected error occurred. Please try again.' });
+        displayContactErrors({ error: 'An unexpected error occurred. Please try again.' });
     }
 }
 
@@ -34,14 +34,14 @@ contactForm.addEventListener('submit', function(e) {
     contact();
 });
 
-function displayErrors(errors) {
-    alertMessage.classList.remove('d-none');
+function displayContactErrors(errors) {
+    alertContactMessage.classList.remove('d-none');
     let errorContent = '';
 
     for (const [fieldName, messages] of Object.entries(errors)) {
         const translatedMessages = Array.isArray(messages) 
-            ? messages.map(translateMessage).join('<br>')
-            : translateMessage(messages);
+            ? messages.map(translateContactMessage).join('<br>')
+            : translateContactMessage(messages);
         
         errorContent += `${translatedMessages}<br>`;
         
@@ -54,22 +54,22 @@ function displayErrors(errors) {
         }
     }
 
-    alertMessage.innerHTML = errorContent;
+    alertContactMessage.innerHTML = errorContent;
 
     setTimeout(() => {
-        alertMessage.classList.add('d-none');
+        alertContactMessage.classList.add('d-none');
     }, 10000); // 10 seconds
 }
 
-function displaySuccessMessage() {
-    successMessage.classList.remove('d-none');
+function displayContactSuccessMessage() {
+    successContactMessage.classList.remove('d-none');
 
     setTimeout(() => {
-        successMessage.classList.add('d-none');
+        successContactMessage.classList.add('d-none');
     }, 10000); // 10 seconds
 }
 
-function translateMessage(message) {
+function translateContactMessage(message) {
     const translations = {
         "This field may not be blank.": "Bu sahə tələb edilir.",
     };

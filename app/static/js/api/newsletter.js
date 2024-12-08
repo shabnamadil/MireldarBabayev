@@ -19,14 +19,16 @@ async function newsletter() {
 
         if (response.ok) {
             newsletterForm.reset();
-            displaySuccessMessage();
+            displayNewsletterSuccessMessage();
         } else {
             const errorData = await response.json();
-            displayErrors(errorData);
+            console.log(errorData);
+            
+            displayNewsletterErrors(errorData);
         }
     } catch (error) {
         console.error('An error occurred:', error);
-        displayErrors({ error: 'An unexpected error occurred. Please try again.' });
+        displayNewsletterErrors({ error: 'An unexpected error occurred. Please try again.' });
     }
 }
 
@@ -35,7 +37,7 @@ newsletterSubmitBtn.addEventListener('click', function(e) {
     newsletter();
 });
 
-function displaySuccessMessage() {
+function displayNewsletterSuccessMessage() {
     successSubscribeMessage.classList.remove('d-none');
 
     setTimeout(() => {
@@ -43,14 +45,14 @@ function displaySuccessMessage() {
     }, 10000); // 10 seconds
 }
 
-function displayErrors(errors) {
+function displayNewsletterErrors(errors) {
     alertSubscribeMessage.classList.remove('d-none');
     let errorContent = '';
 
     for (const [fieldName, messages] of Object.entries(errors)) {
         const translatedMessages = Array.isArray(messages) 
-            ? messages.map(translateMessage).join('<br>')
-            : translateMessage(messages);
+            ? messages.map(translateSubscribeMessage).join('<br>')
+            : translateSubscribeMessage(messages);
         
         errorContent += `${messages}<br>`;
         
@@ -70,7 +72,7 @@ function displayErrors(errors) {
     }, 10000); // 10 seconds
 }
 
-function translateMessage(message) {
+function translateSubscribeMessage(message) {
     const translations = {
         "This field may not be blank.": "Bu sahə tələb edilir.",
     };
