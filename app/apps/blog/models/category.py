@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.text import slugify
 
 from utils.models.base_model import BaseModel
+from utils.helpers.slugify import custom_slugify
 
 
 class Category(BaseModel):
@@ -26,5 +27,5 @@ class Category(BaseModel):
     
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug=slugify(self.name)
+            self.slug=custom_slugify(self.name)
         super().save(*args, **kwargs)

@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from ckeditor_uploader.fields import RichTextUploadingField
 
 from utils.models.base_model import BaseModel
+from utils.helpers.slugify import custom_slugify
 
 
 class Service(BaseModel):
@@ -66,7 +67,7 @@ class Service(BaseModel):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug=slugify(self.title)
+            self.slug=custom_slugify(self.title)
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):

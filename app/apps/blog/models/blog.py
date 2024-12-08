@@ -8,6 +8,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 from utils.models.base_model import BaseModel
 from utils.manager.published_blog import PublishedBlogManager
+from utils.helpers.slugify import custom_slugify
 from .category import Category
 from .ip import IP
 from .tag import Tag
@@ -105,7 +106,7 @@ class Blog(BaseModel):
     
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug=slugify(self.title)
+            self.slug=custom_slugify(self.title)
         if self.status == self.Status.PUBLISHED and self.published_at is None:
             self.published_at = timezone.now()
         super().save(*args, **kwargs)
