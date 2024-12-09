@@ -131,6 +131,13 @@ class CommentAdmin(admin.ModelAdmin):
         return obj.truncated_comment
     get_comment.short_description = 'Comment'
 
+    def has_change_permission(self, request, obj=None):
+        if obj is None:
+            return True
+        if obj.author != request.user:
+            return False
+        return super().has_change_permission(request, obj)
+
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):

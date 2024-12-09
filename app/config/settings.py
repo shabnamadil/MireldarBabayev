@@ -175,3 +175,11 @@ SIMPLE_JWT = {
     "TOKEN_OBTAIN_SERIALIZER": "apps.user.api.serializers.CustomTokenObtainPairSerializer",
     'REFRESH_TOKEN_LIFETIME': timedelta(minutes=2),
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'sebnemadil1999@gmail.com'
+EMAIL_HOST_PASSWORD = 'fdjs mydk diva ixsv'
+DEFAULT_FROM_EMAIL =  EMAIL_HOST_USER
