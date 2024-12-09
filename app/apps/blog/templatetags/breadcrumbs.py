@@ -8,7 +8,6 @@ def breadcrumbs(context):
     path = request.path.strip('/').split('/')
     breadcrumbs = []
     url = ""
-    print(url)
     for part in path:
         url += f"/{part}"
         # Capitalize each part and add to breadcrumbs

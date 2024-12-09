@@ -7,6 +7,8 @@ from django.views.generic import (
     DetailView
 )
 
+from datetime import datetime
+
 from .models import (
     Blog,
     IP,
@@ -53,5 +55,9 @@ class BlogDetailView(DetailView):
         cx['tags'] = Tag.objects.all()
         cx['previous_blog'] = Blog.objects.filter(id=previous_blog_id).first() if previous_blog_id else None
         cx['next_blog'] = Blog.objects.filter(id=next_blog_id).first()
+        cx['formatted_date'] = {
+                'day': obj.published_at.strftime('%d'),
+                'month': obj.published_at.strftime('%b').upper(),
+            }
         return cx
                                                    

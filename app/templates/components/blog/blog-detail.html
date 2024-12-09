@@ -20,8 +20,8 @@
                 <div class="blog-list blog-deatil">
                     <img src="{{blog.image.url}}" class="img-fluid" alt="{{blog.title}}">
                     <div class="blog-date">
-                        <h3>05</h3>
-                        <span>JUN</span>
+                        <h3>{{formatted_date.day}}</h3>
+                        <span>{{formatted_date.month}}</span>
                     </div>
                     <div class="blog-text-wrap border-0 pl-0 pr-0">
                         <div class="blog-comment-top">
@@ -34,6 +34,7 @@
                         <h5>{{blog.short_description}}</h5>
                         <p>{{blog.content|safe}}</p>
                         <div class="tag-block">
+                            {% if blog.tag.count > 0 %}
                             <div class="row">
                                 <div class="col-md-12 col-lg-6">
                                     <div class="tags">
@@ -77,6 +78,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
