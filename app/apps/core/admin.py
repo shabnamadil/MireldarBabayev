@@ -1,5 +1,7 @@
 from django.contrib import admin
 
+from modeltranslation.admin import TranslationAdmin
+
 from .models import (
     Newsletter,
     Contact,
@@ -24,7 +26,7 @@ class NewsletterAdmin(admin.ModelAdmin):
 
 
 @admin.register(Faq)
-class FaqAdmin(admin.ModelAdmin):
+class FaqAdmin(TranslationAdmin):
     list_filter = ('created_at', )
     list_per_page = 20
 
@@ -42,7 +44,7 @@ class ContactAdmin(admin.ModelAdmin):
         return f'{obj.first_name} {obj.last_name}'
 
 
-class SingletonModelAdmin(admin.ModelAdmin):
+class SingletonModelAdmin(TranslationAdmin):
     def has_add_permission(self, request):
         """Prevent adding more than one instance."""
         return not self.model.objects.exists()
@@ -59,7 +61,7 @@ class SiteSettingsAdmin(SingletonModelAdmin):
 
 
 @admin.register(StatisticalIndicator)
-class StatisticsAdmin(admin.ModelAdmin):
+class StatisticsAdmin(TranslationAdmin):
     list_display = ('name', 'value')
     list_filter = ('created_at', )
     list_per_page = 20
@@ -67,7 +69,20 @@ class StatisticsAdmin(admin.ModelAdmin):
     search_fields = ('name', 'value')
 
 
-admin.site.register(AboutUs)
-admin.site.register(WhoWeAre)
-admin.site.register(Testimoinal)
-admin.site.register(Banner)
+@admin.register(AboutUs)
+class AboutUsAdmin(TranslationAdmin):
+    pass
+
+
+@admin.register(WhoWeAre)
+class WhoWeAreAdmin(TranslationAdmin):
+    pass
+
+
+@admin.register(Testimoinal)
+class TestimonialAdmin(TranslationAdmin):
+    pass
+
+@admin.register(Banner)
+class BannerAdmin(TranslationAdmin):
+    pass

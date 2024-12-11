@@ -35,6 +35,12 @@ AUTH_USER_MODEL = 'user.CustomUser'
 
 INSTALLED_APPS = [
 
+    # THIRD PARTY APPS
+    'ckeditor',
+    'rest_framework',
+    'rosetta',
+    'modeltranslation',
+
     # DJANGO SPECIFIC APPS
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,11 +48,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # THIRD PARTY APPS
-    'ckeditor',
-    'rest_framework',
-    'rosetta',
 
     # CUSTOM APPS
     'apps.blog',
@@ -133,6 +134,9 @@ LANGUAGES = [
 LOCALE_PATHS = [
     BASE_DIR / 'locale',
 ]
+
+# MODELTRANSLATION_DEFAULT_LANGUAGE = 'az'
+MODELTRANSLATION_LANGUAGES = ('az', 'en', 'ru')
 
 TIME_ZONE = 'Asia/Baku'
 

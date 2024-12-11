@@ -3,6 +3,8 @@ from django.urls import reverse
 from django.utils.safestring import mark_safe
 from django.utils.html import format_html
 
+from modeltranslation.admin import TranslationAdmin
+
 from .models import (
     Category,
     Tag,
@@ -26,7 +28,7 @@ def make_published(self, request, queryset):
 
 
 @admin.register(Blog)
-class BlogAdmin(admin.ModelAdmin):
+class BlogAdmin(TranslationAdmin):
     list_display = (
         'title', 'display_blog_img',
         'display_blog_author', 'view_count',

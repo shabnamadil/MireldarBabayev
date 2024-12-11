@@ -1,5 +1,7 @@
 from django.contrib import admin
 
+from modeltranslation.admin import TranslationAdmin
+
 from .models import (
     Service,
     Download,
@@ -10,13 +12,13 @@ from .forms import DownloadBaseForm
 
 
 @admin.register(Service)
-class ServiceAdmin(admin.ModelAdmin):
+class ServiceAdmin(TranslationAdmin):
     list_filter = ('created_at', )
     readonly_fields = ('slug', )
 
 
 @admin.register(Download)
-class DownloadAdmin(admin.ModelAdmin):
+class DownloadAdmin(TranslationAdmin):
     list_display = ('title', 'type', 'get_file_size')
     list_filter = ('created_at', 'type')
     form = DownloadBaseForm
@@ -26,5 +28,11 @@ class DownloadAdmin(admin.ModelAdmin):
     get_file_size.short_description = 'File size'
 
 
-admin.site.register(WhyChooseUs)
-admin.site.register(Coworker)
+@admin.register(WhyChooseUs)
+class WhyChooseUsAdmin(TranslationAdmin):
+    pass
+
+
+@admin.register(Coworker)
+class CoworkerAdmin(TranslationAdmin):
+    pass
