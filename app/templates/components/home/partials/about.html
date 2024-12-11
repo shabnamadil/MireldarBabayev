@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <div class="row">
     <div class="col-md-7">
@@ -15,8 +16,15 @@
     </div>
     <div class="col-md-12 col-lg-5">
         <div class="video-play-text">
+            {% get_current_language as CURRENT_LANGUAGE %}
+
+            {% if CURRENT_LANGUAGE == 'az' %}
+            <h2>{{settings.site_name}} kimdir?</h2>
+            {% elif CURRENT_LANGUAGE == 'en' %}
             <h2>Short Story About {{settings.site_name}}</h2>
-            <p> {{about.content|safe|truncatechars:300}} <a href="{% url 'about' %}">Readmore</a>
+            {% endif %}
+            
+            <p> {{about.content|safe|truncatechars:300}} <a href="{% url 'about' %}">{% trans 'Read more' %}</a>
             </p>
             <div class="row">
                 {% for indicator, color in paired_statistics %}

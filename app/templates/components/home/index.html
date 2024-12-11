@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 <!--==================== Banner Section ====================-->
@@ -33,8 +34,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="heading-style1">
-                    <span>Our Services</span>
-                    <h2>High Quality Services for You</h2>
+                    <span>{% trans 'Our Services' %}</span>
+                    <h2>{% trans 'High Quality Services for You' %}</h2>
                 </div>
             </div>
         </div>
@@ -46,7 +47,7 @@
                         <img src="{{service.png.url}}" alt="{{service.name}}">
                         <h3>{{service.name}}</h3>
                         <p>{{service.short_description|truncatechars:150}}</p>
-                        <a href="{{service.get_absolute_url}}" class="btn btn-dark">READ MORE</a>
+                        <a href="{{service.get_absolute_url}}" class="btn btn-dark">{% trans 'READ MORE' %}</a>
                     </div>
                     {% endfor %}
                 </div>
@@ -55,8 +56,8 @@
         <div class="row">
             <div class="col-md-12">
                 <p class="text-center service-help_link">
-                    Contact us for better help and services.
-                    <a href="{% url 'contact' %}">Let’s get started</a>
+                    {% trans 'Contact us for better help and services.' %}
+                    <a href="{% url 'contact' %}">{% trans 'Let’s get started' %}</a>
                 </p>
             </div>
         </div>
@@ -70,8 +71,8 @@
             <div class="col-md-12 col-lg-6">
                 <div class="appointment-form_wrap">
                     <div class="heading-style1">
-                        <span>Online Booking</span>
-                        <h2>Make an Appointment</h2>
+                        <span>{% trans 'Online Booking' %}</span>
+                        <h2>{% trans 'Make an Appointment' %}</h2>
                     </div>
                     {% include 'components/appointment/partials/form.html' %}
                 </div>
@@ -79,10 +80,9 @@
             <div class="col-md-12 col-lg-6">
                 <div class="why-choose_block">
                     <div class="heading-style1 mb-0">
-                        <span>Why Us</span>
-                        <h2>Why Choose Us</h2>
-                        <p>We’re committed to a patient-centered approach, ensuring you feel supported and cared for
-                            every step of the way.</p>
+                        <span>{% trans 'Why Us' %}</span>
+                        <h2>{% trans 'Why Choose Us' %}</h2>
+                        <p>{% trans "We’re committed to a patient-centered approach, ensuring you feel supported and cared for every step of the way." %}</p>
                         <hr>
                     </div>
                     {% for item in why_choose_us %}
@@ -114,8 +114,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="heading-style1">
-                    <span>Blog ----</span>
-                    <h2>Latest News & Events</h2>
+                    <span>{% trans 'Blog' %} ----</span>
+                    <h2>{% trans 'Latest News & Events' %}</h2>
                 </div>
             </div>
         </div>

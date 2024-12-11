@@ -1,22 +1,23 @@
 {% load static %}
+{% load i18n %}
 
 <form method="post" id="appointmentPostForm">
     {% csrf_token %}
     <h4 id="successAppointmentMessage" class="alert alert-success d-none" role="alert">
-        Rezervasiya tamamlandı. Tezliklə sizinlə əlaqə saxlanılacaq.
+        {% trans 'Reservation completed. You will be contacted soon.' %}
     </h4>
     <h4 id="alertAppointmentMessage" class="alert alert-danger d-none" role="alert"></h4>
     <div class="row">
         <div class="col-md-6">
             <div class="form-group form-group-cutom">
-                <input type="text" class="form-control form-custom" required name="full_name" placeholder="Enter Your Name, Surname">
+                <input type="text" class="form-control form-custom" required name="full_name" placeholder="{% trans 'Enter Your Name, Surname' %}">
                 <i class="far fa-user"></i>
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group form-group-cutom">
                 <select class="form-control form-custom" required name="available_time">
-                    <option value="" disabled selected>Enter Available Time</option>
+                    <option value="" disabled selected>{% trans 'Enter Available Time' %}</option>
                     {% for time in available_times %}
                     <option value="{{time.id}}">{{time}}</option>
                     {% endfor %}
@@ -28,13 +29,13 @@
     <div class="row">
         <div class="col-md-6">
             <div class="form-group form-group-cutom">
-                <input type="text" name="phone" required class="form-control form-custom" placeholder="Enter phone number">
+                <input type="text" name="phone" required class="form-control form-custom" placeholder="{% trans 'Enter phone number' %}">
                 <i class="fas fa-phone"></i>
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group form-group-cutom">
-                <input type="text" class="form-control form-custom" name="location" placeholder="Enter location">
+                <input type="text" class="form-control form-custom" name="location" placeholder="{% trans 'Enter location' %}">
                 <i class="fas fa-map-marker-alt"></i>
             </div>
         </div>
@@ -42,14 +43,14 @@
     <div class="row">
         <div class="col-md-12">
             <div class="form-group form-group-cutom">
-                <label for="exampleFormControlTextarea1">Your Message</label>
+                <label for="exampleFormControlTextarea1">{% trans 'Your Message' %}</label>
                 <textarea class="form-control form-cutom" name="message" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-            <button type="submit" class="btn btn-success">BOOK NOW</button>
+            <button type="submit" class="btn btn-success">{% trans 'BOOK NOW' %}</button>
         </div>
     </div>
 </form>

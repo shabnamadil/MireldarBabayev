@@ -1,33 +1,34 @@
 {% load static %}
+{% load i18n %}
 
 <section class="space">
     <div class="container container-custom">
         <div class="row">
             <div class="col-md-4">
                 <div class="mission-wrap">
-                    <h3>Our Mission</h3>
+                    <h3>{% trans 'Our Mission' %}</h3>
                     <p class="missionContent">{{ about.mission|truncatechars:125 }}</p>
                     <p class="fullMissionContent" style="display: none;">{{ about.mission }}</p>
-                    <a href="#" class="readMoreLink">Read More</a>
-                    <a href="#" class="showLessLink" style="display: none;">Show Less</a>                                                        
+                    <a href="#" class="readMoreLink">{% trans 'Read More' %}</a>
+                    <a href="#" class="showLessLink" style="display: none;">{% trans 'Show Less' %}</a>                                                        
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="mission-wrap">
-                    <h3>Our Vision</h3>
+                    <h3>{% trans 'Our Vision' %}</h3>
                     <p class="missionContent">{{ about.vision|truncatechars:125 }}</p>
                     <p class="fullMissionContent" style="display: none;">{{ about.vision }}</p>
-                    <a href="#" class="readMoreLink">Read More</a>
-                    <a href="#" class="showLessLink" style="display: none;">Show Less</a>  
+                    <a href="#" class="readMoreLink">{% trans 'Read More' %}</a>
+                    <a href="#" class="showLessLink" style="display: none;">{% trans 'Show Less' %}</a>  
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="mission-wrap">
-                    <h3>Our Values</h3>
+                    <h3>{% trans 'Our Values' %}</h3>
                     <p class="missionContent">{{ about.value|truncatechars:125 }}</p>
                     <p class="fullMissionContent" style="display: none;">{{ about.value }}</p>
-                    <a href="#" class="readMoreLink">Read More</a>
-                    <a href="#" class="showLessLink" style="display: none;">Show Less</a>  
+                    <a href="#" class="readMoreLink">{% trans 'Read More' %}</a>
+                    <a href="#" class="showLessLink" style="display: none;">{% trans 'Show Less' %}</a>  
                 </div>
             </div>
         </div>

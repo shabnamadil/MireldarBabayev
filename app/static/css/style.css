@@ -4639,3 +4639,41 @@ SERVICE DETAIL
   height: 50px;
   border-radius: 50%;
 }
+
+.language-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.language-dropdown select {
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  appearance: none;  /* Removes default dropdown arrow */
+  -webkit-appearance: none; /* For Safari */
+  -moz-appearance: none; /* For Firefox */
+  border: 1px solid #ddd;  /* Subtle border */
+  transition: all 0.3s ease-in-out;  /* Smooth transition for hover and focus */
+}
+
+.language-dropdown select:hover {
+  border-color: #4CAF50;  /* Change border color on hover */
+}
+
+.language-dropdown select:focus {
+  outline: none;
+  border-color: #4CAF50; /* Highlight the border on focus */
+}
+
+.language-dropdown select option {
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.language-dropdown select option:hover {
+  background-color: #e9e9e9; /* Highlight option on hover */
+}
+

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-
 {% load static %}
+{% load i18n %}
 
 {% block meta %}
 <meta property="og:title" content="{{ blog.title }}">
@@ -10,8 +10,13 @@
 
 {% endblock meta %}
 
-{% block content %}
+{% block subheader %}
+<!-- Sub header -->
+{% include 'components/blog/partials/subheader-detail.html' %}
+<!--//End Sub header -->
+{% endblock subheader %}
 
+{% block content %}
 <section class="space">
     <div class="container container-custom">
         <div class="row">
@@ -38,17 +43,17 @@
                             <div class="row">
                                 <div class="col-md-12 col-lg-6">
                                     <div class="tags">
-                                        <span>tags:</span>
+                                        <span>{% trans 'tags' %}:</span>
                                         <ul>
                                             {% for tag in blog.tag.all %}
-                                            {% include 'components/blog/tag.html' with tag=tag %}
+                                            {% include 'components/blog/partials/tag.html' with tag=tag %}
                                             {% endfor %}
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="col-md-12 col-lg-6">
                                     <div class="share">
-                                        <span>Share:</span>
+                                        <span>{% trans 'Share' %}:</span>
                                         <ul>
                                             <li>
                                                 <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}"
@@ -105,14 +110,14 @@
                             {% if previous_blog %}
                             <div class="tags">
                                 <a href="{% url 'blog-detail' previous_blog.slug %}" class="blog-arrows-left"><i
-                                        class="fas fa-long-arrow-alt-left"></i>Pre</a>
+                                        class="fas fa-long-arrow-alt-left"></i>{% trans 'Pre' %}</a>
                             </div>
                             {% endif %}
                         </div>
                         <div class="col-md-6">
                             {% if next_blog %}
                             <div class="share">
-                                <a href="{% url 'blog-detail' next_blog.slug %}" class="blog-arrows-right">Next<i
+                                <a href="{% url 'blog-detail' next_blog.slug %}" class="blog-arrows-right">{% trans 'Next' %}<i
                                         class="fas fa-long-arrow-alt-right"></i></a>
                             </div>
                             {% endif %}
@@ -120,9 +125,9 @@
                     </div>
                 </div>
                 {% if request.user.is_authenticated %}
-                {% include 'components/blog/comment-form.html' %}
+                {% include 'components/blog/partials/comment-form.html' %}
                 {% endif %}
-                {% include 'components/blog/delete-modal.html' %}
+                {% include 'components/blog/modals/delete-modal.html' %}
                 <div class="comment-wrap" id="comments">
 
                 </div>
@@ -130,13 +135,13 @@
             <div class="col-md-4">
                 <div class="blog-sidebar">
                     <div class="blog-sidebar_heading">
-                        <h4>Search</h4>
+                        <h4>{% trans 'Search' %}</h4>
                     </div>
                     <div class="blog-sidebar_wrap">
                         <div class="blog-sidebar_content blog-sidebar_search">
                             <form action="#">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Search here">
+                                    <input type="text" class="form-control" placeholder="{% trans 'Search here' %}">
                                     <i class="fas fa-search"></i>
                                 </div>
                             </form>
@@ -145,42 +150,42 @@
                 </div>
                 <div class="blog-sidebar">
                     <div class="blog-sidebar_heading">
-                        <h4>Popular Posts</h4>
+                        <h4>{% trans 'Popular Posts' %}</h4>
                     </div>
                     <div class="blog-sidebar_wrap">
                         {% for blog in popular_blogs %}
-                        {% include 'components/blog/popular-blogs.html' %}
+                        {% include 'components/blog/partials/popular-blogs.html' %}
                         {% endfor %}
                     </div>
                 </div>
                 <div class="blog-sidebar">
                     <div class="blog-sidebar_heading">
-                        <h4>Categories</h4>
+                        <h4>{% trans 'Categories' %}</h4>
                     </div>
                     <div class="blog-sidebar_wrap">
                         <ul class="blog-sidebar_category">
-                            {% include 'components/blog/category.html' %}
+                            {% include 'components/blog/partials/category.html' %}
                         </ul>
                     </div>
                 </div>
                 <div class="blog-sidebar">
                     <div class="blog-sidebar_heading">
-                        <h4>Tags</h4>
+                        <h4>{% trans 'Tags' %}</h4>
                     </div>
                     <div class="blog-sidebar_wrap">
                         <ul class="blog-sidebar_tags">
                             {% for tag in tags %}
-                            {% include 'components/blog/tag.html' with tag=tag %}
+                            {% include 'components/blog/partials/tag.html' with tag=tag %}
                             {% endfor %}
                         </ul>
                     </div>
                 </div>
                 <div class="blog-sidebar">
                     <div class="blog-sidebar_heading">
-                        <h4>Follow Us</h4>
+                        <h4>{% trans 'Follow Us' %}</h4>
                     </div>
                     <div class="blog-sidebar_wrap">
-                        {% include 'components/blog/icons.html' %}
+                        {% include 'components/blog/partials/icons.html' %}
                     </div>
                 </div>
             </div>

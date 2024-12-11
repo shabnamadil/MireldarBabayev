@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <div class="modal fade" id="modal-{{ download.id }}" tabindex="-1" role="dialog" aria-labelledby="modalLabel-{{ download.id }}" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -8,12 +10,12 @@
                 </button>
             </div>
             <div class="modal-body">
-                File Size: {{ download.file_size_formatted }}
+                {% trans 'File Size' %}: {{ download.file_size_formatted }}
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans 'Close' %}</button>
                 <!-- Download button with direct file link -->
-                <a href="{{ download.file.url }}" download class="btn btn-primary">Download</a>
+                <a href="{{ download.file.url }}" download class="btn btn-primary">{% trans 'Download' %}</a>
             </div>
         </div>
     </div>

@@ -1,0 +1,504 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-11 20:41+0400\n"
+"PO-Revision-Date: 2024-12-11 20:42+0400\n"
+"Last-Translator:   <admin@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.10.1\n"
+
+#: apps/user/api/serializers.py:36
+msgid "This field is required."
+msgstr "Bu sahə boş ola bilməz"
+
+#: apps/user/api/serializers.py:41
+msgid "Passwords do not match."
+msgstr "Şifrələr uyğun gəlmir"
+
+#: templates/components/about/partials/about.html:17
+msgid "PLAY VIDEO"
+msgstr "Oynat"
+
+#: templates/components/about/partials/mission.html:9
+msgid "Our Mission"
+msgstr "Missiyamız"
+
+#: templates/components/about/partials/mission.html:12
+#: templates/components/about/partials/mission.html:21
+#: templates/components/about/partials/mission.html:30
+msgid "Read More"
+msgstr "Daha çox"
+
+#: templates/components/about/partials/mission.html:13
+#: templates/components/about/partials/mission.html:22
+#: templates/components/about/partials/mission.html:31
+msgid "Show Less"
+msgstr "Daha az"
+
+#: templates/components/about/partials/mission.html:18
+msgid "Our Vision"
+msgstr "Görüşlərimiz"
+
+#: templates/components/about/partials/mission.html:27
+msgid "Our Values"
+msgstr "Dəyərlərimiz"
+
+#: templates/components/about/partials/newsletter.html:5
+msgid "Subscribe to our Newsletter"
+msgstr "Bülletenimizə abunə ol"
+
+#: templates/components/about/partials/newsletter.html:9
+msgid "Enter Your Email"
+msgstr "Email ünvanınızı daxil edin"
+
+#: templates/components/about/partials/newsletter.html:13
+msgid "You subscribed successfuly!!!"
+msgstr "Müvəffəqiyyətlə abunə oldunuz!!!"
+
+#: templates/components/about/partials/subheader.html:8
+msgid "ABOUT US"
+msgstr "HAQQIMIZDA"
+
+#: templates/components/about/partials/subheader.html:9
+msgid "Your Health, Our Priority"
+msgstr "Sizin sağlamlığınız, bizim öncəliyimizdir"
+
+#: templates/components/about/partials/subheader.html:10
+#: templates/components/blog/partials/subheader-detail.html:10
+#: templates/components/blog/partials/subheader.html:10
+#: templates/components/contact/partials/subheader.html:10
+#: templates/components/footer/partials/quick-links.html:5
+#: templates/components/navbar/navbar.html:12
+#: templates/components/service/partials/subheader-detail.html:10
+#: templates/components/service/partials/subheader.html:10
+msgid "Home"
+msgstr "Ana səhifə"
+
+#: templates/components/about/partials/subheader.html:10
+#: templates/components/footer/partials/quick-links.html:11
+msgid "About Us"
+msgstr "Haqqımızda"
+
+#: templates/components/about/partials/subheader.html:15
+#, fuzzy
+#| msgid "About Us"
+msgid "About us"
+msgstr "Haqqımızda"
+
+#: templates/components/about/partials/testimonial.html:8
+msgid "Testimonials"
+msgstr "Müştəri rəyləri"
+
+#: templates/components/about/partials/testimonial.html:9
+msgid "What Our Clients Say"
+msgstr "Müştərilərimiz nə deyir"
+
+#: templates/components/about/partials/who-we-are.html:9
+msgid "Who we are"
+msgstr "Biz kimik"
+
+#: templates/components/appointment/partials/form.html:7
+msgid "Reservation completed. You will be contacted soon."
+msgstr "Rezervasiya tamamlandı. Tezliklə sizinlə əlaqə saxlanılacaq."
+
+#: templates/components/appointment/partials/form.html:13
+msgid "Enter Your Name, Surname"
+msgstr "Ad, Soyad"
+
+#: templates/components/appointment/partials/form.html:20
+msgid "Enter Available Time"
+msgstr "Uyğun tarixi seçin"
+
+#: templates/components/appointment/partials/form.html:32
+msgid "Enter phone number"
+msgstr "Əlaqə nömrəsi"
+
+#: templates/components/appointment/partials/form.html:38
+msgid "Enter location"
+msgstr "Ünvan"
+
+#: templates/components/appointment/partials/form.html:46
+#: templates/components/contact/partials/contact-form.html:48
+msgid "Your Message"
+msgstr "Mesaj"
+
+#: templates/components/appointment/partials/form.html:53
+msgid "BOOK NOW"
+msgstr "Növbə götür"
+
+#: templates/components/blog/blog-detail.html:46
+msgid "tags"
+msgstr "teqlər"
+
+#: templates/components/blog/blog-detail.html:56
+msgid "Share"
+msgstr "Paylaş"
+
+#: templates/components/blog/blog-detail.html:113
+#: templates/components/blog/blog-list.html:26
+msgid "Pre"
+msgstr "Əvvəlki"
+
+#: templates/components/blog/blog-detail.html:120
+#: templates/components/blog/blog-list.html:31
+msgid "Next"
+msgstr "Sonrakı"
+
+#: templates/components/blog/blog-detail.html:138
+#: templates/components/blog/blog-list.html:41
+msgid "Search"
+msgstr "Axtar"
+
+#: templates/components/blog/blog-detail.html:144
+#: templates/components/blog/blog-list.html:47
+msgid "Search here"
+msgstr "Açar sözü yazın"
+
+#: templates/components/blog/blog-detail.html:153
+#: templates/components/blog/blog-list.html:56
+msgid "Popular Posts"
+msgstr "Ən çox oxunan postlar"
+
+#: templates/components/blog/blog-detail.html:163
+#: templates/components/blog/blog-list.html:66
+msgid "Categories"
+msgstr "Kateqoriyalar"
+
+#: templates/components/blog/blog-detail.html:173
+#: templates/components/blog/blog-list.html:76
+msgid "Tags"
+msgstr "Teqlər"
+
+#: templates/components/blog/blog-detail.html:185
+#: templates/components/blog/blog-list.html:88
+msgid "Follow Us"
+msgstr "Bizi izləyin"
+
+#: templates/components/blog/blog-list.html:14
+msgid "Clear"
+msgstr "Təmizlə"
+
+#: templates/components/blog/modals/delete-modal.html:5
+msgid "Are you sure you want to delete this comment?"
+msgstr "Bu rəyi silməkdən əminsən?"
+
+#: templates/components/blog/modals/delete-modal.html:7
+msgid "Delete"
+msgstr "Sil"
+
+#: templates/components/blog/modals/delete-modal.html:8
+msgid "Cancel"
+msgstr "Ləğv et"
+
+#: templates/components/blog/partials/comment-form.html:7
+msgid "Write your message here"
+msgstr "Mesajınız"
+
+#: templates/components/blog/partials/subheader.html:8
+msgid "BLOGS"
+msgstr "BLOQLAR"
+
+#: templates/components/blog/partials/subheader.html:9
+msgid ""
+"Explore insights, tips, and stories on our blog page, crafted to inspire and"
+" inform."
+msgstr "Bir-birindən faydalı bloqlar səni gözləyir."
+
+#: templates/components/blog/partials/subheader.html:10
+#: templates/components/footer/partials/quick-links.html:14
+msgid "Blogs"
+msgstr "Bloqlar"
+
+#: templates/components/blog/partials/subheader.html:15
+#: templates/components/home/index.html:117
+msgid "Blog"
+msgstr "Bloq"
+
+#: templates/components/contact/partials/contact-form.html:4
+msgid "Get in Touch with Us"
+msgstr "Bizimlə əlaqə"
+
+#: templates/components/contact/partials/contact-form.html:6
+msgid "Your message was sent. We`ll get in touch with you soon."
+msgstr "Mesajınız göndərildi. Tezliklə sizinlə əlaqə saxlanılacaq. "
+
+#: templates/components/contact/partials/contact-form.html:16
+msgid "First Name"
+msgstr "Adınız"
+
+#: templates/components/contact/partials/contact-form.html:23
+msgid "Last Name"
+msgstr "Soyadınız"
+
+#: templates/components/contact/partials/contact-form.html:33
+msgid "Your Email"
+msgstr "Email ünvanınız"
+
+#: templates/components/contact/partials/contact-form.html:40
+msgid "Your Phone Number"
+msgstr "Əlaqə nömrəniz"
+
+#: templates/components/contact/partials/contact-form.html:51
+msgid "SEND"
+msgstr "GÖNDƏR"
+
+#: templates/components/contact/partials/contact-info.html:4
+msgid "Have Questions? Reach Out to Us Anytime!"
+msgstr "Sualın var? İstənilən vaxt yaz!"
+
+#: templates/components/contact/partials/contact-info.html:7
+msgid "Contact Information"
+msgstr "Əlaqə"
+
+#: templates/components/contact/partials/contact-info.html:10
+#: templates/components/service/partials/contact.html:9
+msgid "Phone"
+msgstr "Telefon"
+
+#: templates/components/contact/partials/contact-info.html:17
+#: templates/components/service/partials/contact.html:16
+msgid "Email"
+msgstr "Email"
+
+#: templates/components/contact/partials/contact-info.html:25
+msgid "Head Office"
+msgstr "Baş ofis"
+
+#: templates/components/contact/partials/contact-info.html:28
+#: templates/components/service/partials/contact.html:23
+msgid "Location"
+msgstr "Ünvan"
+
+#: templates/components/contact/partials/subheader.html:8
+msgid "CONTACT"
+msgstr "ƏLAQƏ"
+
+#: templates/components/contact/partials/subheader.html:9
+msgid "We're Here to Help – Get in Touch Today!"
+msgstr "Sizə Kömək Etmək Üçün Buradayıq – Elə indi yazın!"
+
+#: templates/components/contact/partials/subheader.html:10
+#: templates/components/contact/partials/subheader.html:15
+#: templates/components/navbar/navbar.html:32
+msgid "Contact"
+msgstr "Əlaqə"
+
+#: templates/components/core/statistics.html:18
+#: templates/components/footer/partials/quick-links.html:17
+#: templates/components/service/partials/contact.html:4
+msgid "Contact Us"
+msgstr "Bizimlə əlaqə"
+
+#: templates/components/footer/footer.html:23
+msgid "Quick Links"
+msgstr "Qısa yollar"
+
+#: templates/components/footer/footer.html:28
+#: templates/components/home/index.html:37
+#: templates/components/service/services.html:18
+msgid "Our Services"
+msgstr "Xidmətlərimiz"
+
+#: templates/components/footer/footer.html:40
+msgid "Appointment"
+msgstr "Qəbula yazıl"
+
+#: templates/components/footer/footer.html:41
+msgid "FAQ"
+msgstr "Tez-tez verilən suallar"
+
+#: templates/components/footer/footer.html:42
+msgid "Newsletter"
+msgstr "Xəbər bülleteni"
+
+#: templates/components/footer/footer.html:52
+msgid "Allrights Reserved"
+msgstr "Bütün haqlar qorunur"
+
+#: templates/components/footer/partials/quick-links.html:8
+#: templates/components/navbar/navbar.html:17
+#: templates/components/service/partials/subheader.html:10
+#: templates/components/service/partials/subheader.html:15
+msgid "Services"
+msgstr "Xidmətlər"
+
+#: templates/components/header/top-bar.html:18
+msgid "Mail us"
+msgstr "Bizə yazın"
+
+#: templates/components/header/top-bar.html:25
+#: templates/components/home/partials/emergency.html:9
+msgid "Call anytime"
+msgstr "Zəng et"
+
+#: templates/components/header/top-bar.html:30
+#: templates/components/home/partials/banner.html:14
+msgid "Make Appointment"
+msgstr "Qəbula yazıl"
+
+#: templates/components/home/index.html:38
+#: templates/components/service/services.html:19
+msgid "High Quality Services for You"
+msgstr "Yüksək keyfiyyətli xidmət"
+
+#: templates/components/home/index.html:50
+#: templates/components/service/partials/service-item.html:9
+msgid "READ MORE"
+msgstr "Daha çox"
+
+#: templates/components/home/index.html:59
+msgid "Contact us for better help and services."
+msgstr "Köməyə ehtiyacın var?"
+
+#: templates/components/home/index.html:60
+msgid "Let’s get started"
+msgstr "Bizə yaz"
+
+#: templates/components/home/index.html:74
+#: templates/components/service/services.html:38
+msgid "Online Booking"
+msgstr "Onlayn növbə"
+
+#: templates/components/home/index.html:75
+#: templates/components/service/services.html:39
+msgid "Make an Appointment"
+msgstr "Qəbula yazıl"
+
+#: templates/components/home/index.html:83
+#: templates/components/service/services.html:47
+msgid "Why Us"
+msgstr "Nə üçün biz"
+
+#: templates/components/home/index.html:84
+#: templates/components/service/services.html:48
+msgid "Why Choose Us"
+msgstr "Nə üçün biz"
+
+#: templates/components/home/index.html:85
+#: templates/components/service/services.html:49
+msgid ""
+"We’re committed to a patient-centered approach, ensuring you feel supported "
+"and cared for every step of the way."
+msgstr "Sizə hər addımda dəstək və qayğı göstərmək üçün buradayıq."
+
+#: templates/components/home/index.html:118
+msgid "Latest News & Events"
+msgstr "Ən son bloqlar"
+
+#: templates/components/home/partials/about.html:27
+msgid "Read more"
+msgstr "Daha çox"
+
+#: templates/components/home/partials/emergency.html:4
+msgid "Emergency? Contact Us Now."
+msgstr "Təcili köməyə ehtiyacınız var?"
+
+#: templates/components/home/partials/emergency.html:5
+msgid ""
+"Facing an emergency? Don’t wait—reach out to us immediately for prompt "
+"assistance. Our team is available 24/7 to provide support and address your "
+"urgent needs. Call or message us now to ensure you get the help you need "
+"when it matters most."
+msgstr ""
+"Təcili bir vəziyyətlə üzləşirsiniz? Gözləməyə ehtiyac yoxdur. Dərhal bizimlə"
+" dərhal əlaqə saxlayın. Komandamız 24/7 xidmətinizdədir. Ehtiyaclarınızı "
+"həll etmək bizim işimiizdir.  "
+
+#: templates/components/home/partials/emergency.html:16
+msgid "Email us"
+msgstr "Bizə yazın"
+
+#: templates/components/home/partials/service-icon.html:8
+msgid "Specialised Service"
+msgstr "Xüsusi xidmət"
+
+#: templates/components/home/partials/service-icon.html:9
+msgid "Designed Just for You"
+msgstr "Yalnız sənin üçün"
+
+#: templates/components/home/partials/service-icon.html:17
+msgid "24/7 Advanced Care"
+msgstr "24/7 dəstək"
+
+#: templates/components/home/partials/service-icon.html:18
+msgid "Anytime You Need It"
+msgstr "İstədiyiniz Zaman"
+
+#: templates/components/home/partials/service-icon.html:26
+msgid "Get Result Online"
+msgstr "Onlyan nəticə"
+
+#: templates/components/home/partials/service-icon.html:27
+msgid "Just a Click Away"
+msgstr "Bir addım uzağında"
+
+#: templates/components/navbar/navbar.html:22
+msgid "About"
+msgstr "Haqqımızda"
+
+#: templates/components/navbar/navbar.html:27
+msgid "Bloq"
+msgstr "Bloq"
+
+#: templates/components/navbar/partials/user-dropdown.html:30
+msgid "Logout"
+msgstr "Çıxış"
+
+#: templates/components/navbar/partials/user-dropdown.html:36
+msgid "Welcome, Guest!"
+msgstr "Xoş gəlmisiniz!"
+
+#: templates/components/navbar/partials/user-dropdown.html:37
+msgid "Please login or register to access your account."
+msgstr "Hesabınıza daxil olmaq və ya qeydiyyatdan keçmək üçün seçim edin."
+
+#: templates/components/navbar/partials/user-dropdown.html:42
+msgid "Login"
+msgstr "Daxil ol"
+
+#: templates/components/navbar/partials/user-dropdown.html:45
+msgid "Register"
+msgstr "Qeydiyyat"
+
+#: templates/components/service/modals/download-modal.html:13
+msgid "File Size"
+msgstr "Fayl ölçüsü"
+
+#: templates/components/service/modals/download-modal.html:16
+msgid "Close"
+msgstr "Bağla"
+
+#: templates/components/service/modals/download-modal.html:18
+msgid "Download"
+msgstr "Yüklə"
+
+#: templates/components/service/partials/service-detail.html:24
+msgid "Files"
+msgstr "Fayllar"
+
+#: templates/components/service/partials/service-detail.html:30
+msgid "Latest Blogs"
+msgstr "Ən Son Bloqlar"
+
+#: templates/components/service/partials/subheader.html:8
+msgid "OUR SERVICES"
+msgstr "XİDMƏTLƏRİMİZ"
+
+#: templates/components/service/partials/subheader.html:9
+msgid "Customized Solutions for Every Need"
+msgstr "Hər bir ehtiyaca uyğun fərdi həll yolları"
+
+#~ msgid "Short Story About"
+#~ msgstr "Qısa məlumat"

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block subheader %}
 <!-- Sub header -->
@@ -14,8 +15,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="sub-title_center">
-                    <span>---- Our Services ----</span>
-                    <h2>High Quality Services for You</h2>
+                    <span>---- {% trans 'Our Services' %} ----</span>
+                    <h2>{% trans 'High Quality Services for You' %}</h2>
                 </div>
             </div>
         </div>
@@ -34,8 +35,8 @@
             <div class="col-md-12 col-lg-6">
                 <div class="appointment-form_wrap">
                     <div class="heading-style1">
-                        <span>Online Booking</span>
-                        <h2>Make an Appointment</h2>
+                        <span>{% trans 'Online Booking' %}</span>
+                        <h2>{% trans 'Make an Appointment' %}</h2>
                     </div>
                     {% include 'components/appointment/partials/form.html' %}
                 </div>
@@ -43,9 +44,9 @@
             <div class="col-md-12 col-lg-6">
                 <div class="why-choose_block">
                     <div class="heading-style1 mb-0">
-                        <span>Why Us</span>
-                        <h2>Why Choose Us</h2>
-                        <p>We’re committed to a patient-centered approach, ensuring you feel supported and cared for every step of the way.</p>
+                        <span>{% trans 'Why Us' %}</span>
+                        <h2>{% trans 'Why Choose Us' %}</h2>
+                        <p>{% trans "We’re committed to a patient-centered approach, ensuring you feel supported and cared for every step of the way." %}</p>
                         <hr>
                     </div>
                     {% for item in why_choose_us %}

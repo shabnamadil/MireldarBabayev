@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <section class="about-section space-mt">
     <div class="container container-custom">
         <div class="row">
@@ -12,13 +14,21 @@
                                     <div class="video-play-icon">
                                         <i class="fas fa-play"></i>
                                     </div>
-                                    <span>PLAY VIDEO</span>
+                                    <span>{% trans 'PLAY VIDEO' %}</span>
                                 </div>
                             </a>
                         </div>
                         <div class="col-md-12 col-lg-6">
                             <div class="video-play-text">
-                                <h2>Short Story About {{settings.site_name}}.</h2>
+                                
+                                {% get_current_language as CURRENT_LANGUAGE %}
+
+                                {% if CURRENT_LANGUAGE == 'az' %}
+                                <h2>{{settings.site_name}} kimdir?</h2>
+                                {% elif CURRENT_LANGUAGE == 'en' %}
+                                <h2>Short Story About {{settings.site_name}}</h2>
+                                {% endif %}
+
                                 <p id="aboutContent">
                                     {{ about.content|safe }}
                                 </p>

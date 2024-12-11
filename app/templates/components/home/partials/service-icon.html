@@ -1,11 +1,12 @@
 {% load static %}
+{% load i18n %}
 
 <div class="col-md-4">
     <div class="service-thumbnail services-top-icon services-top-icon2 blue d-flex flex-fill">
         <img src="{% static 'images/service-icon8.png' %}" class="img-fluid" alt="#">
         <div class="service-thumbnail_text">
-            <h4>Specialised Service</h4>
-            <p>Designed Just for You</p>
+            <h4>{% trans 'Specialised Service' %}</h4>
+            <p>{% trans 'Designed Just for You' %}</p>
         </div>
     </div>
 </div>
@@ -13,8 +14,8 @@
     <div class="service-thumbnail services-top-icon services-top-icon2 green d-flex flex-fill">
         <img src="{% static 'images/service-icon9.png' %}" class="img-fluid" alt="#">
         <div class="service-thumbnail_text">
-            <h4>24/7 Advanced Care</h4>
-            <p>Anytime You Need It</p>
+            <h4>{% trans '24/7 Advanced Care' %}</h4>
+            <p>{% trans 'Anytime You Need It' %}</p>
         </div>
     </div>
 </div>
@@ -22,8 +23,8 @@
     <div class="service-thumbnail services-top-icon services-top-icon2 yellow d-flex flex-fill">
         <img src="{% static 'images/service-icon10.png' %}" class="img-fluid" alt="#">
         <div class="service-thumbnail_text">
-            <h4>Get Result Online</h4>
-            <p>Just a Click Away</p>
+            <h4>{% trans 'Get Result Online' %}</h4>
+            <p>{% trans 'Just a Click Away' %}</p>
         </div>
     </div>
 </div>

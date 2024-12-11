@@ -1,7 +1,9 @@
+{% load i18n %}
+
 <div class="get-in-touch get-in-touch-style2">
-    <h3>Get in Touch with Us</h3>
+    <h3>{% trans 'Get in Touch with Us' %}</h3>
     <h4 id="successContactMessage" class="alert alert-success d-none" role="alert">
-        Mesajınız göndərildi. Tezliklə sizinlə əlaqə saxlanılacaq.
+        {% trans 'Your message was sent. We`ll get in touch with you soon.' %}
     </h4>
     <h4 id="alertContactMessage" class="alert alert-danger d-none" role="alert">
         
@@ -11,14 +13,14 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="first_name" placeholder="First Name"
+                    <input type="text" class="form-control" name="first_name" placeholder="{% trans 'First Name' %}"
                         required>
                     <i class="far fa-user"></i>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="last_name" placeholder="Last Name"
+                    <input type="text" class="form-control" name="last_name" placeholder="{% trans 'Last Name' %}"
                         required>
                     <i class="far fa-user"></i>
                 </div>
@@ -28,14 +30,14 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <input type="email" class="form-control" name="email"
-                        placeholder="Your Email" required>
+                        placeholder="{% trans 'Your Email' %}" required>
                     <i class="far fa-envelope"></i>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <input type="number" class="form-control" name="phone"
-                        placeholder="Your Phone Number" required>
+                        placeholder="{% trans 'Your Phone Number' %}" required>
                     <i class="fas fa-phone"></i>
                 </div>
             </div>
@@ -43,10 +45,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group textarea-icon">
-                    <textarea class="form-control" name="message" required placeholder="Your Message"
+                    <textarea class="form-control" name="message" required placeholder="{% trans 'Your Message' %}"
                         id="" rows="3"></textarea>
                     <i class="far fa-envelope"></i>
-                    <button type="submit" class="btn btn-success">SEND</button>
+                    <button type="submit" class="btn btn-success">{% trans 'SEND' %}</button>
                 </div>
             </div>
         </div>

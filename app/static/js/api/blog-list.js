@@ -8,6 +8,11 @@ const clearFilterButton = document.getElementById('clearfilter');
 const nextBlogs = document.getElementById('nextBlogs');
 const previousBlogs = document.getElementById('previousBlogs');
 
+const BlogListTranslations = {
+    en: "Read More",
+    az: "Daha çox",
+    ru: "Читать далее"
+};
 
 let currentPage = 1;
 
@@ -185,6 +190,11 @@ function renderBlogs(blogs) {
     appendBlogs(blogs);
 }
 
+// Function to get the translation
+function translateBlogListLang(key, lang = 'en') {
+    return BlogListTranslations[lang] || BlogListTranslations['en'];
+}
+
 // Append blogs (adds more content to the existing list)
 function appendBlogs(blogs) {
     const blogsHTML = blogs.map(blog => {
@@ -192,6 +202,8 @@ function appendBlogs(blogs) {
     const day = publishedDate.getDate().toString().padStart(2, '0');
     const month = publishedDate.toLocaleString('en-US', { month: 'short' }).toUpperCase();
     const truncatedTitle = truncateText(blog.title, 60);
+    const urlPath = window.location.pathname;
+    const userLang = urlPath.split('/')[1];
 
     return `
         <div class="blog-list">
@@ -209,7 +221,7 @@ function appendBlogs(blogs) {
                 </div>
                 <h3>${truncatedTitle}</h3>
                 <p>${blog.short_description}</p>
-                <a href="${BLOG_PAGE_URL}${blog.slug}" class="btn btn-primary">Read More</a>
+                <a href="${BLOG_PAGE_URL}${blog.slug}" class="btn btn-primary">${translateBlogListLang('read_more', userLang)}</a>
             </div>
         </div>
     `;

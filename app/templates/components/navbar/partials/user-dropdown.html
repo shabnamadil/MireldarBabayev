@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <li class="nav-item dropdown cart-separate">
     <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button"
         data-bs-toggle="dropdown" aria-expanded="false">
@@ -26,22 +27,22 @@
             <hr class="dropdown-divider">
             <!-- Links for Logged-In Users -->
             <a class="dropdown-item text-danger" href="{% url 'logout' %}">
-                <i class="fas fa-sign-out-alt"></i> Logout
+                <i class="fas fa-sign-out-alt"></i> {% trans 'Logout' %}
             </a>
         </div>
         {% else%}
         <div id="unauthenticatedContent"> <!-- Guest Info Section -->
             <div class="guest-info">
-                <strong>Welcome, Guest!</strong>
-                <p class="text-muted small mb-2">Please login or register to access your account.</p>
+                <strong>{% trans 'Welcome, Guest!' %}</strong>
+                <p class="text-muted small mb-2">{% trans 'Please login or register to access your account.' %}</p>
             </div>
             <hr class="dropdown-divider">
             <!-- Links for Guests -->
             <a class="dropdown-item" href="{% url 'login' %}">
-                <i class="fas fa-sign-in-alt text-secondary"></i> Login
+                <i class="fas fa-sign-in-alt text-secondary"></i> {% trans 'Login' %}
             </a>
             <a class="dropdown-item" href="{% url 'register' %}">
-                <i class="fas fa-user-plus text-secondary"></i> Register
+                <i class="fas fa-user-plus text-secondary"></i> {% trans 'Register' %}
             </a>
         </div>
         {% endif %}

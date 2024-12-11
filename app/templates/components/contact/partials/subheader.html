@@ -1,16 +1,18 @@
+{% load i18n %}
+
 <section class="space sub-header">
     <div class="container container-custom">
         <div class="row">
             <div class="col-md-6">
                 <div class="sub-header_content">
-                    <p>CONTACT</p>
-                    <h3>We're Here to Help – Get in Touch Today!</h3>
-                    <span><i>Home / Contact</i></span>
+                    <p>{% trans 'CONTACT' %}</p>
+                    <h3>{% trans "We're Here to Help – Get in Touch Today!" %}</h3>
+                    <span><i>{% trans 'Home' %} / {% trans 'Contact' %}</i></span>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="sub-header_main">
-                    <h2>Contact</h2>
+                    <h2>{% trans 'Contact' %}</h2>
                 </div>
             </div>
         </div>

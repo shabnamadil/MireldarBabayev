@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block subheader %}
 <!-- Sub header -->
@@ -20,15 +21,15 @@
 
                 {% if downloads %}
                 <div class="contact-box mb-4">
-                    <h4>Files</h4>
+                    <h4>{% trans 'Files' %}</h4>
                     <hr>
                     {% include 'components/service/partials/downloads.html' %}
                 </div>
                 {% endif %}
                 <div class="contact-box mb-4">
-                    <h4>Latest News</h4>
+                    <h4>{% trans 'Latest Blogs' %}</h4>
                     {% for blog in latest_blogs %}
-                    {% include 'components/blog/popular-blogs.html' %}
+                    {% include 'components/blog/partials/popular-blogs.html' %}
                     {% endfor %}
                 </div>
             </div>

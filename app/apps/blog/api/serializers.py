@@ -61,7 +61,7 @@ class CommentPostSerializer(serializers.ModelSerializer):
         return attrs
 
     def get_author_full_name(self, obj):
-        return obj.author.get_full_name() if obj.author else 'Anonymous'
+        return obj.author.get_full_name() if obj.author.get_full_name() else 'Admin User'
     
     def get_author_photo(self, obj):
         return obj.author.image.url if obj.author and obj.author.image else '/static/images/user.png'

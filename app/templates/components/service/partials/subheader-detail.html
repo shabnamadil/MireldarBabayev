@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <section class="space sub-header">
     <div class="container container-custom">
         <div class="row">
@@ -5,7 +7,7 @@
                 <div class="sub-header_content">
                     <p>{{service.name|upper}}</p>
                     <h3>{{service.short_description}}</h3>
-                    <span><i>Home / {{service.name}}</i></span>
+                    <span><i>{% trans 'Home' %} / {{service.name}}</i></span>
                 </div>
             </div>
             <div class="col-md-6">

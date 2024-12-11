@@ -1,3 +1,4 @@
+{% load i18n %}
 <div class="banner">
     <div class="row">
         <div class="col-12 col-md-6 col-lg-5 d-flex align-items-center">
@@ -10,7 +11,7 @@
                 <p>
                     {{banner.description}}
                 </p>
-                <a href="#" class="btn btn-primary">Make Appointment</a>
+                <a href="#" class="btn btn-primary">{% trans 'Make Appointment' %}</a>
                 {% if banner.video_id %}
                 <a href="https://www.youtube.com/watch?v={{banner.video_id}}" class="play-btn popup-youtube"><i
                         class="fas fa-play"></i></a>

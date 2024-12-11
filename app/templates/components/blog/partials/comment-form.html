@@ -1,8 +1,10 @@
+{% load i18n %}
+
 <div class="blog-comment-wrap" id="leave-comment">
     <div class="row">
         <div class="col-md-12">
             <div class="comment-input">
-                <input type="text" placeholder="Write your message here..." id="comment-input-field" />
+                <input type="text" placeholder="{% trans 'Write your message here' %}..." id="comment-input-field" />
                 <button onclick="sendComment()" type="submit">
                     <i class="fas fa-paper-plane"></i>
                 </button>

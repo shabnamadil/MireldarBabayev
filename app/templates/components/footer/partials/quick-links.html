@@ -1,18 +1,20 @@
+{% load i18n %}
+
 <ul>
     <li>
-        <a href="{% url 'home' %}"><i class="fas fa-angle-double-right"></i>Home</a>
+        <a href="{% url 'home' %}"><i class="fas fa-angle-double-right"></i>{% trans 'Home' %}</a>
     </li>
     <li>
-        <a href="{% url 'services' %}"><i class="fas fa-angle-double-right"></i>Our Services</a>
+        <a href="{% url 'services' %}"><i class="fas fa-angle-double-right"></i>{% trans 'Services' %}</a>
     </li>
     <li>
-        <a href="{% url 'about' %}"><i class="fas fa-angle-double-right"></i>About Us</a>
+        <a href="{% url 'about' %}"><i class="fas fa-angle-double-right"></i>{% trans 'About Us' %}</a>
     </li>
     <li>
-        <a href="{% url 'blogs' %}"><i class="fas fa-angle-double-right"></i>Blogs & News</a>
+        <a href="{% url 'blogs' %}"><i class="fas fa-angle-double-right"></i>{% trans 'Blogs' %}</a>
     </li>
     <li>
-        <a href="{% url 'contact' %}"><i class="fas fa-angle-double-right"></i>Contact Us</a>
+        <a href="{% url 'contact' %}"><i class="fas fa-angle-double-right"></i>{% trans 'Contact Us' %}</a>
     </li>
 </ul>
 </div>

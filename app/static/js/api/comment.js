@@ -2,6 +2,32 @@ const COMMENT_URL = `${location.origin}/api/comment/?blog=${blogId}`;
 const commentsContainer = document.getElementById('comments');
 const commentInputField = document.getElementById('comment-input-field');
 
+const urlPath = window.location.pathname;
+const userLang = urlPath.split('/')[1];
+const CommentTranslations = {
+    en: {
+        comments: "Comments",
+        edit: "Edit",
+        delete: "Delete",
+        save: "Save",
+        cancel: "Cancel"
+    },
+    az: {
+        comments: "Rəylər",
+        edit: "Düzəliş et",
+        delete: "Sil",
+        save: "Yadda saxla",
+        cancel: "Ləğv et"
+    },
+    ru: {
+        comments: "Комментарии",
+        edit: "Редактировать",
+        delete: "Удалить",
+        save: "Сохранить",
+        cancel: "Отмена"
+    }
+};
+
 // Load comments on page load
 document.addEventListener('DOMContentLoaded', async function () {
     await fetchComments();
@@ -25,7 +51,7 @@ function renderComments(comments) {
     commentsContainer.innerHTML = '';
 
     const h3 = document.createElement('h3');
-    h3.textContent = `Comments (${comments.length})`;
+    h3.textContent = `${CommentTranslations[userLang].comments}(${comments.length})`;
     commentsContainer.appendChild(h3);
 
     appendComments(comments);
@@ -67,10 +93,10 @@ function createCommentHTML(comment) {
                     isAuthor
                         ? `<div class="comment-actions">
                                <button class="edit" onclick="editComment(${comment.id})">
-                                   <i class="fas fa-edit"></i> Edit
+                                   <i class="fas fa-edit"></i> ${CommentTranslations[userLang].edit}
                                </button>
                                <button class="delete" onclick="deleteComment(${comment.id})">
-                                   <i class="fas fa-trash-alt"></i> Delete
+                                   <i class="fas fa-trash-alt"></i> ${CommentTranslations[userLang].delete}
                                </button>
                            </div>`
                         : ''
@@ -83,11 +109,6 @@ function createCommentHTML(comment) {
 // Add new comment
 async function sendComment() {
     const content = commentInputField.value.trim();
-
-    if (!content) {
-        alert('Comment cannot be empty!');
-        return;
-    }
 
     try {
         const response = await fetch(`${location.origin}/api/comment/`, {
@@ -120,7 +141,7 @@ function addCommentToDOM(comment) {
 
     const commentHeader = commentsContainer.querySelector('h3');
     const currentCount = parseInt(commentHeader.textContent.match(/\d+/)[0]);
-    commentHeader.textContent = `Comments (${currentCount + 1})`;
+    commentHeader.textContent = `${CommentTranslations[userLang].comments} (${currentCount + 1})`;
 
     if (commentsList) {
         commentsList.innerHTML = commentHTML + commentsList.innerHTML;
@@ -179,7 +200,7 @@ function removeCommentFromDOM(commentId) {
 
     const commentHeader = commentsContainer.querySelector('h3');
     const currentCount = parseInt(commentHeader.textContent.match(/\d+/)[0], 10);
-    commentHeader.textContent = `Comments (${Math.max(0, currentCount - 1)})`;
+    commentHeader.textContent = `${CommentTranslations[userLang].comments} (${Math.max(0, currentCount - 1)})`;
 }
 
 // Edit comment
@@ -197,10 +218,10 @@ function editComment(commentId) {
     const actions = commentElement.querySelector('.comment-actions');
     actions.innerHTML = `
         <button class="save" onclick="saveComment(${commentId})">
-            <i class="fas fa-save"></i> Save
+            <i class="fas fa-save"></i> ${CommentTranslations[userLang].save}
         </button>
         <button class="cancel" onclick="cancelEditComment(${commentId}, '${originalContent}')">
-            <i class="fas fa-times"></i> Cancel
+            <i class="fas fa-times"></i> ${CommentTranslations[userLang].cancel}
         </button>
     `;
 }
@@ -249,10 +270,10 @@ function updateCommentInDOM(commentId, comment) {
     const actions = commentElement.querySelector('.comment-actions');
     actions.innerHTML = `
         <button class="edit" onclick="editComment(${commentId})">
-            <i class="fas fa-edit"></i> Edit
+            <i class="fas fa-edit"></i> ${CommentTranslations[userLang].edit}
         </button>
         <button class="delete" onclick="deleteComment(${commentId})">
-            <i class="fas fa-trash-alt"></i> Delete
+            <i class="fas fa-trash-alt"></i> ${CommentTranslations[userLang].delete}
         </button>
     `;
 }
@@ -270,10 +291,10 @@ function cancelEditComment(commentId, originalContent) {
     const actions = commentElement.querySelector('.comment-actions');
     actions.innerHTML = `
         <button class="edit" onclick="editComment(${commentId})">
-            <i class="fas fa-edit"></i> Edit
+            <i class="fas fa-edit"></i> ${CommentTranslations[userLang].edit}
         </button>
         <button class="delete" onclick="deleteComment(${commentId})">
-            <i class="fas fa-trash-alt"></i> Delete
+            <i class="fas fa-trash-alt"></i> ${CommentTranslations[userLang].delete}
         </button>
     `;
 }
