@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.exceptions import ValidationError
-from django.utils.text import slugify
 from django.urls import reverse_lazy
+from django.core.validators import MinLengthValidator
 
 from ckeditor_uploader.fields import RichTextUploadingField
 
@@ -21,7 +21,8 @@ class Service(BaseModel):
         unique=True
     )
     short_description = models.TextField(
-        'Qısa məlumat'
+        'Qısa məlumat',
+        validators=[MinLengthValidator(150)]
     )
     png = models.FileField(
         'PNG',

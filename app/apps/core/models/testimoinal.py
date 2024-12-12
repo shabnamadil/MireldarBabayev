@@ -1,5 +1,10 @@
 from django.db import models
-from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.validators import (
+    MinValueValidator, 
+    MaxValueValidator,
+    MinLengthValidator,
+    MaxLengthValidator
+)
 
 from utils.models.base_model import BaseModel
 
@@ -20,7 +25,7 @@ class Testimoinal(BaseModel):
     )
     client_comment = models.TextField(
         'Müştəri rəyi',
-        max_length=255
+        validators=[MinLengthValidator(150), MaxLengthValidator(155)]
     )
     star = models.IntegerField(
         'Müştərinin verdiyi qiymət',

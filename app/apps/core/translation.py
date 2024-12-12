@@ -49,8 +49,7 @@ class SiteSettingsTranslationAdmin(TranslationOptions):
 @register(StatisticalIndicator)
 class StatisticalIndicatorSettingsTranslationAdmin(TranslationOptions):
     fields = (
-        'value',
-        'name'
+        'name',
     )
 
 
