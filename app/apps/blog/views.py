@@ -35,12 +35,17 @@ class BlogDetailView(DetailView):
     model = Blog
     template_name = 'components/blog/blog-detail.html'
 
-    def get(self, request, *args , **kwargs):
+    def get(self, request, *args, **kwargs):
         obj = self.get_object()
         ip = get_client_ip(request)
+        if not ip:
+            print("No IP address found for the request.")
+            ip = '127.0.0.1'
         ip_obj, created = IP.objects.get_or_create(view_ip=ip)
+        print(f"IP Object: {ip_obj}, Created: {created}")
         obj.increment_view_count(ip_obj)
         return super().get(request, *args, **kwargs)
+
     
     def get_context_data(self, **kwargs):
         obj = self.get_object()
