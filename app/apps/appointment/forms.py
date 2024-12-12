@@ -17,7 +17,7 @@ class TimetableForm(forms.ModelForm):
             'end_time'
         )
 
-    def clean(self) -> dict[str, Any]:
+    def clean(self):
         start = self.cleaned_data.get('start_time', '')
         end = self.cleaned_data.get('end_time', '')
 

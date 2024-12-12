@@ -34,7 +34,7 @@ class AboutUsPageView(DetailView):
     def get_object(self, queryset=None):
         return AboutUs.objects.first()
     
-    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+    def get_context_data(self, **kwargs):
         cx =  super().get_context_data(**kwargs)
 
         statistics = StatisticalIndicator.objects.all()[:4]
@@ -54,7 +54,7 @@ class AboutUsPageView(DetailView):
 class HomePageView(TemplateView):
     template_name = 'components/home/index.html'
 
-    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+    def get_context_data(self, **kwargs):
         cx = super().get_context_data(**kwargs)
 
         statistics = StatisticalIndicator.objects.all()[:4]

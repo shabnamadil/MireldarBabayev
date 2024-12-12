@@ -21,7 +21,7 @@ class ServiceListView(ListView):
     context_object_name = 'services'
     template_name = 'components/service/services.html'
 
-    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+    def get_context_data(self, **kwargs):
         cx = super().get_context_data(**kwargs)
         
         local_time = timezone.localtime(timezone.now())
@@ -43,7 +43,7 @@ class ServiceDetailView(DetailView):
     context_object_name = 'service'
     template_name = 'components/service/partials/service-detail.html'
 
-    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+    def get_context_data(self, **kwargs):
         cx = super().get_context_data(**kwargs)
         obj = self.get_object()
         cx.update({

@@ -14,7 +14,7 @@ from apps.service.models import WhyChooseUs
 class AppointmentPageView(TemplateView):
     template_name = 'components/appointment/appointment.html'
 
-    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+    def get_context_data(self, **kwargs):
         cx = super().get_context_data(**kwargs)
         local_time = timezone.localtime(timezone.now())
         cx.update({

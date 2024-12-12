@@ -12,7 +12,7 @@ from .forms import LoginForm
 class RegisterPageView(TemplateView):
     template_name = 'components/user/register/register.html'
 
-    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+    def get_context_data(self, **kwargs):
         cx = super().get_context_data(**kwargs)
         cx.update({
             'about' : AboutUs.objects.first()
@@ -46,7 +46,7 @@ class LoginPageView(TemplateView):
         return render(request, 'components/user/login/login.html', {'form': form})
 
 
-    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+    def get_context_data(self, **kwargs):
         cx = super().get_context_data(**kwargs)
         cx.update({
             'about' : AboutUs.objects.first()

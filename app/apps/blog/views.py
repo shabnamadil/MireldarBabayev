@@ -21,7 +21,7 @@ from utils.helpers.client_ip import get_client_ip
 class BlogListView(TemplateView):
     template_name = 'components/blog/blog-list.html'
 
-    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+    def get_context_data(self, **kwargs):
         cx =  super().get_context_data(**kwargs)
         cx['popular_blogs'] = Blog.published.annotate(
             comment_count=Count('comments')
@@ -42,7 +42,7 @@ class BlogDetailView(DetailView):
         obj.increment_view_count(ip_obj)
         return super().get(request, *args, **kwargs)
     
-    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+    def get_context_data(self, **kwargs):
         obj = self.get_object()
         cx =  super().get_context_data(**kwargs)
         previous_blog_id = obj.id - 1 if obj.id > 1 else None
