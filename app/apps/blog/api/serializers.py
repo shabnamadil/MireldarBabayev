@@ -81,12 +81,14 @@ class CommentUpdateDestroySerializer(serializers.ModelSerializer):
         )
 
 
+
 class BlogListSerializer(serializers.ModelSerializer):
     category = serializers.SerializerMethodField()
     tag = serializers.SerializerMethodField()
     author = serializers.CharField(source='author.get_full_name', default='Admin User')
     comment_count = serializers.IntegerField(source='comments.count', read_only=True)
     comments = CommentListSerializer(many=True, read_only=True)
+    has_next = serializers.BooleanField(default=True)
 
     class Meta:
         model = Blog
@@ -103,7 +105,8 @@ class BlogListSerializer(serializers.ModelSerializer):
             'view_count',
             'slug',
             'comments',
-            'published_date'
+            'published_date',
+            'has_next'
         )
 
     def get_category(self, obj):
@@ -111,3 +114,6 @@ class BlogListSerializer(serializers.ModelSerializer):
     
     def get_tag(self, obj):
         return [tag.name for tag in obj.tag.all()]
+    
+    def get_has_next(self, obj):
+        return True

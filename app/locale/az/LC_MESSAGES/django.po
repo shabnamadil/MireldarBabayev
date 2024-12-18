@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-12 23:01+0400\n"
-"PO-Revision-Date: 2024-12-12 15:20+0400\n"
-"Last-Translator:   <admin@gmail.com>\n"
+"PO-Revision-Date: 2024-12-18 00:19+0400\n"
+"Last-Translator: Admin user <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -61,7 +61,7 @@ msgstr "Bülletenimizə abunə ol"
 
 #: templates/components/about/partials/newsletter.html:9
 msgid "Enter Your Email"
-msgstr "Email ünvanınızı daxil edin"
+msgstr "Email ünvanınız"
 
 #: templates/components/about/partials/newsletter.html:13
 msgid "You subscribed successfuly!!!"
@@ -212,8 +212,8 @@ msgstr "BLOQLAR"
 
 #: templates/components/blog/partials/subheader.html:9
 msgid ""
-"Explore insights, tips, and stories on our blog page, crafted to inspire and "
-"inform."
+"Explore insights, tips, and stories on our blog page, crafted to inspire and"
+" inform."
 msgstr "Bir-birindən faydalı bloqlar səni gözləyir."
 
 #: templates/components/blog/partials/subheader.html:10
@@ -412,9 +412,9 @@ msgid ""
 "urgent needs. Call or message us now to ensure you get the help you need "
 "when it matters most."
 msgstr ""
-"Təcili bir vəziyyətlə üzləşirsiniz? Gözləməyə ehtiyac yoxdur. Dərhal bizimlə "
-"dərhal əlaqə saxlayın. Komandamız 24/7 xidmətinizdədir. Ehtiyaclarınızı həll "
-"etmək bizim işimiizdir.  "
+"Təcili bir vəziyyətlə üzləşirsiniz? Gözləməyə ehtiyac yoxdur. Dərhal bizimlə"
+" dərhal əlaqə saxlayın. Komandamız 24/7 xidmətinizdədir. Ehtiyaclarınızı "
+"həll etmək bizim işimiizdir.  "
 
 #: templates/components/home/partials/emergency.html:16
 msgid "Email us"

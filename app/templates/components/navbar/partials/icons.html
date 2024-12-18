@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <ul class="nav-icon-wrap d-flex align-items-center">
     <!-- Social Media Icons -->
     {% if settings.facebook %}
@@ -42,7 +44,28 @@
         </a>
     </li>
     {% endif %}
-
+</ul>
+<ul class="nav-icon-wrap nav-appointment-wrap"> 
+    <li class="nav-item appointment-li nav-hidden">
+        <a href="" class="nav-link btn btn-primary appointment-btn-top">
+            {% trans 'Make Appointment' %}
+        </a>
+    </li>
+    <li class="nav-item nav-hidden">
+        <div class="language-dropdown nav-lang">
+            {% get_current_language as CURRENT_LANGUAGE %}
+            {% get_available_languages as AVAILABLE_LANGUAGES %}
+            {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+            <select id="language-select" onchange="window.location.href=this.value">
+                {% for language in languages %}
+                <option value="/{{ language.code }}/{{ request.get_full_path|slice:'4:' }}"
+                    {% if language.code == CURRENT_LANGUAGE %} selected{% endif %}>
+                    {% if language.code == 'ru' %}🇷🇺{% elif language.code == 'az' %}🇦🇿{% elif language.code == 'en' %}🇬🇧{% endif %}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+    </li>   
     <!-- User Dropdown -->
     {% include 'components/navbar/partials/user-dropdown.html' %}
 </ul>

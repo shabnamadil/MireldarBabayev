@@ -15,66 +15,85 @@ const BlogListTranslations = {
 };
 
 let currentPage = 1;
+let currentCategory = null;
+let currentTag = null;
+let currentQuery = '';
 
 document.addEventListener('DOMContentLoaded', async function () {
     const urlParams = new URLSearchParams(window.location.search);
     const categorySlug = urlParams.get('category');
     const tagSlug = urlParams.get('tag');
+    currentCategory = categorySlug;
+    currentTag = tagSlug;
 
-    // Fetch and render blogs based on URL params
-    if (categorySlug) {
-        const filteredBlogs = await filterBlogsByCategory(categorySlug);
-        if (filteredBlogs) renderBlogs(filteredBlogs);
-    } else if (tagSlug) {
-        const filteredBlogs = await filterBlogsByTag(tagSlug);
-        if (filteredBlogs) renderBlogs(filteredBlogs);
-    } else {
-        const blogs = await fetchBlogs(currentPage);
-        if (blogs) renderBlogs(blogs);
-    }
+    // Fetch and render blogs based on URL params or default
+    await loadBlogs();
 
     // Event listener for search functionality
     searchIcon.addEventListener('click', handleSearch);
     searchQuery.addEventListener('keypress', handleSearchOnEnter);
     clearFilterButton.addEventListener('click', clearFilter);
-    nextBlogs.addEventListener('click', handleNextBlogs)
-    previousBlogs.addEventListener('click', handlePreviousBlogs)
+    nextBlogs.addEventListener('click', handleNextBlogs);
+    previousBlogs.addEventListener('click', handlePreviousBlogs);
 
-
-    // Category filter event listeners
     document.querySelectorAll('.category-link').forEach(link => {
         link.addEventListener('click', async (event) => {
             event.preventDefault();
             const categorySlug = event.target.dataset.categorySlug;
             const categoryName = event.target.dataset.categoryName;
-
-            const filteredBlogs = await filterBlogsByCategory(categorySlug);
-            if (filteredBlogs) renderBlogs(filteredBlogs);
-            
+    
+            currentCategory = categorySlug;
+            currentTag = null;  // Reset tag filter
+            currentQuery = '';  // Reset search query
+            currentPage = 1;  // Reset to the first page when a new category is selected
+    
+            await loadBlogs();  // Fetch and render blogs based on new category
             displayFilterResults(categoryName);
         });
     });
-
-    // Tag filter event listeners
+    
     document.querySelectorAll('.tag-link').forEach(link => {
         link.addEventListener('click', async (event) => {
             event.preventDefault();
             const tagSlug = event.target.dataset.tagSlug;
             const tagName = event.target.dataset.tagName;
-
-            const filteredBlogs = await filterBlogsByTag(tagSlug);
-            if (filteredBlogs) renderBlogs(filteredBlogs);
-
+    
+            currentTag = tagSlug;
+            currentCategory = null;  // Reset category filter
+            currentQuery = '';  // Reset search query
+            currentPage = 1;  // Reset to the first page when a new tag is selected
+    
+            await loadBlogs();  // Fetch and render blogs based on new tag
             displayFilterResults(tagName);
         });
     });
+    
 });
+
+// Load blogs based on current filters (category, tag, or query)
+async function loadBlogs() {
+    let blogs;
+    if (currentCategory) {
+        blogs = await filterBlogsByCategory(currentCategory);
+    } else if (currentTag) {
+        blogs = await filterBlogsByTag(currentTag);
+    } else if (currentQuery) {
+        blogs = await filterBlogsByQuery(currentQuery);
+    } else {
+        blogs = await fetchBlogs(currentPage);
+    }
+
+    if (blogs) renderBlogs(blogs);
+}
 
 // Handle search on icon click
 async function handleSearch() {
     if (searchQuery.value) {
-        const filteredBlogs = await filterBlogsByQuery(searchQuery.value);
-        if (filteredBlogs) renderBlogs(filteredBlogs);
+        currentTag = ''
+        currentCategory = ''
+        currentQuery = searchQuery.value;
+        currentPage = 1; // Reset to the first page when performing a new search
+        await loadBlogs();
         displayFilterResults(searchQuery.value);
         searchQuery.value = '';  // Clear search input after search
     }
@@ -90,72 +109,58 @@ async function handleSearchOnEnter(event) {
 
 // Handle next blogs
 async function handleNextBlogs() {
-    try {
-        const moreBlogs = await fetchBlogs(currentPage + 1); // Check the next page directly
-        if (moreBlogs && moreBlogs.length > 0) {
-            currentPage++; // Increment the page only if valid data is fetched
-            renderBlogs(moreBlogs); // Render blogs for the next page
-            previousBlogs.style.display = 'block'; // Ensure the previous button is visible
-        } else {
-            nextBlogs.style.display = 'none'; // Hide the next button if no more blogs
-        }
-    } catch (error) {
-        console.error('Error fetching next blogs:', error);
-    }
+    currentPage++;  // Increment the page
+    await loadBlogs();  // Load next page of blogs
 }
 
 // Handle previous blogs
 async function handlePreviousBlogs() {
-    if (currentPage > 1) { // Ensure we don't go below the first page
-        try {
-            const moreBlogs = await fetchBlogs(currentPage - 1); // Check the previous page
-            if (moreBlogs && moreBlogs.length > 0) {
-                currentPage--; // Decrement the page only if valid data is fetched
-                renderBlogs(moreBlogs); // Render blogs for the previous page
-                nextBlogs.style.display = 'block'; // Ensure the next button is visible
-            } else {
-                previousBlogs.style.display = 'none'; // Hide the previous button if no more blogs
-            }
-        } catch (error) {
-            console.error('Error fetching previous blogs:', error);
-        }
-    } else {
-        previousBlogs.style.display = 'none'; // Hide the previous button on the first page
+    if (currentPage > 1) {
+        currentPage--;  // Decrement the page
+        await loadBlogs();  // Load previous page of blogs
     }
 }
 
-
 // Fetch blogs function
-
 async function fetchBlogs(currentPage) {
     try {
-        const response = await fetch(`${BASE_URL}?p=${currentPage}`);
+        const url = new URL(BASE_URL);
+        url.searchParams.set('page', currentPage);
+        if (currentCategory) url.searchParams.set('category', currentCategory);
+        if (currentTag) url.searchParams.set('tag', currentTag);
+
+        const response = await fetch(url);
         if (!response.ok) throw new Error('Failed to fetch blogs');
-
         const data = await response.json();
-        
-        // Example of API response containing pagination info
-        if (currentPage == 1) {
-            // nextBlogs.style.display = data.meta.has_next ? 'block' : 'none';
-            previousBlogs.style.display = 'none';
-        } 
 
-        return data // Assuming `blogs` is the array of blogs in the API response
+        // Handle pagination visibility
+        nextBlogs.style.display = data.has_next ? 'block' : 'none';
+        previousBlogs.style.display = data.has_previous ? 'block' : 'none';
+
+        return data.results; // Return only the blogs (excluding pagination data)
     } catch (error) {
         console.error('Error fetching blogs:', error);
         return null;
     }
 }
 
-
 // Filter blogs by category
 async function filterBlogsByCategory(category) {
     try {
-        const response = await fetch(`${BASE_URL}?category=${category}`);
-        if (!response.ok) throw new Error('Failed to fetch filtered by category blogs');
-        return await response.json();
+        const response = await fetch(`${BASE_URL}?category=${category}&page=${currentPage}`);
+        if (!response.ok) throw new Error('Failed to fetch filtered blogs');
+        
+        const data = await response.json();
+
+        // Handle pagination visibility
+        nextBlogs.style.display = data.has_next ? 'block' : 'none';
+        previousBlogs.style.display = data.has_previous ? 'block' : 'none';
+
+        displayClearFilterButton()
+
+        return data.results; // Return only the filtered results
     } catch (error) {
-        console.error('Error fetching filtered by category blogs:', error);
+        console.error('Error fetching filtered blogs:', error);
         return null;
     }
 }
@@ -163,9 +168,17 @@ async function filterBlogsByCategory(category) {
 // Filter blogs by tag
 async function filterBlogsByTag(tag) {
     try {
-        const response = await fetch(`${BASE_URL}?tag=${tag}`);
+        const response = await fetch(`${BASE_URL}?tag=${tag}&page=${currentPage}`);
         if (!response.ok) throw new Error('Failed to fetch filtered by tag blogs');
-        return await response.json();
+        const data = await response.json();
+
+        // Handle pagination visibility
+        nextBlogs.style.display = data.has_next ? 'block' : 'none';
+        previousBlogs.style.display = data.has_previous ? 'block' : 'none';
+
+        displayClearFilterButton()
+
+        return data.results;
     } catch (error) {
         console.error('Error fetching filtered by tag blogs:', error);
         return null;
@@ -175,9 +188,17 @@ async function filterBlogsByTag(tag) {
 // Filter blogs by query
 async function filterBlogsByQuery(query) {
     try {
-        const response = await fetch(`${BASE_URL}?q=${query}`);
+        const response = await fetch(`${BASE_URL}?q=${query}&page=${currentPage}`);
         if (!response.ok) throw new Error('Failed to fetch filtered by query blogs');
-        return await response.json();
+        const data = await response.json();
+
+        // Handle pagination visibility
+        nextBlogs.style.display = data.has_next ? 'block' : 'none';
+        previousBlogs.style.display = data.has_previous ? 'block' : 'none';
+
+        displayClearFilterButton()
+
+        return data.results;
     } catch (error) {
         console.error('Error fetching filtered by query blogs:', error);
         return null;
@@ -198,33 +219,33 @@ function translateBlogListLang(key, lang = 'en') {
 // Append blogs (adds more content to the existing list)
 function appendBlogs(blogs) {
     const blogsHTML = blogs.map(blog => {
-    const publishedDate = new Date(blog.published_date);
-    const day = publishedDate.getDate().toString().padStart(2, '0');
-    const month = publishedDate.toLocaleString('en-US', { month: 'short' }).toUpperCase();
-    const truncatedTitle = truncateText(blog.title, 60);
-    const urlPath = window.location.pathname;
-    const userLang = urlPath.split('/')[1];
+        const publishedDate = new Date(blog.published_date);
+        const day = publishedDate.getDate().toString().padStart(2, '0');
+        const month = publishedDate.toLocaleString('en-US', { month: 'short' }).toUpperCase();
+        const truncatedTitle = truncateText(blog.title, 60);
+        const urlPath = window.location.pathname;
+        const userLang = urlPath.split('/')[1];
 
-    return `
-        <div class="blog-list">
-            <img src="${blog.image}" class="img-fluid" alt="${blog.title}">
-            <div class="blog-date">
-                <h3>${day}</h3>
-                <span>${month}</span>
-            </div>
-            <div class="blog-text-wrap">
-                <div class="blog-comment-top">
-                    <p><i class="far fa-user"></i>${blog.author} <span>|</span> 
-                    <i class="far fa-eye"></i>${blog.view_count} <span>|</span> 
-                    <i class="far fa-comment"></i>${blog.comment_count}</p>
-                    <label>${blog.category[0]}</label>
+        return `
+            <div class="blog-list">
+                <img src="${blog.image}" class="img-fluid" alt="${blog.title}">
+                <div class="blog-date">
+                    <h3>${day}</h3>
+                    <span>${month}</span>
                 </div>
-                <h3>${truncatedTitle}</h3>
-                <p>${blog.short_description}</p>
-                <a href="${BLOG_PAGE_URL}${blog.slug}" class="btn btn-primary">${translateBlogListLang('read_more', userLang)}</a>
+                <div class="blog-text-wrap">
+                    <div class="blog-comment-top">
+                        <p><i class="far fa-user"></i>${blog.author} <span>|</span> 
+                        <i class="far fa-eye"></i>${blog.view_count} <span>|</span> 
+                        <i class="far fa-comment"></i>${blog.comment_count}</p>
+                        <label>${blog.category[0]}</label>
+                    </div>
+                    <h3>${truncatedTitle}</h3>
+                    <p>${blog.short_description}</p>
+                    <a href="${BLOG_PAGE_URL}${blog.slug}" class="btn btn-primary">${translateBlogListLang('read_more', userLang)}</a>
+                </div>
             </div>
-        </div>
-    `;
+        `;
     }).join('');
     blogsContainer.innerHTML = blogsHTML;  // Append new blogs to the container
 }
@@ -237,32 +258,23 @@ function truncateText(text, maxLength) {
 // Display filter results
 function displayFilterResults(query) {
     if (filterResults) {
+        filterResults.classList.remove('d-none')
         filterResults.innerHTML = `Results for <i>"${query}"</i>`;
-        clearButtonAdd()
     }
 }
 
-// Clear filter and reset search results
-async function clearFilter() {
-    const blogs = await fetchBlogs();
-    if (blogs) renderBlogs(blogs);
-    resetFilterResults();
+// Clear filters
+function clearFilter() {
+    clearFilterButton.classList.add('d-none');
+    filterResults.classList.add('d-none');
+    currentCategory = null;
+    currentTag = null;
+    currentQuery = '';
+    searchQuery.value = '';
+    currentPage = 1;  // Reset to the first page
+    loadBlogs();
 }
 
-// Reset search results display
-function resetFilterResults() {
-    if (filterResults) {
-        filterResults.innerHTML = ''; // Clear filter results
-    }
-    clearButtonRemove()
-}
-
-//Clear button add
-function clearButtonAdd() {
-    clearFilterButton.classList.remove('d-none');  // Show clear filter button
-}
-
-//Clear button Remove
-function clearButtonRemove() {
-    clearFilterButton.classList.add('d-none');  //Clear filter button
+function displayClearFilterButton () {
+    clearFilterButton.classList.remove('d-none')
 }
