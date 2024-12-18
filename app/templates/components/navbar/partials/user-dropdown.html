@@ -1,7 +1,7 @@
 {% load static %}
 {% load i18n %}
-<li class="nav-item dropdown cart-separate">
-    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button"
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle d-flex align-items-center user-nav" href="#" id="userDropdown" role="button"
         data-bs-toggle="dropdown" aria-expanded="false">
         {% if request.user.image %}
         <img src="{{request.user.image.url}}" class="user-img" alt="{{request.user.full_name}}">
@@ -10,9 +10,6 @@
         {% endif %}
     </a>
     <div class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="userDropdown">
-        <div id="successLogoutMessage" class="alert alert-success d-none" role="alert">
-            <!-- This will display the logout success message -->
-        </div>
         <!-- User Info Section -->
         {% if request.user.is_authenticated %}
         <div id="authenticatedContent">

@@ -288,6 +288,7 @@ textarea {
   .dropdown .dropdown-menu {
     display: block;
     visibility: hidden;
+    display: none;
     opacity: 0;
     transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
@@ -296,7 +297,6 @@ textarea {
     -ms-transition: all 0.2s ease;
     border: none;
     font-size: 15px;
-    border-radius: 0;
     min-width: 12rem;
     -webkit-box-shadow: 0 0px 29px -26px rgba(0, 0, 0, 0.44);
             box-shadow: 0 0px 29px -26px rgba(0, 0, 0, 0.44);
@@ -305,12 +305,14 @@ textarea {
 
   .dropdown:hover > .dropdown-menu {
     visibility: visible;
+    display: block;
     opacity: 1;
     top: 42px;
   }
 
-  .dropdown-submenu:hover .dropdown-menu1 {
+  .dropdown-submenu:hover .dropdown-menu {
     visibility: visible;
+    display: block;
     opacity: 1;
   }
 
@@ -432,9 +434,16 @@ textarea {
     transition: all 0.2s ease;
   }
 }
-.dropdown-menu1 {
+.dropdown-menu {
   left: -192px;
   top: -6px !important;
+  border-radius: 6px 0 6px 6px;
+}
+
+@media (max-width: 993px) {
+  .dropdown-menu {
+    left: -260px;
+  }
 }
 
 body {
@@ -2840,6 +2849,19 @@ APPOINTMENT
   margin: 0 0 30px;
   color: #fff;
 }
+
+@media (max-width: 993px) {
+  .appointment-form_wrap {
+    margin: 0 0 195px !important;
+  }
+}
+
+@media (max-width: 769px) {
+  .appointment-form_wrap {
+    margin: 0 0 225px !important;
+  }
+}
+
 .appointment-form_wrap span {
   color: #fff;
 }
@@ -4558,6 +4580,7 @@ SERVICE DETAIL
   border-radius: 5px;
   text-align: center;
   width: 300px;
+  margin: auto;
 }
 
 .modal-actions {
@@ -4677,3 +4700,37 @@ SERVICE DETAIL
   background-color: #e9e9e9; /* Highlight option on hover */
 }
 
+.nav-lang select {
+  font-size: 12px;
+  padding: 8px;
+}
+
+
+.nav-appointment-wrap  {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 18px;
+}
+
+.appointment-li > a {
+  color: white !important;
+}
+
+.user-nav {
+  padding: 0 !important;
+}
+
+.appointment-li {
+  width: 80% !important;
+}
+
+.nav-hidden {
+  display: none !important;
+}
+
+@media (max-width: 991px) {
+  .nav-hidden {
+    display: block !important;
+  }
+}
