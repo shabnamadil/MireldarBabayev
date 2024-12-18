@@ -28,12 +28,6 @@ class BlogRepository:
             Q(author__first_name__contains=query) |
             Q(author__last_name__contains=query)                    
             )
-    
-    def get_by_page(self, page=1, qs=DEFAULT_QS):
-        items_per_page = 3
-        start = (int(page) - 1) * items_per_page
-        end = start + items_per_page
-        return qs[start:end]
 
 
 class CommentRepository:

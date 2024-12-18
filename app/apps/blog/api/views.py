@@ -24,6 +24,8 @@ from ..models import (
     Comment
 )
 from .permissions import IsCommentAuthor
+from .paginator import BlogPagination
+
 
 
 class BlogListAPIView(ListAPIView):
@@ -32,14 +34,14 @@ class BlogListAPIView(ListAPIView):
     )
     serializer_class = BlogListSerializer
     repo = BlogRepository
+    pagination_class = BlogPagination
 
     def get_filter_methods(self):
         repo = self.repo()
         return {
             'category' : repo.get_by_category,
             'tag' : repo.get_by_tag,
-            'q' : repo.get_by_query,
-            'p' : repo.get_by_page
+            'q' : repo.get_by_query
         }
 
     def get_queryset(self, **kwargs):

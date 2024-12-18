@@ -435,14 +435,20 @@ textarea {
   }
 }
 .dropdown-menu {
-  left: -192px;
-  top: -6px !important;
+  left: -80px;
+  top: 60px !important;
   border-radius: 6px 0 6px 6px;
 }
 
-@media (max-width: 993px) {
+@media (max-width: 1440px) {
   .dropdown-menu {
-    left: -260px;
+    left: -120px;
+  }
+}
+
+@media (max-width: 992px) {
+  .dropdown-menu {
+    left: -190px;
   }
 }
 
