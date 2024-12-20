@@ -1,8 +1,7 @@
 from django.db import models
-from utils.models.base_model import BaseModel
 from utils.models.singleton import SingletonModel
 
-class SiteSettings(BaseModel, SingletonModel):
+class SiteSettings(SingletonModel):
     site_name = models.CharField(max_length=255, verbose_name="Site Name")
     logo = models.ImageField(upload_to='logos/', verbose_name="Site Logo")
     favicon = models.ImageField(upload_to='favicons/', verbose_name="Favicon")

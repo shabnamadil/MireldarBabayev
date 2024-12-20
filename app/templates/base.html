@@ -6,8 +6,12 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {% block meta %}
-    {% endblock meta %}
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta name="author" content="Mireldar Babayev">
+
+    {% block seo %}
+    {% endblock seo %}
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <!-- Google fonts -->
@@ -26,9 +30,8 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="{{settings.favicon.url}}" type="image/x-icon" />
+    
     {% block title %}
-
-    <title>{{settings.site_name}}</title>
     {% endblock title %}
     
 </head>

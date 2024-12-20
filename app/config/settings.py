@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 from datetime import timedelta
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-i)-r$tm^oz7%jsgjel63s!b1px#snq$=l2)wz0zpx+nx!&c0#v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -54,7 +55,8 @@ INSTALLED_APPS = [
     'apps.core',
     'apps.service',
     'apps.appointment',
-    'apps.user'
+    'apps.user',
+    'apps.seo'
 ]
 
 MIDDLEWARE = [
@@ -125,11 +127,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'az'
 
-LANGUAGES = [
-    ('en', 'English'),
-    ('az', 'Azerbaijani'),
-    ('ru', 'Russian'),
-]
+LANGUAGES = (
+    ('az', _('Azerbaijani')),
+    ('ru', _('Russian')),
+    ('en', _('English')),
+)
 
 LOCALE_PATHS = [
     BASE_DIR / 'locale',

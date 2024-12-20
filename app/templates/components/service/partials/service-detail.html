@@ -2,6 +2,22 @@
 {% load static %}
 {% load i18n %}
 
+{% block title %}
+<title>{{service.title|default:settings.site_name}}</title>
+{% endblock title %}
+ 
+{% block seo %}
+
+{% with service.short_description as default_description %}
+    <meta name="description" content="{{ seo.meta_description|default:default_description }}">
+    <meta name="keywords" content="{{ seo.meta_keywords|default:default_description}}">
+    <meta property="og:description" content="{{seo.og_description|default:default_description}}">
+{% endwith %}
+    <meta property="og:title" content="{{service.title}}">
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{service.image.url|default:settings.logo.url}}">
+
+{% endblock seo %}
+
 {% block subheader %}
 <!-- Sub header -->
 {% include 'components/service/partials/subheader-detail.html' %}

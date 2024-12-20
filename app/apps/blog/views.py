@@ -15,6 +15,10 @@ from .models import (
     Category,
     Tag
 )
+from apps.seo.models import (
+    BlogsPageSeo,
+    BlogDetailPageSeo
+)
 from utils.helpers.client_ip import get_client_ip
 
 
@@ -27,7 +31,8 @@ class BlogListView(TemplateView):
             comment_count=Count('comments')
             ).order_by('-comment_count', '-view_count')[:3]
         cx['categories'] = Category.objects.all()
-        cx['tags'] = Tag.objects.all()
+        cx['tags'] = Tag.objects.all(),
+        cx['seo'] = BlogsPageSeo.objects.first()
         return cx
 
 
@@ -60,6 +65,7 @@ class BlogDetailView(DetailView):
         cx['tags'] = Tag.objects.all()
         cx['previous_blog'] = Blog.objects.filter(id=previous_blog_id).first() if previous_blog_id else None
         cx['next_blog'] = Blog.objects.filter(id=next_blog_id).first()
+        cx['seo'] = BlogDetailPageSeo.objects.filter(blog__id=obj.id)
         cx['formatted_date'] = {
                 'day': obj.published_at.strftime('%d'),
                 'month': obj.published_at.strftime('%b').upper(),

@@ -2,11 +2,10 @@ from django.db import models
 
 from ckeditor_uploader.fields import RichTextUploadingField
 
-from utils.models.base_model import BaseModel
 from utils.models.singleton import SingletonModel
 
 
-class AboutUs(BaseModel, SingletonModel):
+class AboutUs(SingletonModel):
     image = models.ImageField(
         'Foto',
         upload_to='about/',

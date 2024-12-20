@@ -11,7 +11,7 @@
                 <p>
                     {{banner.description}}
                 </p>
-                <a href="#" class="btn btn-primary">{% trans 'Make Appointment' %}</a>
+                <a href="{% url 'appointment' %}" class="btn btn-primary">{% trans 'Make Appointment' %}</a>
                 {% if banner.video_id %}
                 <a href="https://www.youtube.com/watch?v={{banner.video_id}}" class="play-btn popup-youtube"><i
                         class="fas fa-play"></i></a>

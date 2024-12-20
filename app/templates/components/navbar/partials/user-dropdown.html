@@ -1,12 +1,14 @@
 {% load static %}
 {% load i18n %}
+
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle d-flex align-items-center user-nav" href="#" id="userDropdown" role="button"
         data-bs-toggle="dropdown" aria-expanded="false">
         {% if request.user.image %}
         <img src="{{request.user.image.url}}" class="user-img" alt="{{request.user.full_name}}">
         {% else %}
-        <i class="fas fa-user me-2"></i>
+        <!-- <i class="fas fa-user me-2 user-img"></i> -->
+        <img src="{% static 'images/user-avatar.png' %}" class="user-img" alt="Mireldar Babayev">
         {% endif %}
     </a>
     <div class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="userDropdown">

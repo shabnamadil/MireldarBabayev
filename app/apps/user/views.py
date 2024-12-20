@@ -25,7 +25,8 @@ class LoginPageView(TemplateView):
 
     def get(self, request):
         form = LoginForm()
-        return render(request, 'components/user/login/login.html', {'form': form})
+        context = self.get_context_data(form=form)
+        return render(request, self.template_name, context)
 
     def post(self, request):
         form = LoginForm(request.POST)
@@ -39,20 +40,18 @@ class LoginPageView(TemplateView):
                 next_url = request.POST.get('next')
                 if next_url:
                     return redirect(next_url)
-                
                 return redirect('home')
             else:
                 form.add_error(None, 'Invalid email or password')
-        return render(request, 'components/user/login/login.html', {'form': form})
-
+        context = self.get_context_data(form=form)
+        return render(request, self.template_name, context)
 
     def get_context_data(self, **kwargs):
         cx = super().get_context_data(**kwargs)
         cx.update({
-            'about' : AboutUs.objects.first()
+            'about': AboutUs.objects.first()
         })
         return cx
-    
 
 
 def logout_view(request):

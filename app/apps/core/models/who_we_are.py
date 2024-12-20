@@ -2,11 +2,10 @@ from django.db import models
 
 from ckeditor_uploader.fields import RichTextUploadingField
 
-from utils.models.base_model import BaseModel
 from utils.models.singleton import SingletonModel
 
 
-class WhoWeAre(BaseModel, SingletonModel):
+class WhoWeAre(SingletonModel):
     title = models.CharField(
         'Başlıq',
         max_length=150

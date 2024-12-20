@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+
 <section class="space">
     <div class="container container-custom">
         <div class="row">
@@ -15,8 +17,8 @@
             </div>
             <div class="col-md-6">
                 <div class="video-play-text">
-                    <span>Who we are -----</span>
-                    <h2>We Have Advanced Technologies</h2>
+                    <span>{% trans 'Who we are' %} -----</span>
+                    <h2>{% trans 'We Have Advanced Technologies' %}</h2>
                     <p>
                         {{who_we_are.content|safe}}
                     </p>

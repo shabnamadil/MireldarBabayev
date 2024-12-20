@@ -11,10 +11,14 @@ from .models import (
     WhyChooseUs,
     Coworker
 )
-
+from apps.seo.models import (
+    ServicesPageSeo,
+    ServiceDetailPageSeo
+)
 from ..blog.models import Blog
 from ..core.models import Testimoinal
 from ..appointment.models import Timetable
+
 
 class ServiceListView(ListView):
     model = Service
@@ -30,6 +34,7 @@ class ServiceListView(ListView):
             'testimonials' : Testimoinal.objects.all()[:3],
             'why_choose_us' : WhyChooseUs.objects.all(),
             'coworkers' : Coworker.objects.all(),
+            'seo' : ServicesPageSeo.objects.first(),
             'available_times' : Timetable.objects.filter(
                 start_time__gte=local_time,
                 appointment=None
@@ -50,6 +55,7 @@ class ServiceDetailView(DetailView):
             'services' : Service.objects.all().exclude(id=obj.id),
             'downloads' : Download.objects.all(),
             'latest_blogs' : Blog.published.all()[:3],
-            'why_choose_us' : WhyChooseUs.objects.all()
+            'why_choose_us' : WhyChooseUs.objects.all(),
+            'seo' : ServiceDetailPageSeo.objects.get(service__id=obj.id)
         })
         return cx

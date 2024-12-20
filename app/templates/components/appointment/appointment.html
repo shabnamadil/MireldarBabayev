@@ -1,5 +1,33 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+
+{% block title %}
+<title>{{seo.meta_title|default:settings.site_name}}</title>
+{% endblock title %}
+ 
+{% block seo %}
+
+{% if request.LANGUAGE_CODE == 'az' %}
+    <meta name="description" content="{{ seo.meta_description|default:'Etibarlı tibbi məsləhətlər, sağlamlıq tövsiyələri və həkim tərəfindən yazılmış ən son məqalələr.' }}">
+    <meta name="keywords" content="{{ seo.meta_keywords|default:'tibb, sağlamlıq, həkim məsləhətləri, tibbi məqalələr, sağlam həyat' }}">
+    <meta property="og:title" content="{{ seo.og_title|default:'Həkim Məsləhətləri ilə Sağlam Həyat'}}">
+    <meta property="og:description" content="{{seo.og_description|default:'Sağlam həyat tərzi üçün həkim məsləhətləri və tövsiyələr, xəstəliklərin qarşısını alma yolları.'}}">
+{% elif request.LANGUAGE_CODE == 'ru' %}
+    <meta name="description" content="{{ seo.meta_description|default:'Надежные медицинские советы, рекомендации по здоровью и последние статьи от врача.' }}">
+    <meta name="keywords" content="{{ seo.meta_keywords|default:'медицина, здоровье, медицинские советы, медицинские статьи, здоровый образ жизни' }}">
+    <meta property="og:title" content="{{seo.og_title|default:'Здоровье с Советами Врача'}}">
+    <meta property="og:description" content="{{seo.og_description|default:'Советы врача для здорового образа жизни, предотвращение болезней и поддержание здоровья.'}}">
+{% else %}
+    <meta name="description" content="{{ seo.meta_description|default:'Trusted medical advice, health tips, and the latest articles from a doctor.' }}">
+    <meta name="keywords" content="{{ seo.meta_keywords|default:'medical, health, doctor advice, medical articles, healthy living' }}">
+    <meta property="og:title" content="{{seo.og_title|default:'Health Tips from a Doctor'}}">
+    <meta property="og:description" content="{{seo.og_description|default:'Doctor`s advice for a healthy lifestyle, disease prevention, and maintaining good health.'}}">
+{% endif %}
+
+<meta property="og:image" content="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{seo.og_image.url|default:settings.logo.url}}">
+
+{% endblock seo %}
 
 <!-- Sub header -->
 {% block subheader %}
@@ -18,8 +46,8 @@
             <div class="col-md-12 col-lg-6">
                 <div class="appointment-form_wrap">
                     <div class="heading-style1">
-                        <span>Online Booking</span>
-                        <h2>Make an Appointment</h2>
+                        <span>{% trans 'Online Booking' %}</span>
+                        <h2>{% trans 'Make an Appointment' %}</h2>
                     </div>
                     {% include 'components/appointment/partials/form.html' %}
                 </div>
@@ -27,9 +55,9 @@
             <div class="col-md-12 col-lg-6">
                 <div class="why-choose_block">
                     <div class="heading-style1">
-                        <span>Why Us</span>
-                        <h2>Why Choose Us</h2>
-                        <p>We’re committed to a patient-centered approach, ensuring you feel supported and cared for every step of the way.</p>
+                        <span>{% trans 'Why Us' %}</span>
+                        <h2>{% trans 'Why Choose Us' %}</h2>
+                        <p>{% trans "We’re committed to a patient-centered approach, ensuring you feel supported and cared for every step of the way." %}</p>
                         <hr>
                     </div>
                     {% for item in why_choose_us %}
