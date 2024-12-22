@@ -11,14 +11,26 @@ from .models import (
 from .forms import DownloadBaseForm
 
 
+class MediaAdmin(TranslationAdmin):
+    class Media:
+        js = (
+            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
+            'modeltranslation/js/tabbed_translation_fields.js',
+        )
+        css = {
+            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
+        }
+
+
 @admin.register(Service)
-class ServiceAdmin(TranslationAdmin):
+class ServiceAdmin(MediaAdmin):
     list_filter = ('created_at', )
     readonly_fields = ('slug', )
 
 
 @admin.register(Download)
-class DownloadAdmin(TranslationAdmin):
+class DownloadAdmin(MediaAdmin):
     list_display = ('title', 'type', 'get_file_size')
     list_filter = ('created_at', 'type')
     form = DownloadBaseForm
@@ -29,10 +41,10 @@ class DownloadAdmin(TranslationAdmin):
 
 
 @admin.register(WhyChooseUs)
-class WhyChooseUsAdmin(TranslationAdmin):
+class WhyChooseUsAdmin(MediaAdmin):
     pass
 
 
 @admin.register(Coworker)
-class CoworkerAdmin(TranslationAdmin):
+class CoworkerAdmin(MediaAdmin):
     pass

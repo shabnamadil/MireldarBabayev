@@ -1,7 +1,10 @@
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.urls import reverse_lazy
-from django.core.validators import MinLengthValidator
+from django.core.validators import (
+    MinLengthValidator,
+    MaxLengthValidator
+)
 
 from ckeditor_uploader.fields import RichTextUploadingField
 
@@ -22,7 +25,10 @@ class Service(BaseModel):
     )
     short_description = models.TextField(
         'Qısa məlumat',
-        validators=[MinLengthValidator(150)]
+        validators=[
+            MinLengthValidator(145),
+            MaxLengthValidator(160)
+        ]
     )
     png = models.FileField(
         'PNG',
@@ -36,7 +42,10 @@ class Service(BaseModel):
     title = models.CharField(
         'Başlıq',
         unique=True,
-        max_length=250
+        max_length=60,
+        validators=[
+            MinLengthValidator(30)
+        ]
     )
     content = RichTextUploadingField(
         'Servis haqqında geniş məlumat'

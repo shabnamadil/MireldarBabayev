@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-10 01:24+0400\n"
+"POT-Creation-Date: 2024-12-22 20:36+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,24 +26,531 @@ msgstr ""
 msgid "Passwords do not match."
 msgstr ""
 
+#: config/settings.py:143
+msgid "Azerbaijani"
+msgstr ""
+
+#: config/settings.py:144
+msgid "Russian"
+msgstr ""
+
+#: config/settings.py:145
+msgid "English"
+msgstr ""
+
+#: templates/components/about/partials/about.html:17
+msgid "PLAY VIDEO"
+msgstr ""
+
+#: templates/components/about/partials/mission.html:9
+msgid "Our Mission"
+msgstr ""
+
+#: templates/components/about/partials/mission.html:12
+#: templates/components/about/partials/mission.html:21
+#: templates/components/about/partials/mission.html:30
+msgid "Read More"
+msgstr ""
+
+#: templates/components/about/partials/mission.html:13
+#: templates/components/about/partials/mission.html:22
+#: templates/components/about/partials/mission.html:31
+msgid "Show Less"
+msgstr ""
+
+#: templates/components/about/partials/mission.html:18
+msgid "Our Vision"
+msgstr ""
+
+#: templates/components/about/partials/mission.html:27
+msgid "Our Values"
+msgstr ""
+
+#: templates/components/about/partials/newsletter.html:5
+msgid "Subscribe to our Newsletter"
+msgstr ""
+
+#: templates/components/about/partials/newsletter.html:9
+msgid "Enter Your Email"
+msgstr ""
+
+#: templates/components/about/partials/newsletter.html:13
+msgid "You subscribed successfuly!!!"
+msgstr ""
+
+#: templates/components/about/partials/subheader.html:8
+msgid "ABOUT US"
+msgstr ""
+
+#: templates/components/about/partials/subheader.html:9
+msgid "Your Health, Our Priority"
+msgstr ""
+
+#: templates/components/about/partials/subheader.html:10
+#: templates/components/appointment/partials/subheader.html:10
+#: templates/components/blog/partials/subheader.html:10
+#: templates/components/contact/partials/subheader.html:10
+#: templates/components/core/partials/faq-subheader.html:10
+#: templates/components/footer/partials/quick-links.html:5
+#: templates/components/navbar/navbar.html:12
+#: templates/components/service/partials/subheader-detail.html:10
+#: templates/components/service/partials/subheader.html:10
+#: templates/components/user/login/partials/subheader.html:10
+#: templates/components/user/register/partials/subheader.html:10
+msgid "Home"
+msgstr ""
+
+#: templates/components/about/partials/subheader.html:10
+#: templates/components/about/partials/subheader.html:15
+#: templates/components/footer/partials/quick-links.html:11
+msgid "About Us"
+msgstr ""
+
+#: templates/components/about/partials/testimonial.html:8
+msgid "Testimonials"
+msgstr ""
+
+#: templates/components/about/partials/testimonial.html:9
+#: templates/components/about/partials/testimonial.html:26
+msgid "What Our Clients Say"
+msgstr ""
+
+#: templates/components/about/partials/who-we-are.html:9
+#: templates/components/appointment/partials/who-we-are.html:20
+msgid "Who we are"
+msgstr ""
+
+#: templates/components/appointment/appointment.html:49
+#: templates/components/home/index.html:101
+#: templates/components/service/services.html:65
+msgid "Online Booking"
+msgstr ""
+
+#: templates/components/appointment/appointment.html:50
+#: templates/components/home/index.html:102
+#: templates/components/service/services.html:66
+msgid "Make an Appointment"
+msgstr ""
+
+#: templates/components/appointment/appointment.html:58
+#: templates/components/home/index.html:110
+#: templates/components/service/services.html:74
+msgid "Why Us"
+msgstr ""
+
+#: templates/components/appointment/appointment.html:59
+#: templates/components/home/index.html:111
+#: templates/components/service/services.html:75
+msgid "Why Choose Us"
+msgstr ""
+
+#: templates/components/appointment/appointment.html:60
+#: templates/components/home/index.html:112
+#: templates/components/service/services.html:76
+msgid ""
+"We’re committed to a patient-centered approach, ensuring you feel supported "
+"and cared for every step of the way."
+msgstr ""
+
+#: templates/components/appointment/partials/form.html:7
+msgid "Reservation completed. You will be contacted soon."
+msgstr ""
+
+#: templates/components/appointment/partials/form.html:13
+msgid "Enter Your Name, Surname"
+msgstr ""
+
+#: templates/components/appointment/partials/form.html:20
+msgid "Enter Available Time"
+msgstr ""
+
+#: templates/components/appointment/partials/form.html:32
+msgid "Enter phone number"
+msgstr ""
+
+#: templates/components/appointment/partials/form.html:38
+msgid "Enter location"
+msgstr ""
+
+#: templates/components/appointment/partials/form.html:46
+#: templates/components/contact/partials/contact-form.html:48
+msgid "Your Message"
+msgstr ""
+
+#: templates/components/appointment/partials/form.html:53
+msgid "BOOK NOW"
+msgstr ""
+
+#: templates/components/appointment/partials/subheader.html:8
+#: templates/components/appointment/partials/subheader.html:10
+#: templates/components/appointment/partials/subheader.html:15
+#: templates/components/footer/footer.html:40
+msgid "Appointment"
+msgstr ""
+
+#: templates/components/appointment/partials/subheader.html:9
+msgid "Your Health, Our Priority – Book Your Doctor's Appointment Today!"
+msgstr ""
+
+#: templates/components/appointment/partials/who-we-are.html:21
+msgid "We Have Advanced Technologies"
+msgstr ""
+
+#: templates/components/blog/blog-detail.html:54
+msgid "tags"
+msgstr ""
+
+#: templates/components/blog/blog-detail.html:64
+msgid "Share"
+msgstr ""
+
+#: templates/components/blog/blog-detail.html:121
+#: templates/components/blog/blog-list.html:53
+msgid "Pre"
+msgstr ""
+
+#: templates/components/blog/blog-detail.html:128
+#: templates/components/blog/blog-list.html:58
+msgid "Next"
+msgstr ""
+
+#: templates/components/blog/blog-detail.html:146
+#: templates/components/blog/blog-list.html:68
+msgid "Search"
+msgstr ""
+
+#: templates/components/blog/blog-detail.html:152
+#: templates/components/blog/blog-list.html:74
+msgid "Search here"
+msgstr ""
+
+#: templates/components/blog/blog-detail.html:161
+#: templates/components/blog/blog-list.html:83
+msgid "Popular Posts"
+msgstr ""
+
+#: templates/components/blog/blog-detail.html:171
+#: templates/components/blog/blog-list.html:93
+msgid "Categories"
+msgstr ""
+
+#: templates/components/blog/blog-detail.html:181
+#: templates/components/blog/blog-list.html:103
+msgid "Tags"
+msgstr ""
+
+#: templates/components/blog/blog-detail.html:193
+#: templates/components/blog/blog-list.html:115
+msgid "Follow Us"
+msgstr ""
+
+#: templates/components/blog/blog-list.html:41
+msgid "Clear"
+msgstr ""
+
+#: templates/components/blog/modals/delete-modal.html:5
+msgid "Are you sure you want to delete this comment?"
+msgstr ""
+
+#: templates/components/blog/modals/delete-modal.html:7
+msgid "Delete"
+msgstr ""
+
+#: templates/components/blog/modals/delete-modal.html:8
+#: templates/components/service/modals/download-modal.html:9
+msgid "Cancel"
+msgstr ""
+
+#: templates/components/blog/partials/comment-form.html:7
+msgid "Write your message here"
+msgstr ""
+
+#: templates/components/blog/partials/subheader.html:8
+msgid "BLOGS"
+msgstr ""
+
+#: templates/components/blog/partials/subheader.html:9
+msgid ""
+"Explore insights, tips, and stories on our blog page, crafted to inspire and "
+"inform."
+msgstr ""
+
+#: templates/components/blog/partials/subheader.html:10
+#: templates/components/footer/partials/quick-links.html:14
+msgid "Blogs"
+msgstr ""
+
+#: templates/components/blog/partials/subheader.html:15
+#: templates/components/home/index.html:144
+msgid "Blog"
+msgstr ""
+
+#: templates/components/contact/partials/contact-form.html:4
+msgid "Get in Touch with Us"
+msgstr ""
+
+#: templates/components/contact/partials/contact-form.html:6
+msgid "Your message was sent. We`ll get in touch with you soon."
+msgstr ""
+
+#: templates/components/contact/partials/contact-form.html:16
+msgid "First Name"
+msgstr ""
+
+#: templates/components/contact/partials/contact-form.html:23
+msgid "Last Name"
+msgstr ""
+
+#: templates/components/contact/partials/contact-form.html:33
+msgid "Your Email"
+msgstr ""
+
+#: templates/components/contact/partials/contact-form.html:40
+msgid "Your Phone Number"
+msgstr ""
+
+#: templates/components/contact/partials/contact-form.html:51
+msgid "SEND"
+msgstr ""
+
+#: templates/components/contact/partials/contact-info.html:4
+msgid "Have Questions? Reach Out to Us Anytime!"
+msgstr ""
+
+#: templates/components/contact/partials/contact-info.html:7
+msgid "Contact Information"
+msgstr ""
+
+#: templates/components/contact/partials/contact-info.html:10
+#: templates/components/service/partials/contact.html:9
+msgid "Phone"
+msgstr ""
+
+#: templates/components/contact/partials/contact-info.html:17
+#: templates/components/service/partials/contact.html:16
+#: templates/components/user/login/partials/form.html:24
+#: templates/components/user/register/partials/form.html:38
+msgid "Email"
+msgstr ""
+
+#: templates/components/contact/partials/contact-info.html:25
+msgid "Head Office"
+msgstr ""
+
+#: templates/components/contact/partials/contact-info.html:28
+#: templates/components/service/partials/contact.html:23
+msgid "Location"
+msgstr ""
+
+#: templates/components/contact/partials/subheader.html:8
+msgid "CONTACT"
+msgstr ""
+
+#: templates/components/contact/partials/subheader.html:9
+msgid "We're Here to Help – Get in Touch Today!"
+msgstr ""
+
+#: templates/components/contact/partials/subheader.html:10
+#: templates/components/contact/partials/subheader.html:15
+#: templates/components/navbar/navbar.html:32
+msgid "Contact"
+msgstr ""
+
+#: templates/components/core/errors/404.html:19
+msgid "404 Not Found"
+msgstr ""
+
+#: templates/components/core/errors/404.html:30
+msgid "Ooops...Page not found!"
+msgstr ""
+
+#: templates/components/core/errors/404.html:31
+msgid ""
+"The page you are looking for might have been removed, had its name changed, "
+"or is temporarily unavailable. Please check the URL or return to the "
+"homepage."
+msgstr ""
+
+#: templates/components/core/errors/404.html:32
+#: templates/components/core/errors/500.html:32
+msgid "HOMEPAGE"
+msgstr ""
+
+#: templates/components/core/errors/500.html:19
+msgid "500 Server Error"
+msgstr ""
+
+#: templates/components/core/errors/500.html:30
+msgid "Ooops...Server Error!"
+msgstr ""
+
+#: templates/components/core/errors/500.html:31
+msgid "A server error occurred. Please contact service administration."
+msgstr ""
+
+#: templates/components/core/faq.html:44
+#: templates/components/core/partials/faq-subheader.html:10
+#: templates/components/core/partials/faq-subheader.html:15
+msgid "Faq"
+msgstr ""
+
+#: templates/components/core/faq.html:45
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: templates/components/core/partials/faq-subheader.html:8
+#: templates/components/footer/footer.html:41
+msgid "FAQ"
+msgstr ""
+
+#: templates/components/core/statistics.html:18
+#: templates/components/footer/partials/quick-links.html:17
+#: templates/components/service/partials/contact.html:4
+msgid "Contact Us"
+msgstr ""
+
+#: templates/components/email/blog/comment_author_send_email.html:8
+#: templates/components/email/blog/comment_author_send_email.html:14
+msgid "Comment Notification"
+msgstr ""
+
+#: templates/components/email/blog/comment_author_send_email.html:20
+msgid "Hello"
+msgstr ""
+
+#: templates/components/email/blog/comment_author_send_email.html:35
+msgid "Comment Content"
+msgstr ""
+
+#: templates/components/email/blog/comment_author_send_email.html:42
+msgid ""
+"If you believe this was done in error or have any questions, feel free to "
+"contact us at"
+msgstr ""
+
+#: templates/components/email/blog/comment_author_send_email.html:47
+msgid "Thank you for being a valued member of our community."
+msgstr ""
+
+#: templates/components/email/blog/comment_author_send_email.html:53
+msgid "Best regards"
+msgstr ""
+
+#: templates/components/email/blog/comment_author_send_email.html:54
+msgid "The Team"
+msgstr ""
+
+#: templates/components/email/blog/comment_author_send_email.html:55
+msgid "All rights reserved."
+msgstr ""
+
+#: templates/components/footer/footer.html:23
+msgid "Quick Links"
+msgstr ""
+
+#: templates/components/footer/footer.html:28
+#: templates/components/home/index.html:64
+#: templates/components/service/services.html:45
+msgid "Our Services"
+msgstr ""
+
+#: templates/components/footer/footer.html:42
+msgid "Newsletter"
+msgstr ""
+
+#: templates/components/footer/footer.html:52
+msgid "Allrights Reserved"
+msgstr ""
+
+#: templates/components/footer/partials/quick-links.html:8
+#: templates/components/navbar/navbar.html:17
+#: templates/components/service/partials/subheader.html:10
+#: templates/components/service/partials/subheader.html:15
+msgid "Services"
+msgstr ""
+
 #: templates/components/header/top-bar.html:18
 msgid "Mail us"
 msgstr ""
 
 #: templates/components/header/top-bar.html:25
+#: templates/components/home/partials/emergency.html:9
 msgid "Call anytime"
 msgstr ""
 
 #: templates/components/header/top-bar.html:30
+#: templates/components/home/partials/banner.html:14
+#: templates/components/navbar/partials/icons.html:51
 msgid "Make Appointment"
 msgstr ""
 
-#: templates/components/navbar/navbar.html:12
-msgid "Home"
+#: templates/components/home/index.html:65
+#: templates/components/service/services.html:46
+msgid "High Quality Services for You"
 msgstr ""
 
-#: templates/components/navbar/navbar.html:17
-msgid "Services"
+#: templates/components/home/index.html:77
+#: templates/components/service/partials/service-item.html:9
+msgid "READ MORE"
+msgstr ""
+
+#: templates/components/home/index.html:86
+msgid "Contact us for better help and services."
+msgstr ""
+
+#: templates/components/home/index.html:87
+msgid "Let’s get started"
+msgstr ""
+
+#: templates/components/home/index.html:145
+msgid "Latest News & Events"
+msgstr ""
+
+#: templates/components/home/partials/about.html:27
+msgid "Read more"
+msgstr ""
+
+#: templates/components/home/partials/emergency.html:4
+msgid "Emergency? Contact Us Now."
+msgstr ""
+
+#: templates/components/home/partials/emergency.html:5
+msgid ""
+"Facing an emergency? Don’t wait—reach out to us immediately for prompt "
+"assistance. Our team is available 24/7 to provide support and address your "
+"urgent needs. Call or message us now to ensure you get the help you need "
+"when it matters most."
+msgstr ""
+
+#: templates/components/home/partials/emergency.html:16
+msgid "Email us"
+msgstr ""
+
+#: templates/components/home/partials/service-icon.html:6
+#: templates/components/home/partials/service-icon.html:8
+msgid "Specialised Service"
+msgstr ""
+
+#: templates/components/home/partials/service-icon.html:9
+msgid "Designed Just for You"
+msgstr ""
+
+#: templates/components/home/partials/service-icon.html:15
+#: templates/components/home/partials/service-icon.html:17
+msgid "24/7 Advanced Care"
+msgstr ""
+
+#: templates/components/home/partials/service-icon.html:18
+msgid "Anytime You Need It"
+msgstr ""
+
+#: templates/components/home/partials/service-icon.html:24
+#: templates/components/home/partials/service-icon.html:26
+msgid "Get Result Online"
+msgstr ""
+
+#: templates/components/home/partials/service-icon.html:27
+msgid "Just a Click Away"
 msgstr ""
 
 #: templates/components/navbar/navbar.html:22
@@ -52,10 +559,6 @@ msgstr ""
 
 #: templates/components/navbar/navbar.html:27
 msgid "Bloq"
-msgstr ""
-
-#: templates/components/navbar/navbar.html:32
-msgid "Contact"
 msgstr ""
 
 #: templates/components/navbar/partials/user-dropdown.html:29
@@ -71,9 +574,146 @@ msgid "Please login or register to access your account."
 msgstr ""
 
 #: templates/components/navbar/partials/user-dropdown.html:41
+#: templates/components/user/login/partials/subheader.html:10
+#: templates/components/user/login/partials/subheader.html:15
 msgid "Login"
 msgstr ""
 
 #: templates/components/navbar/partials/user-dropdown.html:44
+#: templates/components/user/register/partials/form.html:52
+#: templates/components/user/register/partials/subheader.html:10
+#: templates/components/user/register/partials/subheader.html:15
 msgid "Register"
+msgstr ""
+
+#: templates/components/service/modals/download-modal.html:7
+msgid "Do you want to download this file?"
+msgstr ""
+
+#: templates/components/service/modals/download-modal.html:10
+msgid "Download"
+msgstr ""
+
+#: templates/components/service/partials/service-detail.html:40
+msgid "Files"
+msgstr ""
+
+#: templates/components/service/partials/service-detail.html:46
+msgid "Latest Blogs"
+msgstr ""
+
+#: templates/components/service/partials/subheader.html:8
+msgid "OUR SERVICES"
+msgstr ""
+
+#: templates/components/service/partials/subheader.html:9
+msgid "Customized Solutions for Every Need"
+msgstr ""
+
+#: templates/components/user/login/partials/form.html:8
+msgid "Welcome Back to"
+msgstr ""
+
+#: templates/components/user/login/partials/form.html:10
+msgid ""
+"Already a member? Sign in to access your account, check updates, and "
+"continue where you left off."
+msgstr ""
+
+#: templates/components/user/login/partials/form.html:17
+msgid "Sign In"
+msgstr ""
+
+#: templates/components/user/login/partials/form.html:29
+#: templates/components/user/register/partials/form.html:43
+msgid "Password"
+msgstr ""
+
+#: templates/components/user/login/partials/form.html:33
+msgid "Log In"
+msgstr ""
+
+#: templates/components/user/login/partials/form.html:36
+msgid "Don't have an account?"
+msgstr ""
+
+#: templates/components/user/login/partials/form.html:36
+msgid "Register here"
+msgstr ""
+
+#: templates/components/user/login/partials/subheader.html:8
+msgid "LOGIN"
+msgstr ""
+
+#: templates/components/user/login/partials/subheader.html:9
+msgid ""
+"Welcome back! Please log in to access your account and continue where you "
+"left off!"
+msgstr ""
+
+#: templates/components/user/register/partials/form.html:8
+msgid "Welcome to"
+msgstr ""
+
+#: templates/components/user/register/partials/form.html:10
+msgid ""
+"Join us and be part of our growing community. By registering, you gain "
+"access to exclusive features, updates, and opportunities to connect with "
+"like-minded individuals."
+msgstr ""
+
+#: templates/components/user/register/partials/form.html:17
+msgid "Create Your Account"
+msgstr ""
+
+#: templates/components/user/register/partials/form.html:19
+msgid "You successfully registered."
+msgstr ""
+
+#: templates/components/user/register/partials/form.html:24
+msgid "First name"
+msgstr ""
+
+#: templates/components/user/register/partials/form.html:25
+msgid "Enter your first name"
+msgstr ""
+
+#: templates/components/user/register/partials/form.html:29
+msgid "Last name"
+msgstr ""
+
+#: templates/components/user/register/partials/form.html:30
+msgid "Enter your last name"
+msgstr ""
+
+#: templates/components/user/register/partials/form.html:34
+msgid "Image"
+msgstr ""
+
+#: templates/components/user/register/partials/form.html:35
+msgid "Enter your image"
+msgstr ""
+
+#: templates/components/user/register/partials/form.html:39
+msgid "Enter your email"
+msgstr ""
+
+#: templates/components/user/register/partials/form.html:44
+msgid "Enter your password"
+msgstr ""
+
+#: templates/components/user/register/partials/form.html:48
+msgid "Confirm Password"
+msgstr ""
+
+#: templates/components/user/register/partials/form.html:49
+msgid "Confirm your password"
+msgstr ""
+
+#: templates/components/user/register/partials/form.html:55
+msgid "Already have an account?"
+msgstr ""
+
+#: templates/components/user/register/partials/subheader.html:8
+msgid "REGISTER"
 msgstr ""

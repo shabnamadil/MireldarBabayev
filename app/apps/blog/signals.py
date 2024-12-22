@@ -1,4 +1,4 @@
-from django.db.models.signals import post_delete
+from django.db.models.signals import post_delete, post_save
 from django.dispatch import receiver
 from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
@@ -7,8 +7,12 @@ from django.template.loader import render_to_string
 
 import datetime
 
-from apps.blog.models import Comment
+from apps.blog.models import (
+    Comment, 
+    Blog
+)
 from apps.core.models import SiteSettings
+from apps.seo.models import BlogDetailPageSeo
 
 User = get_user_model()
 
@@ -35,3 +39,9 @@ def notify_user_on_comment_delete(sender, instance, **kwargs):
         fail_silently=False,
         html_message=message,
     )
+
+
+@receiver(post_save, sender=Blog)
+def create_service_object_seo(sender, instance, created, **kwargs):
+    if created:
+        BlogDetailPageSeo.objects.create(blog=instance)

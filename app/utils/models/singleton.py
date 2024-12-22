@@ -1,7 +1,9 @@
 from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
 
-class SingletonModel(models.Model):
+from .base_model import BaseModel
+
+class SingletonModel(BaseModel):
     class Meta:
         abstract = True
 

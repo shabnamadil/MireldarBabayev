@@ -98,6 +98,10 @@ class Blog(BaseModel):
         local_published_time = timezone.localtime(self.published_at)
         return local_published_time.strftime('%d %b, %Y')
     
+    @property
+    def sitemap_image(self):
+        return self.image.url if self.image else None
+    
     def get_absolute_url(self):
         return reverse_lazy('blog-detail', args=[self.slug])
     

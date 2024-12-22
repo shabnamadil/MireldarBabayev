@@ -2,6 +2,33 @@
 {% load static %}
 {% load i18n %}
 
+{% block title %}
+    <title>{{seo.meta_title|default:settings.site_name}}</title>
+{% endblock title %}
+ 
+{% block seo %}
+
+{% if request.LANGUAGE_CODE == 'az' %}
+    <meta name="description" content="{{ seo.meta_description|default:'Etibarlı tibbi məsləhətlər, sağlamlıq tövsiyələri və həkim tərəfindən yazılmış ən son məqalələr.' }}">
+    <meta name="keywords" content="{{ seo.meta_keywords|default:'tibb, sağlamlıq xidmətləri, həkimlər, sağlamlıq həlləri, tibbi müalicə' }}">
+    <meta property="og:title" content="{{ seo.og_title|default:'Tibbi Xidmətlər və Sağlamlıq Həlləri'}}">
+    <meta property="og:description" content="{{ seo.og_description|default:'Etibarlı tibbi xidmətlər və xəstəliklərin qarşısının alınması üçün peşəkar məsləhətlər.' }}">
+{% elif request.LANGUAGE_CODE == 'ru' %}
+    <meta name="description" content="{{ seo.meta_description|default:'Подробная информация о профессиональных медицинских услугах и надежных решениях для здоровья.' }}">
+    <meta name="keywords" content="{{ seo.meta_keywords|default:'медицина, медицинские услуги, врачи, решения для здоровья, лечение' }}">
+    <meta property="og:title" content="{{ seo.og_title|default:'Медицинские Услуги и Решения для Здоровья'}}">
+    <meta property="og:description" content="{{ seo.og_description|default:'Надежные медицинские услуги и профессиональные советы для предотвращения болезней.' }}">
+{% else %}
+    <meta name="description" content="{{ seo.meta_description|default:'Comprehensive details about professional medical services and reliable health solutions.' }}">
+    <meta name="keywords" content="{{ seo.meta_keywords|default:'medical, health services, doctors, health solutions, treatment' }}">
+    <meta property="og:title" content="{{ seo.og_title|default:'Medical Services and Health Solutions'}}">
+    <meta property="og:description" content="{{ seo.og_description|default:'Reliable medical services and professional advice for disease prevention.' }}">
+{% endif %}
+
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{seo.og_image.url|default:settings.logo.url}}">
+
+{% endblock seo %}
+
 {% block subheader %}
 <!-- Sub header -->
 {% include 'components/service/partials/subheader.html' %}
@@ -16,7 +43,7 @@
             <div class="col-md-12">
                 <div class="sub-title_center">
                     <span>---- {% trans 'Our Services' %} ----</span>
-                    <h2>{% trans 'High Quality Services for You' %}</h2>
+                    <h1>{% trans 'High Quality Services for You' %}</h1>
                 </div>
             </div>
         </div>
@@ -81,7 +108,7 @@
                 <hr>
                 <div class="testi-slider-style2-nav">
                     {% for worker in coworkers %}
-                    <div><img src="{{worker.png.url}}" class="img-fluid" alt="{{coworker.name}}"></div>
+                    <div><img src="{{worker.png.url}}" class="img-fluid" alt="{{worker.name}}"></div>
                     {% endfor %}
                 </div>
             </div>

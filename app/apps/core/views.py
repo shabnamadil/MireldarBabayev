@@ -18,12 +18,27 @@ from ..service.models import (
     Service,
     WhyChooseUs
 )
+from ..seo.models import (
+    HomePageSeo,
+    AboutUsPageSeo,
+    ContactPageSeo,
+    FaqPageSeo
+)
 from ..blog.models import Blog
 from ..appointment.models import Timetable
 
 
 class ContactPageView(TemplateView):
     template_name = 'components/contact/contact.html'
+
+    def get_context_data(self, **kwargs):
+        cx = super().get_context_data(**kwargs)
+
+        cx.update({
+            'seo' : ContactPageSeo.objects.first()
+        })
+        
+        return cx
 
 
 class AboutUsPageView(DetailView):
@@ -46,7 +61,8 @@ class AboutUsPageView(DetailView):
         cx.update({
             'paired_statistics': paired_statistics,
             'who_we_are' : WhoWeAre.objects.first(),
-            'testimonials' : Testimoinal.objects.all()
+            'testimonials' : Testimoinal.objects.all(),
+            'seo' : AboutUsPageSeo.objects.first()
         })
         return cx
     
@@ -71,6 +87,7 @@ class HomePageView(TemplateView):
             'why_choose_us': WhyChooseUs.objects.all()[:4],
             'testimonials' : Testimoinal.objects.all()[:4],
             'blogs': Blog.published.all()[:4],
+            'seo': HomePageSeo.objects.first(),
             'available_times' : Timetable.objects.filter(
                 start_time__gte=local_time,
                 appointment=None
@@ -83,3 +100,12 @@ class FaqListView(ListView):
     model = Faq
     template_name = 'components/core/faq.html'
     context_object_name = 'faqs'
+
+    def get_context_data(self, **kwargs):
+        cx = super().get_context_data(**kwargs)
+
+        cx.update({
+            'seo' : FaqPageSeo.objects.first()
+        })
+        
+        return cx

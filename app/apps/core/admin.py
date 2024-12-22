@@ -19,6 +19,18 @@ from .forms import (
 )
 
 
+class MediaAdmin(TranslationAdmin):
+    class Media:
+        js = (
+            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
+            'modeltranslation/js/tabbed_translation_fields.js',
+        )
+        css = {
+            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
+        }
+
+
 @admin.register(Newsletter)
 class NewsletterAdmin(admin.ModelAdmin):
     list_filter = ('created_at', )
@@ -26,7 +38,7 @@ class NewsletterAdmin(admin.ModelAdmin):
 
 
 @admin.register(Faq)
-class FaqAdmin(TranslationAdmin):
+class FaqAdmin(MediaAdmin):
     list_filter = ('created_at', )
     list_per_page = 20
 
@@ -52,6 +64,16 @@ class SingletonModelAdmin(TranslationAdmin):
     def has_delete_permission(self, request, obj=None):
         """Prevent deletion of the singleton instance."""
         return False
+    
+    class Media:
+        js = (
+            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
+            'modeltranslation/js/tabbed_translation_fields.js',
+        )
+        css = {
+            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
+        }
 
 
 @admin.register(SiteSettings)
@@ -61,7 +83,7 @@ class SiteSettingsAdmin(SingletonModelAdmin):
 
 
 @admin.register(StatisticalIndicator)
-class StatisticsAdmin(TranslationAdmin):
+class StatisticsAdmin(MediaAdmin):
     list_display = ('name', 'value')
     list_filter = ('created_at', )
     list_per_page = 20
@@ -70,19 +92,20 @@ class StatisticsAdmin(TranslationAdmin):
 
 
 @admin.register(AboutUs)
-class AboutUsAdmin(TranslationAdmin):
+class AboutUsAdmin(SingletonModelAdmin):
     pass
 
 
 @admin.register(WhoWeAre)
-class WhoWeAreAdmin(TranslationAdmin):
+class WhoWeAreAdmin(SingletonModelAdmin):
     pass
-
+    
 
 @admin.register(Testimoinal)
-class TestimonialAdmin(TranslationAdmin):
+class TestimonialAdmin(MediaAdmin):
     pass
 
+
 @admin.register(Banner)
-class BannerAdmin(TranslationAdmin):
+class BannerAdmin(TranslationAdmin):    
     pass

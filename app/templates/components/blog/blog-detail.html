@@ -2,13 +2,21 @@
 {% load static %}
 {% load i18n %}
 
-{% block meta %}
-<meta property="og:title" content="{{ blog.title }}">
-<meta property="og:description" content="{{ blog.short_description }}">
-<meta property="og:image" content="{{ blog.image.url }}">
-<meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% block title %}
+<title>{{blog.title|default:settings.site_name}}</title>
+{% endblock title %}
+ 
+{% block seo %}
 
-{% endblock meta %}
+{% with blog.short_description as default_description %}
+    <meta name="description" content="{{ seo.meta_description|default:default_description }}">
+    <meta name="keywords" content="{{ seo.meta_keywords|default:default_description}}">
+    <meta property="og:description" content="{{seo.og_description|default:default_description}}">
+{% endwith %}
+    <meta property="og:title" content="{{blog.title}}">
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{blog.image.url|default:settings.logo.url}}">
+
+{% endblock seo %}
 
 {% block subheader %}
 <!-- Sub header -->
@@ -35,7 +43,7 @@
                                 <i class="far fa-comment"></i>{{blog.comments.count}}
                             </p>
                         </div>
-                        <h2>{{blog.title}}</h2>
+                        <h1>{{blog.title}}</h1>
                         <h5>{{blog.short_description}}</h5>
                         <p>{{blog.content|safe}}</p>
                         <div class="tag-block">
