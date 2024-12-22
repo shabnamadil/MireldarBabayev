@@ -42,7 +42,10 @@ class Service(BaseModel):
     title = models.CharField(
         'Başlıq',
         unique=True,
-        max_length=60
+        max_length=60,
+        validators=[
+            MinLengthValidator(30)
+        ]
     )
     content = RichTextUploadingField(
         'Servis haqqında geniş məlumat'

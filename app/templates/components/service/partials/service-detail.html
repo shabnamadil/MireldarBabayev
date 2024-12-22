@@ -3,7 +3,7 @@
 {% load i18n %}
 
 {% block title %}
-<title>{{service.title|default:settings.site_name}}</title>
+    <title>{{service.title|default:settings.site_name}}</title>
 {% endblock title %}
  
 {% block seo %}
@@ -53,7 +53,7 @@
                 <div class="service-detail_wrap">
                     <div class="service-detail_img">
                         <img src="{{service.image.url}}" class="img-fluid" alt="{{service.name}}">
-                        <h2>{{service.title}}</h2>
+                        <h1>{{service.title}}</h1>
                         <p>{{service.content|safe}}</p>                 
                         <hr>
                     </div>

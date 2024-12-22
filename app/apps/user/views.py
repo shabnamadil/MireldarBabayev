@@ -19,6 +19,11 @@ class RegisterPageView(TemplateView):
         })
         return cx
     
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return redirect('home')
+        return super().dispatch(request, *args, **kwargs)
+    
 
 class LoginPageView(TemplateView):
     template_name = 'components/user/login/login.html'
@@ -52,6 +57,11 @@ class LoginPageView(TemplateView):
             'about': AboutUs.objects.first()
         })
         return cx
+    
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            return redirect('home')
+        return super().dispatch(request, *args, **kwargs)
 
 
 def logout_view(request):

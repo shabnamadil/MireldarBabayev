@@ -28,9 +28,17 @@ SECRET_KEY = 'django-insecure-i)-r$tm^oz7%jsgjel63s!b1px#snq$=l2)wz0zpx+nx!&c0#v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    '109.205.183.20',
+    'localhost',
+    'testserver'
+]
 
 AUTH_USER_MODEL = 'user.CustomUser'
+
+LOGIN_URL = '/login/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Application definition
 
@@ -49,6 +57,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    'django_check_seo',
 
     # CUSTOM APPS
     'apps.blog',
@@ -58,6 +69,8 @@ INSTALLED_APPS = [
     'apps.user',
     'apps.seo'
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -155,7 +168,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'static/')]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-MEDIA_URL = "media/"
+MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type

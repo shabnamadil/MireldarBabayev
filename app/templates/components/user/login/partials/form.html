@@ -7,7 +7,7 @@
             <div class="login-info">
                 <h2>{% trans 'Welcome Back to' %} {{ settings.site_name }}!</h2>
                 <p>
-                    {% trans 'Already a member? Sign in to access your account, check updates, and continue where you left off.' %'}
+                    {% trans 'Already a member? Sign in to access your account, check updates, and continue where you left off.' %}
                 </p>
                 <img src="{{ about.image.url }}" class="img-fluid w-100" alt="{{ settings.site_name }}" />
             </div>
@@ -33,7 +33,7 @@
                     <button type="submit" id="loginBtn" class="btn btn-primary w-100">{% trans 'Log In' %}</button>
                 </form>
                 <p class="text-center mt-3">
-                    {% trans 'Don't have an account?' %'}<a href="{% url 'register' %}">{% trans 'Register here' %}</a>.
+                    {% trans "Don't have an account?" %}<a href="{% url 'register' %}">{% trans 'Register here' %}</a>.
                 </p>
             </div>
         </div>

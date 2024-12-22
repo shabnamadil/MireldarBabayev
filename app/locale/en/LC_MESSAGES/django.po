@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-21 01:34+0400\n"
+"POT-Creation-Date: 2024-12-22 18:02+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,15 +26,15 @@ msgstr ""
 msgid "Passwords do not match."
 msgstr ""
 
-#: config/settings.py:131
+#: config/settings.py:144
 msgid "Azerbaijani"
 msgstr ""
 
-#: config/settings.py:132
+#: config/settings.py:145
 msgid "Russian"
 msgstr ""
 
-#: config/settings.py:133
+#: config/settings.py:146
 msgid "English"
 msgstr ""
 
@@ -186,6 +186,10 @@ msgstr ""
 #: templates/components/appointment/partials/subheader.html:15
 #: templates/components/footer/footer.html:40
 msgid "Appointment"
+msgstr ""
+
+#: templates/components/appointment/partials/subheader.html:9
+msgid "Your Health, Our Priority – Book Your Doctor's Appointment Today!"
 msgstr ""
 
 #: templates/components/appointment/partials/who-we-are.html:21
@@ -385,6 +389,7 @@ msgid "A server error occurred. Please contact service administration."
 msgstr ""
 
 #: templates/components/core/faq.html:44
+#: templates/components/core/partials/faq-subheader.html:10
 #: templates/components/core/partials/faq-subheader.html:15
 msgid "Faq"
 msgstr ""
@@ -583,6 +588,12 @@ msgstr ""
 msgid "Welcome Back to"
 msgstr ""
 
+#: templates/components/user/login/partials/form.html:10
+msgid ""
+"Already a member? Sign in to access your account, check updates, and "
+"continue where you left off."
+msgstr ""
+
 #: templates/components/user/login/partials/form.html:17
 msgid "Sign In"
 msgstr ""
@@ -597,7 +608,7 @@ msgid "Log In"
 msgstr ""
 
 #: templates/components/user/login/partials/form.html:36
-msgid "Don"
+msgid "Don't have an account?"
 msgstr ""
 
 #: templates/components/user/login/partials/form.html:36
@@ -606,6 +617,12 @@ msgstr ""
 
 #: templates/components/user/login/partials/subheader.html:8
 msgid "LOGIN"
+msgstr ""
+
+#: templates/components/user/login/partials/subheader.html:9
+msgid ""
+"Welcome back! Please log in to access your account and continue where you "
+"left off!"
 msgstr ""
 
 #: templates/components/user/register/partials/form.html:8

@@ -19,12 +19,27 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls import handler404, handler500
+from django.views.generic import TemplateView
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import (
+    StaticSitemap,
+    ServiceSitemap,
+    BlogSitemap
+    )
 
 from utils.errors.custom_errors import custom_404, custom_500
 
 
 handler404 = custom_404
 handler500 = custom_500
+
+languages = ['en', 'az', 'ru']
+sitemaps = {}
+
+for lang in languages:
+    sitemaps[f'blog-{lang}'] = BlogSitemap(language=lang)
+    sitemaps[f'service-{lang}'] = ServiceSitemap(language=lang)
+    sitemaps[f'static-{lang}'] = StaticSitemap(language=lang)
 
 
 urlpatterns = [
@@ -34,7 +49,12 @@ urlpatterns = [
     path('api/', include('apps.core.api.urls')),
     path('api/', include('apps.appointment.api.urls')),
     path('api/', include('apps.user.api.urls')),
-
+    path('robots.txt', TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),
+    path('sitemap.xml', sitemap, {
+      'sitemaps': sitemaps,
+      'template_name': 'custom_sitemap.xml'
+    }, name='django.contrib.sitemaps.views.sitemap'),
+    path("django-check-seo/", include("django_check_seo.urls"))
 ]
 
 urlpatterns += i18n_patterns(

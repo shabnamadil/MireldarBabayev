@@ -1,8 +1,15 @@
 from django.db import models
+from django.core.validators import MinLengthValidator
+
 from utils.models.singleton import SingletonModel
 
+
 class SiteSettings(SingletonModel):
-    site_name = models.CharField(max_length=255, verbose_name="Site Name")
+    site_name = models.CharField(
+        max_length=255, 
+        verbose_name="Site Name",
+        validators=[MinLengthValidator(30)]
+    )
     logo = models.ImageField(upload_to='logos/', verbose_name="Site Logo")
     favicon = models.ImageField(upload_to='favicons/', verbose_name="Favicon")
     location = models.CharField(
