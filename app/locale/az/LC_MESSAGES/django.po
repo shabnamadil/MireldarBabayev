@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-22 18:02+0400\n"
-"PO-Revision-Date: 2024-12-19 01:53+0400\n"
+"POT-Creation-Date: 2024-12-22 20:37+0400\n"
+"PO-Revision-Date: 2024-12-22 20:24+0400\n"
 "Last-Translator: Admin user <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -27,15 +27,15 @@ msgstr "Bu sahə boş ola bilməz"
 msgid "Passwords do not match."
 msgstr "Şifrələr uyğun gəlmir"
 
-#: config/settings.py:144
+#: config/settings.py:143
 msgid "Azerbaijani"
 msgstr ""
 
-#: config/settings.py:145
+#: config/settings.py:144
 msgid "Russian"
 msgstr ""
 
-#: config/settings.py:146
+#: config/settings.py:145
 msgid "English"
 msgstr ""
 
@@ -416,11 +416,41 @@ msgstr "Bizimlə əlaqə"
 #: templates/components/email/blog/comment_author_send_email.html:8
 #: templates/components/email/blog/comment_author_send_email.html:14
 msgid "Comment Notification"
-msgstr ""
+msgstr "Rəy Bildirişi"
 
 #: templates/components/email/blog/comment_author_send_email.html:20
 msgid "Hello"
+msgstr "Salam"
+
+#: templates/components/email/blog/comment_author_send_email.html:35
+#, fuzzy
+#| msgid "Comment Notification"
+msgid "Comment Content"
+msgstr "Rəy Bildirişi"
+
+#: templates/components/email/blog/comment_author_send_email.html:42
+msgid ""
+"If you believe this was done in error or have any questions, feel free to "
+"contact us at"
 msgstr ""
+
+#: templates/components/email/blog/comment_author_send_email.html:47
+msgid "Thank you for being a valued member of our community."
+msgstr ""
+
+#: templates/components/email/blog/comment_author_send_email.html:53
+msgid "Best regards"
+msgstr ""
+
+#: templates/components/email/blog/comment_author_send_email.html:54
+msgid "The Team"
+msgstr ""
+
+#: templates/components/email/blog/comment_author_send_email.html:55
+#, fuzzy
+#| msgid "Allrights Reserved"
+msgid "All rights reserved."
+msgstr "Bütün haqlar qorunur"
 
 #: templates/components/footer/footer.html:23
 msgid "Quick Links"

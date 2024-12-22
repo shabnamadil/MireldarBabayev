@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-22 18:02+0400\n"
+"POT-Creation-Date: 2024-12-22 20:37+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,15 +28,15 @@ msgstr ""
 msgid "Passwords do not match."
 msgstr ""
 
-#: config/settings.py:144
+#: config/settings.py:143
 msgid "Azerbaijani"
 msgstr ""
 
-#: config/settings.py:145
+#: config/settings.py:144
 msgid "Russian"
 msgstr ""
 
-#: config/settings.py:146
+#: config/settings.py:145
 msgid "English"
 msgstr ""
 
@@ -418,6 +418,32 @@ msgstr ""
 
 #: templates/components/email/blog/comment_author_send_email.html:20
 msgid "Hello"
+msgstr ""
+
+#: templates/components/email/blog/comment_author_send_email.html:35
+msgid "Comment Content"
+msgstr ""
+
+#: templates/components/email/blog/comment_author_send_email.html:42
+msgid ""
+"If you believe this was done in error or have any questions, feel free to "
+"contact us at"
+msgstr ""
+
+#: templates/components/email/blog/comment_author_send_email.html:47
+msgid "Thank you for being a valued member of our community."
+msgstr ""
+
+#: templates/components/email/blog/comment_author_send_email.html:53
+msgid "Best regards"
+msgstr ""
+
+#: templates/components/email/blog/comment_author_send_email.html:54
+msgid "The Team"
+msgstr ""
+
+#: templates/components/email/blog/comment_author_send_email.html:55
+msgid "All rights reserved."
 msgstr ""
 
 #: templates/components/footer/footer.html:23

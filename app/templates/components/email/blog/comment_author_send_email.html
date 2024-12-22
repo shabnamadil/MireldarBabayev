@@ -20,31 +20,39 @@
                     {% trans 'Hello' %} <strong>{{author_name}}</strong>,
                 </p>
                 <p style="margin: 0 0 15px; font-size: 16px; line-height: 1.5;">
+                    {% get_current_language as CURRENT_LANGUAGE %}
+
+                    {% if CURRENT_LANGUAGE == 'en' %}
                     We wanted to inform you that your comment on the blog post <strong>"{{blog_title}}"</strong> has been deleted by an admin. Below are the details of your comment:
+                    {% elif CURRENT_LANGUAGE == 'az' %}
+                    Bildirmək istərdik ki, <strong>"{{blog_title}}"</strong> adlı bloqa yazdığınız rəy Admin tərəfindən silinib. Rəyiniz haqqında məlumatlar aşağıda qeyd edilib:
+                    {% elif CURRENT_LANGUAGE == 'ru' %}
+                    Мы хотели сообщить вам, что ваш комментарий к посту в блоге <strong>"{{blog_title}}"</strong> был удален администратором. Ниже приведены детали вашего комментария:
+                    {% endif %}
                 </p>
                 <table width="100%" border="0" cellspacing="0" cellpadding="10" style="background-color: #f5f5f5; border-radius: 6px;">
                     <tr>
-                        <td style="font-size: 14px; font-weight: bold; color: #555;">Comment Content:</td>
+                        <td style="font-size: 14px; font-weight: bold; color: #555;">{% trans 'Comment Content' %}:</td>
                     </tr>
                     <tr>
                         <td style="font-size: 14px; color: #333;">{{comment_content}}</td>
                     </tr>
                 </table>
                 <p style="margin: 20px 0; font-size: 16px; line-height: 1.5;">
-                    If you believe this was done in error or have any questions, feel free to contact us at 
+                    {% trans 'If you believe this was done in error or have any questions, feel free to contact us at' %} 
                     <a href="mailto:support@example.com" style="color: #4CAF50; text-decoration: none;">{{settings.email}}</a>
                     <span> or {{settings.number}}</span>.
                 </p>
                 <p style="margin: 20px 0; font-size: 16px; line-height: 1.5;">
-                    Thank you for being a valued member of our community.
+                    {% trans 'Thank you for being a valued member of our community.' %}
                 </p>
             </td>
         </tr>
         <tr>
             <td style="padding: 20px; text-align: center; background-color: #f1f1f1; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;">
-                <p style="margin: 0; font-size: 14px; color: #777;">Best regards,</p>
-                <p style="margin: 0; font-size: 14px; font-weight: bold; color: #555;">The Team</p>
-                <p style="margin: 10px 0 0; font-size: 12px; color: #999;">&copy; {{current_year}} {{settings.site_name}}. All rights reserved.</p>
+                <p style="margin: 0; font-size: 14px; color: #777;">{% trans 'Best regards' %},</p>
+                <p style="margin: 0; font-size: 14px; font-weight: bold; color: #555;">{% trans 'The Team' %}</p>
+                <p style="margin: 10px 0 0; font-size: 12px; color: #999;">&copy; {{current_year}} {{settings.site_name}}. {% trans 'All rights reserved.' %}</p>
             </td>
         </tr>
     </table>
