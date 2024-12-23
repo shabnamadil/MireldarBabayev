@@ -8,8 +8,9 @@ from utils.helpers.slugify import custom_slugify
 class Tag(BaseModel):
     name = models.CharField(
         'Tag', 
-        max_length=150,
-        unique=True
+        max_length=80,
+        unique=True,
+        help_text='Kontentin uzunluğu maksimum 80-dir.'
     )
     slug=models.SlugField(
         'Link adı',

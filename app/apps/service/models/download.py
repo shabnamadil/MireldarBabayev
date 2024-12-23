@@ -11,7 +11,8 @@ class Download(BaseModel):
     )
     title = models.CharField(
         'Başlıq',
-        max_length=200
+        max_length=200,
+        help_text='Kontentin uzunluğu maksimum 200-dür.'
     )
     type = models.CharField(
         choices=TYPE_CHOICES,
@@ -25,6 +26,7 @@ class Download(BaseModel):
         Service,
         on_delete=models.CASCADE,
         related_name='downloads',
+        null=True, blank=True
     )
 
     class Meta:

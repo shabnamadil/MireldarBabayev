@@ -25,11 +25,14 @@ class Blog(BaseModel):
     title = models.CharField(
         'Məqalə başlığı', 
         max_length=100,
-        unique=True
+        unique=True,
+        help_text='Kontentin uzunluğu maksimum 100-dür.'
+        
     )
     short_description = models.CharField(
         'Qısa məzmun',
-        max_length=200
+        max_length=200,
+        help_text='Kontentin uzunluğu maksimum 200-dür.'
     )
     content = RichTextUploadingField(
         'Məqalə mətni'

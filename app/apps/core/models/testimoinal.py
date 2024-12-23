@@ -17,11 +17,13 @@ class Testimoinal(BaseModel):
     )
     client_full_name = models.CharField(
         'Müştərinin ad, soyadı',
-        max_length=200
+        max_length=200,
+        help_text='Kontentin uzunluğu maksimum 200-dür.'
     )
     client_profession = models.CharField(
         'Müştərinin peşəsi',
-        max_length=200
+        max_length=200,
+        help_text='Kontentin uzunluğu maksimum 200-dür.'
     )
     client_comment = models.TextField(
         'Müştəri rəyi',

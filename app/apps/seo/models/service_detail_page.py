@@ -12,20 +12,23 @@ class ServiceDetailPageSeo(BaseModel):
     meta_description = models.TextField(
         validators=[
             MaxLengthValidator(160),
-            MinLengthValidator(50)       
-        ]
+            MinLengthValidator(50)     
+        ],
+        help_text='Kontentin uzunluğu maksimum 50-160 aralığındadır.'
     )
     meta_keywords = models.TextField(
         validators=[
             MaxLengthValidator(160),
             MinLengthValidator(50)       
-        ]
+        ],
+        help_text='Kontentin uzunluğu maksimum 50-160 aralığındadır.'
     )
     og_description = models.TextField(
         validators=[
             MaxLengthValidator(160),
             MinLengthValidator(50)       
-        ]
+        ],
+        help_text='Kontentin uzunluğu maksimum 50-160 aralığındadır.'
     )
     service = models.OneToOneField(
         Service,

@@ -8,7 +8,8 @@ class WhyChooseUs(BaseModel):
     title = models.CharField(
         'Başlıq',
         max_length=200,
-        unique=True
+        unique=True,
+        help_text='Kontentin uzunluğu maksimum 200-dür.'
     )
     short_description = models.TextField(
         'Qısa məlumat',

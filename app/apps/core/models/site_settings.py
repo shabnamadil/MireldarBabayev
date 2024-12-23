@@ -6,15 +6,17 @@ from utils.models.singleton import SingletonModel
 
 class SiteSettings(SingletonModel):
     site_name = models.CharField(
-        max_length=255, 
+        max_length=200, 
         verbose_name="Site Name",
-        validators=[MinLengthValidator(30)]
+        validators=[MinLengthValidator(30)],
+        help_text='Kontentin uzunluğu maksimum 200-dür.'
     )
     logo = models.ImageField(upload_to='logos/', verbose_name="Site Logo")
     favicon = models.ImageField(upload_to='favicons/', verbose_name="Favicon")
     location = models.CharField(
         'Məkan',
-        max_length=200
+        max_length=200,
+        help_text='Kontentin uzunluğu maksimum 200-dür.'
     )
     number = models.CharField(
         'Əlaqə nömrəsi',

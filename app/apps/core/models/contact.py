@@ -6,11 +6,13 @@ from utils.models.base_model import BaseModel
 class Contact(BaseModel):
     first_name = models.CharField(
         'Ad', 
-        max_length=200
+        max_length=200,
+        help_text='Kontentin uzunluğu maksimum 200-dür.'
     )
     last_name = models.CharField(
         'Soyad', 
-        max_length=200
+        max_length=200,
+        help_text='Kontentin uzunluğu maksimum 200-dür.'
     )
     email = models.EmailField(
         'E-poçt'
