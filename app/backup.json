@@ -1,19 +1,6 @@
 [
   {
     "model": "admin.logentry",
-    "pk": 6,
-    "fields": {
-      "action_time": "2024-11-24T22:32:49.389Z",
-      "user": 13,
-      "content_type": 26,
-      "object_id": "12",
-      "object_repr": "sebnemadil99@gmail.com",
-      "action_flag": 3,
-      "change_message": ""
-    }
-  },
-  {
-    "model": "admin.logentry",
     "pk": 7,
     "fields": {
       "action_time": "2024-11-26T08:01:50.899Z",

@@ -53,7 +53,6 @@ class ServiceDetailView(DetailView):
         obj = self.get_object()
         cx.update({
             'services' : Service.objects.all().exclude(id=obj.id),
-            'downloads' : Download.objects.all(),
             'latest_blogs' : Blog.published.all()[:3],
             'why_choose_us' : WhyChooseUs.objects.all(),
             'seo' : ServiceDetailPageSeo.objects.get(service__id=obj.id)

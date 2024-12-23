@@ -1,6 +1,6 @@
 {% load static %}
 <div class="contact-title">
-    {% for download in downloads %}
+    {% for download in service.downloads %}
         <div class="alert {% if download.type == 'pdf' %} alert-success {% else %} alert-warning {% endif %}" 
              role="alert" style="cursor: pointer;" 
              data-toggle="modal" 

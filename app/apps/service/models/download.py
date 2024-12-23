@@ -2,7 +2,7 @@ from django.db import models
 from django.core.exceptions import ValidationError
 
 from utils.models.base_model import BaseModel
-
+from ..models import Service
 
 class Download(BaseModel):
     TYPE_CHOICES = (
@@ -20,6 +20,12 @@ class Download(BaseModel):
     )
     file = models.FileField(
         upload_to='services/downloads'
+    )
+    service  = models.ForeignKey(
+        Service,
+        on_delete=models.CASCADE,
+        related_name='downloads',
+        
     )
 
     class Meta:
