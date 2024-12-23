@@ -21,12 +21,7 @@ class Download(BaseModel):
     file = models.FileField(
         upload_to='services/downloads'
     )
-    service  = models.ForeignKey(
-        Service,
-        on_delete=models.CASCADE,
-        related_name='downloads',
-        
-    )
+    service = models.ForeignKey(Service, on_delete=models.CASCADE, null=True, blank=True)
 
     class Meta:
         verbose_name = ('Endirmə')
