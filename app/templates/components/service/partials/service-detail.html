@@ -34,8 +34,7 @@
                     {% include 'components/service/partials/service-sidebar.html' %}
                 </div>
                 {% include 'components/service/partials/contact.html' %}
-
-                {% if service.downloads %}
+                {% if service.downloads.count > 0 %}
                 <div class="contact-box mb-4">
                     <h4>{% trans 'Files' %}</h4>
                     <hr>
