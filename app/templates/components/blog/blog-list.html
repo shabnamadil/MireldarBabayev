@@ -3,7 +3,13 @@
 {% load i18n %}
 
 {% block title %}
-<title>{{seo.meta_title|default:settings.site_name}}</title>
+    <title>
+        {% if seo.meta_title %}
+        {{seo.meta_title}}
+        {% elif settings.site_name %}
+        {{settings.site_name}}
+        {% endif %}
+    </title>
 {% endblock title %}
  
 {% block seo %}
