@@ -9,7 +9,8 @@ class Category(BaseModel):
     name = models.CharField(
         'Kateqoriya adı', 
         max_length=150,
-        unique=True
+        unique=True,
+        help_text='Kontentin uzunluğu maksimum 150-dir.'
     )
     slug=models.SlugField(
         'Link adı',

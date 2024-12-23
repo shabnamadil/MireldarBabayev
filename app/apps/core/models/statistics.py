@@ -16,7 +16,8 @@ class StatisticalIndicator(BaseModel):
     name = models.CharField(
         'Statistik göstəricinin adı',
         max_length=50,
-        unique=True
+        unique=True,
+        help_text='Kontentin uzunluğu maksimum 50-dir.'
     )
 
     class Meta:

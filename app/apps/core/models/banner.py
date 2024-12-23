@@ -8,13 +8,15 @@ from utils.models.base_model import BaseModel
 class Banner(BaseModel):
     title = models.CharField(
         'Başlıq', 
-        max_length=200,
-        unique=True
+        max_length=100,
+        unique=True,
+        help_text='Kontentin uzunluğu maksimum 100-dür.'
     )
     subtitle = models.CharField(
         'Alt başlıq', 
         max_length=100,
-        unique=True
+        unique=True,
+        help_text='Kontentin uzunluğu maksimum 50-dir.'
     )
     description = models.TextField(
         'Qısa izah',

@@ -8,7 +8,8 @@ from .timetable import Timetable
 class Appointment(BaseModel):
     full_name = models.CharField(
         'Ad, Soyad',
-        max_length=200
+        max_length=200,
+        help_text='Kontentin uzunluğu maksimum 200-dür.'
     )
     phone = models.CharField(
         'Əlaqə nömrəsi',

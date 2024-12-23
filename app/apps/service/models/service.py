@@ -21,14 +21,16 @@ class Service(BaseModel):
     name = models.CharField(
         'Servisin adı',
         max_length=200,
-        unique=True
+        unique=True,
+        help_text='Kontentin uzunluğu maksimum 200-dür.'
     )
     short_description = models.TextField(
         'Qısa məlumat',
         validators=[
             MinLengthValidator(145),
             MaxLengthValidator(160)
-        ]
+        ],
+        help_text='Kontentin uzunlu]u 145-160 aralığındadır.'
     )
     png = models.FileField(
         'PNG',

@@ -6,8 +6,14 @@ from apps.user.manager.custom_user_manager import CustomUserManager
 
 
 class CustomUser(AbstractUser, BaseModel):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
+    first_name = models.CharField(
+        max_length=30,
+        help_text='Kontentin uzunluğu maksimum 30-dur.'
+    )
+    last_name = models.CharField(
+        max_length=30,
+        help_text='Kontentin uzunluğu maksimum 30-dur.'
+    )
     email = models.EmailField(unique=True)
     image = models.ImageField(
         'Foto',
