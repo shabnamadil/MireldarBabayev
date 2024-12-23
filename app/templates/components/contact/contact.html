@@ -24,7 +24,9 @@
     <meta property="og:description" content="{{seo.og_description|default:'Doctor`s advice for a healthy lifestyle, disease prevention, and maintaining good health.'}}">
 {% endif %}
 
-<meta property="og:image" content="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{seo.og_image.url|default:settings.logo.url}}">
+    <meta property="og:image" content="
+    {{ request.scheme }}://{{ request.META.HTTP_HOST }}
+    {% if seo.og_image %} {{seo.og_image.url}} {% elif settings.logo %} {{settings.logo.url}} {% endif %} ">
 
 {% endblock seo %}
 

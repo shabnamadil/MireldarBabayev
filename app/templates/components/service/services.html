@@ -25,7 +25,9 @@
     <meta property="og:description" content="{{ seo.og_description|default:'Reliable medical services and professional advice for disease prevention.' }}">
 {% endif %}
 
-    <meta property="og:image" content="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{seo.og_image.url|default:settings.logo.url}}">
+    <meta property="og:image" content="
+    {{ request.scheme }}://{{ request.META.HTTP_HOST }}
+    {% if seo.og_image %} {{seo.og_image.url}} {% elif settings.logo %} {{settings.logo.url}} {% endif %} ">
 
 {% endblock seo %}
 
