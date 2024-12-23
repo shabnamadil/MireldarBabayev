@@ -13,21 +13,23 @@ from apps.blog.models import (
 )
 from apps.core.models import SiteSettings
 from apps.seo.models import BlogDetailPageSeo
+from apps.user.middleware import get_current_user
 
 User = get_user_model()
 
 @receiver(post_delete, sender=Comment)
 def notify_user_on_comment_delete(sender, instance, **kwargs):
-    if instance.author.is_staff:
+    current_user = get_current_user()
+    if instance.author.is_staff or instance.author == current_user:
         return
 
     subject = "Your comment has been deleted"
     context = {
-        'author_name' : instance.author.get_full_name(),
-        'blog_title' : instance.blog.title,
-        'comment_content' : instance.content,
-        'current_year' : datetime.datetime.now().year,
-        'settings' : SiteSettings.objects.first()
+        'author_name': instance.author.get_full_name(),
+        'blog_title': instance.blog.title,
+        'comment_content': instance.content,
+        'current_year': datetime.datetime.now().year,
+        'settings': SiteSettings.objects.first(),
     }
     message = render_to_string('components/email/blog/comment_author_send_email.html', context)
     recipient_list = [instance.author.email]
