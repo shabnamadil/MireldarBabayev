@@ -12,7 +12,7 @@ Welcome to the Mireldar Blog Website, a comprehensive platform powered by Python
 
 ## 🚀 Features
 
-# General Pages
+## General Pages
 
 - Homepage: Welcoming users with featured blogs and services.
 - Contact Page: Reach out for inquiries or feedback.
