@@ -1,8 +1,8 @@
-## Mireldar Babayev Blog Website
+# Mireldar Babayev Blog Website
 
 Welcome to the Mireldar Blog Website, a comprehensive platform powered by Python Django! This website offers a seamless blogging experience alongside additional features such as appointment scheduling and FAQs to enhance user engagement.
 
-## Table of Contents
+# Table of Contents
 
 1. Features
 2. Installation
@@ -10,7 +10,7 @@ Welcome to the Mireldar Blog Website, a comprehensive platform powered by Python
 4. Technologies Used
 
 
-## 🚀 Features
+# 🚀 Features
 
 ## General Pages
 
@@ -46,7 +46,7 @@ Welcome to the Mireldar Blog Website, a comprehensive platform powered by Python
 - FAQ Page: View frequently asked questions with answers.
 
 
-## 🛠️ Installation
+# 🛠️ Installation
 
 Follow these steps to set up the project locally:
 
@@ -74,7 +74,7 @@ Follow these steps to set up the project locally:
     python3 manage.py runserver
 
 
-## 📖 Usage
+# 📖 Usage
 
 ## General Usage
 
@@ -90,7 +90,7 @@ Follow these steps to set up the project locally:
 - Submit the form to book the appointment.
 
 
-## 🖥️ Technologies Used
+# 🖥️ Technologies Used
 
 - Backend: Python, Django, Django REST Framework
 - Frontend: HTML, CSS, JavaScript
