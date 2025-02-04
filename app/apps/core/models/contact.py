@@ -1,6 +1,13 @@
 from django.db import models
 
 from utils.models.base_model import BaseModel
+from django.core.exceptions import ValidationError
+
+import re
+
+def validate_phone(value):
+    if not re.match(r'^\+?1?\d{9,15}$', value):
+        raise ValidationError(f'{value} is not a valid phone number')
 
 
 class Contact(BaseModel):
@@ -19,8 +26,9 @@ class Contact(BaseModel):
     )
     phone = models.CharField(
         'Telefon nömrəsi',
-        max_length=20,
-        help_text='Yalnız rəqəm daxil edin'
+        max_length=17,
+        help_text='Yalnız rəqəm daxil edin',
+        validators=[validate_phone]
     )
     message = models.TextField(
         'Mesaj'

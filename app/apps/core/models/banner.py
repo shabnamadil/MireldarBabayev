@@ -30,7 +30,8 @@ class Banner(BaseModel):
     video_id= models.CharField(
         'Video link id',
         help_text='Nümunə: "https://www.youtube.com/watch?v=MKG_6BqnhpI" linkindən  "MKG_6BqnhpI" daxil edilməlidir',
-        max_length=11
+        max_length=11,
+        unique=True
     )
 
 

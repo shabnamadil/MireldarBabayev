@@ -33,8 +33,6 @@ class AboutUs(SingletonModel):
     class Meta:
         verbose_name = 'Haqqımızda'
         verbose_name_plural = 'Haqqımızda'
-        indexes = [models.Index(fields=['created_at'])]
-        ordering = ('-created_at',)
 
     def __str__(self) -> str:
         return f'Haqqımızda məlumat'

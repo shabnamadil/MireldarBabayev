@@ -50,7 +50,7 @@ class ContactAdmin(admin.ModelAdmin):
     date_hierarchy = 'created_at'
     list_per_page = 20
     search_fields = ('first_name', 'last_name', 'email', 'message', 'subject')
-    form = ContactForm
+    # form = ContactForm
 
     def full_name(self, obj):
         return f'{obj.first_name} {obj.last_name}'
