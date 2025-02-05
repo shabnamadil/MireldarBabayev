@@ -8,8 +8,8 @@ from utils.models.singleton import SingletonModel
 class WhoWeAre(SingletonModel):
     title = models.CharField(
         'Başlıq',
-        max_length=150,
-        help_text='Kontentin uzunluğu maksimum 150-dir.'
+        max_length=50,
+        help_text='Kontentin uzunluğu maksimum 50-dir.'
     )
     video_link = models.URLField(
         'Video linki',

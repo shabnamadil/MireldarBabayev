@@ -16,7 +16,7 @@ class Banner(BaseModel):
         'Alt başlıq', 
         max_length=100,
         unique=True,
-        help_text='Kontentin uzunluğu maksimum 50-dir.'
+        help_text='Kontentin uzunluğu maksimum 100-dür.'
     )
     description = models.TextField(
         'Qısa izah',

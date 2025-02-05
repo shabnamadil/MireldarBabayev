@@ -1,11 +1,8 @@
-from django.test import TestCase
-from django.db.utils import IntegrityError
-from django.core.exceptions import ValidationError
-
 from apps.core.models import AboutUs
+from utils.tests.base import BaseValidationTest
 
 
-class TestAboutUsModel(TestCase):
+class TestAboutUsModel(BaseValidationTest):
 
     @classmethod
     def setUpTestData(cls):
@@ -18,25 +15,22 @@ class TestAboutUsModel(TestCase):
             image='about/1.jpg'
         )
 
+    def test_about_us_model(self):
+        self.assert_model_instance(AboutUs, 'video_id', 'MKG_6BqnhpI')
+        self.assert_model_instance(AboutUs, 'mission', 'Missiyamız')
+        self.assert_model_instance(AboutUs, 'vision', 'Görüşümüz')
+        self.assert_model_instance(AboutUs, 'value', 'Dəyərlərimiz')
+        self.assert_model_instance(AboutUs, 'content', 'Haqqımızda səhifəsi üçün kontent')
+        self.assert_model_instance(AboutUs, 'image', 'about/1.jpg')
+
     def test_str_method(self):
-        self.assertEqual(str(self.about_us), "Haqqımızda məlumat")
+        self.assert_str_method(self.about_us, 'Haqqımızda məlumat')
 
     def test_singleton_model(self):
-        with self.assertRaises(IntegrityError):
-            AboutUs.objects.create()
+        self.assert_singleton(AboutUs)
 
     def test_object_count(self):
-        self.assertEqual(AboutUs.objects.count(), 1)
-
-    def test_verbose_name(self):
-        self.assertEqual(AboutUs._meta.verbose_name, "Haqqımızda")
-
-    def test_deletion(self):
-        self.about_us.delete()
-        new_about_us = AboutUs.objects.create()
-        self.assertEqual(AboutUs.objects.count(), 1)
+        self.assert_object_count(AboutUs, 1)
 
     def test_video_id_length(self):
-        self.about_us.video_id = 'MKG_6BqnhpI123'
-        with self.assertRaises(ValidationError):
-            self.about_us.full_clean()
+        self.assert_max_length(self.about_us, 'video_id', 11)

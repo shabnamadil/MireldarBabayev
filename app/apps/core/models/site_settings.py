@@ -2,32 +2,38 @@ from django.db import models
 from django.core.validators import MinLengthValidator
 
 from utils.models.singleton import SingletonModel
+from utils.helpers.validate_phone import PhoneValidationError
+from utils.helpers.validate_work_hours import WorkHourValidationError
 
 
 class SiteSettings(SingletonModel):
     site_name = models.CharField(
-        max_length=200, 
+        max_length=100, 
         verbose_name="Site Name",
         validators=[MinLengthValidator(30)],
-        help_text='Kontentin uzunluğu maksimum 200-dür.'
+        help_text='Kontentin uzunluğu maksimum 100-dür.'
     )
     logo = models.ImageField(upload_to='logos/', verbose_name="Site Logo")
     favicon = models.ImageField(upload_to='favicons/', verbose_name="Favicon")
     location = models.CharField(
         'Məkan',
-        max_length=200,
-        help_text='Kontentin uzunluğu maksimum 200-dür.'
+        max_length=100,
+        help_text='Kontentin uzunluğu maksimum 100-dür.'
     )
     number = models.CharField(
         'Əlaqə nömrəsi',
-        max_length=20
+        max_length=17,
+        help_text='Yalnız rəqəm daxil edin. Məsələn: +994123456789',
+        validators=[PhoneValidationError]
     )
     email = models.EmailField(
         'Email ünvanı'
     )
     work_hours = models.CharField(
         'İş saatları',
-        max_length=200
+        max_length=13,
+        validators=[WorkHourValidationError],
+        help_text='Kontentin uzunluğu maksimum 13-dür. Nümunə: 09:00 - 18:00'
     )
     map_url = models.CharField(
         'Xəritə',
