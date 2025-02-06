@@ -52,6 +52,9 @@ class TestSiteSettingsModel(BaseValidationTest):
     def test_object_count(self):
         self.assert_object_count(SiteSettings, 1)
 
+    def test_deletion(self):
+        self.assert_object_deleted(SiteSettings)
+
     def test_site_name_min_length(self):
         self.assert_min_length(self.site_settings, 'site_name', 30)
 

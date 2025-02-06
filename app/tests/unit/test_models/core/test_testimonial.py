@@ -50,3 +50,6 @@ class TestimoinalModelTest(BaseValidationTest):
 
     def test_object_count(self):
         self.assertEqual(Testimoinal.objects.count(), 1)
+
+    def test_deletion(self):
+        self.assert_object_deleted(Testimoinal)

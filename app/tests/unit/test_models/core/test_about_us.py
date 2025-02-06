@@ -32,5 +32,9 @@ class TestAboutUsModel(BaseValidationTest):
     def test_object_count(self):
         self.assert_object_count(AboutUs, 1)
 
+    def test_deletion(self):
+        self.assert_object_deleted(AboutUs)
+
     def test_video_id_length(self):
         self.assert_max_length(self.about_us, 'video_id', 11)
+

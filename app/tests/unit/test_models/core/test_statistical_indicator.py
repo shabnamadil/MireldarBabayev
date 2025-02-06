@@ -39,3 +39,6 @@ class TestStatisticalIndicatorModel(BaseValidationTest):
     
     def test_object_count(self):
         self.assert_object_count(StatisticalIndicator, 1)
+
+    def test_deletion(self):
+        self.assert_object_deleted(StatisticalIndicator)

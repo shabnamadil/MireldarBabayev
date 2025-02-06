@@ -41,3 +41,6 @@ class TestContactModel(BaseValidationTest):
 
     def test_object_count(self):
         self.assert_object_count(Contact, 1)
+
+    def test_deletion(self):
+        self.assert_object_deleted(Contact)

@@ -35,6 +35,11 @@ class BaseValidationTest(TestCase):
         """Test that the object count is equal to the given count."""
         self.assertEqual(model.objects.count(), count)
 
+    def assert_object_deleted(self, model):
+        """Test that the object is deleted."""
+        model.objects.first().delete()
+        self.assert_object_count(model, 0)
+
     def assert_str_method(self, instance, expected_str):
         """Test that the __str__ method returns the expected string."""
         self.assertEqual(str(instance), expected_str)

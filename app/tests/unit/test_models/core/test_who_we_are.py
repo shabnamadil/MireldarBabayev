@@ -31,3 +31,6 @@ class WhoWeAreModelTest(BaseValidationTest):
 
     def test_object_count(self):
         self.assert_object_count(WhoWeAre, 1)
+
+    def test_deletion(self):
+        self.assert_object_deleted(WhoWeAre)
