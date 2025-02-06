@@ -61,3 +61,21 @@ class BaseValidationTest(TestCase):
         """Test that the model instance is equal to the given value."""
         model_instance = model.objects.first()
         self.assertEqual(getattr(model_instance, field), value)
+
+    def assert_valid_social_media_urls(self, instance, url_field, valid_url):
+        """Test that valid URL does not raise a validation error."""
+        setattr(instance, url_field, valid_url)
+        instance.full_clean()
+
+    def assert_invalid_social_media_urls(self, instance, url_field):
+        """Test that invalid URL raises a validation error."""
+        invalid_urls = [
+            'invalid_url',  # Not a URL
+            'www.invalid.com',  # Missing scheme (http:// or https://)
+            'http://invalid.com',  # Not a social media link
+            'https://invalid.com'  # Not a social media link
+        ]
+        for url in invalid_urls:
+            setattr(instance, url_field, url)
+            with self.assertRaises(ValidationError):
+                instance.full_clean()

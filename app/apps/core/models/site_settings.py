@@ -4,6 +4,15 @@ from django.core.validators import MinLengthValidator
 from utils.models.singleton import SingletonModel
 from utils.helpers.validate_phone import PhoneValidationError
 from utils.helpers.validate_work_hours import WorkHourValidationError
+from utils.helpers.validate_google_map import GoogleMapValidationError
+from utils.helpers.validate_social_media import (
+    validate_facebook,
+    validate_youtube,
+    validate_twitter,
+    validate_instagram,
+    validate_linkedin,
+    validate_tiktok,
+)
 
 
 class SiteSettings(SingletonModel):
@@ -38,31 +47,38 @@ class SiteSettings(SingletonModel):
     map_url = models.CharField(
         'Xəritə',
         max_length=500,
+        validators=[GoogleMapValidationError],
         help_text='Zəhmət olmasa, google məkanınızın "iframe" contentindən "src" attributunu daxil edin.'
     )
     facebook = models.URLField(
         'Facebook hesab linki',
-        null=True, blank=True
+        null=True, blank=True,
+        validators=[validate_facebook]
     )
     youtube = models.URLField(
-        'Youtube hesab linki',
-        null=True, blank=True
-    )
-    instagram = models.URLField(
-        'Instagram hesab linki',
-        null=True, blank=True
+        'YouTube hesab linki',
+        null=True, blank=True,
+        validators=[validate_youtube]
     )
     twitter = models.URLField(
         'Twitter hesab linki',
-        null=True, blank=True
+        null=True, blank=True,
+        validators=[validate_twitter]
+    )
+    instagram = models.URLField(
+        'Instagram hesab linki',
+        null=True, blank=True,
+        validators=[validate_instagram]
     )
     linkedin = models.URLField(
-        'Linkedin hesab linki',
-        null=True, blank=True
+        'LinkedIn hesab linki',
+        null=True, blank=True,
+        validators=[validate_linkedin]
     )
     tiktok = models.URLField(
-        'Tiktok hesab linki',
-        null=True, blank=True
+        'TikTok hesab linki',
+        null=True, blank=True,
+        validators=[validate_tiktok]
     )
     footer_description = models.TextField(
         'Footer hissədə göstəriləcək mətn'
