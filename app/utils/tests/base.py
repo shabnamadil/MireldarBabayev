@@ -1,9 +1,21 @@
 from django.test import TestCase
 from django.core.exceptions import ValidationError
 from django.db.utils import IntegrityError
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
 class BaseValidationTest(TestCase):
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.user = User.objects.create(
+            first_name='Test',
+            last_name='user',
+            password='123',
+            email='test@gmail.com'
+        )
 
     def assert_invalid_email(self, instance, email_field='email'):
         """Test that an invalid email raises a validation error."""

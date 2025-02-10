@@ -1,20 +1,12 @@
-from django.contrib.auth import get_user_model
-
 from utils.tests.base import BaseValidationTest
 from apps.blog.models import Comment, Blog
-
-User = get_user_model()
 
 
 class TestCommentModel(BaseValidationTest):
 
     @classmethod
     def setUpTestData(cls):
-        cls.user = User.objects.create(
-            first_name='Test',
-            last_name='user',
-            email='test@gmail.com'
-        )
+        super().setUpTestData()
         cls.blog = Blog.objects.create(
             title='Test bloq',
             author=cls.user
@@ -24,6 +16,7 @@ class TestCommentModel(BaseValidationTest):
             blog=cls.blog,
             author=cls.user
         )
+
 
     def test_model(self):
         self.assert_model_instance(Comment, 'content', 'Test bloq')
