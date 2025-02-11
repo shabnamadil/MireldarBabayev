@@ -50,3 +50,6 @@ class TestCommentModel(BaseValidationTest):
             author=self.user
         )
         self.assertEqual(comment.truncated_comment, "This is a ...")
+
+    def test_str_method(self):
+        self.assert_str_method(self.comment, self.comment.truncated_comment)
