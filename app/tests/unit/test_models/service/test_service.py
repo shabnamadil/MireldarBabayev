@@ -14,9 +14,15 @@ class TestServiceModel(BaseValidationTest):
             name='Test service',
             short_description='Test short desc',
             png= SimpleUploadedFile(
-            "test.png", b"dummy png content", content_type="test/1.png"
-        ),
-            image='test/1.jpg',
+            "test1.png", 
+            b"dummy png content", 
+            content_type="image/png"
+            ),
+            image= SimpleUploadedFile(
+            "test1.jpg", 
+            b"dummy png content", 
+            content_type="image/jpeg"
+            ),
             title='Test title',
             content='Test content',
             background_color='blue'
@@ -55,19 +61,19 @@ class TestServiceModel(BaseValidationTest):
     def test_model(self):
         self.assert_model_instance(Service, 'name', 'Test service')
         self.assert_model_instance(Service, 'short_description', 'Test short desc')
-        self.assert_model_instance(Service, 'png', 'test/1.png')
-        self.assert_model_instance(Service, 'image', 'test/1.jpg')
         self.assert_model_instance(Service, 'title', 'Test title')
         self.assert_model_instance(Service, 'content', 'Test content')
         self.assert_model_instance(Service, 'background_color', 'blue')
+        self.assertTrue(self.service.png.name.startswith('services/test1'))
+        self.assertTrue(self.service.png.name.endswith('png'))
+        self.assertTrue(self.service.image.name.startswith('services/images/test1'))
+        self.assertTrue(self.service.image.name.endswith('jpg'))
 
     def test_slug_auto_generation(self):
-        """Test that the slug is auto-generated from the title using custom_slugify."""
         expected_slug = custom_slugify(self.service.title)
         self.assertEqual(self.service.slug, expected_slug)
 
     def test_get_absolute_url(self):
-        """Test that get_absolute_url returns the proper URL."""
         expected_url = reverse('service-detail', args=[self.service.slug])
         self.assertEqual(self.service.get_absolute_url(), expected_url)
 

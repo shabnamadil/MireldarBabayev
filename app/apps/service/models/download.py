@@ -11,7 +11,7 @@ class Download(BaseModel):
     )
     title = models.CharField(
         'Başlıq',
-        max_length=200,
+        max_length=100,
         help_text='Kontentin uzunluğu maksimum 200-dür.'
     )
     type = models.CharField(
@@ -36,6 +36,7 @@ class Download(BaseModel):
         indexes = [
             models.Index(fields=['-created_at'])
         ]
+        unique_together = ('service', 'title')
 
     def __str__(self) -> str:
         return self.title
