@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 
 from utils.models.base_model import BaseModel
 
@@ -15,3 +16,8 @@ class IP(BaseModel):
 
     def __str__(self) -> str:
         return self.view_ip
+    
+    def save(self, *args, **kwargs):
+        if self.pk and self.view_ip != IP.objects.get(pk=self.pk).view_ip:
+            raise ValidationError("The 'view_ip' field cannot be changed.")
+        super().save(*args, **kwargs)

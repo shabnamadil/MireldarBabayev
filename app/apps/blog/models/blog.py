@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-from django.utils.text import slugify
 from django.utils import timezone
 from django.urls import reverse_lazy
 
@@ -27,7 +26,6 @@ class Blog(BaseModel):
         max_length=100,
         unique=True,
         help_text='Kontentin uzunluğu maksimum 100-dür.'
-        
     )
     short_description = models.CharField(
         'Qısa məzmun',

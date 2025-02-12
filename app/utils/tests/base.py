@@ -1,9 +1,21 @@
 from django.test import TestCase
 from django.core.exceptions import ValidationError
 from django.db.utils import IntegrityError
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
 class BaseValidationTest(TestCase):
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.user = User.objects.create(
+            first_name='Test',
+            last_name='user',
+            password='123',
+            email='test@gmail.com'
+        )
 
     def assert_invalid_email(self, instance, email_field='email'):
         """Test that an invalid email raises a validation error."""
@@ -34,6 +46,11 @@ class BaseValidationTest(TestCase):
     def assert_object_count(self, model, count):
         """Test that the object count is equal to the given count."""
         self.assertEqual(model.objects.count(), count)
+
+    def assert_object_deleted(self, model):
+        """Test that the object is deleted."""
+        model.objects.first().delete()
+        self.assert_object_count(model, 0)
 
     def assert_str_method(self, instance, expected_str):
         """Test that the __str__ method returns the expected string."""
