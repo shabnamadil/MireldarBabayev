@@ -18,21 +18,23 @@ class TimetableForm(forms.ModelForm):
         )
 
     def clean(self):
-        start = self.cleaned_data.get('start_time', '')
-        end = self.cleaned_data.get('end_time', '')
+        cleaned_data = super().clean()
+        start = cleaned_data.get('start_time')  # Will be None if missing
+        end = cleaned_data.get('end_time')
 
-        # Convert to local time for comparison
         local_time = timezone.localtime(timezone.now())
 
-        # Validate that 'start_time' is in the future
-        if start and start < local_time:
-            raise forms.ValidationError('The start time must be in the future.')
+        if start is None:
+            pass
+        elif start < local_time:
+            self.add_error('start_time', 'The start time must be in the future.')
 
-        # Validate that 'end_time' is after 'start_time'
-        if end and end < start:
-            raise forms.ValidationError('The end time must be after the start time.')
+        if end is None:
+            pass
+        elif start and end < start:  # Ensure 'start' is not None before comparison
+            self.add_error('end_time', 'The end time must be after the start time.')
 
-        return super().clean()
+        return cleaned_data  # Always return cleaned_data
     
 
 class AppointmentForm(forms.ModelForm):
