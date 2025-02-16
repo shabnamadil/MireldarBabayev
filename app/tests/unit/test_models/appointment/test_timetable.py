@@ -84,3 +84,12 @@ class TestTimeTableModel(BaseValidationTest):
         form = TimetableForm(data=form_data)
         self.assertFalse(form.is_valid())
 
+    def test_start_and_end_time_non_equiality(self):
+        time=timezone.now()
+        invalid_form_data = {
+            'start_time' : time,
+            'end_time' : time
+        }
+
+        form = TimetableForm(data=invalid_form_data)
+        self.assertFalse(form.is_valid())

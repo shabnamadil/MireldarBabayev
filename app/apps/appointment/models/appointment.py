@@ -1,6 +1,7 @@
 from django.db import models
 
 from utils.models.base_model import BaseModel
+from utils.helpers.validate_phone import PhoneValidationError
 
 from .timetable import Timetable
 
@@ -8,12 +9,13 @@ from .timetable import Timetable
 class Appointment(BaseModel):
     full_name = models.CharField(
         'Ad, Soyad',
-        max_length=200,
+        max_length=100,
         help_text='Kontentin uzunluğu maksimum 200-dür.'
     )
     phone = models.CharField(
         'Əlaqə nömrəsi',
-        max_length=20,
+        max_length=17,
+        validators=[PhoneValidationError],
         help_text='Yalnız rəqəm daxil edin'
     )
     location = models.CharField(
@@ -38,4 +40,4 @@ class Appointment(BaseModel):
         ordering = ('-created_at',)
 
     def __str__(self) -> str:
-        return f'{self.full_name}-{self.available_time}'
+        return f'{self.full_name} - {self.available_time}'
