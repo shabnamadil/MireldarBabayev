@@ -3,7 +3,6 @@ from .base import BaseValidationTest
 
 
 class BaseSeoTest(BaseValidationTest):
-    
 
     @classmethod
     def setUpTestData(cls):
