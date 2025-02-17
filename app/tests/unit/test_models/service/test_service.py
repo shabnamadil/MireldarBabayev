@@ -20,7 +20,7 @@ class TestServiceModel(BaseValidationTest):
             ),
             image= SimpleUploadedFile(
             "test1.jpg", 
-            b"dummy png content", 
+            b"dummy jpg content", 
             content_type="image/jpeg"
             ),
             title='Test title',

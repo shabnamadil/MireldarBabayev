@@ -10,7 +10,7 @@ class Appointment(BaseModel):
     full_name = models.CharField(
         'Ad, Soyad',
         max_length=100,
-        help_text='Kontentin uzunluğu maksimum 200-dür.'
+        help_text='Kontentin uzunluğu maksimum 100-dür.'
     )
     phone = models.CharField(
         'Əlaqə nömrəsi',
