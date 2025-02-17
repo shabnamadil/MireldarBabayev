@@ -1,7 +1,8 @@
+from datetime import timedelta
+
 from django.utils import timezone
 from django.urls import reverse
-
-from datetime import timedelta
+from django.core.files.uploadedfile import SimpleUploadedFile
 
 from utils.tests.base import BaseValidationTest
 from utils.helpers.slugify import custom_slugify
@@ -28,7 +29,11 @@ class TestBlogModel(BaseValidationTest):
             title='Test blog',
             short_description='Test description',
             content='Test content',
-            image='blog/1.jpg',
+            image=SimpleUploadedFile(
+            "test1.jpg", 
+            b"dummy jpg content", 
+            content_type="image/jpeg"
+            ),
             author=cls.user,
         )
         cls.blog.category.add(cls.category)
@@ -41,8 +46,9 @@ class TestBlogModel(BaseValidationTest):
         self.assert_model_instance(Blog, 'title', 'Test blog')
         self.assert_model_instance(Blog, 'short_description', 'Test description')
         self.assert_model_instance(Blog, 'content', 'Test content')
-        self.assert_model_instance(Blog, 'image', 'blog/1.jpg')
         self.assert_model_instance(Blog, 'author', self.user)
+        self.assertTrue(self.blog.image.name.startswith('blogs/'))
+        self.assertTrue(self.blog.image.name.endswith('jpg'))
 
     def test_object_count(self):
         self.assert_object_count(Blog, 1)

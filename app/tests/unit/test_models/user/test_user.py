@@ -58,6 +58,8 @@ class TestCustomUserModel(BaseValidationTest):
         self.assert_model_instance(User, 'first_name', 'Test')
         self.assertNotEqual(User, 'password', '123')
         self.assertTrue(self.user.image.name.startswith('users/'))
+        self.assertTrue(self.user.image.name.endswith('jpg'))
+
 
     def test_email_required(self):
         new_user = User(

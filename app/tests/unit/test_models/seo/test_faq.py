@@ -68,3 +68,5 @@ class TestFaqPageSeoModel(BaseSeoTest):
         self.assert_model_instance(FaqPageSeo, 'meta_keywords', self.valid_data["meta_keywords"])
         self.assert_model_instance(FaqPageSeo, 'og_title', self.valid_data["og_title"])
         self.assert_model_instance(FaqPageSeo, 'og_description', self.valid_data["og_description"])
+        self.assertTrue(self.instance.og_image.name.startswith('seo-images/faq/'))
+        self.assertTrue(self.instance.og_image.name.endswith('jpg'))

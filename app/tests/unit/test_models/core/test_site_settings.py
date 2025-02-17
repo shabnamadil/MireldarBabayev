@@ -1,4 +1,5 @@
 from django.core.exceptions import ValidationError
+from django.core.files.uploadedfile import SimpleUploadedFile
 
 from apps.core.models import SiteSettings
 from utils.tests.base import BaseValidationTest
@@ -10,8 +11,16 @@ class TestSiteSettingsModel(BaseValidationTest):
     def setUpTestData(cls):
         cls.site_settings = SiteSettings.objects.create(
             site_name='a' * 30,
-            logo='logos/test.png',
-            favicon='favicons/test.png',
+            logo=SimpleUploadedFile(
+            "test1.png", 
+            b"dummy png content", 
+            content_type="image/png"
+            ),
+            favicon=SimpleUploadedFile(
+            "test1.png", 
+            b"dummy png content", 
+            content_type="image/png"
+            ),
             location='Test location',
             number='+1234567890',
             email='test@gmail.com',
@@ -28,8 +37,6 @@ class TestSiteSettingsModel(BaseValidationTest):
 
     def test_model(self):
         self.assert_model_instance(SiteSettings, 'site_name', 'a' * 30)
-        self.assert_model_instance(SiteSettings, 'logo', 'logos/test.png')
-        self.assert_model_instance(SiteSettings, 'favicon', 'favicons/test.png')
         self.assert_model_instance(SiteSettings, 'location', 'Test location')
         self.assert_model_instance(SiteSettings, 'number', '+1234567890')
         self.assert_model_instance(SiteSettings, 'email', 'test@gmail.com')
@@ -42,6 +49,10 @@ class TestSiteSettingsModel(BaseValidationTest):
         self.assert_model_instance(SiteSettings, 'linkedin', 'https://linkedin.com/')
         self.assert_model_instance(SiteSettings, 'tiktok', 'https://tiktok.com/')
         self.assert_model_instance(SiteSettings, 'footer_description', 'Test footer description')
+        self.assertTrue(self.site_settings.logo.name.startswith('logos/'))
+        self.assertTrue(self.site_settings.logo.name.endswith('png'))
+        self.assertTrue(self.site_settings.favicon.name.startswith('favicons/'))
+        self.assertTrue(self.site_settings.favicon.name.endswith('png'))
 
     def str_method(self):
         self.assert_str_method(self.site_settings, 'Test')
