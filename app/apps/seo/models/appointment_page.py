@@ -43,7 +43,7 @@ class AppointmentPageSeo(SingletonModel):
         ],
         help_text='Kontentin uzunluğu maksimum 50-160 aralığındadır.'
     )
-    og_image = models.ImageField(upload_to='seo-images/blogs/')
+    og_image = models.ImageField(upload_to='seo-images/appointment/')
 
     def __str__(self):
         return self.meta_title

@@ -32,7 +32,7 @@ class ServiceDetailPageSeo(BaseModel):
     )
     service = models.OneToOneField(
         Service,
-        related_name='seo',
+        related_name='detail_page_seo',
         on_delete=models.CASCADE
     )
 
