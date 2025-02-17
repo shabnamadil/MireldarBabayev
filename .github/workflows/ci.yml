@@ -22,4 +22,5 @@ jobs:
         env:
           DJANGO_SETTINGS_MODULE: config.settings  # Adjust this to your project's settings
         run: |
+          cd MireldarBabayev/app  # Move into the correct directory
           python manage.py test
