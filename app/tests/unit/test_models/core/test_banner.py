@@ -32,10 +32,16 @@ class TestBannerModel(BaseValidationTest):
     def test_str_method(self):
         self.assert_str_method(self.banner, 'Banner title')
 
-    def test_fields_unique(self):
+    def test_title_unique(self):
         self.assert_unique_field(Banner, 'title', 'Banner title')
+
+    def test_subtitle_unique(self):
         self.assert_unique_field(Banner, 'subtitle', 'Banner subtitle')
+
+    def test_description_unique(self):
         self.assert_unique_field(Banner, 'description', 'Banner description')
+        
+    def test_video_id_unique(self):
         self.assert_unique_field(Banner, 'video_id', 'MKG_6BqnhpI')
 
     def test_fields_max_length(self):

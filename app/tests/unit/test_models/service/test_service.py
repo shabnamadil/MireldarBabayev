@@ -31,8 +31,10 @@ class TestServiceModel(BaseValidationTest):
     def test_str_method(self):
         self.assert_str_method(self.service, 'Test service')
 
-    def test_fields_unique(self):
+    def test_name_unique(self):
         self.assert_unique_field(Service, 'name', 'Test service')
+        
+    def test_title_unique(self):
         self.assert_unique_field(Service, 'title', 'Test title')
 
     def test_fields_max_length(self):
