@@ -69,19 +69,11 @@ class TestSiteSettingsModel(BaseValidationTest):
     def test_site_name_min_length(self):
         self.assert_min_length(self.site_settings, 'site_name', 30)
 
-    def test_site_name_max_length(self):
+    def test_fields_max_length(self):
         self.assert_max_length(self.site_settings, 'site_name', 100)
-
-    def test_location_max_length(self):
         self.assert_max_length(self.site_settings, 'location', 100)
-
-    def test_work_hours_max_length(self):
         self.assert_max_length(self.site_settings, 'work_hours', 13)
-
-    def test_map_url_max_length(self): 
         self.assert_max_length(self.site_settings, 'map_url', 500)
-
-    def test_number_max_length(self):
         self.assert_max_length(self.site_settings, 'number', 17)
 
     def test_number(self):

@@ -32,23 +32,15 @@ class TestimoinalModelTest(BaseValidationTest):
     def test_str_method(self):
         self.assert_str_method(self.testimonial, 'Test Test-in rəyi')
 
-    def test_client_full_name_max_length(self):
+    def test_fields_max_length(self):
         self.assert_max_length(self.testimonial, 'client_full_name', 20)
-
-    def test_client_profession_max_length(self):
         self.assert_max_length(self.testimonial, 'client_profession', 100)
-
-    def test_client_comment_min_length(self):
-        self.assert_min_length(self.testimonial, 'client_comment', 150)
-
-    def test_client_comment_max_length(self):
         self.assert_max_length(self.testimonial, 'client_comment', 155)
-
-    def test_star_min_value(self):
-        self.assert_min_length(self.testimonial, 'star', 1)
-
-    def test_star_max_value(self):
         self.assert_max_length(self.testimonial, 'star', 5)
+
+    def test_fields_min_length(self):
+        self.assert_min_length(self.testimonial, 'client_comment', 150)
+        self.assert_min_length(self.testimonial, 'star', 1)
 
     def test_star_type(self):
         self.assert_field_type(self.testimonial, 'star', 'a')

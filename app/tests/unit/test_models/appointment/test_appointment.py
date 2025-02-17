@@ -34,19 +34,13 @@ class TestAppointmentModel(BaseValidationTest):
             'message': 'Test message',
             'available_time': time.id
         }
-    
-
 
     def test_str_method(self):
         self.assert_str_method(self.appointment, f'Test user - {self.appointment.available_time}')
 
-    def test_full_name_max_length(self):
+    def test_fields_max_length(self):
         self.assert_max_length(self.appointment, 'full_name', 100)
-
-    def test_phone_max_length(self):
         self.assert_max_length(self.appointment, 'phone', 17)
-
-    def test_location_max_length(self):
         self.assert_max_length(self.appointment, 'location', 200)
 
     def test_object_count(self):

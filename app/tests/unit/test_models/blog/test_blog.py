@@ -59,11 +59,10 @@ class TestBlogModel(BaseValidationTest):
     def test_unique_title(self):
         self.assert_unique_field(Blog, 'title', 'Test blog')
 
-    def test_title_max_length(self):
+    def test_fields_max_length(self):
         self.assert_max_length(self.blog, 'title', 100)
-
-    def test_short_desc_max_length(self):
         self.assert_max_length(self.blog, 'short_description', 200)
+        self.assert_max_length(self.blog, 'slug', 500)
 
     def test_category_count(self):
         self.assertEqual(self.blog.category.count(), 1)
@@ -78,9 +77,6 @@ class TestBlogModel(BaseValidationTest):
     def test_tag_remove(self):
         self.blog.tag.remove(self.tag)
         self.assertEqual(self.blog.tag.count(), 0)
-
-    def test_slug_max_length(self):
-        self.assert_max_length(self.blog, 'slug', 500)
 
     def test_slug_auto_generation(self):
         """Test that the slug is auto-generated using custom_slugify."""

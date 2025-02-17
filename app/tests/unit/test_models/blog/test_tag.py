@@ -23,10 +23,8 @@ class TestTagModel(BaseValidationTest):
     def test_unique_name(self):
         self.assert_unique_field(Tag, 'name', 'Test Tag')
 
-    def test_name_max_length(self):
+    def test_fields_max_length(self):
         self.assert_max_length(self.tag, 'name', 80)
-
-    def test_slug_max_length(self):
         self.assert_max_length(self.tag, 'slug', 500)
 
     def test_slug_on_object_edit(self):
