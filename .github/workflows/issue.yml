@@ -8,22 +8,9 @@ on:
 jobs:
   label_issue:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
-
     steps:
-      - name: Set up GitHub CLI
-        run: |
-          curl -fsSL https://cli.github.com/packages/release/latest/gh_latest_linux_amd64.deb -o gh-cli.deb
-          sudo dpkg -i gh-cli.deb
-          sudo apt-get install -f
-
-      - name: Authenticate with GitHub CLI
-        env:
+      - env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
         run: |
-          echo "$GH_TOKEN" | gh auth login --with-token
-
-      - name: Add "bug" label to new issue
-        run: |
-          gh issue edit ${{ github.event.issue.number }} --add-label "bug"
+          gh issue edit $ISSUE_URL --add-label "triage"
