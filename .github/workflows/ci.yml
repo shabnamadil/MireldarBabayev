@@ -1,4 +1,4 @@
-name: Test and Commit Results
+name: Testing
 on: push
 
 jobs:
@@ -18,10 +18,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt  
 
-      - name: Run Django unit tests and save results
+      - name: Set environment variables
+        run: echo "SECRET_KEY=${{ secrets.MIRELDAR_BABAYEV_SECRET_KEY }}" >> $GITHUB_ENV
+
+      - name: Run Django unit tests
+        env:
+          DJANGO_SECRET_KEY: ${{ secrets.MIRELDAR_BABAYEV_SECRET_KEY }}
+          DJANGO_SETTINGS_MODULE: config.settings
         run: |
           cd app
-          python manage.py test > test_results.txt
+          python manage.py test
 
       - name: Commit test results
         run: |
