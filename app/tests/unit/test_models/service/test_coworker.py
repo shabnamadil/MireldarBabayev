@@ -1,4 +1,5 @@
 from django.core.exceptions import ValidationError
+from django.core.files.uploadedfile import SimpleUploadedFile
 
 from utils.tests.base import BaseValidationTest
 from apps.service.models import Coworker
@@ -10,7 +11,11 @@ class TestCoworkerModel(BaseValidationTest):
     def setUpTestData(cls):
         cls.coworker = Coworker.objects.create(
             name='Test coworker',
-            png='test/1.png'
+            png= SimpleUploadedFile(
+            "test1.png", 
+            b"dummy png content", 
+            content_type="image/png"
+            ),
         )
 
     def test_str_method(self):
@@ -24,7 +29,8 @@ class TestCoworkerModel(BaseValidationTest):
 
     def test_model(self):
         self.assert_model_instance(Coworker, 'name', 'Test coworker')
-        self.assert_model_instance(Coworker, 'png', 'test/1.png')
+        self.assertTrue(self.coworker.png.name.startswith('coworkers/'))
+        self.assertTrue(self.coworker.png.name.endswith('png'))
 
     def test_object_count(self):
         self.assert_object_count(Coworker, 1)

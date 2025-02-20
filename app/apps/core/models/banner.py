@@ -24,7 +24,7 @@ class Banner(BaseModel):
     )
     png = models.ImageField(
         'Banner foto',
-        upload_to='banner',
+        upload_to='banner/',
         help_text='PNG formatda daxil edin. Ölçü: 720x726px'
     )
     video_id= models.CharField(

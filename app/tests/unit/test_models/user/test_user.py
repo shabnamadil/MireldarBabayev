@@ -26,12 +26,10 @@ class TestCustomUserModel(BaseValidationTest):
 
     def test_str_method(self):
         return self.assert_str_method(self.user, 'test@gmail.com')
-    
-    def test_first_name_max_length(self):
-        return self.assert_max_length(self.user, 'first_name', 30)
-    
-    def test_last_name_max_length(self):
-        return self.assert_max_length(self.user, 'last_name', 30)
+
+    def test_fields_max_length(self):
+        self.assert_max_length(self.user, 'first_name', 30)
+        self.assert_max_length(self.user, 'last_name', 30)
     
     def test_email_unique(self):
         self.assert_unique_field(User, 'email', 'test@gmail.com')
@@ -58,6 +56,8 @@ class TestCustomUserModel(BaseValidationTest):
         self.assert_model_instance(User, 'first_name', 'Test')
         self.assertNotEqual(User, 'password', '123')
         self.assertTrue(self.user.image.name.startswith('users/'))
+        self.assertTrue(self.user.image.name.endswith('jpg'))
+
 
     def test_email_required(self):
         new_user = User(

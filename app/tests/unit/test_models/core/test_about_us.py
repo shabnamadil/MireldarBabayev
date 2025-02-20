@@ -1,3 +1,5 @@
+from django.core.files.uploadedfile import SimpleUploadedFile
+
 from apps.core.models import AboutUs
 from utils.tests.base import BaseValidationTest
 
@@ -12,7 +14,11 @@ class TestAboutUsModel(BaseValidationTest):
             vision='Görüşümüz',
             value='Dəyərlərimiz',
             content='Haqqımızda səhifəsi üçün kontent',
-            image='about/1.jpg'
+            image= SimpleUploadedFile(
+            "test1.jpg", 
+            b"dummy jpg content", 
+            content_type="image/jpeg"
+            ),
         )
 
     def test_about_us_model(self):
@@ -21,7 +27,8 @@ class TestAboutUsModel(BaseValidationTest):
         self.assert_model_instance(AboutUs, 'vision', 'Görüşümüz')
         self.assert_model_instance(AboutUs, 'value', 'Dəyərlərimiz')
         self.assert_model_instance(AboutUs, 'content', 'Haqqımızda səhifəsi üçün kontent')
-        self.assert_model_instance(AboutUs, 'image', 'about/1.jpg')
+        self.assertTrue(self.about_us.image.name.startswith('about/'))
+        self.assertTrue(self.about_us.image.name.endswith('jpg'))
 
     def test_str_method(self):
         self.assert_str_method(self.about_us, 'Haqqımızda məlumat')

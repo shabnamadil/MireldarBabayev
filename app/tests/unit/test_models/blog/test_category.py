@@ -26,10 +26,8 @@ class TestCategoryModel(BaseValidationTest):
     def test_unique_name(self):
         self.assert_unique_field(Category, 'name', self.category.name)
 
-    def test_name_max_length(self):
+    def test_fields_max_length(self):
         self.assert_max_length(self.category, 'name', 150)
-
-    def test_slug_max_length(self):
         self.assert_max_length(self.category, 'slug', 500)
 
     def test_slug_on_object_edit(self):

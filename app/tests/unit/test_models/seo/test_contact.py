@@ -68,3 +68,5 @@ class TestContactPageSeoModel(BaseSeoTest):
         self.assert_model_instance(ContactPageSeo, 'meta_keywords', self.valid_data["meta_keywords"])
         self.assert_model_instance(ContactPageSeo, 'og_title', self.valid_data["og_title"])
         self.assert_model_instance(ContactPageSeo, 'og_description', self.valid_data["og_description"])
+        self.assertTrue(self.instance.og_image.name.startswith('seo-images/contact/'))
+        self.assertTrue(self.instance.og_image.name.endswith('jpg'))
