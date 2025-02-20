@@ -30,13 +30,9 @@ class TestContactModel(BaseValidationTest):
     def test_phone(self):
         self.assert_invalid_number(self.contact, number_field='phone')
 
-    def test_phone_max_length(self):
+    def test_fields_max_length(self):
         self.assert_max_length(self.contact, 'phone', 17)
-
-    def test_first_name_max_length(self):
         self.assert_max_length(self.contact, 'first_name', 20)
-
-    def test_last_name_max_length(self):
         self.assert_max_length(self.contact, 'last_name', 20)
 
     def test_object_count(self):

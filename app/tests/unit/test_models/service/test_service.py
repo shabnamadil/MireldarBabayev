@@ -33,23 +33,18 @@ class TestServiceModel(BaseValidationTest):
 
     def test_name_unique(self):
         self.assert_unique_field(Service, 'name', 'Test service')
-
+        
     def test_title_unique(self):
         self.assert_unique_field(Service, 'title', 'Test title')
 
-    def test_name_max_length(self):
+    def test_fields_max_length(self):
         self.assert_max_length(self.service, 'name', 200)
-
-    def test_title_max_length(self):
         self.assert_max_length(self.service, 'title', 60)
-
-    def test_title_min_length(self):
-        self.assert_min_length(self.service, 'title', 30)
-
-    def test_short_desc_max_length(self):
         self.assert_max_length(self.service, 'short_description', 160)
+        self.assert_max_length(self.service, 'slug', 500)
 
-    def test_short_desc_min_length(self):
+    def test_fields_min_length(self):
+        self.assert_min_length(self.service, 'title', 30)
         self.assert_min_length(self.service, 'short_description', 145)
 
     def test_object_count(self):
@@ -76,8 +71,3 @@ class TestServiceModel(BaseValidationTest):
     def test_get_absolute_url(self):
         expected_url = reverse('service-detail', args=[self.service.slug])
         self.assertEqual(self.service.get_absolute_url(), expected_url)
-
-    def test_slug_max_length(self):
-        self.assert_max_length(self.service, 'slug', 500)
-
-        

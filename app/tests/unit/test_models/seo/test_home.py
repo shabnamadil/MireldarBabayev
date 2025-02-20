@@ -68,3 +68,5 @@ class TestHomePageSeoModel(BaseSeoTest):
         self.assert_model_instance(HomePageSeo, 'meta_keywords', self.valid_data["meta_keywords"])
         self.assert_model_instance(HomePageSeo, 'og_title', self.valid_data["og_title"])
         self.assert_model_instance(HomePageSeo, 'og_description', self.valid_data["og_description"])
+        self.assertTrue(self.instance.og_image.name.startswith('seo-images/home/'))
+        self.assertTrue(self.instance.og_image.name.endswith('jpg'))

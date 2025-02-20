@@ -12,7 +12,7 @@ from utils.models.base_model import BaseModel
 class Testimoinal(BaseModel):
     client_image = models.ImageField(
         'Müştəri fotosu',
-        upload_to='testimoinals/',
+        upload_to='testimonials/',
         help_text="Foto '170x170px' ölçüsündə olmalıdır. "
     )
     client_full_name = models.CharField(

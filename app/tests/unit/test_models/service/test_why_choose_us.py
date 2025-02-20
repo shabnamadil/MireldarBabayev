@@ -1,4 +1,5 @@
 from django.core.exceptions import ValidationError
+from django.core.files.uploadedfile import SimpleUploadedFile
 
 from utils.tests.base import BaseValidationTest
 from apps.service.models import WhyChooseUs
@@ -11,7 +12,11 @@ class TestWhyChooseUsModel(BaseValidationTest):
         cls.object = WhyChooseUs.objects.create(
             title='Test object',
             short_description='Test desc',
-            png='test/1.png'
+            png= SimpleUploadedFile(
+            "test1.png", 
+            b"dummy png content", 
+            content_type="image/png"
+            ),
         )
 
     def test_str_method(self):
@@ -26,7 +31,8 @@ class TestWhyChooseUsModel(BaseValidationTest):
     def test_model(self):
         self.assert_model_instance(WhyChooseUs, 'title', 'Test object')
         self.assert_model_instance(WhyChooseUs, 'short_description', 'Test desc')
-        self.assert_model_instance(WhyChooseUs, 'png', 'test/1.png')
+        self.assertTrue(self.object.png.name.startswith('why_choose_us/'))
+        self.assertTrue(self.object.png.name.endswith('png'))
 
     def test_object_count(self):
         self.assert_object_count(WhyChooseUs, 1)
