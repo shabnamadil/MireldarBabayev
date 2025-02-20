@@ -9,9 +9,12 @@ jobs:
   label_issue:
     runs-on: ubuntu-latest
     steps:
-      - name: Add "bug" label to new issue
+      - name: Print a test message
+        run: |
+          echo "Workflow triggered! This is a test message."
+          
+      - name: Add "triage" label to new issue
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          echo "Labeling issue #${{ github.event.issue.number }}"
           gh issue edit ${{ github.event.issue.number }} --add-label "bug"
