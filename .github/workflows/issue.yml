@@ -9,12 +9,15 @@ jobs:
   label_issue:
     runs-on: ubuntu-latest
     steps:
-      - name: Print a test message
+      - name: Set up GitHub CLI
         run: |
-          echo "Workflow triggered! This is a test message."
-          
+          curl -fsSL https://cli.github.com/packages/release/gh_2.14.3_linux_amd64.deb -o gh-cli.deb
+          sudo dpkg -i gh-cli.deb
+          sudo apt-get install -f  # Install dependencies if needed
+
       - name: Add "triage" label to new issue
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
+          echo "Issue number: ${{ github.event.issue.number }}"
           gh issue edit ${{ github.event.issue.number }} --add-label "bug"
