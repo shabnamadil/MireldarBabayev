@@ -13,4 +13,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          gh issue edit ${{ github.event.issue.number }} --add-label "triage"
+          gh issue edit ${{ github.event.issue.number }} --add-label "bug"
