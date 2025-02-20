@@ -9,12 +9,12 @@ jobs:
   label_issue:
     runs-on: ubuntu-latest
     permissions:
-      issues: write  # Crucial: Grant permission to modify issues
+      issues: write
 
     steps:
       - name: Set up GitHub CLI
         run: |
-          curl -fsSL https://cli.github.com/packages/release/gh_2.32.0_linux_amd64.deb -o gh-cli.deb # Updated to the latest gh version
+          curl -fsSL https://cli.github.com/packages/release/latest/gh_latest_linux_amd64.deb -o gh-cli.deb
           sudo dpkg -i gh-cli.deb
           sudo apt-get install -f
 
@@ -22,10 +22,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          echo "$GH_TOKEN" | gh auth login --with-token # Authenticate using the PAT
+          echo "$GH_TOKEN" | gh auth login --with-token
 
       - name: Add "bug" label to new issue
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT }} # You can keep this, but it is not necessary after the auth
         run: |
           gh issue edit ${{ github.event.issue.number }} --add-label "bug"
