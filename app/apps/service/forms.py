@@ -10,7 +10,7 @@ class DownloadBaseForm(forms.ModelForm):
         model = Download
         fields = '__all__'
 
-    def clean(self):
+    def clean_file(self):
         cleaned_data = super().clean()
         file = cleaned_data.get('file')
         file_type = cleaned_data.get('type')

@@ -44,6 +44,6 @@ def notify_user_on_comment_delete(sender, instance, **kwargs):
 
 
 @receiver(post_save, sender=Blog)
-def create_service_object_seo(sender, instance, created, **kwargs):
+def create_blog_detail_page_object_seo(sender, instance, created, **kwargs):
     if created:
         BlogDetailPageSeo.objects.create(blog=instance)

@@ -16,7 +16,7 @@ class Banner(BaseModel):
         'Alt başlıq', 
         max_length=100,
         unique=True,
-        help_text='Kontentin uzunluğu maksimum 50-dir.'
+        help_text='Kontentin uzunluğu maksimum 100-dür.'
     )
     description = models.TextField(
         'Qısa izah',
@@ -24,13 +24,14 @@ class Banner(BaseModel):
     )
     png = models.ImageField(
         'Banner foto',
-        upload_to='banner',
+        upload_to='banner/',
         help_text='PNG formatda daxil edin. Ölçü: 720x726px'
     )
     video_id= models.CharField(
         'Video link id',
         help_text='Nümunə: "https://www.youtube.com/watch?v=MKG_6BqnhpI" linkindən  "MKG_6BqnhpI" daxil edilməlidir',
-        max_length=11
+        max_length=11,
+        unique=True
     )
 
 

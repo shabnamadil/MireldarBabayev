@@ -32,7 +32,7 @@ class BlogDetailPageSeo(BaseModel):
     )
     blog = models.OneToOneField(
         Blog,
-        related_name='seo',
+        related_name='detail_page_seo',
         on_delete=models.CASCADE
     )
 

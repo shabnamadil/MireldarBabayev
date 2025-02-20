@@ -7,8 +7,9 @@ from utils.models.base_model import BaseModel
 class Coworker(BaseModel):
     name = models.CharField(
         'Əməkdaş şirkətin adı',
-        max_length=200,
-        help_text='Kontentin uzunluğu maksimum 200-dür.'
+        max_length=100,
+        unique=True,
+        help_text='Kontentin uzunluğu maksimum 100-dür.'
     )
     png = models.FileField(
         'Logo',
