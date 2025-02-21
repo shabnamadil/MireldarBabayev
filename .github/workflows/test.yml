@@ -1,5 +1,8 @@
 name: Test project
-on: push
+on: 
+  push:
+    branches:
+      - tests
 
 jobs:
   Test_Mireldar_Babayev_blog_project:
