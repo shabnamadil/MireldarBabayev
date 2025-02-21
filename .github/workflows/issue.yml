@@ -2,7 +2,7 @@ name: Issue
 
 on:
   workflow_run:
-  workflows: ["Test project"]
-  types: [requested]
-  branches:
-    - tests
+    workflows: ["Test project"]
+    types: [requested]
+    branches:
+      - 'tests'
