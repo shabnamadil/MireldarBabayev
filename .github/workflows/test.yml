@@ -1,11 +1,5 @@
 name: Test project
-
-on:
-  workflow_run:
-    workflows: ["Test project"]  # Runs when "Build" workflow completes
-    types: [requested]  # Only trigger when the workflow finishes
-    branches:
-      - tests  # Ensure it only runs when "Build" runs on the 'tests' branch
+on: push
 
 jobs:
   Test_Mireldar_Babayev_blog_project:
