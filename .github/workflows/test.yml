@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - tests
+      - main
 
 jobs:
   Test_Mireldar_Babayev_blog_project:
