@@ -5,7 +5,7 @@ on:
       - main
 
 jobs:
-  Test_Mireldar_Babayev_blog_project:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repository
