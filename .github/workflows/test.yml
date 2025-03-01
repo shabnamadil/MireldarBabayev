@@ -1,8 +1,8 @@
 name: Test project
 on: 
-  push:
+  pull_request:
     branches:
-      - tests
+      - main
 
 jobs:
   Test_Mireldar_Babayev_blog_project:
