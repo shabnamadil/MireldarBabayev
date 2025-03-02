@@ -1,0 +1,40 @@
+[tool.black]
+line-length = 88
+target-version = ['py312']
+include = '\.pyi?$'
+exclude = [".git", "__pycache__", ".venv", "migrations", "__init__.py", "settings.py]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+combine_as_imports = true
+skip = ["migrations", ".venv", "settings.py"]
+
+[tool.flake8]
+max-line-length = 88
+select = ["C", "E", "F", "W", "B", "B9"]
+exclude = [".git", "__pycache__", ".venv", "migrations", "__init__.py", "settings.py]
+ignore = ["E203", "E501", "W503", "C812", "E731", "F811"]
+max-complexity = 10
+max-cognitive-complexity = 5
+
+[tool.autoflake]
+remove-all-unused-imports = true
+remove-unused-variables = true
+recursive = true
+in-place = true
+exclude = "__init__.py"
+
+[tool.commitlint]
+extends = ["@commitlint/config-conventional"]
+rules = {
+    "type-enum": [2, "always", ["feat", "fix", "docs", "style", "refactor", "test", "chore"]],
+    "subject-case": [2, "always", "sentence-case"]
+}
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
