@@ -1,11 +1,9 @@
-from django.db.utils import IntegrityError
-from django.utils.timezone import now, timedelta
 from django.utils import timezone
-from django.core.exceptions import ValidationError
+from django.utils.timezone import timedelta
 
-from utils.tests.base import BaseValidationTest
-from apps.appointment.models import Timetable
 from apps.appointment.forms import TimetableForm
+from apps.appointment.models import Timetable
+from utils.tests.base import BaseValidationTest
 
 
 class TestTimeTableModel(BaseValidationTest):
@@ -17,7 +15,7 @@ class TestTimeTableModel(BaseValidationTest):
 
         cls.timetable = Timetable.objects.create(
             start_time=cls.start_time,
-            end_time=cls.end_time
+            end_time=cls.end_time,
         )
 
     def test_str_method(self):
@@ -31,21 +29,29 @@ class TestTimeTableModel(BaseValidationTest):
         self.assert_object_deleted(Timetable)
 
     def test_model(self):
-        self.assert_model_instance(Timetable, 'start_time', self.start_time)
-        self.assert_model_instance(Timetable, 'end_time', self.end_time)
+        self.assert_model_instance(
+            Timetable,
+            "start_time",
+            self.start_time,
+        )
+        self.assert_model_instance(Timetable, "end_time", self.end_time)
 
     def test_start_time_unique(self):
         object = Timetable.objects.first()
-        self.assert_unique_field(Timetable, 'start_time', object.start_time)
+        self.assert_unique_field(
+            Timetable,
+            "start_time",
+            object.start_time,
+        )
 
     def test_end_time_unique(self):
         object = Timetable.objects.first()
-        self.assert_unique_field(Timetable, 'end_time', object.end_time)
+        self.assert_unique_field(Timetable, "end_time", object.end_time)
 
     def test_valid_data(self):
         valid_form_data = {
-            'start_time' : self.start_time + timedelta(minutes=15),
-            'end_time' : self.end_time + timedelta(hours=1)
+            "start_time": self.start_time + timedelta(minutes=15),
+            "end_time": self.end_time + timedelta(hours=1),
         }
         form = TimetableForm(data=valid_form_data)
         self.assertTrue(form.is_valid())
@@ -53,8 +59,8 @@ class TestTimeTableModel(BaseValidationTest):
     def test_start_time_in_past(self):
         """Test validation error when start_time is in the past"""
         invalid_form_data = {
-            'start_time' : timezone.now() - timezone.timedelta(days=1),
-            'end_time' : self.end_time + timedelta(hours=1)
+            "start_time": timezone.now() - timezone.timedelta(days=1),
+            "end_time": self.end_time + timedelta(hours=1),
         }
         form = TimetableForm(data=invalid_form_data)
         self.assertFalse(form.is_valid())
@@ -62,33 +68,31 @@ class TestTimeTableModel(BaseValidationTest):
     def test_end_time_before_start_time(self):
         """Test validation error when end_time is before start_time"""
         invalid_form_data = {
-            'start_time' : timezone.now() + timezone.timedelta(days=1),
-            'end_time' : self.end_time - timedelta(hours=1)
+            "start_time": timezone.now() + timezone.timedelta(days=1),
+            "end_time": self.end_time - timedelta(hours=1),
         }
         form = TimetableForm(data=invalid_form_data)
         self.assertFalse(form.is_valid())
 
     def test_missing_start_time(self):
         """Test validation error when start_time is missing"""
-        form_data = {
-            'end_time': timezone.now() + timedelta(hours=1)
-        }
+        form_data = {"end_time": timezone.now() + timedelta(hours=1)}
         form = TimetableForm(data=form_data)
         self.assertFalse(form.is_valid())
 
     def test_missing_end_time(self):
         """Test validation error when end_time is missing"""
-        form_data = {
-            'start_time': timezone.now()
-        }
+        form_data = {"start_time": timezone.now()}
         form = TimetableForm(data=form_data)
         self.assertFalse(form.is_valid())
 
-    def test_start_and_end_time_non_equiality(self):
-        time=timezone.now()
+    def test_start_and_end_time_non_equiality(
+        self,
+    ):
+        time = timezone.now()
         invalid_form_data = {
-            'start_time' : time,
-            'end_time' : time
+            "start_time": time,
+            "end_time": time,
         }
 
         form = TimetableForm(data=invalid_form_data)

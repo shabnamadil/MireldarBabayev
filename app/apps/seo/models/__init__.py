@@ -1,9 +1,11 @@
-from .home_page import HomePageSeo
-from .services_page import ServicesPageSeo
-from .service_detail_page import ServiceDetailPageSeo
 from .about_us_page import AboutUsPageSeo
-from .blogs_page import BlogsPageSeo
-from .blog_detail_page import BlogDetailPageSeo
-from .contact_page import ContactPageSeo
 from .appointment_page import AppointmentPageSeo
+from .blog_detail_page import BlogDetailPageSeo
+from .blogs_page import BlogsPageSeo
+from .contact_page import ContactPageSeo
 from .faq_page import FaqPageSeo
+from .home_page import HomePageSeo
+from .service_detail_page import (
+    ServiceDetailPageSeo,
+)
+from .services_page import ServicesPageSeo

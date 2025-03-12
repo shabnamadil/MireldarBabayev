@@ -4,6 +4,7 @@ from django.utils import timezone
 
 class BaseModel(models.Model):
     """All models extends this model"""
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -13,9 +14,9 @@ class BaseModel(models.Model):
     @property
     def created_date(self):
         local_created_time = timezone.localtime(self.created_at)
-        return local_created_time.strftime('%d %b %Y, %H:%M')
-    
+        return local_created_time.strftime("%d %b %Y, %H:%M")
+
     @property
     def updated_date(self):
         local_updated_time = timezone.localtime(self.updated_at)
-        return local_updated_time.strftime('%d/%m/%Y, %H:%M')
+        return local_updated_time.strftime("%d/%m/%Y, %H:%M")

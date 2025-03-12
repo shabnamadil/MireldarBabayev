@@ -1,34 +1,37 @@
-from modeltranslation.translator import register, TranslationOptions
+from modeltranslation.translator import (
+    TranslationOptions,
+    register,
+)
 
 from .models import (
-    HomePageSeo,
-    ServicesPageSeo,
-    ServiceDetailPageSeo,
     AboutUsPageSeo,
-    BlogsPageSeo,
-    BlogDetailPageSeo,
-    ContactPageSeo,
     AppointmentPageSeo,
-    FaqPageSeo
+    BlogDetailPageSeo,
+    BlogsPageSeo,
+    ContactPageSeo,
+    FaqPageSeo,
+    HomePageSeo,
+    ServiceDetailPageSeo,
+    ServicesPageSeo,
 )
 
 
 class SeoSingletonTranslationOptions(TranslationOptions):
     fields = (
-        'meta_title', 
-        'meta_description',
-        'meta_keywords',
-        'og_title',
-        'og_description'
-        )
-    
+        "meta_title",
+        "meta_description",
+        "meta_keywords",
+        "og_title",
+        "og_description",
+    )
+
 
 class SeoDetailPageTranslationOptions(TranslationOptions):
     fields = (
-        'meta_description',
-        'meta_keywords',
-        'og_description'
-        )
+        "meta_description",
+        "meta_keywords",
+        "og_description",
+    )
 
 
 @register(HomePageSeo)

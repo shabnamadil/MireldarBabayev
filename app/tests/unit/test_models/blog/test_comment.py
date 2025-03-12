@@ -1,5 +1,5 @@
+from apps.blog.models import Blog, Comment
 from utils.tests.base import BaseValidationTest
-from apps.blog.models import Comment, Blog
 
 
 class TestCommentModel(BaseValidationTest):
@@ -7,22 +7,22 @@ class TestCommentModel(BaseValidationTest):
     @classmethod
     def setUpTestData(cls):
         super().setUpTestData()
-        cls.blog = Blog.objects.create(
-            title='Test bloq',
-            author=cls.user
-        )
+        cls.blog = Blog.objects.create(title="Test bloq", author=cls.user)
         cls.comment = Comment.objects.create(
-            content='Test bloq',
+            content="Test bloq",
             blog=cls.blog,
-            author=cls.user
+            author=cls.user,
         )
-
 
     def test_model(self):
-        self.assert_model_instance(Comment, 'content', 'Test bloq')
-        self.assert_model_instance(Comment, 'blog', self.blog)
-        self.assert_model_instance(Comment, 'author', self.user)
-        self.assert_model_instance(Comment, 'truncated_comment', 'Test bloq')
+        self.assert_model_instance(Comment, "content", "Test bloq")
+        self.assert_model_instance(Comment, "blog", self.blog)
+        self.assert_model_instance(Comment, "author", self.user)
+        self.assert_model_instance(
+            Comment,
+            "truncated_comment",
+            "Test bloq",
+        )
 
     def test_object_count(self):
         self.assert_object_count(Comment, 1)
@@ -47,9 +47,15 @@ class TestCommentModel(BaseValidationTest):
         comment = Comment.objects.create(
             content="This is a very long comment that should be truncated",
             blog=self.blog,
-            author=self.user
+            author=self.user,
         )
-        self.assertEqual(comment.truncated_comment, "This is a ...")
+        self.assertEqual(
+            comment.truncated_comment,
+            "This is a ...",
+        )
 
     def test_str_method(self):
-        self.assert_str_method(self.comment, self.comment.truncated_comment)
+        self.assert_str_method(
+            self.comment,
+            self.comment.truncated_comment,
+        )

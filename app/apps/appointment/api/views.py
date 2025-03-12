@@ -1,13 +1,6 @@
-from rest_framework.generics import (
-    CreateAPIView,
-    ListAPIView
-)
+from rest_framework.generics import CreateAPIView
 
-from .serializers import (
-    AppointmentPostSerializer
-)
-
-from ..models import Timetable
+from .serializers import AppointmentPostSerializer
 
 
 class AppointmentPostAPIView(CreateAPIView):

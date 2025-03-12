@@ -1,2 +1,2 @@
-from .timetable import Timetable
 from .appointment import Appointment
+from .timetable import Timetable
