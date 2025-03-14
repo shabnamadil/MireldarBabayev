@@ -9,8 +9,7 @@ class TestFaqModel(BaseValidationTest):
     @classmethod
     def setUpTestData(cls):
         cls.faq = Faq.objects.create(
-            question='Faq question',
-            response='Faq response'
+            question='Faq question', response='Faq response'
         )
 
     def test_faq_model(self):
@@ -20,8 +19,7 @@ class TestFaqModel(BaseValidationTest):
     def test_question_response_unique(self):
         with self.assertRaises(IntegrityError):
             Faq.objects.create(
-                question='Faq question',
-                response='Faq response'
+                question='Faq question', response='Faq response'
             )
 
     def test_str_method(self):

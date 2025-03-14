@@ -9,7 +9,7 @@ class WhoWeAreModelTest(BaseValidationTest):
         cls.data = WhoWeAre.objects.create(
             title='Test title',
             video_link='https://www.youtube.com/watch?v=U4fHv1KXQkY',
-            content='Test content'
+            content='Test content',
         )
 
     def test_str_method(self):
@@ -17,7 +17,11 @@ class WhoWeAreModelTest(BaseValidationTest):
 
     def test_model(self):
         self.assert_model_instance(WhoWeAre, 'title', 'Test title')
-        self.assert_model_instance(WhoWeAre, 'video_link', 'https://www.youtube.com/watch?v=U4fHv1KXQkY')
+        self.assert_model_instance(
+            WhoWeAre,
+            'video_link',
+            'https://www.youtube.com/watch?v=U4fHv1KXQkY',
+        )
         self.assert_model_instance(WhoWeAre, 'content', 'Test content')
 
     def test_title_max_length(self):

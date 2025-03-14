@@ -1,7 +1,7 @@
-from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
 
 from .base_model import BaseModel
+
 
 class SingletonModel(BaseModel):
     class Meta:

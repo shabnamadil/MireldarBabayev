@@ -1,11 +1,6 @@
-from rest_framework.generics import (
-    CreateAPIView
-)
+from rest_framework.generics import CreateAPIView
 
-from .serializers import (
-    NewsletterPostSerializer,
-    ContactPostSerializer
-)
+from .serializers import ContactPostSerializer, NewsletterPostSerializer
 
 
 class NewsletterCreateAPIView(CreateAPIView):

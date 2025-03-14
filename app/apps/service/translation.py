@@ -1,40 +1,23 @@
+from modeltranslation.translator import TranslationOptions, register
 
-from modeltranslation.translator import register, TranslationOptions
-from .models import (
-    Coworker,
-    Download,
-    Service,
-    WhyChooseUs
-)
+from .models import Coworker, Download, Service, WhyChooseUs
 
 
 @register(Coworker)
 class CoworkerTranslationOptions(TranslationOptions):
-    fields = (
-        'name',
-        )
-    
+    fields = ('name',)
+
 
 @register(Download)
 class DownloadTranslationAdmin(TranslationOptions):
-    fields = (
-        'title',
-    )
+    fields = ('title',)
 
 
 @register(Service)
 class ServiceTranslationAdmin(TranslationOptions):
-    fields = (
-        'name',
-        'short_description',
-        'title',
-        'content'
-    )
+    fields = ('name', 'short_description', 'title', 'content')
 
 
 @register(WhyChooseUs)
 class WhyChooseUsTranslationAdmin(TranslationOptions):
-    fields = (
-        'title',
-        'short_description'
-    )
+    fields = ('title', 'short_description')

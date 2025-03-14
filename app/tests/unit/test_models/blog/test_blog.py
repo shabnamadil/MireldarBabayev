@@ -1,17 +1,12 @@
 from datetime import timedelta
 
-from django.utils import timezone
-from django.urls import reverse
 from django.core.files.uploadedfile import SimpleUploadedFile
+from django.urls import reverse
+from django.utils import timezone
 
-from utils.tests.base import BaseValidationTest
+from apps.blog.models import IP, Blog, Category, Tag
 from utils.helpers.slugify import custom_slugify
-from apps.blog.models import (
-    Blog, 
-    Category, 
-    Tag,
-    IP
-)
+from utils.tests.base import BaseValidationTest
 
 
 class TestBlogModel(BaseValidationTest):
@@ -19,20 +14,14 @@ class TestBlogModel(BaseValidationTest):
     @classmethod
     def setUpTestData(cls):
         super().setUpTestData()
-        cls.category = Category.objects.create(
-            name='Test category'
-        )
-        cls.tag = Tag.objects.create(
-            name='Test tag'
-        )
+        cls.category = Category.objects.create(name='Test category')
+        cls.tag = Tag.objects.create(name='Test tag')
         cls.blog = Blog.objects.create(
             title='Test blog',
             short_description='Test description',
             content='Test content',
             image=SimpleUploadedFile(
-            "test1.jpg", 
-            b"dummy jpg content", 
-            content_type="image/jpeg"
+                "test1.jpg", b"dummy jpg content", content_type="image/jpeg"
             ),
             author=cls.user,
         )
@@ -44,7 +33,9 @@ class TestBlogModel(BaseValidationTest):
 
     def test_model(self):
         self.assert_model_instance(Blog, 'title', 'Test blog')
-        self.assert_model_instance(Blog, 'short_description', 'Test description')
+        self.assert_model_instance(
+            Blog, 'short_description', 'Test description'
+        )
         self.assert_model_instance(Blog, 'content', 'Test content')
         self.assert_model_instance(Blog, 'author', self.user)
         self.assertTrue(self.blog.image.name.startswith('blogs/'))
@@ -106,7 +97,9 @@ class TestBlogModel(BaseValidationTest):
     def test_published_at_auto_set(self):
         """Test that published_at is set when status is PUBLISHED."""
         self.assertIsNotNone(self.blog.published_at)
-        self.assertTrue(timezone.now() - self.blog.published_at < timedelta(seconds=5))
+        self.assertTrue(
+            timezone.now() - self.blog.published_at < timedelta(seconds=5)
+        )
 
     def test_published_date_property(self):
         local_time = timezone.localtime(self.blog.published_at)
@@ -155,6 +148,3 @@ class TestBlogModel(BaseValidationTest):
         self.blog.status = self.blog.Status.DRAFT
         self.blog.save()
         self.assertNotEqual(self.blog.status, self.blog.Status.PUBLISHED)
-
-
-        

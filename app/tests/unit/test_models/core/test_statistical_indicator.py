@@ -11,12 +11,10 @@ class TestStatisticalIndicatorModel(BaseValidationTest):
     def setUpTestData(cls) -> None:
         cls.indicator = StatisticalIndicator.objects.create(
             png=SimpleUploadedFile(
-            "test1.png", 
-            b"dummy png content", 
-            content_type="image/png"
+                "test1.png", b"dummy png content", content_type="image/png"
             ),
             value=10,
-            name='Test'
+            name='Test',
         )
 
     def test_statistical_indicator_model(self):
@@ -24,7 +22,7 @@ class TestStatisticalIndicatorModel(BaseValidationTest):
         self.assert_model_instance(StatisticalIndicator, 'name', 'Test')
         self.assertTrue(self.indicator.png.name.startswith('statistics/'))
         self.assertTrue(self.indicator.png.name.endswith('png'))
-        
+
     def test_str_method(self):
         self.assert_str_method(self.indicator, 'Test')
 
@@ -42,7 +40,7 @@ class TestStatisticalIndicatorModel(BaseValidationTest):
 
     def test_statistical_indicator_name_unique(self):
         self.assert_unique_field(StatisticalIndicator, 'name', 'Test')
-    
+
     def test_object_count(self):
         self.assert_object_count(StatisticalIndicator, 1)
 

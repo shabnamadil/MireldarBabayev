@@ -1,8 +1,6 @@
 from rest_framework import serializers
 
-from ..models import (
-    Appointment
-)
+from ..models import Appointment
 
 
 class AppointmentPostSerializer(serializers.ModelSerializer):
@@ -14,5 +12,5 @@ class AppointmentPostSerializer(serializers.ModelSerializer):
             'phone',
             'location',
             'message',
-            'available_time'
+            'available_time',
         )
