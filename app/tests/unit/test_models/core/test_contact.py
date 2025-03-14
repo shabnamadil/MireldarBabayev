@@ -3,7 +3,7 @@ from utils.tests.base import BaseValidationTest
 
 
 class TestContactModel(BaseValidationTest):
-    
+
     @classmethod
     def setUpTestData(cls):
         cls.contact = Contact.objects.create(
@@ -11,7 +11,7 @@ class TestContactModel(BaseValidationTest):
             last_name='Last name',
             email='test@gmail.com',
             phone='1234567890',
-            message='Test message'
+            message='Test message',
         )
 
     def test_contact_model(self):

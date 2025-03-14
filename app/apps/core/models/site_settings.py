@@ -1,23 +1,25 @@
-from django.db import models
 from django.core.validators import MinLengthValidator
+from django.db import models
 
-from utils.models.singleton import SingletonModel
-from utils.helpers.validate_phone import PhoneValidationError
-from utils.helpers.validate_work_hours import WorkHourValidationError
 from utils.helpers.validate_google_map import GoogleMapValidationError
+from utils.helpers.validate_phone import validate_phone_value
 from utils.helpers.validate_social_media import (
     validate_facebook,
-    validate_youtube,
-    validate_twitter,
     validate_instagram,
     validate_linkedin,
     validate_tiktok,
+    validate_twitter,
+    validate_youtube,
 )
+from utils.helpers.validate_time import (
+    validate_work_hours as WorkHourValidationError,
+)
+from utils.models.singleton import SingletonModel
 
 
 class SiteSettings(SingletonModel):
     site_name = models.CharField(
-        max_length=100, 
+        max_length=100,
         verbose_name="Site Name",
         validators=[MinLengthValidator(30)],
         help_text='Kontentin uzunluğu maksimum 100-dür.'
@@ -33,7 +35,7 @@ class SiteSettings(SingletonModel):
         'Əlaqə nömrəsi',
         max_length=17,
         help_text='Yalnız rəqəm daxil edin. Məsələn: +994123456789',
-        validators=[PhoneValidationError]
+        validators=[validate_phone_value]
     )
     email = models.EmailField(
         'Email ünvanı'
@@ -83,7 +85,7 @@ class SiteSettings(SingletonModel):
     footer_description = models.TextField(
         'Footer hissədə göstəriləcək mətn'
     )
-    
+
     class Meta:
         verbose_name = "Site Setting"
         verbose_name_plural = "Site Settings"

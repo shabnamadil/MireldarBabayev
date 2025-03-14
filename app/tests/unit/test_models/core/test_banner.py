@@ -6,19 +6,17 @@ from utils.tests.base import BaseValidationTest
 
 
 class TestBannerModel(BaseValidationTest):
-    
+
     @classmethod
     def setUpTestData(cls):
         cls.banner = Banner.objects.create(
             title='Banner title',
             subtitle='Banner subtitle',
             description='Banner description',
-            png= SimpleUploadedFile(
-            "test1.png", 
-            b"dummy png content", 
-            content_type="image/png"
+            png=SimpleUploadedFile(
+                "test1.png", b"dummy png content", content_type="image/png"
             ),
-            video_id='MKG_6BqnhpI'
+            video_id='MKG_6BqnhpI',
         )
 
     def test_banner_model(self):
@@ -40,7 +38,7 @@ class TestBannerModel(BaseValidationTest):
 
     def test_description_unique(self):
         self.assert_unique_field(Banner, 'description', 'Banner description')
-        
+
     def test_video_id_unique(self):
         self.assert_unique_field(Banner, 'video_id', 'MKG_6BqnhpI')
 

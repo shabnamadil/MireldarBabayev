@@ -1,8 +1,8 @@
 from django.core.exceptions import ValidationError
 from django.core.files.uploadedfile import SimpleUploadedFile
 
-from utils.tests.base import BaseValidationTest
 from apps.service.models import Coworker
+from utils.tests.base import BaseValidationTest
 
 
 class TestCoworkerModel(BaseValidationTest):
@@ -11,10 +11,8 @@ class TestCoworkerModel(BaseValidationTest):
     def setUpTestData(cls):
         cls.coworker = Coworker.objects.create(
             name='Test coworker',
-            png= SimpleUploadedFile(
-            "test1.png", 
-            b"dummy png content", 
-            content_type="image/png"
+            png=SimpleUploadedFile(
+                "test1.png", b"dummy png content", content_type="image/png"
             ),
         )
 

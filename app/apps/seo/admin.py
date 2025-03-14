@@ -3,15 +3,15 @@ from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
 
 from .models import (
-    HomePageSeo,
-    ServicesPageSeo,
-    ServiceDetailPageSeo,
     AboutUsPageSeo,
-    BlogsPageSeo,
-    BlogDetailPageSeo,
-    ContactPageSeo,
     AppointmentPageSeo,
-    FaqPageSeo
+    BlogDetailPageSeo,
+    BlogsPageSeo,
+    ContactPageSeo,
+    FaqPageSeo,
+    HomePageSeo,
+    ServiceDetailPageSeo,
+    ServicesPageSeo,
 )
 
 
@@ -23,7 +23,7 @@ class SingletonModelAdmin(TranslationAdmin):
     def has_delete_permission(self, request, obj=None):
         """Prevent deletion of the singleton instance."""
         return False
-    
+
     class Media:
         js = (
             'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',

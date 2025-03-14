@@ -2,8 +2,8 @@ from django.core.exceptions import ValidationError
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.db import IntegrityError
 
-from apps.seo.models import BlogDetailPageSeo
 from apps.blog.models import Blog
+from apps.seo.models import BlogDetailPageSeo
 from utils.tests.seo import BaseValidationTest
 
 
@@ -22,7 +22,7 @@ class TestBlogDetailPageSeoModel(BaseValidationTest):
                 name="test_image.jpg",
                 content=b"\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01",
                 content_type="image/jpeg",
-            ), 
+            ),
             author=cls.user,
         )
 
@@ -32,12 +32,13 @@ class TestBlogDetailPageSeoModel(BaseValidationTest):
             "og_description": "This is a valid OG description for testing SEO constraints.",
         }
 
-        cls.instance, created = BlogDetailPageSeo.objects.get_or_create(blog=cls.blog)
+        cls.instance, created = BlogDetailPageSeo.objects.get_or_create(
+            blog=cls.blog
+        )
 
         for key, value in cls.valid_data.items():
             setattr(cls.instance, key, value)
         cls.instance.save()
-
 
     def test_str_method(self):
         self.assert_str_method(self.instance, f'SEO ==> {self.blog}')
@@ -75,9 +76,21 @@ class TestBlogDetailPageSeoModel(BaseValidationTest):
         self.assertIn("og_description", errors)
 
     def test_model(self):
-        self.assert_model_instance(BlogDetailPageSeo, 'meta_description', self.valid_data["meta_description"])
-        self.assert_model_instance(BlogDetailPageSeo, 'meta_keywords', self.valid_data["meta_keywords"])
-        self.assert_model_instance(BlogDetailPageSeo, 'og_description', self.valid_data["og_description"])
+        self.assert_model_instance(
+            BlogDetailPageSeo,
+            'meta_description',
+            self.valid_data["meta_description"],
+        )
+        self.assert_model_instance(
+            BlogDetailPageSeo,
+            'meta_keywords',
+            self.valid_data["meta_keywords"],
+        )
+        self.assert_model_instance(
+            BlogDetailPageSeo,
+            'og_description',
+            self.valid_data["og_description"],
+        )
         self.assert_model_instance(BlogDetailPageSeo, 'blog', self.blog)
 
     def test_automatically_created_blog_detail_page_seo(self):
@@ -89,7 +102,7 @@ class TestBlogDetailPageSeoModel(BaseValidationTest):
                 name="test_image.jpg",
                 content=b"\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01",
                 content_type="image/jpeg",
-            ), 
+            ),
             author=self.user,
         )
 

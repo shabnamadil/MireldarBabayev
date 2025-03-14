@@ -1,8 +1,9 @@
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
-from .models import Service
 from apps.seo.models import ServiceDetailPageSeo
+
+from .models import Service
 
 
 @receiver(post_save, sender=Service)

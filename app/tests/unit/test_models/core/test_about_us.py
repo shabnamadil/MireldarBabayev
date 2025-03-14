@@ -14,10 +14,8 @@ class TestAboutUsModel(BaseValidationTest):
             vision='Görüşümüz',
             value='Dəyərlərimiz',
             content='Haqqımızda səhifəsi üçün kontent',
-            image= SimpleUploadedFile(
-            "test1.jpg", 
-            b"dummy jpg content", 
-            content_type="image/jpeg"
+            image=SimpleUploadedFile(
+                "test1.jpg", b"dummy jpg content", content_type="image/jpeg"
             ),
         )
 
@@ -26,7 +24,9 @@ class TestAboutUsModel(BaseValidationTest):
         self.assert_model_instance(AboutUs, 'mission', 'Missiyamız')
         self.assert_model_instance(AboutUs, 'vision', 'Görüşümüz')
         self.assert_model_instance(AboutUs, 'value', 'Dəyərlərimiz')
-        self.assert_model_instance(AboutUs, 'content', 'Haqqımızda səhifəsi üçün kontent')
+        self.assert_model_instance(
+            AboutUs, 'content', 'Haqqımızda səhifəsi üçün kontent'
+        )
         self.assertTrue(self.about_us.image.name.startswith('about/'))
         self.assertTrue(self.about_us.image.name.endswith('jpg'))
 
@@ -44,4 +44,3 @@ class TestAboutUsModel(BaseValidationTest):
 
     def test_video_id_length(self):
         self.assert_max_length(self.about_us, 'video_id', 11)
-

@@ -2,8 +2,8 @@ from django.core.files.uploadedfile import SimpleUploadedFile
 from django.urls import reverse
 
 from apps.service.models import Service
-from utils.tests.base import BaseValidationTest
 from utils.helpers.slugify import custom_slugify
+from utils.tests.base import BaseValidationTest
 
 
 class TestServiceModel(BaseValidationTest):
@@ -13,19 +13,15 @@ class TestServiceModel(BaseValidationTest):
         cls.service = Service.objects.create(
             name='Test service',
             short_description='Test short desc',
-            png= SimpleUploadedFile(
-            "test1.png", 
-            b"dummy png content", 
-            content_type="image/png"
+            png=SimpleUploadedFile(
+                "test1.png", b"dummy png content", content_type="image/png"
             ),
-            image= SimpleUploadedFile(
-            "test1.jpg", 
-            b"dummy jpg content", 
-            content_type="image/jpeg"
+            image=SimpleUploadedFile(
+                "test1.jpg", b"dummy jpg content", content_type="image/jpeg"
             ),
             title='Test title',
             content='Test content',
-            background_color='blue'
+            background_color='blue',
         )
 
     def test_str_method(self):
@@ -33,7 +29,7 @@ class TestServiceModel(BaseValidationTest):
 
     def test_name_unique(self):
         self.assert_unique_field(Service, 'name', 'Test service')
-        
+
     def test_title_unique(self):
         self.assert_unique_field(Service, 'title', 'Test title')
 
@@ -55,13 +51,17 @@ class TestServiceModel(BaseValidationTest):
 
     def test_model(self):
         self.assert_model_instance(Service, 'name', 'Test service')
-        self.assert_model_instance(Service, 'short_description', 'Test short desc')
+        self.assert_model_instance(
+            Service, 'short_description', 'Test short desc'
+        )
         self.assert_model_instance(Service, 'title', 'Test title')
         self.assert_model_instance(Service, 'content', 'Test content')
         self.assert_model_instance(Service, 'background_color', 'blue')
         self.assertTrue(self.service.png.name.startswith('services/test1'))
         self.assertTrue(self.service.png.name.endswith('png'))
-        self.assertTrue(self.service.image.name.startswith('services/images/test1'))
+        self.assertTrue(
+            self.service.image.name.startswith('services/images/test1')
+        )
         self.assertTrue(self.service.image.name.endswith('jpg'))
 
     def test_slug_auto_generation(self):

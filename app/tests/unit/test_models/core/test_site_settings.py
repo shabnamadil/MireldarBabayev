@@ -6,20 +6,20 @@ from utils.tests.base import BaseValidationTest
 
 
 class TestSiteSettingsModel(BaseValidationTest):
-    
+
     @classmethod
     def setUpTestData(cls):
         cls.site_settings = SiteSettings.objects.create(
             site_name='a' * 30,
             logo=SimpleUploadedFile(
-            "test1.png", 
-            b"dummy png content", 
-            content_type="image/png"
+                "test1.png",
+                b"dummy png content",
+                content_type="image/png"
             ),
             favicon=SimpleUploadedFile(
-            "test1.png", 
-            b"dummy png content", 
-            content_type="image/png"
+                "test1.png",
+                b"dummy png content",
+                content_type="image/png"
             ),
             location='Test location',
             number='+1234567890',
@@ -41,14 +41,20 @@ class TestSiteSettingsModel(BaseValidationTest):
         self.assert_model_instance(SiteSettings, 'number', '+1234567890')
         self.assert_model_instance(SiteSettings, 'email', 'test@gmail.com')
         self.assert_model_instance(SiteSettings, 'work_hours', '09:00 - 18:00')
-        self.assert_model_instance(SiteSettings, 'map_url', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d...')
+        self.assert_model_instance(
+            SiteSettings,
+            'map_url',
+            'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d...')
         self.assert_model_instance(SiteSettings, 'facebook', 'https://facebook.com/')
         self.assert_model_instance(SiteSettings, 'youtube', 'https://youtube.com/')
         self.assert_model_instance(SiteSettings, 'instagram', 'https://instagram.com/')
         self.assert_model_instance(SiteSettings, 'twitter', 'https://twitter.com/')
         self.assert_model_instance(SiteSettings, 'linkedin', 'https://linkedin.com/')
         self.assert_model_instance(SiteSettings, 'tiktok', 'https://tiktok.com/')
-        self.assert_model_instance(SiteSettings, 'footer_description', 'Test footer description')
+        self.assert_model_instance(
+            SiteSettings,
+            'footer_description',
+            'Test footer description')
         self.assertTrue(self.site_settings.logo.name.startswith('logos/'))
         self.assertTrue(self.site_settings.logo.name.endswith('png'))
         self.assertTrue(self.site_settings.favicon.name.startswith('favicons/'))
@@ -93,7 +99,7 @@ class TestSiteSettingsModel(BaseValidationTest):
             '22:00 - 18:00',  # Start time is after end time
             '09:00 - 09:00',   # Start time is equal to end time,
             '18:00 - 09:00',   # Start time is after end time
-            '59:68 - 09:00',   # Invalid start 
+            '59:68 - 09:00',   # Invalid start
             '09:00 - 59:68',   # Invalid end
         ]
 
@@ -103,9 +109,9 @@ class TestSiteSettingsModel(BaseValidationTest):
                 self.site_settings.full_clean()
 
     def test_valid_map_url(self):
-            valid_url = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d..."
-            self.site_settings.map_url = valid_url
-            self.site_settings.full_clean()
+        valid_url = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d..."
+        self.site_settings.map_url = valid_url
+        self.site_settings.full_clean()
 
     def test_invalid_map_urls(self):
         invalid_urls = [
@@ -122,12 +128,18 @@ class TestSiteSettingsModel(BaseValidationTest):
 
     def test_valid_social_media_links(self):
         """Ensure valid URLs do not raise validation error"""
-        self.assert_valid_social_media_urls(self.site_settings, 'facebook', 'https://facebook.com/')
-        self.assert_valid_social_media_urls(self.site_settings, 'instagram', 'https://instagram.com/')
-        self.assert_valid_social_media_urls(self.site_settings, 'twitter', 'https://twitter.com/')
-        self.assert_valid_social_media_urls(self.site_settings, 'linkedin', 'https://linkedin.com/')
-        self.assert_valid_social_media_urls(self.site_settings, 'youtube', 'https://youtube.com/')
-        self.assert_valid_social_media_urls(self.site_settings, 'tiktok', 'https://tiktok.com/')
+        self.assert_valid_social_media_urls(
+            self.site_settings, 'facebook', 'https://facebook.com/')
+        self.assert_valid_social_media_urls(
+            self.site_settings, 'instagram', 'https://instagram.com/')
+        self.assert_valid_social_media_urls(
+            self.site_settings, 'twitter', 'https://twitter.com/')
+        self.assert_valid_social_media_urls(
+            self.site_settings, 'linkedin', 'https://linkedin.com/')
+        self.assert_valid_social_media_urls(
+            self.site_settings, 'youtube', 'https://youtube.com/')
+        self.assert_valid_social_media_urls(
+            self.site_settings, 'tiktok', 'https://tiktok.com/')
 
     def test_invalid_soical_media_links(self):
         """Ensure valid URLs do not raise validation error"""

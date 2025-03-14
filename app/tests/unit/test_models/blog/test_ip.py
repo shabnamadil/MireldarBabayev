@@ -36,7 +36,7 @@ class TestIPModel(BaseValidationTest):
             "192.168.1.-1",  # Negative number
             "192.168.1.1.1",  # Too many octets
             "2001:db8:::1",  # Invalid IPv6
-            "2001:db8:zzzz::1"  # Invalid characters in IPv6
+            "2001:db8:zzzz::1",  # Invalid characters in IPv6
         ]
         for ip in invalid_ips:
             obj = IP(view_ip=ip)

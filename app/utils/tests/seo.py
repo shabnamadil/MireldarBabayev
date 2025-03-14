@@ -1,4 +1,5 @@
 from django.core.files.uploadedfile import SimpleUploadedFile
+
 from .base import BaseValidationTest
 
 
