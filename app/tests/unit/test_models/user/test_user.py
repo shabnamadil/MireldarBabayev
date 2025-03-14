@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model
-from django.core.files.uploadedfile import SimpleUploadedFile
-from django.core.exceptions import ValidationError
 from django.contrib.auth.hashers import check_password
+from django.core.exceptions import ValidationError
+from django.core.files.uploadedfile import SimpleUploadedFile
 
 from utils.tests.base import BaseValidationTest
 
@@ -18,9 +18,7 @@ class TestCustomUserModel(BaseValidationTest):
             password='123',
             email='test@gmail.com',
             image=SimpleUploadedFile(
-            "test1.jpg", 
-            b"dummy png content", 
-            content_type="image/jpeg"
+                "test1.jpg", b"dummy png content", content_type="image/jpeg"
             ),
         )
 
@@ -30,7 +28,7 @@ class TestCustomUserModel(BaseValidationTest):
     def test_fields_max_length(self):
         self.assert_max_length(self.user, 'first_name', 30)
         self.assert_max_length(self.user, 'last_name', 30)
-    
+
     def test_email_unique(self):
         self.assert_unique_field(User, 'email', 'test@gmail.com')
 
@@ -42,7 +40,7 @@ class TestCustomUserModel(BaseValidationTest):
 
     def test_get_full_name(self):
         return self.assertEqual(self.user.full_name, 'Test User')
-    
+
     def test_admin_user_name(self):
         self.user.first_name = ''
         self.user.last_name = ''
@@ -58,17 +56,14 @@ class TestCustomUserModel(BaseValidationTest):
         self.assertTrue(self.user.image.name.startswith('users/'))
         self.assertTrue(self.user.image.name.endswith('jpg'))
 
-
     def test_email_required(self):
-        new_user = User(
-            first_name='New',
-            last_name='User',
-            password='123'
-        )
-        
+        new_user = User(first_name='New', last_name='User', password='123')
+
         with self.assertRaises(ValidationError):
             new_user.full_clean()
 
     def test_password_hashed(self):
         """Test that the password is hashed and not stored in plain text."""
-        self.assertTrue(check_password('123', self.user.password))  # Ensure it's hashed correctly
+        self.assertTrue(
+            check_password('123', self.user.password)
+        )  # Ensure it's hashed correctly

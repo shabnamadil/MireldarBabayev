@@ -1,5 +1,7 @@
 import unicodedata
+
 from django.utils.text import slugify
+
 from transliterate import translit
 
 

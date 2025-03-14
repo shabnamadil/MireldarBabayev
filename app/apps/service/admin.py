@@ -2,13 +2,8 @@ from django.contrib import admin
 
 from modeltranslation.admin import TranslationAdmin
 
-from .models import (
-    Service,
-    Download,
-    WhyChooseUs,
-    Coworker
-)
 from .forms import DownloadBaseForm
+from .models import Coworker, Download, Service, WhyChooseUs
 
 
 class MediaAdmin(TranslationAdmin):
@@ -25,8 +20,8 @@ class MediaAdmin(TranslationAdmin):
 
 @admin.register(Service)
 class ServiceAdmin(MediaAdmin):
-    list_filter = ('created_at', )
-    readonly_fields = ('slug', )
+    list_filter = ('created_at',)
+    readonly_fields = ('slug',)
 
 
 @admin.register(Download)
@@ -37,6 +32,7 @@ class DownloadAdmin(MediaAdmin):
 
     def get_file_size(self, obj):
         return obj.file_size_formatted
+
     get_file_size.short_description = 'File size'
 
 

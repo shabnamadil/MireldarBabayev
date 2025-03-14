@@ -1,46 +1,36 @@
 from django.db import models
-from django.core.exceptions import ValidationError
 
+from apps.service.models.service import Service
 from utils.models.base_model import BaseModel
-from ..models import Service
+
 
 class Download(BaseModel):
-    TYPE_CHOICES = (
-        ('pdf', 'pdf'),
-        ('docx', 'docx')
-    )
+    TYPE_CHOICES = (('pdf', 'pdf'), ('docx', 'docx'))
     title = models.CharField(
         'Başlıq',
         max_length=100,
-        help_text='Kontentin uzunluğu maksimum 200-dür.'
+        help_text='Kontentin uzunluğu maksimum 200-dür.',
     )
-    type = models.CharField(
-        choices=TYPE_CHOICES,
-        default='pdf',
-        max_length=4
-    )
-    file = models.FileField(
-        upload_to='services/downloads'
-    )
-    service  = models.ForeignKey(
+    type = models.CharField(choices=TYPE_CHOICES, default='pdf', max_length=4)
+    file = models.FileField(upload_to='services/downloads')
+    service = models.ForeignKey(
         Service,
         on_delete=models.CASCADE,
         related_name='downloads',
-        null=True, blank=True
+        null=True,
+        blank=True,
     )
 
     class Meta:
-        verbose_name = ('Endirmə')
-        verbose_name_plural = ('Endirmələr')
+        verbose_name = 'Endirmə'
+        verbose_name_plural = 'Endirmələr'
         ordering = ['-created_at']
-        indexes = [
-            models.Index(fields=['-created_at'])
-        ]
+        indexes = [models.Index(fields=['-created_at'])]
         unique_together = ('service', 'title')
 
     def __str__(self) -> str:
         return self.title
-    
+
     @property
     def file_size(self):
         if self.file and hasattr(self.file, 'size'):

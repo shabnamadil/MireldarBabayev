@@ -1,17 +1,16 @@
-from django.contrib.auth import get_user_model 
+from django.contrib.auth import get_user_model
 from django.contrib.auth.password_validation import validate_password
 from django.utils.translation import gettext as _
-from django.core.exceptions import ValidationError
 
 from rest_framework import serializers
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-
 from utils.serializers.password_field import PasswordField
 
 User = get_user_model()
 
+
 class RegisterSerializer(serializers.ModelSerializer):
-    password = PasswordField(write_only=True,  validators=[validate_password])
+    password = PasswordField(write_only=True, validators=[validate_password])
     password_confirm = PasswordField(write_only=True)
 
     class Meta:
@@ -24,7 +23,7 @@ class RegisterSerializer(serializers.ModelSerializer):
             'image',
             'email',
             'password',
-            'password_confirm'
+            'password_confirm',
         )
 
     def validate(self, attrs):
@@ -32,17 +31,21 @@ class RegisterSerializer(serializers.ModelSerializer):
         password_confirm = self.initial_data.get('password_confirm', '')
 
         if not password_confirm:
-            raise serializers.ValidationError({
-                'password_confirm': _('This field is required.'),
-            })
-        
+            raise serializers.ValidationError(
+                {
+                    'password_confirm': _('This field is required.'),
+                }
+            )
+
         if password != password_confirm:
-            raise serializers.ValidationError({
-                'password_confirm': _("Passwords do not match."),
-            })
-        
+            raise serializers.ValidationError(
+                {
+                    'password_confirm': _("Passwords do not match."),
+                }
+            )
+
         return attrs
-    
+
     def create(self, validated_data):
         validated_data.pop('password_confirm')
         user = User(
@@ -50,12 +53,11 @@ class RegisterSerializer(serializers.ModelSerializer):
             last_name=validated_data['last_name'],
             email=validated_data['email'],
             image=validated_data['image'],
-
         )
         user.set_password(validated_data['password'])
         user.save()
         return user
-    
+
 
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
@@ -66,14 +68,18 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
             access_token['refresh_jti'] = str(refresh['jti'])
             data['access'] = str(access_token)
             data['refresh'] = str(refresh)
-            data.update({
-                'user': {
-                    'id': self.user.id,
-                    'full_name': self.user.full_name,
-                    'email': self.user.email,
-                    'image': self.user.image.url if self.user.image else None,
+            data.update(
+                {
+                    'user': {
+                        'id': self.user.id,
+                        'full_name': self.user.full_name,
+                        'email': self.user.email,
+                        'image': (
+                            self.user.image.url if self.user.image else None
+                        ),
+                    }
                 }
-            })
+            )
         except Exception as e:
             print(f"Token creation failed: {e}")
             raise e

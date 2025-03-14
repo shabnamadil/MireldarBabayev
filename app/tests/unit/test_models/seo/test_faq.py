@@ -1,4 +1,3 @@
-
 from django.core.exceptions import ValidationError
 
 from apps.seo.models import FaqPageSeo
@@ -26,7 +25,9 @@ class TestFaqPageSeoModel(BaseSeoTest):
         self.assert_singleton(self.model)
 
     def test_image_field(self):
-        self.assertTrue(self.instance.og_image.name.startswith("seo-images/faq/"))
+        self.assertTrue(
+            self.instance.og_image.name.startswith("seo-images/faq/")
+        )
 
     def test_fields_min_length(self):
         self.assert_min_length(self.instance, "meta_title", 30)
@@ -63,10 +64,22 @@ class TestFaqPageSeoModel(BaseSeoTest):
         self.assertIn("og_description", errors)
 
     def test_model(self):
-        self.assert_model_instance(FaqPageSeo, 'meta_title', self.valid_data["meta_title"])
-        self.assert_model_instance(FaqPageSeo, 'meta_description', self.valid_data["meta_description"])
-        self.assert_model_instance(FaqPageSeo, 'meta_keywords', self.valid_data["meta_keywords"])
-        self.assert_model_instance(FaqPageSeo, 'og_title', self.valid_data["og_title"])
-        self.assert_model_instance(FaqPageSeo, 'og_description', self.valid_data["og_description"])
-        self.assertTrue(self.instance.og_image.name.startswith('seo-images/faq/'))
+        self.assert_model_instance(
+            FaqPageSeo, 'meta_title', self.valid_data["meta_title"]
+        )
+        self.assert_model_instance(
+            FaqPageSeo, 'meta_description', self.valid_data["meta_description"]
+        )
+        self.assert_model_instance(
+            FaqPageSeo, 'meta_keywords', self.valid_data["meta_keywords"]
+        )
+        self.assert_model_instance(
+            FaqPageSeo, 'og_title', self.valid_data["og_title"]
+        )
+        self.assert_model_instance(
+            FaqPageSeo, 'og_description', self.valid_data["og_description"]
+        )
+        self.assertTrue(
+            self.instance.og_image.name.startswith('seo-images/faq/')
+        )
         self.assertTrue(self.instance.og_image.name.endswith('jpg'))

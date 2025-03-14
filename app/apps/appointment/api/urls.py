@@ -1,10 +1,5 @@
 from django.urls import path
 
-from .views import (
-    AppointmentPostAPIView
-)
+from .views import AppointmentPostAPIView
 
-
-urlpatterns = [
-    path('appointment/', AppointmentPostAPIView.as_view())
-]
+urlpatterns = [path('appointment/', AppointmentPostAPIView.as_view())]

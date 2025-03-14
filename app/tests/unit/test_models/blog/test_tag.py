@@ -1,7 +1,6 @@
-from utils.tests.base import BaseValidationTest
-
 from apps.blog.models import Tag
 from utils.helpers.slugify import custom_slugify
+from utils.tests.base import BaseValidationTest
 
 
 class TestTagModel(BaseValidationTest):
@@ -18,7 +17,7 @@ class TestTagModel(BaseValidationTest):
         self.assert_model_instance(Tag, 'slug', custom_slugify(self.tag.name))
 
     def test_object_count(self):
-         self.assert_object_count(Tag, 1)
+        self.assert_object_count(Tag, 1)
 
     def test_unique_name(self):
         self.assert_unique_field(Tag, 'name', 'Test Tag')
@@ -35,4 +34,3 @@ class TestTagModel(BaseValidationTest):
 
     def test_deletion(self):
         self.assert_object_deleted(Tag)
-    
