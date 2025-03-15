@@ -15,12 +15,13 @@ class TestCustomUserModel(BaseValidationTest):
         cls.user = User.objects.create_user(
             first_name='Test',
             last_name='User',
-            password='123',
             email='test@gmail.com',
             image=SimpleUploadedFile(
                 "test1.jpg", b"dummy png content", content_type="image/jpeg"
             ),
         )
+        cls.user.set_password('testpassword')
+        cls.user.save()
 
     def test_str_method(self):
         return self.assert_str_method(self.user, 'test@gmail.com')
@@ -57,13 +58,12 @@ class TestCustomUserModel(BaseValidationTest):
         self.assertTrue(self.user.image.name.endswith('jpg'))
 
     def test_email_required(self):
-        new_user = User(first_name='New', last_name='User', password='123')
-
+        new_user = User(first_name='New', last_name='User')
+        new_user.set_password('testpassword')
+        new_user.save()
         with self.assertRaises(ValidationError):
             new_user.full_clean()
 
     def test_password_hashed(self):
         """Test that the password is hashed and not stored in plain text."""
-        self.assertTrue(
-            check_password('123', self.user.password)
-        )  # Ensure it's hashed correctly
+        self.assertTrue(check_password('testpassword', self.user.password))

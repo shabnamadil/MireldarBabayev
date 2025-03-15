@@ -13,9 +13,10 @@ class BaseValidationTest(TestCase):
         cls.user = User.objects.create(
             first_name='Test',
             last_name='user',
-            password='123',
             email='test@gmail.com',
         )
+        cls.user.set_password('testpassword')
+        cls.user.save()
 
     def assert_invalid_email(self, instance, email_field='email'):
         """Test that an invalid email raises a validation error."""
