@@ -22,5 +22,8 @@ lint:
 	$(PYTHON) -m black $(PROJECT_DIR) --check --diff --config $(SETTINGS_FILE)
 	$(PYTHON) -m isort $(PROJECT_DIR) --check --diff --settings $(SETTINGS_FILE)
 
+secure:
+	$(PYTHON) -m bandit -r $(PROJECT_DIR) --config ${SETTINGS_FILE}
+
 test:
 	cd ${PROJECT_DIR} && ${PYTHON} manage.py test

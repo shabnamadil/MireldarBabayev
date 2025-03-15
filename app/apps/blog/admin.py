@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.urls import reverse
 from django.utils.html import format_html
-from django.utils.safestring import mark_safe
 
 from modeltranslation.admin import TranslationAdmin
 
@@ -67,7 +66,7 @@ class BlogAdmin(TranslationAdmin):
         )
         url = reverse("admin:user_customuser_change", args=[obj.author.id])
         link = '<a style="color: red;" href="%s">%s</a>' % (url, author_name)
-        return mark_safe(link)
+        return format_html(link)
 
     display_blog_author.short_description = 'Müəllif'
 
@@ -128,17 +127,22 @@ class CommentAdmin(admin.ModelAdmin):
             url,
             obj.blog.title,
         )
-        return mark_safe(link)
+        return format_html(link)
 
     display_blog.short_description = 'Bloq'
 
     def display_comment_author(self, obj):
+        author_name = (
+            obj.author.get_full_name()
+            if obj.author.get_full_name()
+            else 'Admin'
+        )
         url = reverse("admin:user_customuser_change", args=[obj.author.id])
         link = '<a style="color: red;" href="%s">%s</a>' % (
             url,
-            obj.author.get_full_name(),
+            author_name,
         )
-        return mark_safe(link)
+        return format_html(link)
 
     display_comment_author.short_description = 'Müəllif'
 
