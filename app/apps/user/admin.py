@@ -61,7 +61,7 @@ class CustomUserAdmin(BaseUserAdmin):
         raw_html = f'<img style="width:150px;height:auto;" src="{image}">'
         return format_html(raw_html)
 
-    get_image.short_description = "Foto"
+    get_image.short_description = "Foto"  # type: ignore
 
 
 admin.site.register(CustomUser, CustomUserAdmin)

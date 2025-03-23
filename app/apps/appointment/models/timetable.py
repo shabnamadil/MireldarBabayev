@@ -12,6 +12,4 @@ class Timetable(BaseModel):
         verbose_name_plural = 'Rezervasiya üçün uyğun vaxtlar'
 
     def __str__(self) -> str:
-        return f"{
-            self.start_time.strftime('%d %b %Y, %H:%M')} - {
-            self.end_time.strftime('%d %b %Y, %H:%M')}"
+        return f"{self.start_time.strftime('%d %b %Y, %H:%M')} - {self.end_time.strftime('%d %b %Y, %H:%M')}"

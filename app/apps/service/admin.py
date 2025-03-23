@@ -33,7 +33,7 @@ class DownloadAdmin(MediaAdmin):
     def get_file_size(self, obj):
         return obj.file_size_formatted
 
-    get_file_size.short_description = 'File size'
+    get_file_size.short_description = 'File size'  # type: ignore[attr-defined]
 
 
 @admin.register(WhyChooseUs)

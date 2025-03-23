@@ -21,7 +21,7 @@ class CustomUser(AbstractUser, BaseModel):
 
     username = None
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS: list[str] = []
 
     class Meta:
         verbose_name = 'İstifadəçi'

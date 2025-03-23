@@ -1,5 +1,6 @@
+from datetime import timedelta
+
 from django.utils import timezone
-from django.utils.timezone import timedelta
 
 from apps.appointment.forms import TimetableForm
 from apps.appointment.models import Timetable
@@ -18,9 +19,7 @@ class TestTimeTableModel(BaseValidationTest):
         )
 
     def test_str_method(self):
-        expected_str = f"{
-            self.start_time.strftime('%d %b %Y, %H:%M')} - {
-            self.end_time.strftime('%d %b %Y, %H:%M')}"
+        expected_str = f"{self.start_time.strftime('%d %b %Y, %H:%M')} - {self.end_time.strftime('%d %b %Y, %H:%M')}"
         self.assert_str_method(self.timetable, expected_str)
 
     def test_object_count(self):
