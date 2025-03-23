@@ -25,5 +25,11 @@ lint:
 secure:
 	$(PYTHON) -m bandit -r $(PROJECT_DIR) --config ${SETTINGS_FILE}
 
+type-check:
+	$(PYTHON) -m mypy $(PROJECT_DIR) --config ${SETTINGS_FILE}
+
 test:
 	cd ${PROJECT_DIR} && ${PYTHON} manage.py test
+
+install:
+	pip install -r requirements.txt
