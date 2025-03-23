@@ -147,3 +147,5 @@ celerybeat-schedule
 
 
 node_modules/
+
+.mypy_cache

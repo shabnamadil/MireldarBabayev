@@ -41,6 +41,16 @@ severity = "high"
 confidence = "high"
 skips = ["B311", "B404"]
 
+[tool.mypy]
+plugins = ["mypy_django_plugin.main"]
+mypy_path = "app"
+exclude = ["app/.*/migrations/.*"]  # Exclude all migrations folders
+ignore_missing_imports = true
+no_site_packages = true
+
+[tool.django-stubs]
+django_settings_module = "config.settings"
+
 [build-system]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"

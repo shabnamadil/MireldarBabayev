@@ -68,7 +68,7 @@ class BlogAdmin(TranslationAdmin):
         link = '<a style="color: red;" href="%s">%s</a>' % (url, author_name)
         return format_html(link)
 
-    display_blog_author.short_description = 'Müəllif'
+    display_blog_author.short_description = 'Müəllif'  # type: ignore[attr-defined]
 
     def display_blog_img(self, obj):
         image = obj.image.url
@@ -76,18 +76,18 @@ class BlogAdmin(TranslationAdmin):
             raw_html = f'<img style="width:70px;height:auto;" src="{image}">'
             return format_html(raw_html)
 
-    display_blog_img.short_description = 'Cover foto'
+    display_blog_img.short_description = 'Cover foto'  # type: ignore[attr-defined]
 
     def display_blog_categories(self, obj):
         return ", ".join(category.name for category in obj.category.all())
 
-    display_blog_categories.short_description = 'Kateqoriya'
+    display_blog_categories.short_description = 'Kateqoriya'  # type: ignore[attr-defined]
 
     def show_comments_count(self, obj):
         result = Comment.objects.filter(blog=obj).count()
         return result
 
-    show_comments_count.short_description = 'RƏYLƏRİN SAYI'
+    show_comments_count.short_description = 'RƏYLƏRİN SAYI'  # type: ignore[attr-defined]
 
     class Media:
         js = (
@@ -129,7 +129,7 @@ class CommentAdmin(admin.ModelAdmin):
         )
         return format_html(link)
 
-    display_blog.short_description = 'Bloq'
+    display_blog.short_description = 'Bloq'  # type: ignore[attr-defined]
 
     def display_comment_author(self, obj):
         author_name = (
@@ -144,12 +144,12 @@ class CommentAdmin(admin.ModelAdmin):
         )
         return format_html(link)
 
-    display_comment_author.short_description = 'Müəllif'
+    display_comment_author.short_description = 'Müəllif'  # type: ignore[attr-defined]
 
     def get_comment(self, obj):
         return obj.truncated_comment
 
-    get_comment.short_description = 'Comment'
+    get_comment.short_description = 'Comment'  # type: ignore[attr-defined]
 
     def has_change_permission(self, request, obj=None):
         if obj is None:
