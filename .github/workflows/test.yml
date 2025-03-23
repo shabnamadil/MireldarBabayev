@@ -17,12 +17,10 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install dependencies
-        run: |
-          pip install --upgrade virtualenv pip setuptools
-          virtualenv .venv
-          source .venv/bin/activate
-          make install
+      - run: pip install --upgrade virtualenv pip setuptools
+      - run: virtualenv .venv
+      - run: source .venv/bin/activate
+      - run: make install
 
       - name: Set environment variables
         run: echo "SECRET_KEY=${{ secrets.MIRELDAR_BABAYEV_SECRET_KEY }}" >> $GITHUB_ENV
