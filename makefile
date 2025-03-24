@@ -33,3 +33,6 @@ test:
 
 install:
 	pip install -r requirements.txt
+
+enable-pre-commit-hooks:
+	${PYTHON} -m pre_commit install
