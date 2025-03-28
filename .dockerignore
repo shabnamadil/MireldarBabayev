@@ -1,0 +1,32 @@
+# Virtual environments
+venv/
+env/
+
+# Docker and build files
+Dockerfile
+.dockerignore
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+mypy_cache/
+
+# Logs and temporary files
+*.log
+*.sqlite3
+
+# Environment variables and credentials (important)
+.env
+.env.local
+.env.*
+
+# Git and version control
+.git/
+.gitignore
+
+# Compiled assets and dependencies
+node_modules/
+staticfiles/
+media/
