@@ -29,5 +29,5 @@ jobs:
         env:
           DJANGO_SECRET_KEY: ${{ secrets.MIRELDAR_BABAYEV_SECRET_KEY }}
           DJANGO_SETTINGS_MODULE: config.settings.dev
-        run: |
-          make test
+        run: make dev-build
+        run: make test
