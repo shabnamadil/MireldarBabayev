@@ -1,14 +1,24 @@
 PYTHON = python3
 PROJECT_DIR = app
+DEVELOPMENT_DIR = _development
 SETTINGS_FILE = pyproject.toml
 
-.PHONY: help format lint
+SUBDIRS := '_development'
+
+.PHONY: format lint secure type-check test enable-pre-commit-hooks dev-build dev-install dev-run dev-setup help
 
 help:
 	@echo "Available commands:"
 	@echo "  make format  - Format the code with black and isort"
 	@echo "  make lint    - Lint the code with flake8"
+	@echo "  make secure    - Check security issues via bandit"
+	@echo "  make type-check    - Check type issues via mypy"
 	@echo "  make test    - Run the unit tests"
+	@echo "  make enable-pre-commit-hooks    - Enable pre commit hook"
+	@echo "  make dev-build  - Make docker up for development server"
+	@echo "  make dev-install  - Install development stage dependencies"
+	@echo "  make dev-run  - Run development server"
+	@echo "  make dev-setup  - Make ready development server"
 	@echo "  make help    - Show this help message"
 
 format:
@@ -31,8 +41,16 @@ type-check:
 test:
 	cd ${PROJECT_DIR} && ${PYTHON} manage.py test
 
-install:
-	pip install -r requirements.txt
-
 enable-pre-commit-hooks:
 	${PYTHON} -m pre_commit install
+
+dev-build:
+	cd ${DEVELOPMENT_DIR} && docker compose up --build -d
+
+dev-install:
+	cd ${DEVELOPMENT_DIR} && pip install -r requirements_dev.txt
+
+dev-run:
+	cd ${PROJECT_DIR} && ${PYTHON} manage.py runserver
+
+dev-setup: dev-install dev-build dev-run

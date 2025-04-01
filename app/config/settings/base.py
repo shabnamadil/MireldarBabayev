@@ -10,27 +10,23 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import os
+from datetime import timedelta
+from pathlib import Path
+
 from django.utils.translation import gettext_lazy as _
 
-import os
-from pathlib import Path
-from datetime import timedelta
-from dotenv import load_dotenv
-
-load_dotenv()
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 
@@ -48,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rosetta',
     'modeltranslation',
+    'django_check_seo',
 
     # DJANGO SPECIFIC APPS
     'django.contrib.admin',
@@ -58,7 +55,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.sitemaps',
-    'django_check_seo',
 
     # CUSTOM APPS
     'apps.blog',
@@ -66,7 +62,7 @@ INSTALLED_APPS = [
     'apps.service',
     'apps.appointment',
     'apps.user',
-    'apps.seo'
+    'apps.seo',
 ]
 
 SITE_ID = 1
@@ -80,7 +76,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'apps.user.middleware.CurrentUserMiddleware'
+    'apps.user.middleware.CurrentUserMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -96,7 +92,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'utils.context_processors.context.context_info'
+                'utils.context_processors.context.context_info',
             ],
         },
     },
@@ -111,14 +107,13 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("POSTGRES_DB", ''),
-        "USER": os.environ.get("POSTGRES_USER", ''),
-        "PASSWORD": os.environ.get("POSTGRES_PASSWORD", ''),
-        "HOST": os.environ.get("POSTGRES_HOST", 'db'),
-        "PORT": os.environ.get("POSTGRES_PORT", ''),
+        "NAME": os.environ.get("POSTGRES_DB", "dev_db"),
+        "USER": os.environ.get("POSTGRES_USER", 'dev_user'),
+        "PASSWORD": os.environ.get("POSTGRES_PASSWORD", 'dev_password'),
+        "HOST": os.environ.get("POSTGRES_HOST", "localhost"),
+        "PORT": os.environ.get("POSTGRES_PORT", 5432),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -167,10 +162,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
-
-STATICFILES_DIRS=[os.path.join(BASE_DIR,'static/')]
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
@@ -184,17 +176,20 @@ TEST_DISCOVER_TOP_LEVEL = os.path.join(BASE_DIR, "tests")
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_IMAGE_BACKEND = "pillow"
-CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js' 
+CKEDITOR_JQUERY_URL = (
+    '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+)
 
 CKEDITOR_CONFIGS = {
-    'default':
-        {
-            'toolbar': 'full',
-            'width': 'auto',
-            'extraPlugins': ','.join([
+    'default': {
+        'toolbar': 'full',
+        'width': 'auto',
+        'extraPlugins': ','.join(
+            [
                 'codesnippet',
-            ]),
-        },
+            ]
+        ),
+    },
 }
 
 
@@ -212,11 +207,3 @@ SIMPLE_JWT = {
     "TOKEN_OBTAIN_SERIALIZER": "apps.user.api.serializers.CustomTokenObtainPairSerializer",
     'REFRESH_TOKEN_LIFETIME': timedelta(minutes=2),
 }
-
-EMAIL_BACKEND =  os.environ.get('EMAIL_BACKEND', '')
-EMAIL_HOST =  os.environ.get('EMAIL_HOST', '')
-EMAIL_PORT = os.environ.get('EMAIL_PORT', '')
-EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', '')
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
-DEFAULT_FROM_EMAIL =  EMAIL_HOST_USER

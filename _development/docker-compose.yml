@@ -1,0 +1,17 @@
+services:
+  postgres:
+    container_name: postgres-dev-db
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - LC_ALL=C.UTF-8
+    ports:
+      - "5432:5432"
+    volumes: 
+      - postgres:/var/lib/postgresql/data
+    env_file:
+      - .env
+
+volumes:
+  postgres:
+    driver: local

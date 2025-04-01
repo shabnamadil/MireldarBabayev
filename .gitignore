@@ -133,7 +133,7 @@ __pycache__/
 migrations/
 local_settings.py
 db.sqlite3
-# .env
+.env
 .save
 
 .venv
@@ -144,7 +144,6 @@ staticfiles/
 
 celerybeat-schedule.db
 celerybeat-schedule
-
 
 node_modules/
 

@@ -19,7 +19,6 @@ mypy_cache/
 
 # Environment variables and credentials (important)
 .env
-.env.local
 .env.*
 
 # Git and version control
@@ -28,5 +27,11 @@ mypy_cache/
 
 # Compiled assets and dependencies
 node_modules/
-staticfiles/
+static/
 media/
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon

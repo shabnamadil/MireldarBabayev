@@ -28,6 +28,6 @@ jobs:
       - name: Run Django unit tests
         env:
           DJANGO_SECRET_KEY: ${{ secrets.MIRELDAR_BABAYEV_SECRET_KEY }}
-          DJANGO_SETTINGS_MODULE: config.settings
+          DJANGO_SETTINGS_MODULE: config.settings.dev
         run: |
           make test
