@@ -25,9 +25,9 @@ jobs:
       - name: Set environment variables
         run: echo "SECRET_KEY=${{ secrets.MIRELDAR_BABAYEV_SECRET_KEY }}" >> $GITHUB_ENV
 
-      - name: Run Django unit tests
+      - name: Set Django unit test secrets
         env:
           DJANGO_SECRET_KEY: ${{ secrets.MIRELDAR_BABAYEV_SECRET_KEY }}
           DJANGO_SETTINGS_MODULE: config.settings.dev
-        run: make dev-build
-        run: make test
+      - run: make dev-build
+      - run: make test
