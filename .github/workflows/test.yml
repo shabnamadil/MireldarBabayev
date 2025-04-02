@@ -35,7 +35,6 @@ jobs:
         run: |
           make dev-build
           docker-compose logs
-          cd _development && docker-compose up -d
           sleep 30
           docker exec postgres-dev-db pg_isready -U dev_user -d dev_db
 
