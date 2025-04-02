@@ -1,5 +1,5 @@
 services:
-  postgres:
+  db:
     container_name: postgres-dev-db
     image: postgres:14.1-alpine
     restart: always
