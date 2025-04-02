@@ -26,7 +26,7 @@ jobs:
         run: echo "SECRET_KEY=${{ secrets.MIRELDAR_BABAYEV_SECRET_KEY }}" >> $GITHUB_ENV
 
       - name: Run Docker build
-        run: make dev-build
+        run: make dev-setup
 
       - name: Run Django unit tests
         env:
