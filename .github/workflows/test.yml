@@ -28,7 +28,7 @@ jobs:
       - name: Docker build
         run: |
           make dev-build
-          docker compose up -d
+          cd ${DEVELOPMENT_DIR} && docker compose up -d
           sleep 200
 
       - name: Run Django unit tests
