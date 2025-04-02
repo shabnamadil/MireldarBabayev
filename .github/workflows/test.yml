@@ -30,8 +30,8 @@ jobs:
         with:
           command: up
           options: --build --detach
-        run: |
-          make dev-build
+          
+      - run: make dev-build
 
       - name: Run Django unit tests
         env:
