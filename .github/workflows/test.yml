@@ -28,7 +28,7 @@ jobs:
       - name: Docker build
         run: |
           make dev-build
-          docker compose up -d db
+          docker compose up -d postgres-dev-db
           sleep 200
 
       - name: Run Django unit tests
