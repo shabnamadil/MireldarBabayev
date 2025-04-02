@@ -38,6 +38,8 @@ jobs:
           cd ${DEVELOPMENT_DIR} && docker-compose up -d
           sleep 30
           docker exec postgres-dev-db pg_isready -U dev_user -d dev_db
+        run: |
+          echo "DEVELOPMENT_DIR is: ${DEVELOPMENT_DIR}"
 
       - name: Run Django unit tests
         env:
