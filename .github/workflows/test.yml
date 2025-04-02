@@ -1,10 +1,3 @@
-name: Test project
-on: 
-  pull_request:
-    branches:
-      - main
-    types: [opened, synchronize, reopened, edited]
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -25,13 +18,18 @@ jobs:
       - name: Set environment variables
         run: echo "SECRET_KEY=${{ secrets.MIRELDAR_BABAYEV_SECRET_KEY }}" >> $GITHUB_ENV
 
+      - name: Install Docker Compose
+        run: |
+          sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+          sudo chmod +x /usr/local/bin/docker-compose
+          docker-compose --version  # Verify installation
+
       - name: Docker build and start containers
         run: |
           make dev-build
           docker-compose logs postgres-dev-db
-          cd ${DEVELOPMENT_DIR} && docker compose up -d
-          sleep 30  # Wait for PostgreSQL to initialize
-          # Optional: Check if PostgreSQL is ready (using `pg_isready`)
+          cd ${DEVELOPMENT_DIR} && docker-compose up -d
+          sleep 30
           docker exec postgres-dev-db pg_isready -U dev_user -d dev_db
 
       - name: Run Django unit tests
@@ -43,4 +41,4 @@ jobs:
 
       - name: Stop and clean up Docker services
         if: always()
-        run: cd ${DEVELOPMENT_DIR} && docker compose down -v
+        run: cd ${DEVELOPMENT_DIR} && docker-compose down -v
