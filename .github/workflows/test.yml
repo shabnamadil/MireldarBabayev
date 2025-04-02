@@ -37,7 +37,3 @@ jobs:
           DJANGO_SETTINGS_MODULE: config.settings.dev
         run: |
           make test
-
-      - name: Stop and clean up Docker services
-        if: always()
-        run: cd ${DEVELOPMENT_DIR} && docker compose down -v
