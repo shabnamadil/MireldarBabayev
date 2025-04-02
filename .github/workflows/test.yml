@@ -28,10 +28,10 @@ jobs:
       - name: Docker build and start containers
         run: |
           make dev-build
+          docker-compose logs postgres-dev-db
           cd ${DEVELOPMENT_DIR} && docker compose up -d
           sleep 30  # Wait for PostgreSQL to initialize
           # Optional: Check if PostgreSQL is ready (using `pg_isready`)
-          docker-compose logs postgres-dev-db
           docker exec postgres-dev-db pg_isready -U dev_user -d dev_db
 
       - name: Run Django unit tests
