@@ -25,8 +25,13 @@ jobs:
       - name: Set environment variables
         run: echo "SECRET_KEY=${{ secrets.MIRELDAR_BABAYEV_SECRET_KEY }}" >> $GITHUB_ENV
 
-      - name: Run Docker build
-        run: make dev-setup
+      - name: Docker build
+        uses: docker/compose-action@v2
+        with:
+          command: up
+          options: --build --detach
+        run: |
+          make dev-build
 
       - name: Run Django unit tests
         env:
@@ -34,3 +39,10 @@ jobs:
           DJANGO_SETTINGS_MODULE: config.settings.dev
         run: |
           make test
+
+      - name: Stop Docker services
+        uses: docker/compose-action@v2
+        if: always() # Run even if tests fail
+        with:
+          command: down
+          options: -v # Remove volumes
