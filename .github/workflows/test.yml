@@ -1,3 +1,10 @@
+name: Test project
+on: 
+  pull_request:
+    branches:
+      - main
+    types: [opened, synchronize, reopened, edited]
+
 jobs:
   test:
     runs-on: ubuntu-latest
