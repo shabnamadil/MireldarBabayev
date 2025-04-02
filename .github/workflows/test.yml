@@ -37,7 +37,7 @@ jobs:
           docker-compose logs
           sleep 30
           docker exec postgres-dev-db pg_isready -U dev_user -d dev_db
-          python3 manage.py migrate --noinput
+          docker exec postgres-dev-db && python3 manage.py migrate --noinput
 
       - name: Run Django unit tests
         env:
