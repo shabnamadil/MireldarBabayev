@@ -25,11 +25,13 @@ jobs:
       - name: Set environment variables
         run: echo "SECRET_KEY=${{ secrets.MIRELDAR_BABAYEV_SECRET_KEY }}" >> $GITHUB_ENV
 
-      - name: Docker build
+      - name: Docker build and start containers
         run: |
           make dev-build
           cd ${DEVELOPMENT_DIR} && docker compose up -d
-          sleep 200
+          sleep 30  # Wait for PostgreSQL to initialize
+          # Optional: Check if PostgreSQL is ready (using `pg_isready`)
+          docker exec postgres-dev-db pg_isready -U dev_user -d dev_db
 
       - name: Run Django unit tests
         env:
@@ -37,3 +39,7 @@ jobs:
           DJANGO_SETTINGS_MODULE: config.settings.dev
         run: |
           make test
+
+      - name: Stop and clean up Docker services
+        if: always()
+        run: cd ${DEVELOPMENT_DIR} && docker compose down -v
