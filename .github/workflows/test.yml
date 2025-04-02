@@ -35,9 +35,6 @@ jobs:
         run: |
           make test
 
-      - name: Stop Docker services
-        uses: docker/compose-action@v2
-        if: always() # Run even if tests fail
-        with:
-          command: down
-          options: -v # Remove volumes
+      - name: Stop and clean up Docker services
+        if: always()
+        run: cd ${DEVELOPMENT_DIR} && docker compose down -v
