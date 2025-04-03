@@ -41,7 +41,7 @@ jobs:
       - name: Docker build and start containers
         run: |
           cd _development && docker-compose down -v  # Ensure a fresh start
-          make dev-build
+          cd .. && make dev-build
           cd _development && docker-compose up -d
           sleep 30
           docker exec postgres-dev-db pg_isready -U dev_user -d dev_db
