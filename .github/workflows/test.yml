@@ -40,7 +40,7 @@ jobs:
 
       - name: Run Migrations inside Django container
         run: |
-          docker exec -i db python3 manage.py migrate --noinput
+          docker exec -i postgres-dev-db python3 manage.py migrate --noinput
 
       - name: Run Django unit tests
         env:

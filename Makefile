@@ -45,7 +45,7 @@ enable-pre-commit-hooks:
 	${PYTHON} -m pre_commit install
 
 dev-build:
-	cd ${DEVELOPMENT_DIR} && docker compose up --build -d
+	cd ${DEVELOPMENT_DIR} && docker compose -f docker-compose.dev.yml up --build -d
 
 dev-install:
 	cd ${DEVELOPMENT_DIR} && pip install -r requirements_dev.txt
