@@ -31,11 +31,18 @@ jobs:
           sudo chmod +x /usr/local/bin/docker-compose
           docker-compose --version  # Verify installation
 
+      - name: Remove existing PostgreSQL container (if any)
+        run: |
+          if [ "$(docker ps -aq -f name=postgres-dev-db)" ]; then
+            docker stop postgres-dev-db
+            docker rm postgres-dev-db
+          fi
+
       - name: Docker build and start containers
         run: |
+          cd _development && docker-compose down -v  # Ensure a fresh start
           make dev-build
-          docker-compose logs
-          cd _development && docker-compose up
+          cd _development && docker-compose up -d
           sleep 30
           docker exec postgres-dev-db pg_isready -U dev_user -d dev_db
 
