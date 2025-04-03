@@ -34,15 +34,9 @@ jobs:
       - name: Docker build and start containers
         run: |
           make dev-build
-          cd _development && docker-compose up -d
+          docker-compose logs
           sleep 30
           docker exec postgres-dev-db pg_isready -U dev_user -d dev_db
-
-      - name: Run Migrations
-        run: |
-          cd app
-          python3 manage.py makemigrations
-          python3 manage.py migrate --noinput
 
       - name: Run Django unit tests
         env:
