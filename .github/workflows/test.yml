@@ -51,9 +51,7 @@ jobs:
           done
 
       - name: Run Migrations inside Django container
-        run: |
-          cd app && python3 manage.py makemigrations --noinput && python3 manage.py migrate --noinput
-        
+        run: make migrate-all
 
       - name: Run Django unit tests
         env:
