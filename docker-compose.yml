@@ -4,9 +4,6 @@ services:
     image: postgres:15-alpine 
     restart: always
     environment:
-      - POSTGRES_DB=${POSTGRES_DB}
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - LC_ALL=C.UTF-8
     ports:
       - '5430:5432'
