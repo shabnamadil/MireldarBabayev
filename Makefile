@@ -53,4 +53,7 @@ dev-install:
 dev-run:
 	cd ${PROJECT_DIR} && ${PYTHON} manage.py runserver
 
+dev-down:
+	cd ${DEVELOPMENT_DIR} && docker compose down -v
+
 dev-setup: dev-install dev-build dev-run
