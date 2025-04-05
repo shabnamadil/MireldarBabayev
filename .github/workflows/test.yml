@@ -26,11 +26,11 @@ jobs:
             ${{ runner.os }}-pip-
 
       - name: Setup virtualenv & install dev dependencies
-        run: |
-          pip install --upgrade virtualenv pip setuptools
-          virtualenv .venv
-          source .venv/bin/activate
-          make dev-install
+        run: pip install --upgrade virtualenv pip setuptools
+
+      - run: virtualenv .venv
+      - run: source .venv/bin/activate
+      - run: make dev-install
 
       - name: Set environment variables
         run: echo "SECRET_KEY=${{ secrets.MIRELDAR_BABAYEV_SECRET_KEY }}" >> $GITHUB_ENV
