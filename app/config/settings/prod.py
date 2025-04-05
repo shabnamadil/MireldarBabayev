@@ -7,7 +7,7 @@ DEBUG = False
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
+DATABASE_URL = os.environ.get('DATABASE_URL')
 EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND', '')
 EMAIL_HOST = os.environ.get('EMAIL_HOST', '')
 EMAIL_PORT = os.environ.get('EMAIL_PORT', '')
