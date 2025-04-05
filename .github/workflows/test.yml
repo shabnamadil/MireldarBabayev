@@ -41,7 +41,9 @@ jobs:
           sudo chmod +x /usr/local/bin/docker-compose
 
       - name: Build and start Docker container
-        run: make dev-build
+        run: |
+          make dev-build
+          docker ps -a
 
       - name: Wait for Postgres to be ready
         run: |
