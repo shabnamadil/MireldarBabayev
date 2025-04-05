@@ -17,22 +17,10 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Cache pip dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-
-      - name: 🚀 Upgrade pip & virtualenv
-        run: pip install --upgrade virtualenv pip setuptools
-
-      - name: Set up virtualenv & install dev dependencies
-        run: |
-          virtualenv .venv
-          source .venv/bin/activate
-          make dev-install
+      - run: pip install --upgrade virtualenv pip setuptools
+      - run: virtualenv .venv
+      - run: source .venv/bin/activate
+      - run: make dev-install
 
       - name: Set environment variables
         run: echo "SECRET_KEY=${{ secrets.MIRELDAR_BABAYEV_SECRET_KEY }}" >> $GITHUB_ENV
@@ -42,20 +30,15 @@ jobs:
           sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
           sudo chmod +x /usr/local/bin/docker-compose
 
-      - name:  Build and start Docker containers
+      - name: Docker build and start containers
         run: |
           make dev-build
+          sleep 30
+          docker exec postgres-dev-db pg_isready -U dev_user -d dev_db
 
-      - name: Wait for Postgres to be ready
+      - name: Run Migrations inside Django container
         run: |
-          until docker exec postgres-dev-db pg_isready -U dev_user -d dev_db; do
-            echo "Waiting for PostgreSQL..."
-            sleep 2
-          done
-
-      - name: Run Migrations
-        run: |
-          cd app && python3 manage.py makemigrations core --noinput && python3 manage.py migrate --noinput
+          cd app && python3 manage.py makemigrations user blog core seo appointment service --noinput && python3 manage.py migrate --noinput
         
 
       - name: Run Django unit tests
@@ -67,4 +50,4 @@ jobs:
 
       - name: Stop and clean up Docker services
         if: always()
-        run: make dev-down
+        run: cd _development && docker-compose down -v
