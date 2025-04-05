@@ -25,7 +25,16 @@ services:
       - postgres
     restart: always
 
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
+    restart: always
+    ports:
+      - 80:80
 
-volumes:
-  db:
-    driver: local
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
+      external: True
