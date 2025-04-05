@@ -53,7 +53,7 @@ dev-install:
 dev-run:
 	cd ${PROJECT_DIR} && ${PYTHON} manage.py runserver
 
-dev-down:
-	cd ${DEVELOPMENT_DIR} && docker compose down -v
+dev-stop:
+	cd ${DEVELOPMENT_DIR} && docker compose stop postgres-dev-db
 
 dev-setup: dev-install dev-build dev-run

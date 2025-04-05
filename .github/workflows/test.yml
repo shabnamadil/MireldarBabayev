@@ -58,4 +58,4 @@ jobs:
 
       - name: Stop and clean up Docker services
         if: always()
-        run: cd _development && docker-compose down -v
+        run: make dev-stop
