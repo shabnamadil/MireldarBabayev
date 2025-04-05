@@ -33,7 +33,6 @@ jobs:
           virtualenv .venv
           source .venv/bin/activate
           make dev-install
-        shell: bash
 
       - name: Set environment variables
         run: echo "SECRET_KEY=${{ secrets.MIRELDAR_BABAYEV_SECRET_KEY }}" >> $GITHUB_ENV
