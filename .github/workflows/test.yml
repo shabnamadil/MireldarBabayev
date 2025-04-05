@@ -17,15 +17,15 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Cache pip dependencies
+      - name: 🧠 Cache pip dependencies
         uses: actions/cache@v3
         with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements_dev*.txt') }}
+          path: ~/.cache/pip 
+          key: ${{ runner.os }}-pip-${{ hashFiles('_development/requirements_dev.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
 
-      - name: Setup virtualenv & install dev dependencies
+      - name: Setup virtualenv
         run: pip install --upgrade virtualenv pip setuptools
 
       - run: virtualenv .venv
@@ -44,7 +44,7 @@ jobs:
         run: |
           make dev-build
           docker-compose logs
-          sleep 30
+          sleep 3
           docker exec postgres-dev-db pg_isready -U dev_user -d dev_db
 
       - name: Run Migrations inside Django container
