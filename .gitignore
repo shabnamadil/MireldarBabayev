@@ -145,7 +145,11 @@ staticfiles/
 celerybeat-schedule.db
 celerybeat-schedule
 
-
 node_modules/
 
 .mypy_cache
+
+/media/
+*.mp4
+*.png
+*.jpg
