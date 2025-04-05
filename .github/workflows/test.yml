@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: 🧠 Cache pip dependencies
+      - name: Cache pip dependencies
         uses: actions/cache@v3
         with:
           path: ~/.cache/pip 
@@ -40,12 +40,15 @@ jobs:
           sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
           sudo chmod +x /usr/local/bin/docker-compose
 
-      - name: Docker build and start containers
+      - name: Build and start Docker container
+        run: make dev-build
+
+      - name: Wait for Postgres to be ready
         run: |
-          make dev-build
-          docker-compose logs
-          sleep 3
-          docker exec postgres-dev-db pg_isready -U dev_user -d dev_db
+          until docker exec postgres-dev-db pg_isready -U dev_user -d dev_db; do
+            echo "Waiting for PostgreSQL..."
+            sleep 2
+          done
 
       - name: Run Migrations inside Django container
         run: |
@@ -61,4 +64,4 @@ jobs:
 
       - name: Stop and clean up Docker services
         if: always()
-        run: cd _development && docker-compose down -v
+        run: make dev-stop
