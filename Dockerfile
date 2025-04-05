@@ -26,4 +26,4 @@ COPY ./app /code
 EXPOSE 8000
 
 # Run Django development server
-CMD ["gunicorn", "config.wsgi"]
+CMD ["sh", "-c", "python3 manage.py makemigrations core user seo service blog && python3 manage.py migrate && gunicorn config.wsgi"]
