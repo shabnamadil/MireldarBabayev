@@ -20,7 +20,7 @@ RUN addgroup --system django && adduser --system --group django
 USER django
 
 # Copy the rest of the project files
-COPY . .
+COPY ./app /code
 
 # Expose Django's default port
 EXPOSE 8000
