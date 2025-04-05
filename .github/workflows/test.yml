@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: 🧠 Cache pip dependencies
+      - name: Cache pip dependencies
         uses: actions/cache@v3
         with:
           path: ~/.cache/pip
@@ -28,7 +28,7 @@ jobs:
       - name: 🚀 Upgrade pip & virtualenv
         run: pip install --upgrade virtualenv pip setuptools
 
-      - name: 🛠️ Set up virtualenv & install dev dependencies
+      - name: Set up virtualenv & install dev dependencies
         run: |
           virtualenv .venv
           source .venv/bin/activate
@@ -47,7 +47,7 @@ jobs:
         run: |
           make dev-build
 
-      - name: 🕓 Wait for Postgres to be ready
+      - name: Wait for Postgres to be ready
         run: |
           until docker exec postgres-dev-db pg_isready -U dev_user -d dev_db; do
             echo "Waiting for PostgreSQL..."
@@ -56,7 +56,7 @@ jobs:
 
       - name: Run Migrations
         run: |
-          cd app && python3 manage.py makemigrations --noinput && python3 manage.py migrate --noinput
+          cd app && python3 manage.py makemigrations core --noinput && python3 manage.py migrate --noinput
         
 
       - name: Run Django unit tests
