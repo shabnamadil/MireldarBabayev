@@ -17,14 +17,6 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Cache pip dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-
       - run: pip install --upgrade virtualenv pip setuptools
       - run: virtualenv .venv
       - run: source .venv/bin/activate
@@ -41,7 +33,7 @@ jobs:
       - name: Docker build and start containers
         run: |
           make dev-build
-          docker compose logs
+          docker-compose logs
           sleep 30
           docker exec postgres-dev-db pg_isready -U dev_user -d dev_db
 
@@ -59,4 +51,4 @@ jobs:
 
       - name: Stop and clean up Docker services
         if: always()
-        run: make dev-stop
+        run: cd _development && docker-compose down -v

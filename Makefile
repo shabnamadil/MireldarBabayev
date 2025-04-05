@@ -48,7 +48,7 @@ dev-build:
 	cd ${DEVELOPMENT_DIR} && docker compose -f docker-compose.dev.yml up --build -d
 
 dev-install:
-	cd ${DEVELOPMENT_DIR} && pip install -r requirements_dev.txt
+	cd ${DEVELOPMENT_DIR} && pip install --no-cache-dir -r requirements_dev.txt
 
 dev-run:
 	cd ${PROJECT_DIR} && ${PYTHON} manage.py runserver
