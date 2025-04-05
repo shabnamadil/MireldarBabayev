@@ -41,9 +41,7 @@ jobs:
           sudo chmod +x /usr/local/bin/docker-compose
 
       - name: Build and start Docker container
-        run: |
-          make dev-build
-          docker ps -a
+        run: make dev-build
 
       - name: Wait for Postgres to be ready
         run: |
@@ -54,7 +52,7 @@ jobs:
 
       - name: Run Migrations inside Django container
         run: |
-          cd app && python3 manage.py makemigrations user blog core seo appointment service --noinput && python3 manage.py migrate --noinput
+          cd app && python3 manage.py makemigrations --noinput && python3 manage.py migrate --noinput
         
 
       - name: Run Django unit tests
@@ -66,4 +64,4 @@ jobs:
 
       - name: Stop and clean up Docker services
         if: always()
-        run: make dev-stop
+        run: cd _development && docker-compose down -v
