@@ -149,6 +149,7 @@ node_modules/
 
 .mypy_cache
 
+/static/
 /media/
 *.mp4
 *.png

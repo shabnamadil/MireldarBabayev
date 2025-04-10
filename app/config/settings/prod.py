@@ -6,7 +6,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'config/static/')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+
+CSRF_TRUSTED_ORIGINS = ['*'] # Change after domain available
 
 EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND', '')
 EMAIL_HOST = os.environ.get('EMAIL_HOST', '')
