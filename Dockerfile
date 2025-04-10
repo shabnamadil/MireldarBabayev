@@ -1,5 +1,5 @@
 # Use official Python image
-FROM python:3.12
+FROM python:3.12-slim
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -26,4 +26,4 @@ COPY ./app /code
 EXPOSE 8000
 
 # Run Django development server
-CMD ["sh", "-c", "python3 manage.py makemigrations user && python3 manage.py migrate && gunicorn config.wsgi"]
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]

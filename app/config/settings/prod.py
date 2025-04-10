@@ -1,5 +1,4 @@
 from .base import *
-import dj_database_url
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
@@ -7,14 +6,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
-
-INSTALLED_APPS+=['dj_database_url']
-
-
-DATABASES = {
-    'default': dj_database_url.config(default=os.environ['DATABASE_URL'], conn_max_age=600)
-}
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'config/static/')]
 
 EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND', '')
 EMAIL_HOST = os.environ.get('EMAIL_HOST', '')

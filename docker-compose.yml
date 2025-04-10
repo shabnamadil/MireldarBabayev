@@ -12,8 +12,8 @@ services:
     env_file:
       - .env
 
-  web:
-    container_name: mireldar
+  web: &web
+    container_name: mireldar_web
     build: .
     env_file:
       - .env
@@ -25,16 +25,5 @@ services:
       - postgres
     restart: always
 
-  nginx-proxy:
-    image: jwilder/nginx-proxy
-    container_name: nginx-proxy
-    restart: always
-    ports:
-      - 80:80
-
-
-networks:
-  default:
-    external:
-      name: nginx-proxy
-      external: True
+volumes:
+  db:
