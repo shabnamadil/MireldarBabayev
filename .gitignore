@@ -137,10 +137,10 @@ db.sqlite3
 .save
 
 .venv
-venv
+venv/
 .idea
-
-staticfiles/
+.env/
+env
 
 celerybeat-schedule.db
 celerybeat-schedule
