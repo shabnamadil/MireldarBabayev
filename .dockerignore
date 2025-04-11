@@ -10,7 +10,6 @@ Dockerfile
 
 # Python cache files
 __pycache__/
-migrations/
 *.pyc
 *.pyo
 *.pyd
