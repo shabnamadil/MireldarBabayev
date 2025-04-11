@@ -24,11 +24,14 @@ RUN python3 -m pip install --upgrade pip && \
     python3 -m pip install --no-cache-dir -r requirements.txt
 
 # Create a non-root user and ensure the directory is accessible
-RUN addgroup --system django && adduser --system --group django && \
-    chown -R django:django /code
+RUN addgroup --system django && adduser --system --group django
 
 # Copy your application code to the container (make sure you create a .dockerignore file if any large files or directories should be excluded)
 COPY ./app /code
+RUN chown -R django:django /code
+RUN chmod -R 755 /code
+
+# Copy other config files
 COPY uwsgi.ini /conf/uwsgi.ini
 COPY mime.types /etc/mime.types
 
