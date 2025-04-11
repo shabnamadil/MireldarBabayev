@@ -23,8 +23,11 @@ COPY requirements.txt ./
 RUN python3 -m pip install --upgrade pip && \
     python3 -m pip install --no-cache-dir -r requirements.txt
 
-# Security: Create non-root user
-RUN addgroup --system django && adduser --system --group django
+# Create a non-root user and ensure the directory is accessible
+RUN addgroup --system django && adduser --system --group django && \
+    chown -R django:django /code
+
+# Switch to the non-root user
 USER django
 
 # Copy your application code to the container (make sure you create a .dockerignore file if any large files or directories should be excluded)
@@ -35,5 +38,5 @@ COPY mime.types /etc/mime.types
 # Expose Django's default port
 EXPOSE 8000
 
-# Run uWSGI
-CMD [ "uwsgi", "--ini", "/conf/uwsgi.ini"]
+# Run uWSGI with the appropriate configuration
+CMD ["uwsgi", "--ini", "/conf/uwsgi.ini"]
