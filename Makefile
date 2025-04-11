@@ -53,7 +53,7 @@ dev-install:
 dev-run:
 	cd ${PROJECT_DIR} && ${PYTHON} manage.py runserver
 
-dev-setup: dev-install dev-build dev-run
+dev-setup: dev-install dev-build
 
 migrate-all:
 	cd ${PROJECT_DIR} && python3 manage.py makemigrations appointment blog core seo service user --noinput && python3 manage.py migrate --noinput
