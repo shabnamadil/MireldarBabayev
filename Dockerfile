@@ -8,10 +8,18 @@ ENV PYTHONUNBUFFERED=1
 # Set the working directory inside the container
 WORKDIR /code
 
+# Install build tools and Python dev headers required for uWSGI
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    gcc \
+    python3-dev \
+    libpcre3-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 # Copy only requirements first for caching optimization
 COPY requirements.txt ./
 
-# Install dependencies
+# Install Python dependencies
 RUN python3 -m pip install --upgrade pip && \
     python3 -m pip install --no-cache-dir -r requirements.txt
 
@@ -19,11 +27,13 @@ RUN python3 -m pip install --upgrade pip && \
 RUN addgroup --system django && adduser --system --group django
 USER django
 
-# Copy the rest of the project files
+# Copy your application code to the container (make sure you create a .dockerignore file if any large files or directories should be excluded)
 COPY ./app /code
+COPY uwsgi.ini /conf/uwsgi.ini
+COPY mime.types /etc/mime.types
 
 # Expose Django's default port
 EXPOSE 8000
 
-# Run Django development server
-CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
+# Run uWSGI
+CMD [ "uwsgi", "--ini", "/conf/uwsgi.ini"]

@@ -8,5 +8,5 @@ django-cms==4.1.4
 django-rosetta==0.10.1
 python-dotenv==1.0.1
 psycopg2-binary==2.9.10
-gunicorn==23.0.0
 transliterate==1.10.2
+uWSGI==2.0.28

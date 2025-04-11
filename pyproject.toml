@@ -50,7 +50,3 @@ no_site_packages = true
 
 [tool.django-stubs]
 django_settings_module = "config.settings.dev"
-
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
