@@ -137,15 +137,20 @@ db.sqlite3
 .save
 
 .venv
-venv
+venv/
 .idea
-
-staticfiles/
+.env/
+env
 
 celerybeat-schedule.db
 celerybeat-schedule
 
-
 node_modules/
 
 .mypy_cache
+
+/static/
+/media/
+*.mp4
+*.png
+*.jpg

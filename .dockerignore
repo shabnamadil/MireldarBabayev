@@ -1,0 +1,37 @@
+# Virtual environments
+venv/
+.venv
+env/
+.env
+
+# Docker and build files
+Dockerfile
+.dockerignore
+
+# Python cache files
+__pycache__/
+migrations/
+*.pyc
+*.pyo
+*.pyd
+mypy_cache/
+
+# Logs and temporary files
+*.log
+*.sqlite3
+
+# Git and version control
+.git/
+.gitignore
+
+# Compiled assets and dependencies
+node_modules/
+static/
+media/
+pgdb/
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon

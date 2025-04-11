@@ -1,0 +1,47 @@
+services:
+  postgres:
+    container_name: postgres-db
+    image: postgres:15-alpine 
+    restart: always
+    environment:
+      - LC_ALL=C.UTF-8
+    ports:
+      - '5430:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+    env_file:
+      - .env
+
+  web: &web
+    container_name: mireldar_web
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ./app:/code
+      - ./app/static:/code/static
+      - ./app/media/:/code/media/
+    ports:
+      - "8002:8000"
+    depends_on:
+      - postgres
+    restart: always
+
+  nginx:
+    image: jwilder/nginx-proxy
+    volumes:
+      - ./nginx/sites/mireldar.com.conf:/etc/nginx/conf.d/mireldar.com.conf
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./app/static:/code/static
+      - ./app/media/:/code/media/
+    ports:
+      - "80:80"
+    depends_on:
+      - web 
+volumes:
+  db:
+
+networks:
+  default:
+    name: nginx-proxy
+    external: true
