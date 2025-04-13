@@ -35,6 +35,10 @@ RUN chmod -R 755 /code
 COPY uwsgi.ini /conf/uwsgi.ini
 COPY mime.types /etc/mime.types
 
+COPY start.sh /start.sh
+RUN chmod +x /start.sh
+ENTRYPOINT ["/start.sh"]
+
 # Switch to the non-root user
 USER django
 
