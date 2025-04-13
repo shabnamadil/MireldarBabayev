@@ -47,3 +47,4 @@ EXPOSE 8000
 
 # Run uWSGI with the appropriate configuration
 CMD ["uwsgi", "--ini", "/conf/uwsgi.ini"]
+# CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]

@@ -6,7 +6,7 @@ services:
     environment:
       - LC_ALL=C.UTF-8
     ports:
-      - '5430:5432'
+      - '5432:5432'
     volumes: 
       - db:/var/lib/postgresql/data
     env_file:
@@ -22,7 +22,7 @@ services:
       - ./app/static:/code/static
       - ./app/media/:/code/media/
     ports:
-      - "8002:8000"
+      - "8000:8000"
     depends_on:
       - postgres
     restart: always
