@@ -16,34 +16,38 @@ RUN apt-get update && apt-get install -y \
     libpcre3-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy only requirements first for caching optimization
-COPY requirements.txt ./
+# Copy requirements first (for caching)
+COPY requirements.txt .
 
 # Install Python dependencies
-RUN python3 -m pip install --upgrade pip && \
-    python3 -m pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
-# Create a non-root user and ensure the directory is accessible
-RUN addgroup --system django && adduser --system --group django
+# Create a non-root user
+RUN addgroup --system django && adduser --system --ingroup django django
 
-# Copy your application code to the container (make sure you create a .dockerignore file if any large files or directories should be excluded)
+# Copy app source
 COPY ./app /code
-RUN chown -R django:django /code
-RUN chmod -R 755 /code
 
-# Copy other config files
+# Copy config files
 COPY uwsgi.ini /conf/uwsgi.ini
 COPY mime.types /etc/mime.types
 
-COPY start.sh /start.sh
-RUN chmod +x /start.sh
-ENTRYPOINT ["/start.sh"]
+# Copy entrypoint script
+COPY start.sh /starter.sh
+RUN chmod +x /starter.sh
 
-# Switch to the non-root user
+# Set permissions
+RUN chown -R django:django /code
+
+# Switch to non-root user
 USER django
 
-# Expose Django's default port
+# Expose Django port
 EXPOSE 8000
+
+# Start the app using entrypoint
+ENTRYPOINT ["/starter.sh"]
 
 # Run uWSGI with the appropriate configuration
 CMD ["uwsgi", "--ini", "/conf/uwsgi.ini"]
