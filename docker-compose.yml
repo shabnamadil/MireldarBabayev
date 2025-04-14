@@ -11,8 +11,6 @@ services:
       - db:/var/lib/postgresql/data
     env_file:
       - .env
-    networks:
-      - nginx-proxy
 
   web: &web
     container_name: mireldar_web
@@ -28,8 +26,6 @@ services:
     depends_on:
       - postgres
     restart: always
-    networks:
-      - nginx-proxy
 
   nginx:
     image: jwilder/nginx-proxy
@@ -43,8 +39,6 @@ services:
       - "80:80"
     depends_on:
       - web 
-    networks:
-      - nginx-proxy
 
 volumes:
   db:

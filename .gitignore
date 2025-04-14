@@ -1,26 +1,16 @@
-# GENERAL
-
-# OSX
+# macOS
 .DS_Store
 .AppleDouble
 .LSOverride
 Icon
-
-# Thumbnails
 ._*
-
-# Files that might appear on external disk
 .Spotlight-V100
 .Trashes
-
-# Directories potentially created on remote AFP share
 .AppleDB
 .AppleDesktop
 Network Trash Folder
 Temporary Items
 .apdisk
-
-# Files that might appear in the root of a volume
 .DocumentRevisions-V100
 .fseventsd
 .TemporaryItems
@@ -28,129 +18,116 @@ Temporary Items
 
 # Linux
 *~
-
-# KDE directory preferences
 .directory
-
-# Linux trash folder which might appear on any partition or disk
 .Trash-*
 
 # Windows
-# Windows image file caches
 Thumbs.db
 ehthumbs.db
-
-# Folder config file
 Desktop.ini
-
-# Recycle Bin used on file shares
 $RECYCLE.BIN/
-
-# Windows Installer files
 *.cab
 *.msi
 *.msm
 *.msp
-
-# Windows shortcuts
 *.lnk
 
 # Dropbox
-# Dropbox settings and caches
 .dropbox
 .dropbox.attr
 .dropbox.cache
 
-# General Editor Configurations
-# SublimeText
+# ========== EDITORS ==========
+# VSCode
+.vscode/
+.settings/
+
+# Sublime Text
 *.tmlanguage.cache
 *.tmPreferences.cache
 *.stTheme.cache
 *.sublime-workspace
 
-# Visual Studio Code - https://code.visualstudio.com/
-.settings/
-.vscode/
+# IntelliJ / PyCharm
+.idea/
 
-# BACKEND
-
-# Python
-# Byte-compiled / optimized / DLL files
+# ========== PYTHON ==========
+# Byte-compiled files
 __pycache__/
 *.py[cod]
 
 # C extensions
 *.so
 
-# Distribution / packaging
-.Python
+# Virtual environments
+.venv/
+venv/
 env/
+.env/
+.env
+
+# Distribution
 build/
-develop-eggs/
 dist/
+*.egg-info/
+.eggs/
 downloads/
-eggs/
-lib/
-lib64/
+develop-eggs/
 parts/
 sdist/
 var/
-*.egg-info/
 .installed.cfg
-*.egg
+.Python
 
 # PyInstaller
 *.manifest
 *.spec
 
-# Installer logs
+# Logs
+*.log
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Unit test / coverage reports
+# Testing
 htmlcov/
 .tox/
 .coverage
 .cache
 nosetests.xml
 coverage.xml
+.mypy_cache/
+
+# Django
+*.pot
+*.mo
+*.pyc
+*.sqlite3
+local_settings.py
+celerybeat-schedule*
+db.sqlite3
+
+# Migrations
+*/migrations/
+!*/migrations/__init__.py
+
+# Static/Media
+app/static/
+media/
+*.png
+*.jpg
+*.mp4
 
 # Translations
-*.mo
 *.pot
+*.mo
 
-# Sphinx documentation
+# Docs
 docs/_build/
 
 # PyBuilder
 target/
 
-# Django
-*.log
-*.pot
-*.pyc
-__pycache__/
-migrations/
-local_settings.py
-db.sqlite3
-.env
-.save
-
-.venv
-venv/
-.idea
-.env/
-env
-
-celerybeat-schedule.db
-celerybeat-schedule
-
+# Node
 node_modules/
-
-.mypy_cache
-
-/static/
-/media/
-*.mp4
-*.png
-*.jpg
+npm-debug.log
+yarn-debug.log
