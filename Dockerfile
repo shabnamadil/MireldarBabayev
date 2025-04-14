@@ -39,7 +39,8 @@ RUN chmod +x /starter.sh
 
 # Set permissions
 RUN chown -R django:django /code
-RUN mkdir -p /code/static && chown -R django:django /code/static
+ENV STATIC_ROOT=/code/static
+RUN mkdir -p $STATIC_ROOT && chown -R django:django $STATIC_ROOT
 
 # Switch to non-root user
 USER django
