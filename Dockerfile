@@ -49,5 +49,6 @@ EXPOSE 8000
 # Start the app using entrypoint
 ENTRYPOINT ["/starter.sh"]
 
+RUN if [ -f manage.py ]; then python manage.py collectstatic --noinput; fi
 # Run uWSGI with the appropriate configuration
 CMD ["uwsgi", "--ini", "/conf/uwsgi.ini"]
