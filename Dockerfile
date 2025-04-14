@@ -39,6 +39,7 @@ RUN chmod +x /starter.sh
 
 # Set permissions
 RUN chown -R django:django /code
+RUN mkdir -p /code/static && chown -R django:django /code/staticfiles
 
 # Switch to non-root user
 USER django
@@ -49,6 +50,5 @@ EXPOSE 8000
 # Start the app using entrypoint
 ENTRYPOINT ["/starter.sh"]
 
-RUN if [ -f manage.py ]; then python manage.py collectstatic --noinput; fi
 # Run uWSGI with the appropriate configuration
 CMD ["uwsgi", "--ini", "/conf/uwsgi.ini"]
