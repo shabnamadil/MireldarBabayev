@@ -34,7 +34,7 @@ COPY uwsgi.ini /conf/uwsgi.ini
 COPY mime.types /etc/mime.types
 
 # Copy entrypoint script
-COPY start.sh /starter.sh
+COPY starter.sh /starter.sh
 RUN chmod +x /starter.sh
 
 # Set permissions
