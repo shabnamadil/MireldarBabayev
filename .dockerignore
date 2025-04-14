@@ -1,36 +1,50 @@
 # Virtual environments
 venv/
-.venv
+.venv/
 env/
-.env
+.env/
 
-# Docker and build files
-Dockerfile
+# Docker-related files (Dockerfiles themselves can stay if needed)
 .dockerignore
 
-# Python cache files
+# Python cache
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
 mypy_cache/
+*.so
 
-# Logs and temporary files
+# Logs and local databases
 *.log
 *.sqlite3
+*.db
 
-# Git and version control
+# Git
 .git/
 .gitignore
 
-# Compiled assets and dependencies
+# Node and frontend builds
 node_modules/
-static/
-media/
-pgdb/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+*.tsbuildinfo
 
-# OSX
+# Compiled static/media files
+static/   
+media/         
+
+# Build artifacts and other cruft
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# IDE/OS-specific
 .DS_Store
 .AppleDouble
 .LSOverride
 Icon
+.idea/
+.vscode/
+*.swp
+*~

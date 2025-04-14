@@ -8,7 +8,7 @@ ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-CSRF_TRUSTED_ORIGINS=['https://*.bridgerds.com', 'https://bridgerds.com']
+CSRF_TRUSTED_ORIGINS=['http://13.60.211.242', 'https://13.60.211.242'] # change after domain available
 
 EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND', '')
 EMAIL_HOST = os.environ.get('EMAIL_HOST', '')
