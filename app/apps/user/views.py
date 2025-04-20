@@ -1,5 +1,3 @@
-from django.contrib.auth import logout
-from django.shortcuts import redirect, render
 from django.views.generic import TemplateView
 
 from ..core.models import AboutUs

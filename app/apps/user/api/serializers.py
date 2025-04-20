@@ -4,7 +4,6 @@ from django.templatetags.static import static
 from django.utils.translation import gettext as _
 
 from rest_framework import serializers
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from utils.serializers.password_field import PasswordField
 
 User = get_user_model()

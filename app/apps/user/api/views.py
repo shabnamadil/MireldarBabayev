@@ -64,7 +64,7 @@ class CustomTokenRefreshView(TokenRefreshView):
         if not refresh_token:
             return Response(
                 {'detail': 'Refresh token not found in cookie'},
-                status=status.HTTP_400_BAD_REQUEST
+                status=status.HTTP_400_BAD_REQUEST,
             )
 
         # Inject the refresh token into the data
@@ -72,8 +72,11 @@ class CustomTokenRefreshView(TokenRefreshView):
 
         try:
             serializer.is_valid(raise_exception=True)
-        except Exception as e:
-            return Response({'detail': 'Invalid or expired refresh token'}, status=status.HTTP_401_UNAUTHORIZED)
+        except Exception:
+            return Response(
+                {'detail': 'Invalid or expired refresh token'},
+                status=status.HTTP_401_UNAUTHORIZED,
+            )
 
         return Response(serializer.validated_data, status=status.HTTP_200_OK)
 
