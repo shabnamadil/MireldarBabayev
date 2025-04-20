@@ -1,49 +1,6 @@
 {% load static %}
 {% load i18n %}
 
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle d-flex align-items-center user-nav" href="#" id="userDropdown" role="button"
-        data-bs-toggle="dropdown" aria-expanded="false">
-        {% if request.user.image %}
-        <img src="{{request.user.image.url}}" class="user-img" alt="{{request.user.full_name}}">
-        {% else %}
-        <!-- <i class="fas fa-user me-2 user-img"></i> -->
-        <img src="{% static 'images/user.png' %}" class="user-img" alt="Mireldar Babayev">
-        {% endif %}
-    </a>
-    <div class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="userDropdown">
-        <!-- User Info Section -->
-        {% if request.user.is_authenticated %}
-        <div id="authenticatedContent">
-            <div class="user-info" id="userInfo">
-                <div class="d-flex align-items-center">
-                    <div>
-                        <strong>{{request.user.full_name}}</strong>
-                        <div class="text-muted small">{{request.user.email}}</div>
-                    </div>
-                </div>
-            </div>
-            <hr class="dropdown-divider">
-            <!-- Links for Logged-In Users -->
-            <a class="dropdown-item text-danger" href="{% url 'logout' %}">
-                <i class="fas fa-sign-out-alt"></i> {% trans 'Logout' %}
-            </a>
-        </div>
-        {% else%}
-        <div id="unauthenticatedContent"> <!-- Guest Info Section -->
-            <div class="guest-info">
-                <strong>{% trans 'Welcome, Guest!' %}</strong>
-                <p class="text-muted small mb-2">{% trans 'Please login or register to access your account.' %}</p>
-            </div>
-            <hr class="dropdown-divider">
-            <!-- Links for Guests -->
-            <a class="dropdown-item" href="{% url 'login' %}">
-                <i class="fas fa-sign-in-alt text-secondary"></i> {% trans 'Login' %}
-            </a>
-            <a class="dropdown-item" href="{% url 'register' %}">
-                <i class="fas fa-user-plus text-secondary"></i> {% trans 'Register' %}
-            </a>
-        </div>
-        {% endif %}
-    </div>
+<li class="nav-item dropdown" id="userInfoContainer">
+
 </li>

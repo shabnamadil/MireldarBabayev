@@ -8,16 +8,6 @@ User = get_user_model()
 
 class BaseValidationTest(TestCase):
 
-    @classmethod
-    def setUpTestData(cls):
-        cls.user = User.objects.create(
-            first_name='Test',
-            last_name='user',
-            email='test@gmail.com',
-        )
-        cls.user.set_password('testpassword')
-        cls.user.save()
-
     def assert_invalid_email(self, instance, email_field='email'):
         """Test that an invalid email raises a validation error."""
         invalid_emails = [
@@ -68,8 +58,9 @@ class BaseValidationTest(TestCase):
         model.objects.first().delete()
         self.assert_object_count(model, 0)
 
-    def assert_str_method(self, instance, expected_str):
+    def assert_str_output(self, model_class, field_name, expected_str):
         """Test that the __str__ method returns the expected string."""
+        instance = model_class(**{field_name: expected_str})
         self.assertEqual(str(instance), expected_str)
 
     def assert_max_length(self, instance, field, length):
@@ -90,10 +81,10 @@ class BaseValidationTest(TestCase):
         with self.assertRaises(ValidationError):
             instance.full_clean()
 
-    def assert_model_instance(self, model, field, value):
-        """Test that the model instance is equal to the given value."""
-        model_instance = model.objects.first()
-        self.assertEqual(getattr(model_instance, field), value)
+    def assert_model_instance(self, instance, field, value):
+        """Assert that the given model instance field matches the expected value from the database."""
+        instance.refresh_from_db()
+        self.assertEqual(getattr(instance, field), value)
 
     def assert_valid_social_media_urls(self, instance, url_field, valid_url):
         """Test that valid URL does not raise a validation error."""

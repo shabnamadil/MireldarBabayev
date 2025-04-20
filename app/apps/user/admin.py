@@ -57,9 +57,12 @@ class CustomUserAdmin(BaseUserAdmin):
     list_per_page = 20
 
     def get_image(self, obj):
-        image = obj.image.url if obj.image else None
-        raw_html = f'<img style="width:150px;height:auto;" src="{image}">'
-        return format_html(raw_html)
+        if obj.image:
+            return format_html(
+                '<img src="{}" style="width:150px;height:auto;" />',
+                obj.image.url,
+            )
+        return ''
 
     get_image.short_description = "Foto"  # type: ignore
 

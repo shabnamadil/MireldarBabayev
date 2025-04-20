@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.password_validation import validate_password
+from django.templatetags.static import static
 from django.utils.translation import gettext as _
 
 from rest_framework import serializers
@@ -59,28 +60,20 @@ class RegisterSerializer(serializers.ModelSerializer):
         return user
 
 
-class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
-    def validate(self, attrs):
-        data = super().validate(attrs)
-        try:
-            refresh = self.get_token(self.user)
-            access_token = refresh.access_token
-            access_token['refresh_jti'] = str(refresh['jti'])
-            data['access'] = str(access_token)
-            data['refresh'] = str(refresh)
-            data.update(
-                {
-                    'user': {
-                        'id': self.user.id,
-                        'full_name': self.user.full_name,
-                        'email': self.user.email,
-                        'image': (
-                            self.user.image.url if self.user.image else None
-                        ),
-                    }
-                }
-            )
-        except Exception as e:
-            print(f"Token creation failed: {e}")
-            raise e
-        return data
+class UserInfoSerializer(serializers.ModelSerializer):
+    image = serializers.SerializerMethodField()
+
+    class Meta:
+        model = User
+        fields = ('id', 'full_name', 'email', 'image')
+
+    def get_image(self, obj):
+        request = self.context.get('request', None)
+        if obj.image:
+            if request:
+                return request.build_absolute_uri(obj.image.url)
+            return obj.image.url
+        static_url = static('images/user.png')
+        return (
+            request.build_absolute_uri(static_url) if request else static_url
+        )

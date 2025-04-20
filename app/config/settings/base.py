@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # THIRD PARTY APPS
     'ckeditor',
     'rest_framework',
+    'rest_framework_simplejwt.token_blacklist',
     'rosetta',
     'modeltranslation',
     'django_check_seo',
@@ -206,7 +207,7 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(days=5),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
     "TOKEN_OBTAIN_SERIALIZER": "apps.user.api.serializers.CustomTokenObtainPairSerializer",
-    'REFRESH_TOKEN_LIFETIME': timedelta(minutes=2),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
 }

@@ -25,6 +25,7 @@ from django.contrib.sitemaps import Sitemap
 from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path, re_path
 from django.views.generic import TemplateView
+from django.views.i18n import JavaScriptCatalog
 
 from utils.errors.custom_errors import custom_404, custom_500
 
@@ -61,6 +62,7 @@ urlpatterns = [
         name='django.contrib.sitemaps.views.sitemap',
     ),
     path("django-check-seo/", include("django_check_seo.urls")),
+    path('jsi18n/', JavaScriptCatalog.as_view(), name='javascript-catalog'),
 ]
 
 urlpatterns += i18n_patterns(
