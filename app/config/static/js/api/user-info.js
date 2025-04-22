@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             if (response.ok) {
                 const data = await response.json();
                 renderAuthenticatedUserInfo(data);
-                setupLogoutButton();Z
+                setupLogoutButton();
             } else {
                 renderGuestUserInfo()
             }

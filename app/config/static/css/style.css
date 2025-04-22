@@ -2393,9 +2393,7 @@ footer {
 ABOUT
 -------------------------------------------------------------------*/
 /* --------- Sub Header --------- */
-.top-bar {
-  padding: 24px 0;
-}
+
 .top-bar ul {
   padding: 0;
   margin: 0;
@@ -2435,6 +2433,10 @@ ABOUT
 
 .top-bar-style2 {
   background: #4d72d0;
+}
+
+.top-bar .navbar-brand img {
+  width: 80px;
 }
 
 .topbar-social {
@@ -4744,4 +4746,14 @@ SERVICE DETAIL
 .cursor {
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.login-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
