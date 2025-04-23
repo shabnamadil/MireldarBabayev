@@ -18,7 +18,7 @@ urlpatterns = [
     path(
         'token/refresh/',
         CustomTokenRefreshView.as_view(),
-        name='token_refresh',
+        name='custom_token_refresh',
     ),
     path('user/me/', UserMeAPIView.as_view(), name='user_me_api'),
     path('logout/', LogoutAPIView.as_view(), name='logout_api'),

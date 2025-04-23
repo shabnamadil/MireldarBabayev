@@ -5,6 +5,7 @@ from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -18,14 +19,6 @@ User = get_user_model()
 
 class RegisterAPIView(CreateAPIView):
     serializer_class = RegisterSerializer
-
-
-class UserMeAPIView(APIView):
-    permission_classes = (IsAuthenticated,)
-
-    def get(self, request):
-        serializer = UserInfoSerializer(request.user)
-        return Response(serializer.data)
 
 
 class CustomTokenObtainPairView(TokenObtainPairView):
@@ -81,16 +74,31 @@ class CustomTokenRefreshView(TokenRefreshView):
         return Response(serializer.validated_data, status=status.HTTP_200_OK)
 
 
+class UserMeAPIView(APIView):
+    permission_classes = (IsAuthenticated,)
+    authentication_classes = (JWTAuthentication,)
+
+    def get(self, request):
+        serializer = UserInfoSerializer(request.user)
+        return Response(serializer.data)
+
+
 class LogoutAPIView(APIView):
     permission_classes = (IsAuthenticated,)
+    authentication_classes = (JWTAuthentication,)
 
     def post(self, request):
         refresh_token = request.COOKIES.get('refresh_token')
         try:
+            if not refresh_token:
+                return Response(
+                    {'detail': 'Refresh token not found in cookie'},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
             token = RefreshToken(refresh_token)
             token.blacklist()
-            return Response(
-                status=status.HTTP_205_RESET_CONTENT,
-            )
+            response = Response(status=status.HTTP_205_RESET_CONTENT)
+            response.delete_cookie('refresh_token')
+            return response
         except Exception:
             return Response(status=status.HTTP_400_BAD_REQUEST)
