@@ -15,7 +15,7 @@ async function logoutUser() {
             method: 'POST'
         });
         if (response.ok) {
-            window.location.href = '/';
+            window.location.href = '/login';
         }
     } catch (error) {
         console.error('Error logout user:', error);

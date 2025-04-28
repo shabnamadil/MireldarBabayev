@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}
     <title>
         {% if seo.meta_title %}
         {{seo.meta_title}}
-        {% elif settings.site_name %}
-        {{settings.site_name}}
+        {% else %}
+        {% trans 'Contact' %}
         {% endif %}
     </title>
 {% endblock title %}
