@@ -25,9 +25,7 @@ class TestBlogsPageSeoModel(BaseSeoTest):
         self.assert_singleton(self.model)
 
     def test_image_field(self):
-        self.assertTrue(
-            self.instance.og_image.name.startswith("seo-images/blogs/")
-        )
+        self.assertTrue(self.instance.og_image.name.startswith("seo-images/blogs/"))
 
     def test_fields_min_length(self):
         self.assert_min_length(self.instance, "meta_title", 30)
@@ -79,9 +77,9 @@ class TestBlogsPageSeoModel(BaseSeoTest):
             BlogsPageSeo, 'og_title', self.valid_data["og_title"]
         )
         self.assert_model_instance(
-            BlogsPageSeo, 'og_description', self.valid_data["og_description"]
+            BlogsPageSeo,
+            'og_description',
+            self.valid_data["og_description"],
         )
-        self.assertTrue(
-            self.instance.og_image.name.startswith('seo-images/blogs/')
-        )
+        self.assertTrue(self.instance.og_image.name.startswith('seo-images/blogs/'))
         self.assertTrue(self.instance.og_image.name.endswith('jpg'))

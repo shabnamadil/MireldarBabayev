@@ -17,7 +17,9 @@ class TestServiceModel(BaseValidationTest):
                 "test1.png", b"dummy png content", content_type="image/png"
             ),
             image=SimpleUploadedFile(
-                "test1.jpg", b"dummy jpg content", content_type="image/jpeg"
+                "test1.jpg",
+                b"dummy jpg content",
+                content_type="image/jpeg",
             ),
             title='Test title',
             content='Test content',
@@ -51,17 +53,13 @@ class TestServiceModel(BaseValidationTest):
 
     def test_model(self):
         self.assert_model_instance(Service, 'name', 'Test service')
-        self.assert_model_instance(
-            Service, 'short_description', 'Test short desc'
-        )
+        self.assert_model_instance(Service, 'short_description', 'Test short desc')
         self.assert_model_instance(Service, 'title', 'Test title')
         self.assert_model_instance(Service, 'content', 'Test content')
         self.assert_model_instance(Service, 'background_color', 'blue')
         self.assertTrue(self.service.png.name.startswith('services/test1'))
         self.assertTrue(self.service.png.name.endswith('png'))
-        self.assertTrue(
-            self.service.image.name.startswith('services/images/test1')
-        )
+        self.assertTrue(self.service.image.name.startswith('services/images/test1'))
         self.assertTrue(self.service.image.name.endswith('jpg'))
 
     def test_slug_auto_generation(self):

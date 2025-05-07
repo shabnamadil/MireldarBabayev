@@ -1,31 +1,80 @@
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.db import models
+from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 
 from apps.user.manager.custom_user_manager import CustomUserManager
 from utils.models.base_model import BaseModel
+from utils.validators.validate_image import (
+    validate_image_extension as ImageExtensionValidator,
+)
+from utils.validators.validate_image import validate_image_size as ImageSizeValidator
 
 
-class CustomUser(AbstractUser, BaseModel):
+class CustomUser(  # type: ignore[django-manager-missing]
+    AbstractBaseUser, PermissionsMixin, BaseModel
+):
+
     first_name = models.CharField(
-        max_length=30, help_text='Kontentin uzunluğu maksimum 30-dur.'
+        _('First Name'),
+        max_length=30,
+        help_text=_('The content length is a maximum of 30.'),
     )
     last_name = models.CharField(
-        max_length=30, help_text='Kontentin uzunluğu maksimum 30-dur.'
+        _('Last Name'),
+        max_length=30,
+        help_text=_('The content length is a maximum of 30.'),
     )
-    email = models.EmailField(unique=True)
+    email = models.EmailField(
+        _('Email'),
+        unique=True,
+        error_messages={
+            'unique': _("This email is already registered."),
+            'invalid': _("Enter a valid email address."),
+        },
+    )
     image = models.ImageField(
-        'Foto', null=True, blank=True, upload_to='users/'
+        _('Image'),
+        null=True,
+        blank=True,
+        upload_to='users/',
+        validators=[
+            ImageExtensionValidator,
+            ImageSizeValidator,
+        ],
     )
+
+    # Required fields for AbstractBaseUser
+    is_staff = models.BooleanField(
+        _('staff status'),
+        default=False,
+        help_text=_('Designates whether the user can log into this admin site.'),
+    )
+    is_active = models.BooleanField(
+        _('active'),
+        default=True,
+        help_text=_(
+            'Designates whether this user should be treated as active. '
+            'Unselect this instead of deleting accounts.'
+        ),
+    )
+    date_joined = models.DateTimeField(_("date joined"), default=timezone.now)
 
     objects = CustomUserManager()
 
-    username = None
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS: list[str] = []
+    REQUIRED_FIELDS = []
 
     class Meta:
-        verbose_name = 'İstifadəçi'
-        verbose_name_plural = 'İstifadəçilər'
+        verbose_name = _('User')
+        verbose_name_plural = _('Users')
+
+    def get_full_name(self):
+        """
+        Return the first_name plus the last_name, with a space in between.
+        """
+        full_name = f"{self.first_name} {self.last_name}"
+        return full_name.strip()
 
     @property
     def full_name(self):

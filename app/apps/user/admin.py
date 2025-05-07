@@ -19,7 +19,10 @@ class CustomUserAdmin(BaseUserAdmin):
     list_filter = ('created_at',)
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        ('Personal info', {'fields': ('first_name', 'last_name', 'image')}),
+        (
+            'Personal info',
+            {'fields': ('first_name', 'last_name', 'image')},
+        ),
         (
             'Permissions',
             {
@@ -62,7 +65,7 @@ class CustomUserAdmin(BaseUserAdmin):
                 '<img src="{}" style="width:150px;height:auto;" />',
                 obj.image.url,
             )
-        return ''
+        return '-'
 
     get_image.short_description = "Foto"  # type: ignore
 

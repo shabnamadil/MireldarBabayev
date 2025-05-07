@@ -9,7 +9,7 @@ function setupLogoutButton() {
 }
 
 async function logoutUser() {
-    const LOGOUT_URL = `${location.origin}/api/logout/`;
+    const LOGOUT_URL = `${location.origin}/${lang}/api/logout/`;
     try {
         const response = await authFetch(LOGOUT_URL, {
             method: 'POST'

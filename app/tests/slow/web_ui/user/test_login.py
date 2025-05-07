@@ -1,34 +1,16 @@
-from django.contrib.staticfiles.testing import StaticLiveServerTestCase
-
-from selenium import webdriver
 from tests.factories import UserFactory
+from tests.slow.web_ui.helpers.base_test import BaseTest
 from tests.slow.web_ui.helpers.translations import TRANSLATIONS
 from tests.slow.web_ui.pages.login_page import LoginPage
 
 
-class LoginPageTest(StaticLiveServerTestCase):
+class LoginPageTest(BaseTest):
 
     def setUp(self):
-        chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument("--headless")
-        chrome_options.add_argument("--disable-application-cache")
-        chrome_options.add_argument("--disk-cache-size=0")
-        chrome_options.add_argument("--disable-cache")
-        chrome_options.add_argument("--disable-offline-load-stale-cache")
-        chrome_options.add_argument("--aggressive-cache-discard")
-
-        self.browser = webdriver.Chrome(options=chrome_options)
-
-        # Clear all browser data immediately
-        self.browser.delete_all_cookies()
+        super().setUp()
 
         self.login_page = LoginPage(self.browser)
-        self.user = UserFactory(
-            email='selenium@gmail.com', password='Seleniumpass1234'
-        )
-
-    def tearDown(self):
-        self.browser.quit()
+        self.user = UserFactory(email='selenium@gmail.com', password='Seleniumpass1234')
 
     def test_login_page_loads_in_multilinguage(self):
         for lang in TRANSLATIONS.keys():
@@ -39,9 +21,7 @@ class LoginPageTest(StaticLiveServerTestCase):
 
                 self.assertIn(translations['Login'], self.browser.page_source)
                 self.assertIn(translations['Email'], self.browser.page_source)
-                self.assertIn(
-                    translations['Password'], self.browser.page_source
-                )
+                self.assertIn(translations['Password'], self.browser.page_source)
 
     def test_successful_login(self):
         self.login_page.load(self.live_server_url)
@@ -55,9 +35,7 @@ class LoginPageTest(StaticLiveServerTestCase):
         self.login_page.load(self.live_server_url)
         self.login_page.login('wronguser@gamil.com', 'wrongpass')
         error_message = self.login_page.get_text(LoginPage.login_error_message)
-        self.assertIn(
-            'Invalid email or password. Please try again.', error_message
-        )
+        self.assertIn('Invalid email or password. Please try again.', error_message)
 
     def test_login_with_invalid_email_format(self):
         self.login_page.load(self.live_server_url)
@@ -67,7 +45,8 @@ class LoginPageTest(StaticLiveServerTestCase):
             "return arguments[0].validationMessage;", email_input
         )
         self.assertIn(
-            "Please include an '@' in the email address", validation_message
+            "Please include an '@' in the email address",
+            validation_message,
         )
 
     def test_login_with_empty_email(self):
@@ -100,9 +79,7 @@ class LoginPageTest(StaticLiveServerTestCase):
             "return arguments[0].validationMessage;", password_input
         )
         self.assertIn('Please fill out this field.', email_validation_message)
-        self.assertIn(
-            'Please fill out this field.', password_validation_message
-        )
+        self.assertIn('Please fill out this field.', password_validation_message)
 
     def test_password_field_is_masked(self):
         self.login_page.load(self.live_server_url)

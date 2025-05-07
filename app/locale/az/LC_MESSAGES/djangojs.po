@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-20 21:33+0400\n"
+"POT-Creation-Date: 2025-04-29 18:03+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,10 +18,73 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: config/static/js/api/user-info.js:69
+#: config/static/js/api/blog-list.js:235
+msgid "Read more"
+msgstr ""
+
+#: config/static/js/api/blog-list.js:252
+msgid "Results for"
+msgstr ""
+
+#: config/static/js/api/comment.js:29 config/static/js/api/comment.js:119
+#: config/static/js/api/comment.js:178
+msgid "Comments"
+msgstr ""
+
+#: config/static/js/api/comment.js:71 config/static/js/api/comment.js:248
+#: config/static/js/api/comment.js:269
+msgid "Edit"
+msgstr ""
+
+#: config/static/js/api/comment.js:74 config/static/js/api/comment.js:251
+#: config/static/js/api/comment.js:272
+msgid "Delete"
+msgstr ""
+
+#: config/static/js/api/comment.js:153
+msgid "Failed to delete comment. Please try again."
+msgstr ""
+
+#: config/static/js/api/comment.js:196
+msgid "Save"
+msgstr ""
+
+#: config/static/js/api/comment.js:199
+msgid "Cancel"
+msgstr ""
+
+#: config/static/js/api/comment.js:211
+msgid "Comment content cannot be empty."
+msgstr ""
+
+#: config/static/js/api/comment.js:231
+msgid "Failed to update comment. Please try again."
+msgstr ""
+
+#: config/static/js/api/contact.js:28 config/static/js/api/newsletter.js:31
+msgid "An unexpected error occurred. Please try again."
+msgstr ""
+
+#: config/static/js/api/login.js:32
+msgid "Invalid email or password. Please try again."
+msgstr "Email və ya parol səhvdir. Yenidən cəhd edin."
+
+#: config/static/js/api/user-info.js:45
+msgid "Logout"
+msgstr ""
+
+#: config/static/js/api/user-info.js:54 config/static/js/api/user-info.js:71
 msgid "Login"
 msgstr "Daxil ol"
 
-#: config/static/js/api/user-info.js:72
+#: config/static/js/api/user-info.js:65
+msgid "Welcome, Guest!"
+msgstr "Xoş gəlmisiniz!"
+
+#: config/static/js/api/user-info.js:66
+msgid "Please login or register to access your account."
+msgstr ""
+
+#: config/static/js/api/user-info.js:74
 msgid "Register"
 msgstr ""

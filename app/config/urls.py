@@ -43,17 +43,13 @@ for lang in languages:
     sitemaps[f'static-{lang}'] = StaticSitemap(language=lang)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('api/', include('apps.blog.api.urls')),
     path('api/', include('apps.core.api.urls')),
     path('api/', include('apps.appointment.api.urls')),
-    path('api/', include('apps.user.api.urls')),
     path(
         'robots.txt',
-        TemplateView.as_view(
-            template_name="robots.txt", content_type="text/plain"
-        ),
+        TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),
     ),
     path(
         'sitemap.xml',
@@ -62,7 +58,6 @@ urlpatterns = [
         name='django.contrib.sitemaps.views.sitemap',
     ),
     path("django-check-seo/", include("django_check_seo.urls")),
-    path('jsi18n/', JavaScriptCatalog.as_view(), name='javascript-catalog'),
 ]
 
 urlpatterns += i18n_patterns(
@@ -72,12 +67,13 @@ urlpatterns += i18n_patterns(
     path('', include('apps.service.urls')),
     path('', include('apps.appointment.urls')),
     path('', include('apps.user.urls')),
+    path('admin/', admin.site.urls),
+    path('api/', include('apps.user.api.urls')),
+    path('jsi18n/', JavaScriptCatalog.as_view(), name='javascript-catalog'),
 )
 
 if settings.DEBUG:
-    urlpatterns += static(
-        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
-    )
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if 'rosetta' in settings.INSTALLED_APPS:
     urlpatterns += [re_path(r'^rosetta/', include('rosetta.urls'))]

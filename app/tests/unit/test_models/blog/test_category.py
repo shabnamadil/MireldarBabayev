@@ -14,9 +14,7 @@ class TestCategoryModel(BaseValidationTest):
 
     def test_model(self):
         self.assert_model_instance(Category, 'name', self.category.name)
-        self.assert_model_instance(
-            Category, 'slug', custom_slugify(self.category.name)
-        )
+        self.assert_model_instance(Category, 'slug', custom_slugify(self.category.name))
 
     def test_object_count(self):
         self.assert_object_count(Category, 1)
@@ -34,7 +32,5 @@ class TestCategoryModel(BaseValidationTest):
     def test_slug_on_object_edit(self):
         self.category.name = 'Edited Category'
         self.category.save()
-        self.assertNotEqual(
-            self.category.slug, custom_slugify(self.category.name)
-        )
+        self.assertNotEqual(self.category.slug, custom_slugify(self.category.name))
         self.assertEqual(self.category.slug, 'test-category')

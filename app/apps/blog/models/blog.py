@@ -1,10 +1,11 @@
 from django.contrib.auth import get_user_model
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.urls import reverse_lazy
 from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 
 from ckeditor_uploader.fields import RichTextUploadingField
-from utils.helpers.slugify import custom_slugify
 from utils.manager.published_blog import PublishedBlogManager
 from utils.models.base_model import BaseModel
 
@@ -37,7 +38,7 @@ class Blog(BaseModel):
     category = models.ManyToManyField(
         Category, related_name='blogs', verbose_name='Kateqoriya'
     )
-    tag = models.ManyToManyField(
+    tag: models.ManyToManyField = models.ManyToManyField(
         Tag, related_name='blogs', verbose_name='Teq', blank=True
     )
     slug = models.SlugField(
@@ -53,7 +54,7 @@ class Blog(BaseModel):
         related_name='blogs',
         verbose_name='Müəllif',
     )
-    viewed_ips = models.ManyToManyField(
+    viewed_ips: models.ManyToManyField = models.ManyToManyField(
         IP,
         related_name="blogs",
         verbose_name='Məqalənin görüntüləndiyi IP ünvanları',
@@ -63,11 +64,9 @@ class Blog(BaseModel):
     status = models.CharField(
         max_length=2, choices=Status.choices, default=Status.PUBLISHED
     )
-    published_at = models.DateTimeField(
-        'Paylaşım tarixi', null=True, blank=True
-    )
-    objects = models.Manager()
-    published = PublishedBlogManager()
+    published_at = models.DateTimeField('Paylaşım tarixi', null=True, blank=True)
+    objects: models.Manager["Blog"] = models.Manager()
+    published: PublishedBlogManager = PublishedBlogManager()
 
     class Meta:
         verbose_name = 'Məqalə'
@@ -75,30 +74,29 @@ class Blog(BaseModel):
         ordering = ['-published_at']
         indexes = [models.Index(fields=['-published_at'])]
 
-    def increment_view_count(self, ip_instance):
+    def increment_view_count(self, ip_instance: IP) -> None:
         if not self.viewed_ips.filter(id=ip_instance.id).exists():
             self.viewed_ips.add(ip_instance)
             self.view_count += 1
             self.save()
 
     @property
-    def published_date(self):
+    def published_date(self) -> str:
         local_published_time = timezone.localtime(self.published_at)
         return local_published_time.strftime('%d %b, %Y')
 
     @property
-    def sitemap_image(self):
+    def sitemap_image(self) -> str | None:
         return self.image.url if self.image else None
 
     def get_absolute_url(self):
         return reverse_lazy('blog-detail', args=[self.slug])
 
+    def clean(self):
+        cd = super().clean()
+        if Blog.objects.exclude(pk=self.pk).filter(title=self.title).exists():
+            raise ValidationError(_(f'"{self.title}" article already exists.'))
+        return cd
+
     def __str__(self) -> str:
         return self.title
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = custom_slugify(self.title)
-        if self.status == self.Status.PUBLISHED and self.published_at is None:
-            self.published_at = timezone.now()
-        super().save(*args, **kwargs)

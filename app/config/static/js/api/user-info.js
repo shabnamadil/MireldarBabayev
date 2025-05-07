@@ -1,4 +1,4 @@
-const USER_INFO = `${location.origin}/api/user/me/`;
+const USER_INFO = `${location.origin}/${lang}/api/user/me/`;
 const userInfoContainer = document.getElementById('userInfoContainer');
 
 

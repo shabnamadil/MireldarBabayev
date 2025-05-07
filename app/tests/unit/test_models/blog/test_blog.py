@@ -21,7 +21,9 @@ class TestBlogModel(BaseValidationTest):
             short_description='Test description',
             content='Test content',
             image=SimpleUploadedFile(
-                "test1.jpg", b"dummy jpg content", content_type="image/jpeg"
+                "test1.jpg",
+                b"dummy jpg content",
+                content_type="image/jpeg",
             ),
             author=cls.user,
         )
@@ -33,9 +35,7 @@ class TestBlogModel(BaseValidationTest):
 
     def test_model(self):
         self.assert_model_instance(Blog, 'title', 'Test blog')
-        self.assert_model_instance(
-            Blog, 'short_description', 'Test description'
-        )
+        self.assert_model_instance(Blog, 'short_description', 'Test description')
         self.assert_model_instance(Blog, 'content', 'Test content')
         self.assert_model_instance(Blog, 'author', self.user)
         self.assertTrue(self.blog.image.name.startswith('blogs/'))
@@ -97,9 +97,7 @@ class TestBlogModel(BaseValidationTest):
     def test_published_at_auto_set(self):
         """Test that published_at is set when status is PUBLISHED."""
         self.assertIsNotNone(self.blog.published_at)
-        self.assertTrue(
-            timezone.now() - self.blog.published_at < timedelta(seconds=5)
-        )
+        self.assertTrue(timezone.now() - self.blog.published_at < timedelta(seconds=5))
 
     def test_published_date_property(self):
         local_time = timezone.localtime(self.blog.published_at)

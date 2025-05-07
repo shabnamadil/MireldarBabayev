@@ -15,9 +15,7 @@ class TestUserInfoSerializer(APITestCase):
         serializer = UserInfoSerializer(user, context={'request': request})
         data = serializer.data
         self.assertTrue(data['image'].endswith('/profile.png'))
-        self.assertEqual(
-            data['image'], request.build_absolute_uri(user.image.url)
-        )
+        self.assertEqual(data['image'], request.build_absolute_uri(user.image.url))
         self.assertEqual(data['email'], user.email)
         self.assertEqual(data['full_name'], user.get_full_name())
 

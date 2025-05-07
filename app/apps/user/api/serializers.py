@@ -15,7 +15,6 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        extra_kwargs = {"password": {"write_only": True}}
         fields = (
             'id',
             'first_name',
@@ -48,14 +47,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         validated_data.pop('password_confirm')
-        user = User(
-            first_name=validated_data['first_name'],
-            last_name=validated_data['last_name'],
-            email=validated_data['email'],
-            image=validated_data['image'],
-        )
-        user.set_password(validated_data['password'])
-        user.save()
+        user = User.objects.create_user(**validated_data)
         return user
 
 
@@ -73,6 +65,4 @@ class UserInfoSerializer(serializers.ModelSerializer):
                 return request.build_absolute_uri(obj.image.url)
             return obj.image.url
         static_url = static('images/user.png')
-        return (
-            request.build_absolute_uri(static_url) if request else static_url
-        )
+        return request.build_absolute_uri(static_url) if request else static_url

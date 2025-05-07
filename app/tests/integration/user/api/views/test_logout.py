@@ -18,9 +18,7 @@ class TestLogoutAPIView(APITestCase):
         refresh = RefreshToken.for_user(self.user)
         self.access_token = str(refresh.access_token)
         self.refresh_token = str(refresh)
-        self.client.credentials(
-            HTTP_AUTHORIZATION=f'Bearer {self.access_token}'
-        )
+        self.client.credentials(HTTP_AUTHORIZATION=f'Bearer {self.access_token}')
 
     def test_successful_logout_blacklists_token(self):
         self.authenticate()
@@ -40,9 +38,7 @@ class TestLogoutAPIView(APITestCase):
                 self.authenticate()
                 self.client.cookies['refresh_token'] = token
                 response = self.client.post(self.url)
-                self.assertEqual(
-                    response.status_code, status.HTTP_400_BAD_REQUEST
-                )
+                self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_logout_fails_with_expired_refresh_token(self):
         self.authenticate()
@@ -75,9 +71,7 @@ class TestLogoutAPIView(APITestCase):
         self.authenticate()
         refresh = RefreshToken(self.refresh_token)
         refresh.blacklist()
-        self.client.credentials(
-            HTTP_AUTHORIZATION=f'Bearer {refresh.access_token}'
-        )
+        self.client.credentials(HTTP_AUTHORIZATION=f'Bearer {refresh.access_token}')
         response = self.client.post(self.url)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 

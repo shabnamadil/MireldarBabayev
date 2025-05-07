@@ -55,6 +55,4 @@ class TestCustomTokenRefreshView(APITestCase):
         response = self.client.post(self.refresh_url)
 
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
-        self.assertEqual(
-            response.data['detail'], 'Invalid or expired refresh token'
-        )
+        self.assertEqual(response.data['detail'], 'Invalid or expired refresh token')

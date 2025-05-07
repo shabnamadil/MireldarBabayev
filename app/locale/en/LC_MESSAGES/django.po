@@ -8,22 +8,74 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-27 15:41+0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2025-04-30 13:46+0400\n"
+"PO-Revision-Date: 2025-04-28 21:50+0400\n"
+"Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.10.1\n"
 
-#: apps/user/api/serializers.py:36
+#: apps/user/api/serializers.py:17
+msgid "Email is required."
+msgstr ""
+
+#: apps/user/api/serializers.py:18
+msgid "Enter a valid email address."
+msgstr ""
+
+#: apps/user/api/serializers.py:19
+msgid "A user with"
+msgstr ""
+
+#: apps/user/api/serializers.py:39 apps/user/models/user.py:28
+msgid "This email is already registered."
+msgstr ""
+
+#: apps/user/api/serializers.py:50
 msgid "This field is required."
 msgstr ""
 
-#: apps/user/api/serializers.py:43
+#: apps/user/api/serializers.py:57
 msgid "Passwords do not match."
+msgstr ""
+
+#: apps/user/models/user.py:15
+#: templates/components/contact/partials/contact-form.html:16
+msgid "First Name"
+msgstr ""
+
+#: apps/user/models/user.py:17 apps/user/models/user.py:22
+msgid "The content length is a maximum of 30."
+msgstr ""
+
+#: apps/user/models/user.py:20
+#: templates/components/contact/partials/contact-form.html:23
+msgid "Last Name"
+msgstr ""
+
+#: apps/user/models/user.py:25
+#: templates/components/contact/partials/contact-info.html:17
+#: templates/components/service/partials/contact.html:16
+#: templates/components/user/login/partials/form.html:15
+#: templates/components/user/register/partials/form.html:32
+msgid "Email"
+msgstr ""
+
+#: apps/user/models/user.py:32
+#: templates/components/user/register/partials/form.html:39
+msgid "Image"
+msgstr ""
+
+#: apps/user/models/user.py:49
+msgid "User"
+msgstr ""
+
+#: apps/user/models/user.py:50
+msgid "Users"
 msgstr ""
 
 #: config/settings/base.py:144
@@ -300,14 +352,6 @@ msgstr ""
 msgid "Your message was sent. We`ll get in touch with you soon."
 msgstr ""
 
-#: templates/components/contact/partials/contact-form.html:16
-msgid "First Name"
-msgstr ""
-
-#: templates/components/contact/partials/contact-form.html:23
-msgid "Last Name"
-msgstr ""
-
 #: templates/components/contact/partials/contact-form.html:33
 msgid "Your Email"
 msgstr ""
@@ -331,13 +375,6 @@ msgstr ""
 #: templates/components/contact/partials/contact-info.html:10
 #: templates/components/service/partials/contact.html:9
 msgid "Phone"
-msgstr ""
-
-#: templates/components/contact/partials/contact-info.html:17
-#: templates/components/service/partials/contact.html:16
-#: templates/components/user/login/partials/form.html:15
-#: templates/components/user/register/partials/form.html:38
-msgid "Email"
 msgstr ""
 
 #: templates/components/contact/partials/contact-info.html:25
@@ -591,7 +628,7 @@ msgid "Customized Solutions for Every Need"
 msgstr ""
 
 #: templates/components/user/login/login.html:7
-#: templates/components/user/login/partials/form.html:28
+#: templates/components/user/login/partials/form.html:24
 msgid "Login"
 msgstr ""
 
@@ -603,16 +640,16 @@ msgstr ""
 msgid "Enter email address"
 msgstr ""
 
-#: templates/components/user/login/partials/form.html:22
+#: templates/components/user/login/partials/form.html:20
 #: templates/components/user/register/partials/form.html:45
 msgid "Password"
 msgstr ""
 
-#: templates/components/user/login/partials/form.html:31
+#: templates/components/user/login/partials/form.html:27
 msgid "Don't have an account yet?"
 msgstr ""
 
-#: templates/components/user/login/partials/form.html:31
+#: templates/components/user/login/partials/form.html:27
 msgid "Register here"
 msgstr ""
 
@@ -640,11 +677,7 @@ msgstr ""
 msgid "Enter your last name"
 msgstr ""
 
-#: templates/components/user/register/partials/form.html:32
-msgid "Image"
-msgstr ""
-
-#: templates/components/user/register/partials/form.html:40
+#: templates/components/user/register/partials/form.html:34
 msgid "Enter your email"
 msgstr ""
 
@@ -672,3 +705,17 @@ msgstr ""
 #: templates/components/user/register/partials/form.html:63
 msgid "Login here"
 msgstr ""
+
+#: utils/validators/validate_image.py:9
+#, python-brace-format
+msgid "Image size should not exceed {max_size_mb} MB."
+msgstr ""
+
+#: utils/validators/validate_image.py:17
+msgid "Only JPG, PNG, and JPEG files are accepted."
+msgstr ""
+
+#, fuzzy
+#~| msgid "İstifadəçi bu Email sahə ilə artıq mövcuddur."
+#~ msgid "İstifadəçi bu Em artıq mövcuddur."
+#~ msgstr "fdngfjf"

@@ -15,9 +15,7 @@ def create_test_image():
     image = Image.new('RGB', (100, 100), color='red')
     image.save(buffer, format='JPEG')
     buffer.seek(0)
-    return SimpleUploadedFile(
-        'test.jpg', buffer.read(), content_type='image/jpeg'
-    )
+    return SimpleUploadedFile('test.jpg', buffer.read(), content_type='image/jpeg')
 
 
 class TestRegisterSerializer(TestCase):
@@ -83,9 +81,7 @@ class TestRegisterSerializer(TestCase):
                 self.assertIn(field, serializer.errors)
 
     def test_email_already_registered(self):
-        User.objects.create_user(
-            email="john@example.com", password="SomePass123!"
-        )
+        User.objects.create_user(email="john@example.com", password="SomePass123!")
         serializer = RegisterSerializer(data=self.data)
         self.assertFalse(serializer.is_valid())
         self.assertIn("email", serializer.errors)

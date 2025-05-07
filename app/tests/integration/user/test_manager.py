@@ -38,7 +38,9 @@ class TestCustomUserManager(BaseValidationTest):
         superuser = User.objects.create_superuser(email='test')
         self.assert_invalid_email(superuser)
 
-    def test_create_super_user_raises_validation_error_when_no_password(self):
+    def test_create_super_user_raises_validation_error_when_no_password(
+        self,
+    ):
         superuser = User.objects.create_superuser(
             email='testuser@gmail.com', password=None
         )

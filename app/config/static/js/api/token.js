@@ -10,7 +10,7 @@ function getAccessToken() {
 
 async function refreshAccessToken() {
     try {
-        const response = await fetch(`${location.origin}/api/token/refresh/`, {
+        const response = await fetch(`${location.origin}/${lang}/api/token/refresh/`, {
             method: 'POST',
             credentials: 'include', // ✅ refresh cookie will be sent
         });

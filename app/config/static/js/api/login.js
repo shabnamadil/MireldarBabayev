@@ -1,4 +1,7 @@
-const LOGIN_URL = `${location.origin}/api/token/`;
+const urlLang = window.location.pathname.split('/')[1];
+const lang = urlLang || localStorage.getItem('lang') || navigator.language.slice(0, 2) || 'en';
+
+const LOGIN_URL = `${location.origin}/${lang}/api/token/`;
 const loginForm = document.getElementById('loginForm');
 const alertLoginMessage = document.getElementById('alertLoginMessage');
 

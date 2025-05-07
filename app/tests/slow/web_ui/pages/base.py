@@ -1,5 +1,7 @@
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+from tests.slow.web_ui.helpers.image_handler import ImageInputHelper
 
 
 class BasePage:
@@ -31,7 +33,23 @@ class BasePage:
         element.clear()
         element.send_keys(text)
 
+    def input_image(self, locator, image_name):
+        element = self.find_visible_element(locator)
+        element.clear()
+
+        if image_name is None:
+            return
+
+        helper = ImageInputHelper()
+        image_path = helper.get_image_path(image_name)
+        element.send_keys(image_path)
+
     def get_text(self, locator):
+        return self.find_visible_element(locator).text
+
+    def get_error_message(self, field_name):
+        """Get the error locator for a specific field."""
+        locator = (By.ID, f'{field_name}_error')
         return self.find_visible_element(locator).text
 
     def wait_url_changes(self, old_url, timeout=15):

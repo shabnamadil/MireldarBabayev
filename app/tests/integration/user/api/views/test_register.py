@@ -16,9 +16,7 @@ def create_test_image():
     image = Image.new('RGB', (100, 100), color='blue')
     image.save(buffer, format='JPEG')
     buffer.seek(0)
-    return SimpleUploadedFile(
-        'avatar.jpg', buffer.read(), content_type='image/jpeg'
-    )
+    return SimpleUploadedFile('avatar.jpg', buffer.read(), content_type='image/jpeg')
 
 
 class TestRegisterAPI(APITestCase):
@@ -54,9 +52,7 @@ class TestRegisterAPI(APITestCase):
         self.assertIn('email', response.data)
 
     def test_existing_email(self):
-        User.objects.create_user(
-            email="john@example.com", password="TestPass123!"
-        )
+        User.objects.create_user(email="john@example.com", password="TestPass123!")
         response = self.client.post(self.url, self.data, format='multipart')
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertIn('email', response.data)

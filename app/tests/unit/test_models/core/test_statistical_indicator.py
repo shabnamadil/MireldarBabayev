@@ -6,6 +6,7 @@ from utils.tests.base import BaseValidationTest
 
 
 class TestStatisticalIndicatorModel(BaseValidationTest):
+    indicator: StatisticalIndicator
 
     @classmethod
     def setUpTestData(cls) -> None:

@@ -33,7 +33,10 @@ class TestCustomTokenObtainPairView(APITestCase):
         self.assertEqual(refresh_token_cookie['samesite'], 'Lax')
 
     def test_token_obtain_pair_with_invalid_credentials(self):
-        data = {'email': 'wronguser@gmail.com', 'password': 'WrongPass123!'}
+        data = {
+            'email': 'wronguser@gmail.com',
+            'password': 'WrongPass123!',
+        }
 
         response = self.client.post(self.url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
