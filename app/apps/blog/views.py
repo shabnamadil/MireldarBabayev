@@ -1,4 +1,4 @@
-from django.db.models import Count
+from django.db.models import Count, Q
 from django.views.generic import DetailView, TemplateView
 
 from apps.seo.models import BlogDetailPageSeo, BlogsPageSeo
@@ -15,7 +15,11 @@ class BlogListView(TemplateView):
         cx['popular_blogs'] = Blog.published.annotate(
             comment_count=Count('comments')
         ).order_by('-comment_count', '-view_count')[:3]
-        cx['categories'] = Category.objects.all()
+        cx['categories'] = Category.objects.annotate(
+            published_blog_count=Count(
+                'blogs', filter=Q(blogs__status=Blog.Status.PUBLISHED)
+            )
+        )
         cx['tags'] = (Tag.objects.all(),)
         cx['seo'] = BlogsPageSeo.objects.first()
         return cx
