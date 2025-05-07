@@ -48,7 +48,11 @@ class BlogDetailView(DetailView):
             .exclude(id=obj.id)
             .order_by('-comment_count', '-view_count')[:3]
         )
-        cx['categories'] = Category.objects.all()
+        cx['categories'] = Category.objects.annotate(
+            published_blog_count=Count(
+                'blogs', filter=Q(blogs__status=Blog.Status.PUBLISHED)
+            )
+        )
         cx['tags'] = Tag.objects.all()
         cx['previous_blog'] = (
             Blog.objects.filter(id=previous_blog_id).first()
