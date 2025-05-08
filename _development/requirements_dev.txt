@@ -18,6 +18,7 @@ django-check-seo==1.0.1
 django-ckeditor==6.7.1
 django-classy-tags==4.1.0
 django-cms==4.1.4
+django-crum==0.7.9
 django-filer==3.3.1
 django-formtools==2.5.1
 django-js-asset==2.2.0

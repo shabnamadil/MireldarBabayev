@@ -132,9 +132,7 @@
                         </div>
                     </div>
                 </div>
-                {% if request.user.is_authenticated %}
                 {% include 'components/blog/partials/comment-form.html' %}
-                {% endif %}
                 {% include 'components/blog/modals/delete-modal.html' %}
                 <div class="comment-wrap" id="comments">
 

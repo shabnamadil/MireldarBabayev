@@ -31,20 +31,22 @@ async function refreshAccessToken() {
 }
 
 async function authFetch(url, options = {}) {
+    const method = options.method ? options.method.toUpperCase() : 'GET';
     const token = getAccessToken();
 
     if (!options.headers) {
         options.headers = {};
     }
 
-    if (token) {
+    if (token && method !== 'GET') {
         options.headers['Authorization'] = `Bearer ${token}`;
     }
 
     let response = await fetch(url, { ...options, credentials: 'include' });
 
-    // If token is expired or invalid, try to refresh
-    if (response.status === 401 || response.status === 403) {
+    // If token is expired or invalid, try to refresh 
+    // Status 200 for AuthenticatedOrReadOnly
+    if (response.status === 401 || response.status === 403 || response.status === 200) {
         const newToken = await refreshAccessToken();
 
         if (newToken) {

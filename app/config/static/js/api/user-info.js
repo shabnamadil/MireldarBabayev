@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 const data = await response.json();
                 renderAuthenticatedUserInfo(data);
                 setupLogoutButton();
+                setCommentArea();
             } else {
                 renderGuestUserInfo()
             }

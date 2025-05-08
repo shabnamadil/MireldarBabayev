@@ -4096,6 +4096,9 @@ BLOG DETAIL
   vertical-align: middle;
 }
 
+.blog-comment-wrap{
+  display: none;
+}
 .blog-comment-wrap h3 {
   font-weight: 600;
   margin: 20px 0 20px;

@@ -12,7 +12,7 @@ from django.utils.text import slugify as custom_slugify
 from apps.blog.models import Blog, Comment
 from apps.core.models import SiteSettings
 from apps.seo.models import BlogDetailPageSeo
-from apps.user.middleware import get_current_user
+from crum import get_current_user
 
 User = get_user_model()
 
@@ -20,7 +20,8 @@ User = get_user_model()
 @receiver(post_delete, sender=Comment)
 def notify_user_on_comment_delete(sender, instance, **kwargs):
     current_user = get_current_user()
-    if instance.author.is_staff or instance.author == current_user:
+
+    if not current_user or current_user == instance.author or instance.author.is_staff:
         return
 
     subject = "Your comment has been deleted"

@@ -27,14 +27,9 @@ class CustomTokenObtainPairView(TokenObtainPairView):
 
         # Extract refresh token
         refresh_token = response.data.get('refresh')
-        access_token = response.data.get('access')
 
-        # Create new response with only access token
-        res = Response(
-            {
-                'access': access_token,
-            }
-        )
+        # Create new response without any data
+        res = Response()
 
         # Set refresh token in secure HttpOnly cookie
         res.set_cookie(

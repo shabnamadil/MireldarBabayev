@@ -11,7 +11,9 @@ document.addEventListener('DOMContentLoaded', async function () {
 // Fetch all comments
 async function fetchComments() {
     try {
-        const response = await fetch(COMMENT_URL);
+        const response = await authFetch(COMMENT_URL);
+        console.log(`response`, response);
+        
         if (!response.ok) throw new Error('Failed to fetch comments');
 
         const comments = await response.json();
@@ -86,11 +88,10 @@ async function sendComment() {
     const content = commentInputField.value.trim();
 
     try {
-        const response = await fetch(`${location.origin}/api/comment/`, {
+        const response = await authFetch(`${location.origin}/api/comment/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'X-CSRFToken': getCSRFToken(),
             },
             body: JSON.stringify({
                 blog: blogId,
@@ -137,11 +138,8 @@ document.getElementById('confirmDeleteButton').addEventListener('click', async f
     if (!commentToDeleteId) return;
 
     try {
-        const response = await fetch(`${location.origin}/api/comment/${commentToDeleteId}/`, {
+        const response = await authFetch(`${location.origin}/api/comment/${commentToDeleteId}/`, {
             method: 'DELETE',
-            headers: {
-                'X-CSRFToken': getCSRFToken(),
-            },
         });
 
         if (!response.ok) throw new Error('Failed to delete comment');
@@ -213,11 +211,10 @@ async function saveComment(commentId) {
     }
 
     try {
-        const response = await fetch(`${location.origin}/api/comment/${commentId}/`, {
+        const response = await authFetch(`${location.origin}/api/comment/${commentId}/`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
-                'X-CSRFToken': getCSRFToken(),
             },
             body: JSON.stringify({ content: updatedContent }),
         });
@@ -274,8 +271,16 @@ function cancelEditComment(commentId, originalContent) {
     `;
 }
 
-// Get CSRF token
-function getCSRFToken() {
-    const csrfCookie = document.cookie.split('; ').find(row => row.startsWith('csrftoken='));
-    return csrfCookie ? csrfCookie.split('=')[1] : '';
+function setCommentArea() {
+    const commentArea = document.getElementById('leave-comment');
+    if (commentArea) {
+        commentArea.style.display = 'block';
+    }
+}
+
+function hideCommentArea() {
+    const commentArea = document.getElementById('leave-comment');
+    if (commentArea) {
+        commentArea.style.display = 'none';
+    }
 }

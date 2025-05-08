@@ -16,6 +16,7 @@ async function logoutUser() {
         });
         if (response.ok) {
             window.location.href = '/login';
+            hideCommentArea()
         }
     } catch (error) {
         console.error('Error logout user:', error);
