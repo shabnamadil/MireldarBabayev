@@ -1,6 +1,7 @@
 from tests.factories import UserFactory
 from tests.slow.web_ui.helpers.base_test import BaseTest
 from tests.slow.web_ui.helpers.translations import TRANSLATIONS
+from tests.slow.web_ui.pages.base import BasePage
 from tests.slow.web_ui.pages.login_page import LoginPage
 
 
@@ -11,6 +12,16 @@ class LoginPageTest(BaseTest):
 
         self.login_page = LoginPage(self.browser)
         self.user = UserFactory(email='selenium@gmail.com', password='Seleniumpass1234')
+
+    def _successful_login(self, window_size):
+        self.browser.set_window_size(*window_size)
+        self.login_page.load(self.live_server_url)
+        self.login_page.login('selenium@gmail.com', 'Seleniumpass1234')
+        self.login_page.wait_url_changes(self.browser.current_url)
+        BasePage(self.browser)._set_user_info_available()
+        self.assertIn('selenium@gmail.com', self.browser.page_source)
+        self.assertIn('Logout', self.browser.page_source)
+        self.assertNotIn('Login', self.browser.page_source)
 
     def test_login_page_loads_in_multilinguage(self):
         for lang in TRANSLATIONS.keys():
@@ -23,13 +34,14 @@ class LoginPageTest(BaseTest):
                 self.assertIn(translations['Email'], self.browser.page_source)
                 self.assertIn(translations['Password'], self.browser.page_source)
 
-    def test_successful_login(self):
-        self.login_page.load(self.live_server_url)
-        self.login_page.login('selenium@gmail.com', 'Seleniumpass1234')
-        self.login_page.wait_url_changes(self.browser.current_url)
-        self.assertIn('selenium@gmail.com', self.browser.page_source)
-        self.assertIn('Logout', self.browser.page_source)
-        self.assertNotIn('Login', self.browser.page_source)
+    def test_successful_login_on_large_screen(self):
+        self._successful_login(window_size=(1920, 1080))
+
+    def test_successful_login_on_medium_screen(self):
+        self._successful_login(window_size=(1024, 768))
+
+    def test_successful_login_on_small_screen(self):
+        self._successful_login(window_size=(375, 667))
 
     def test_login_with_invalid_credentials(self):
         self.login_page.load(self.live_server_url)

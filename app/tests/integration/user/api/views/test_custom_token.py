@@ -15,17 +15,16 @@ class TestCustomTokenObtainPairView(APITestCase):
             'password': 'testpassword',
         }
 
-    def test_token_obtain_pair_only_access_token_in_response(self):
+    def test_token_obtain_pair_returns_no_token_in_response(self):
         response = self.client.post(self.url, self.data, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertIn('access', response.data)
-        self.assertNotIn('refresh', response.data)
+        self.assertEqual(response.data, None)
 
     def test_token_obtain_pair_with_refresh_token_in_cookie(self):
         response = self.client.post(self.url, self.data, format='json')
 
-        # Check that the refresh token is in the HttpOnly cookie (secure and
-        # samesite properties)
+        """ Check that the refresh token is in the HttpOnly cookie (secure and
+        samesite properties) """
         refresh_token_cookie = response.cookies.get('refresh_token')
         self.assertIsNotNone(refresh_token_cookie)
         self.assertTrue(refresh_token_cookie['httponly'])

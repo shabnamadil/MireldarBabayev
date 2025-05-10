@@ -1,3 +1,4 @@
+from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
@@ -7,7 +8,10 @@ from tests.slow.web_ui.helpers.image_handler import ImageInputHelper
 class BasePage:
     """Base class for common functionality shared by all pages."""
 
-    def __init__(self, browser, timeout=15):
+    profile_icon = (By.ID, "userInfoContainer")
+    burger_menu = (By.CLASS_NAME, "navbar-toggler")
+
+    def __init__(self, browser, timeout=5):
         self.browser = browser
         self.wait = WebDriverWait(self.browser, timeout)
 
@@ -54,3 +58,46 @@ class BasePage:
 
     def wait_url_changes(self, old_url, timeout=15):
         WebDriverWait(self.browser, timeout).until(EC.url_changes(old_url))
+
+    def _set_user_info_available(self):
+        """Ensure the user profile menu is available regardless of screen size."""
+        if self._is_medium_screen():
+            self._handle_medium_screen_menu()
+        elif self._is_large_screen():
+            self._handle_large_screen_hover()
+
+    def _is_medium_screen(self):
+        return self._element_exists(self.burger_menu)
+
+    def _is_large_screen(self):
+        return self._element_exists(self.profile_icon)
+
+    def _handle_medium_screen_menu(self):
+        """Handles menu expansion and profile click on medium screens."""
+        try:
+            burger_menu = self.find_element(self.burger_menu)
+            self.click(burger_menu)
+
+            profile = self.find_element(self.profile_icon)
+            self.click(profile)
+        except Exception as e:
+            self._log_ui_issue("Medium screen menu handling failed", e)
+
+    def _handle_large_screen_hover(self):
+        """Handles hover over profile icon on large screens."""
+        try:
+            profile = self.find_element(self.profile_icon)
+            actions = ActionChains(self.browser)
+            actions.move_to_element(profile).perform()
+        except Exception as e:
+            self._log_ui_issue("Large screen profile hover failed", e)
+
+    def _element_exists(self, locator):
+        try:
+            self.find_visible_element(locator)
+            return True
+        except Exception:
+            return False
+
+    def _log_ui_issue(self, message, exception):
+        print(f"[WARN] {message}: {exception}")
