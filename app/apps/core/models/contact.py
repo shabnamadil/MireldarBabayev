@@ -1,15 +1,19 @@
 from django.db import models
 
-from utils.helpers.validate_phone import validate_phone_value
 from utils.models.base_model import BaseModel
+from utils.validators.validate_phone import validate_phone_value
 
 
 class Contact(BaseModel):
     first_name = models.CharField(
-        'Ad', max_length=20, help_text='Kontentin uzunluğu maksimum 20-dir.'
+        'Ad',
+        max_length=20,
+        help_text='Kontentin uzunluğu maksimum 20-dir.',
     )
     last_name = models.CharField(
-        'Soyad', max_length=20, help_text='Kontentin uzunluğu maksimum 20-dir.'
+        'Soyad',
+        max_length=20,
+        help_text='Kontentin uzunluğu maksimum 20-dir.',
     )
     email = models.EmailField('E-poçt')
     phone = models.CharField(

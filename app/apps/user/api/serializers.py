@@ -1,9 +1,9 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.password_validation import validate_password
+from django.templatetags.static import static
 from django.utils.translation import gettext as _
 
 from rest_framework import serializers
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from utils.serializers.password_field import PasswordField
 
 User = get_user_model()
@@ -15,7 +15,6 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        extra_kwargs = {"password": {"write_only": True}}
         fields = (
             'id',
             'first_name',
@@ -48,39 +47,22 @@ class RegisterSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         validated_data.pop('password_confirm')
-        user = User(
-            first_name=validated_data['first_name'],
-            last_name=validated_data['last_name'],
-            email=validated_data['email'],
-            image=validated_data['image'],
-        )
-        user.set_password(validated_data['password'])
-        user.save()
+        user = User.objects.create_user(**validated_data)
         return user
 
 
-class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
-    def validate(self, attrs):
-        data = super().validate(attrs)
-        try:
-            refresh = self.get_token(self.user)
-            access_token = refresh.access_token
-            access_token['refresh_jti'] = str(refresh['jti'])
-            data['access'] = str(access_token)
-            data['refresh'] = str(refresh)
-            data.update(
-                {
-                    'user': {
-                        'id': self.user.id,
-                        'full_name': self.user.full_name,
-                        'email': self.user.email,
-                        'image': (
-                            self.user.image.url if self.user.image else None
-                        ),
-                    }
-                }
-            )
-        except Exception as e:
-            print(f"Token creation failed: {e}")
-            raise e
-        return data
+class UserInfoSerializer(serializers.ModelSerializer):
+    image = serializers.SerializerMethodField()
+
+    class Meta:
+        model = User
+        fields = ('id', 'full_name', 'email', 'image')
+
+    def get_image(self, obj):
+        request = self.context.get('request', None)
+        if obj.image:
+            if request:
+                return request.build_absolute_uri(obj.image.url)
+            return obj.image.url
+        static_url = static('images/user.png')
+        return request.build_absolute_uri(static_url) if request else static_url

@@ -1,9 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block subheader %}
-{% include 'components/user/register/partials/subheader.html' %}
-{% endblock subheader %}
+{% block title %}
+    <title>
+        {% trans 'Register' %}
+    </title>
+{% endblock title %}
 
 {% block content %}
 <section class="register-section space-mt">

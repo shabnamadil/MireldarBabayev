@@ -3,6 +3,6 @@
     <a href="{% url 'blogs' %}?category={{ category.slug }}" class="category-link" data-category-slug="{{ category.slug }}" data-category-name="{{ category.name }}">
         {{ category.name }}
     </a> 
-    <span>{{ category.blogs.count }}</span>
+    <span>{{ category.published_blog_count }}</span>
 </li>
 {% endfor %}

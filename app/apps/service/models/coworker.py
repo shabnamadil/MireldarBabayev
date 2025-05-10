@@ -12,7 +12,9 @@ class Coworker(BaseModel):
         help_text='Kontentin uzunluğu maksimum 100-dür.',
     )
     png = models.FileField(
-        'Logo', upload_to='coworkers/', help_text='PNG formatda daxil edin.'
+        'Logo',
+        upload_to='coworkers/',
+        help_text='PNG formatda daxil edin.',
     )
 
     class Meta:

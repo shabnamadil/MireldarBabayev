@@ -111,6 +111,7 @@ db.sqlite3
 !*/migrations/__init__.py
 
 # Static/Media
+app/tests/assets/
 app/static/
 media/
 *.png

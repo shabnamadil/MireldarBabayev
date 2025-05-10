@@ -1,6 +1,6 @@
 from django import forms
 
-from utils.helpers.validate_time import (
+from utils.validators.validate_time import (
     validate_future_time,
     validate_start_end_times,
 )

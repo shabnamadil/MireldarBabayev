@@ -34,8 +34,8 @@ class BlogAdmin(TranslationAdmin):
         'display_blog_img',
         'display_blog_author',
         'view_count',
-        'display_blog_categories',
-        'show_comments_count',
+        'display_blog_cats',
+        'show_comment_count',
         'status',
         'created_date',
     )
@@ -60,12 +60,13 @@ class BlogAdmin(TranslationAdmin):
 
     def display_blog_author(self, obj):
         author_name = (
-            obj.author.get_full_name()
-            if obj.author.get_full_name()
-            else 'Admin'
+            obj.author.get_full_name() if obj.author.get_full_name() else 'Admin'
         )
         url = reverse("admin:user_customuser_change", args=[obj.author.id])
-        link = '<a style="color: red;" href="%s">%s</a>' % (url, author_name)
+        link = '<a style="color: red;" href="%s">%s</a>' % (
+            url,
+            author_name,
+        )
         return format_html(link)
 
     display_blog_author.short_description = 'Müəllif'  # type: ignore[attr-defined]
@@ -78,16 +79,16 @@ class BlogAdmin(TranslationAdmin):
 
     display_blog_img.short_description = 'Cover foto'  # type: ignore[attr-defined]
 
-    def display_blog_categories(self, obj):
+    def display_blog_cats(self, obj):
         return ", ".join(category.name for category in obj.category.all())
 
-    display_blog_categories.short_description = 'Kateqoriya'  # type: ignore[attr-defined]
+    display_blog_cats.short_description = 'Kateqoriya'  # type: ignore[attr-defined]
 
-    def show_comments_count(self, obj):
+    def show_comment_count(self, obj):
         result = Comment.objects.filter(blog=obj).count()
         return result
 
-    show_comments_count.short_description = 'RƏYLƏRİN SAYI'  # type: ignore[attr-defined]
+    show_comment_count.short_description = 'RƏYLƏRİN SAYI'  # type: ignore[attr-defined]
 
     class Media:
         js = (
@@ -133,9 +134,7 @@ class CommentAdmin(admin.ModelAdmin):
 
     def display_comment_author(self, obj):
         author_name = (
-            obj.author.get_full_name()
-            if obj.author.get_full_name()
-            else 'Admin'
+            obj.author.get_full_name() if obj.author.get_full_name() else 'Admin'
         )
         url = reverse("admin:user_customuser_change", args=[obj.author.id])
         link = '<a style="color: red;" href="%s">%s</a>' % (

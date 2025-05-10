@@ -2,31 +2,6 @@ const COMMENT_URL = `${location.origin}/api/comment/?blog=${blogId}`;
 const commentsContainer = document.getElementById('comments');
 const commentInputField = document.getElementById('comment-input-field');
 
-const urlPath = window.location.pathname;
-const userLang = urlPath.split('/')[1];
-const CommentTranslations = {
-    en: {
-        comments: "Comments",
-        edit: "Edit",
-        delete: "Delete",
-        save: "Save",
-        cancel: "Cancel"
-    },
-    az: {
-        comments: "Rəylər",
-        edit: "Düzəliş et",
-        delete: "Sil",
-        save: "Yadda saxla",
-        cancel: "Ləğv et"
-    },
-    ru: {
-        comments: "Комментарии",
-        edit: "Редактировать",
-        delete: "Удалить",
-        save: "Сохранить",
-        cancel: "Отмена"
-    }
-};
 
 // Load comments on page load
 document.addEventListener('DOMContentLoaded', async function () {
@@ -36,7 +11,9 @@ document.addEventListener('DOMContentLoaded', async function () {
 // Fetch all comments
 async function fetchComments() {
     try {
-        const response = await fetch(COMMENT_URL);
+        const response = await authFetch(COMMENT_URL);
+        console.log(`response`, response);
+        
         if (!response.ok) throw new Error('Failed to fetch comments');
 
         const comments = await response.json();
@@ -51,7 +28,7 @@ function renderComments(comments) {
     commentsContainer.innerHTML = '';
 
     const h3 = document.createElement('h3');
-    h3.textContent = `${CommentTranslations[userLang].comments}(${comments.length})`;
+    h3.textContent = `${gettext('Comments')}(${comments.length})`;
     commentsContainer.appendChild(h3);
 
     appendComments(comments);
@@ -93,10 +70,10 @@ function createCommentHTML(comment) {
                     isAuthor
                         ? `<div class="comment-actions">
                                <button class="edit" onclick="editComment(${comment.id})">
-                                   <i class="fas fa-edit"></i> ${CommentTranslations[userLang].edit}
+                                   <i class="fas fa-edit"></i> ${gettext('Edit')}
                                </button>
                                <button class="delete" onclick="deleteComment(${comment.id})">
-                                   <i class="fas fa-trash-alt"></i> ${CommentTranslations[userLang].delete}
+                                   <i class="fas fa-trash-alt"></i> ${gettext('Delete')}
                                </button>
                            </div>`
                         : ''
@@ -111,11 +88,10 @@ async function sendComment() {
     const content = commentInputField.value.trim();
 
     try {
-        const response = await fetch(`${location.origin}/api/comment/`, {
+        const response = await authFetch(`${location.origin}/api/comment/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'X-CSRFToken': getCSRFToken(),
             },
             body: JSON.stringify({
                 blog: blogId,
@@ -141,7 +117,7 @@ function addCommentToDOM(comment) {
 
     const commentHeader = commentsContainer.querySelector('h3');
     const currentCount = parseInt(commentHeader.textContent.match(/\d+/)[0]);
-    commentHeader.textContent = `${CommentTranslations[userLang].comments} (${currentCount + 1})`;
+    commentHeader.textContent = `${gettext('Comments')} (${currentCount + 1})`;
 
     if (commentsList) {
         commentsList.innerHTML = commentHTML + commentsList.innerHTML;
@@ -162,11 +138,8 @@ document.getElementById('confirmDeleteButton').addEventListener('click', async f
     if (!commentToDeleteId) return;
 
     try {
-        const response = await fetch(`${location.origin}/api/comment/${commentToDeleteId}/`, {
+        const response = await authFetch(`${location.origin}/api/comment/${commentToDeleteId}/`, {
             method: 'DELETE',
-            headers: {
-                'X-CSRFToken': getCSRFToken(),
-            },
         });
 
         if (!response.ok) throw new Error('Failed to delete comment');
@@ -175,7 +148,7 @@ document.getElementById('confirmDeleteButton').addEventListener('click', async f
         closeModal();
     } catch (error) {
         console.error(`Error deleting comment ${commentToDeleteId}:`, error);
-        alert('Failed to delete comment. Please try again.');
+        alert(gettext('Failed to delete comment. Please try again.'));
     }
 });
 
@@ -200,7 +173,7 @@ function removeCommentFromDOM(commentId) {
 
     const commentHeader = commentsContainer.querySelector('h3');
     const currentCount = parseInt(commentHeader.textContent.match(/\d+/)[0], 10);
-    commentHeader.textContent = `${CommentTranslations[userLang].comments} (${Math.max(0, currentCount - 1)})`;
+    commentHeader.textContent = `${gettext('Comments')} (${Math.max(0, currentCount - 1)})`;
 }
 
 // Edit comment
@@ -218,10 +191,10 @@ function editComment(commentId) {
     const actions = commentElement.querySelector('.comment-actions');
     actions.innerHTML = `
         <button class="save" onclick="saveComment(${commentId})">
-            <i class="fas fa-save"></i> ${CommentTranslations[userLang].save}
+            <i class="fas fa-save"></i> ${gettext('Save')}
         </button>
         <button class="cancel" onclick="cancelEditComment(${commentId}, '${originalContent}')">
-            <i class="fas fa-times"></i> ${CommentTranslations[userLang].cancel}
+            <i class="fas fa-times"></i> ${gettext('Cancel')}
         </button>
     `;
 }
@@ -233,16 +206,15 @@ async function saveComment(commentId) {
     const updatedContent = editTextarea.value.trim();
 
     if (!updatedContent) {
-        alert('Comment cannot be empty!');
+        alert(gettext('Comment content cannot be empty.'));
         return;
     }
 
     try {
-        const response = await fetch(`${location.origin}/api/comment/${commentId}/`, {
+        const response = await authFetch(`${location.origin}/api/comment/${commentId}/`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
-                'X-CSRFToken': getCSRFToken(),
             },
             body: JSON.stringify({ content: updatedContent }),
         });
@@ -253,7 +225,7 @@ async function saveComment(commentId) {
         updateCommentInDOM(commentId, updatedComment);
     } catch (error) {
         console.error(`Error updating comment ${commentId}:`, error);
-        alert('Failed to update comment. Please try again.');
+        alert(gettext('Failed to update comment. Please try again.'));
     }
 }
 
@@ -270,10 +242,10 @@ function updateCommentInDOM(commentId, comment) {
     const actions = commentElement.querySelector('.comment-actions');
     actions.innerHTML = `
         <button class="edit" onclick="editComment(${commentId})">
-            <i class="fas fa-edit"></i> ${CommentTranslations[userLang].edit}
+            <i class="fas fa-edit"></i> ${gettext('Edit')}
         </button>
         <button class="delete" onclick="deleteComment(${commentId})">
-            <i class="fas fa-trash-alt"></i> ${CommentTranslations[userLang].delete}
+            <i class="fas fa-trash-alt"></i> ${gettext('Delete')}
         </button>
     `;
 }
@@ -291,16 +263,24 @@ function cancelEditComment(commentId, originalContent) {
     const actions = commentElement.querySelector('.comment-actions');
     actions.innerHTML = `
         <button class="edit" onclick="editComment(${commentId})">
-            <i class="fas fa-edit"></i> ${CommentTranslations[userLang].edit}
+            <i class="fas fa-edit"></i> ${gettext('Edit')}
         </button>
         <button class="delete" onclick="deleteComment(${commentId})">
-            <i class="fas fa-trash-alt"></i> ${CommentTranslations[userLang].delete}
+            <i class="fas fa-trash-alt"></i> ${gettext('Delete')}
         </button>
     `;
 }
 
-// Get CSRF token
-function getCSRFToken() {
-    const csrfCookie = document.cookie.split('; ').find(row => row.startsWith('csrftoken='));
-    return csrfCookie ? csrfCookie.split('=')[1] : '';
+function setCommentArea() {
+    const commentArea = document.getElementById('leave-comment');
+    if (commentArea) {
+        commentArea.style.display = 'block';
+    }
+}
+
+function hideCommentArea() {
+    const commentArea = document.getElementById('leave-comment');
+    if (commentArea) {
+        commentArea.style.display = 'none';
+    }
 }

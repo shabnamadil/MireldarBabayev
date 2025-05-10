@@ -1,63 +1,72 @@
 {% load static %}
 {% load i18n %}
 
-<div class="register-block">
-    <div class="row">
-        <div class="col-md-12 col-lg-6">
-            <div class="register-info">
-                <h2>{% trans 'Welcome to' %} {{ settings.site_name }}!</h2>
-                <p>
-                    {% trans 'Join us and be part of our growing community. By registering, you gain access to exclusive features, updates, and opportunities to connect with like-minded individuals.' %}
-                </p>
-                <img src="{{ about.image.url }}" class="img-fluid w-100" alt="{{ settings.site_name }}" />
+<div class="row justify-content-center">
+    <div class="col-md-12 col-lg-6 d-flex justify-content-center">
+        <div class="register-form p-4 shadow-sm bg-white rounded">
+
+            <h3 class="fw-bold text-center mb-4">{% trans 'Create Your Account' %}</h3>
+
+            <div id="successRegisterMessage" class="alert alert-success d-none" role="alert">
+                {% trans 'You successfully registered.' %}
             </div>
-        </div>
-        <div class="col-md-12 col-lg-6">
-            <div class="register-form">
-                <h2>{% trans 'Create Your Account' %}</h2>
-                <h4 id="successRegisterMessage" class="alert alert-success d-none" role="alert">
-                    {% trans 'You successfully registered.' %}
-                </h4>
-                <form method="POST" id="registerForm">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <label for="first_name">{% trans 'First name' %}</label>
-                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="{% trans 'Enter your first name' %}" required>
-                        <div class="error-message" id="first_name_error" class="text-danger"></div> <!-- Placeholder for error -->
-                    </div>
-                    <div class="form-group">
-                        <label for="last_name">{% trans 'Last name' %}</label>
-                        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="{% trans 'Enter your last name' %}" required>
-                        <div class="error-message" id="last_name_error" class="text-danger"></div> <!-- Placeholder for error -->
-                    </div>
-                    <div class="form-group">
-                        <label for="image">{% trans 'Image' %}</label>
-                        <input type="file" class="form-control" id="image" name="image" placeholder="{% trans 'Enter your image' %}" >
-                    </div>
-                    <div class="form-group">
-                        <label for="email">{% trans 'Email' %}</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="{% trans 'Enter your email' %}" required>
-                        <div class="error-message" id="email_error" class="text-danger"></div> <!-- Placeholder for error -->
-                    </div>
-                    <div class="form-group">
-                        <label for="password">{% trans 'Password' %}</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="{% trans 'Enter your password' %}" required>
-                        <div class="error-message" id="password_error" class="text-danger"></div> <!-- Placeholder for error -->
-                    </div>
-                    <div class="form-group">
-                        <label for="confirm-password">{% trans 'Confirm Password' %}</label>
-                        <input type="password" class="form-control" id="confirm-password" name="password_confirm" placeholder="{% trans 'Confirm your password' %}" required>
-                        <div class="error-message" id="password_confirm_error" class="text-danger"></div> <!-- Placeholder for error -->
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">{% trans 'Register' %}</button>
-                </form>
-                <p class="text-center mt-3">
-                    {% trans 'Already have an account?' %} <a href="{% url 'login' %}">{% trans 'Login here' %}</a>.
-                </p>
-            </div>
+
+            <form method="POST" id="registerForm" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="form-group mb-3">
+                    <label for="first_name" class="form-label">{% trans 'First name' %}</label>
+                    <input type="text" class="form-control" id="first_name" name="first_name"
+                        placeholder="{% trans 'Enter your first name' %}" required>
+                    <div id="first_name_error" class="text-danger small mt-1"></div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="last_name" class="form-label">{% trans 'Last name' %}</label>
+                    <input type="text" class="form-control" id="last_name" name="last_name"
+                        placeholder="{% trans 'Enter your last name' %}" required>
+                    <div id="last_name_error" class="text-danger small mt-1"></div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="email" class="form-label">{% trans 'Email' %}</label>
+                    <input type="email" class="form-control" id="email" name="email"
+                        placeholder="{% trans 'Enter your email' %}" required>
+                    <div id="email_error" class="text-danger small mt-1"></div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="image" class="form-label">{% trans 'Image' %}</label>
+                    <input type="file" class="form-control" id="image" name="image">
+                    <div id="image_error" class="text-danger small mt-1"></div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="password" class="form-label">{% trans 'Password' %}</label>
+                    <input type="password" class="form-control" id="password" name="password"
+                        placeholder="{% trans 'Enter your password' %}" required>
+                    <div id="password_error" class="text-danger small mt-1"></div>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="confirm-password" class="form-label">{% trans 'Confirm Password' %}</label>
+                    <input type="password" class="form-control" id="confirm-password" name="password_confirm"
+                        placeholder="{% trans 'Confirm your password' %}" required>
+                    <div id="password_confirm_error" class="text-danger small mt-1"></div>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">{% trans 'Register' %}</button>
+            </form>
+
+            <p class="text-center mt-4 mb-0">
+                {% trans 'Already have an account?' %}
+                <a href="{% url 'login' %}">{% trans 'Login here' %}</a>.
+            </p>
+
         </div>
     </div>
 </div>
+
 
 {% block js %}
 <script src="{% static 'js/api/register.js' %}"></script>

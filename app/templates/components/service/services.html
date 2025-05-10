@@ -6,8 +6,8 @@
     <title>
         {% if seo.meta_title %}
         {{seo.meta_title}}
-        {% elif settings.site_name %}
-        {{settings.site_name}}
+        {% else %}
+        {% trans 'Services' %}
         {% endif %}
     </title>
 {% endblock title %}

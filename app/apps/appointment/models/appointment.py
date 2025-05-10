@@ -1,7 +1,7 @@
 from django.db import models
 
-from utils.helpers.validate_phone import validate_phone_value
 from utils.models.base_model import BaseModel
+from utils.validators.validate_phone import validate_phone_value
 
 from .timetable import Timetable
 

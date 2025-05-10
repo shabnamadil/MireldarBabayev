@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from utils.helpers.validate_phone import validate_phone_value
+from utils.validators.validate_phone import validate_phone_value
 
 from ..models import Contact, Newsletter
 

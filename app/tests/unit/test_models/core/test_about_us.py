@@ -15,7 +15,9 @@ class TestAboutUsModel(BaseValidationTest):
             value='Dəyərlərimiz',
             content='Haqqımızda səhifəsi üçün kontent',
             image=SimpleUploadedFile(
-                "test1.jpg", b"dummy jpg content", content_type="image/jpeg"
+                "test1.jpg",
+                b"dummy jpg content",
+                content_type="image/jpeg",
             ),
         )
 

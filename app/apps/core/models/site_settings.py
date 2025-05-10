@@ -1,9 +1,10 @@
 from django.core.validators import MinLengthValidator
 from django.db import models
 
-from utils.helpers.validate_google_map import GoogleMapValidationError
-from utils.helpers.validate_phone import validate_phone_value
-from utils.helpers.validate_social_media import (
+from utils.models.singleton import SingletonModel
+from utils.validators.validate_google_map import GoogleMapValidationError
+from utils.validators.validate_phone import validate_phone_value
+from utils.validators.validate_social_media import (
     validate_facebook,
     validate_instagram,
     validate_linkedin,
@@ -11,10 +12,9 @@ from utils.helpers.validate_social_media import (
     validate_twitter,
     validate_youtube,
 )
-from utils.helpers.validate_time import (
+from utils.validators.validate_time import (
     validate_work_hours as WorkHourValidationError,
 )
-from utils.models.singleton import SingletonModel
 
 
 class SiteSettings(SingletonModel):
@@ -25,7 +25,9 @@ class SiteSettings(SingletonModel):
         help_text='Kontentin uzunluğu maksimum 100-dür.'
     )
     logo = models.ImageField(upload_to='logos/', verbose_name="Site Logo")
-    favicon = models.ImageField(upload_to='favicons/', verbose_name="Favicon")
+    favicon = models.ImageField(
+        upload_to='favicons/',
+        verbose_name="Favicon")
     location = models.CharField(
         'Məkan',
         max_length=100,
@@ -44,8 +46,7 @@ class SiteSettings(SingletonModel):
         'İş saatları',
         max_length=13,
         validators=[WorkHourValidationError],
-        help_text='Kontentin uzunluğu maksimum 13-dür. Nümunə: 09:00 - 18:00'
-    )
+        help_text='Kontentin uzunluğu maksimum 13-dür. Nümunə: 09:00 - 18:00')
     map_url = models.CharField(
         'Xəritə',
         max_length=500,

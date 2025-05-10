@@ -2437,6 +2437,10 @@ ABOUT
   background: #4d72d0;
 }
 
+.top-bar .navbar-brand img {
+  width: 80px;
+}
+
 .topbar-social {
   padding: 12px 0;
   margin: 0;
@@ -4092,6 +4096,9 @@ BLOG DETAIL
   vertical-align: middle;
 }
 
+.blog-comment-wrap{
+  display: none;
+}
 .blog-comment-wrap h3 {
   font-weight: 600;
   margin: 20px 0 20px;
@@ -4738,5 +4745,27 @@ SERVICE DETAIL
 @media (max-width: 991px) {
   .nav-hidden {
     display: block !important;
+  }
+}
+
+.cursor {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 576px) {
+  .login-form,
+  .register-form {
+    min-width: 500px
   }
 }

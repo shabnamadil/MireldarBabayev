@@ -21,7 +21,9 @@ class TestServiceDetailPageSeoModel(BaseValidationTest):
                 "test1.png", b"dummy png content", content_type="image/png"
             ),
             image=SimpleUploadedFile(
-                "test1.jpg", b"dummy jpg content", content_type="image/jpeg"
+                "test1.jpg",
+                b"dummy jpg content",
+                content_type="image/jpeg",
             ),
             title='Test title new',
             content='Test content new',
@@ -93,9 +95,7 @@ class TestServiceDetailPageSeoModel(BaseValidationTest):
             'og_description',
             self.valid_data["og_description"],
         )
-        self.assert_model_instance(
-            ServiceDetailPageSeo, 'service', self.service
-        )
+        self.assert_model_instance(ServiceDetailPageSeo, 'service', self.service)
 
     def test_automatically_created_service_detail_page_seo(self):
         service = Service.objects.create(
@@ -105,16 +105,16 @@ class TestServiceDetailPageSeoModel(BaseValidationTest):
                 "test1.png", b"dummy png content", content_type="image/png"
             ),
             image=SimpleUploadedFile(
-                "test1.jpg", b"dummy jpg content", content_type="image/jpeg"
+                "test1.jpg",
+                b"dummy jpg content",
+                content_type="image/jpeg",
             ),
             title='Test',
             content='Test',
             background_color='yellow',
         )
 
-        deteail_page_seo_instance = ServiceDetailPageSeo.objects.get(
-            service=service
-        )
+        deteail_page_seo_instance = ServiceDetailPageSeo.objects.get(service=service)
 
         self.assertEqual(deteail_page_seo_instance, service.detail_page_seo)
 

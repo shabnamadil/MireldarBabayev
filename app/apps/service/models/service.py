@@ -8,7 +8,7 @@ from utils.helpers.slugify import custom_slugify
 from utils.models.base_model import BaseModel
 
 
-class Service(BaseModel):
+class Service(BaseModel):  # type: ignore[django-manager-missing]
     COLOR_CHOICES = (
         ('yellow', 'yellow'),
         ('green', 'green'),

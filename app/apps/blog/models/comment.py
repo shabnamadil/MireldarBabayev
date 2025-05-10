@@ -41,5 +41,5 @@ class Comment(BaseModel):
 
         return truncated_content
 
-    def __str__(self) -> str:
+    def __str__(self):
         return self.truncated_comment

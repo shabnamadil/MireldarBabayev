@@ -58,6 +58,4 @@ def validate_future_time(value, field_name):
     """Ensures the given time is in the future."""
     local_time = timezone.localtime(timezone.now())
     if value and value < local_time:
-        raise ValidationError(
-            {field_name: "The start time must be in the future."}
-        )
+        raise ValidationError({field_name: "The start time must be in the future."})

@@ -1,4 +1,7 @@
-const REGISTER_URL = `${location.origin}/api/register/`;
+const urlLang = window.location.pathname.split('/')[1];
+const lang = urlLang || localStorage.getItem('lang') || navigator.language.slice(0, 2) || 'en';
+
+const REGISTER_URL = `${location.origin}/${lang}/api/register/`;
 const registerForm = document.getElementById('registerForm');
 const successRegisterMessage = document.getElementById('successRegisterMessage');
 
@@ -42,15 +45,15 @@ function displayRegisterErrors(errors) {
 
     // Loop through each field and its corresponding error messages
     for (const [fieldName, messages] of Object.entries(errors)) {
-        const translatedMessages = Array.isArray(messages) 
-            ? messages.map(translateMessage).join('<br>')
-            : translateMessage(messages);
+        const error_messages = Array.isArray(messages) 
+            ? messages.map(msg => msg).join('<br>')
+            : messages;
 
         // Create a custom error message container
         const errorContainer = document.getElementById(`${fieldName}_error`);
         if (errorContainer) {
             // Display the error message under the respective input field
-            errorContainer.innerHTML = translatedMessages;
+            errorContainer.innerHTML = error_messages;
             errorContainer.classList.remove('d-none');  // Make error message visible
 
             // Add an error class to the input field
@@ -75,11 +78,4 @@ function displayRegisterErrors(errors) {
             }
         });
     }, 10000); // 10 seconds
-}
-
-function translateMessage(message) {
-    const translations = {
-        "This field may not be blank.": "Bu sahə tələb edilir.",
-    };
-    return translations[message] || message;
 }

@@ -28,7 +28,7 @@ async function newsletter() {
         }
     } catch (error) {
         console.error('An error occurred:', error);
-        displayNewsletterErrors({ error: 'An unexpected error occurred. Please try again.' });
+        displayNewsletterErrors({ error: gettext('An unexpected error occurred. Please try again.') });
     }
 }
 
