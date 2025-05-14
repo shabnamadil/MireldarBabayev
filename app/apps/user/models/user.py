@@ -6,6 +6,9 @@ from django.utils.translation import gettext_lazy as _
 from apps.user.manager.custom_user_manager import CustomUserManager
 from utils.models.base_model import BaseModel
 from utils.validators.validate_image import (
+    validate_image_content as ImageContentValidator,
+)
+from utils.validators.validate_image import (
     validate_image_extension as ImageExtensionValidator,
 )
 from utils.validators.validate_image import validate_image_size as ImageSizeValidator
@@ -38,10 +41,8 @@ class CustomUser(  # type: ignore[django-manager-missing]
         null=True,
         blank=True,
         upload_to='users/',
-        validators=[
-            ImageExtensionValidator,
-            ImageSizeValidator,
-        ],
+        validators=[ImageExtensionValidator, ImageSizeValidator, ImageContentValidator],
+        help_text=_('Please upload a PNG or JPG file.'),
     )
 
     # Required fields for AbstractBaseUser

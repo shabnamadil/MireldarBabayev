@@ -2,11 +2,12 @@ import os
 from dataclasses import dataclass
 from typing import Callable
 
-from tests.slow.web_ui.helpers.download import download_image
-from tests.slow.web_ui.helpers.generate_image import (
+from tests.utils.helpers import (
+    download_image,
     generate_invalid_image,
     generate_valid_image_with_disallowed_extension,
 )
+from tests.utils.helpers.generate_image import create_empty_image
 
 
 @dataclass
@@ -44,7 +45,9 @@ class ImageInputHelper:
             ),
             ImageHandler(
                 condition=lambda name: 'empty' in name,
-                generate_path=lambda name: self._generate_asset_path(name),
+                generate_path=lambda name: self._generate_asset_path(
+                    create_empty_image(name)
+                ),
             ),
         ]
 

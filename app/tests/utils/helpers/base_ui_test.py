@@ -5,7 +5,7 @@ from selenium import webdriver
 from .retry import RetryTestCase
 
 
-class BaseTest(StaticLiveServerTestCase, RetryTestCase):
+class BaseUITest(StaticLiveServerTestCase, RetryTestCase):
     """Base class for all tests."""
 
     def setUp(self):

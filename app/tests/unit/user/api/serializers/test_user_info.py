@@ -2,7 +2,7 @@ from django.templatetags.static import static
 
 from apps.user.api.serializers import UserInfoSerializer
 from rest_framework.test import APIRequestFactory, APITestCase
-from tests.factories.user_factory import UserFactory
+from tests.utils.factories import UserFactory
 
 
 class TestUserInfoSerializer(APITestCase):

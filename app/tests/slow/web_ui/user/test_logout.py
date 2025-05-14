@@ -1,11 +1,10 @@
-from tests.factories import UserFactory
-from tests.slow.web_ui.functionalities.logout import LogoutFunctionality
-from tests.slow.web_ui.helpers.base_test import BaseTest
-from tests.slow.web_ui.pages.base import BasePage
-from tests.slow.web_ui.pages.login_page import LoginPage
+from tests.slow.web_ui.functionalities import LogoutFunctionality
+from tests.slow.web_ui.pages import BasePage, LoginPage
+from tests.utils.factories import UserFactory
+from tests.utils.helpers import BaseUITest
 
 
-class LogoutFunctionalityTest(BaseTest):
+class LogoutFunctionalityTest(BaseUITest):
     """Test class for logout functionality."""
 
     def setUp(self):

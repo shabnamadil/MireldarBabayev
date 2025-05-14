@@ -2,7 +2,7 @@ from django.urls import reverse
 
 from rest_framework import status
 from rest_framework.test import APITestCase
-from tests.factories.user_factory import UserFactory
+from tests.utils.factories import UserFactory
 
 
 class TestCustomTokenObtainPairView(APITestCase):

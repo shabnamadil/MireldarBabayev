@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-30 13:46+0400\n"
+"POT-Creation-Date: 2025-05-13 15:57+0400\n"
 "PO-Revision-Date: 2025-04-28 21:46+0400\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,50 +19,143 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.10.1\n"
 
-#: apps/user/api/serializers.py:17
+#: apps/blog/models/blog.py:98
+#, fuzzy, python-brace-format
+#| msgid "This email already exists."
+msgid "\"{self.title}\" article already exists."
+msgstr "Bu email ilə istifadəçi artıq mövcuddur."
+
+#: apps/service/models/service.py:14
 #, fuzzy
-#| msgid "This field is required."
-msgid "Email is required."
-msgstr "Bu sahə boş ola bilməz"
+#| msgid "Hello"
+msgid "yellow"
+msgstr "Salam"
 
-#: apps/user/api/serializers.py:18
+#: apps/service/models/service.py:15
+msgid "green"
+msgstr ""
+
+#: apps/service/models/service.py:16
+msgid "blue"
+msgstr "mavi"
+
+#: apps/service/models/service.py:19
 #, fuzzy
-#| msgid "Email us"
-msgid "Enter a valid email address."
-msgstr "Bizə yazın"
+#| msgid "Services"
+msgid "Service name"
+msgstr "Xidmətlər"
 
-#: apps/user/api/serializers.py:19
-msgid "A user with"
-msgstr "istleeee"
+#: apps/service/models/service.py:22 apps/user/models/user.py:21
+#: apps/user/models/user.py:26
+msgid "The content length is a maximum of 30."
+msgstr "Kontentin uzunluğu maksimum 30-dur."
 
-#: apps/user/api/serializers.py:39 apps/user/models/user.py:28
-#| msgid "This email is already registered."
-msgid "This email is already registered."
-msgstr "Bu epoçt-ünvanı artıq qeydiyyatdan keçib."
+#: apps/service/models/service.py:25
+msgid "Short description"
+msgstr ""
 
-#: apps/user/api/serializers.py:50
+#: apps/service/models/service.py:27
+#, fuzzy
+#| msgid "The content length is a maximum of 30."
+msgid "The content length is a maximum of 160, minimum of 145."
+msgstr "Kontentin uzunluğu maksimum 30-dur."
+
+#: apps/service/models/service.py:30
+msgid "PNG file"
+msgstr ""
+
+#: apps/service/models/service.py:32
+msgid "Please upload a PNG file.(94x74px)"
+msgstr ""
+
+#: apps/service/models/service.py:34
+msgid "Main photo"
+msgstr ""
+
+#: apps/service/models/service.py:36
+msgid "Title"
+msgstr ""
+
+#: apps/service/models/service.py:40
+#, fuzzy
+#| msgid "The content length is a maximum of 30."
+msgid "The content length is a maximum of 60, minimum of 30."
+msgstr "Kontentin uzunluğu maksimum 30-dur."
+
+#: apps/service/models/service.py:43
+#, fuzzy
+#| msgid "Contact"
+msgid "Content"
+msgstr "Əlaqə"
+
+#: apps/service/models/service.py:44
+#, fuzzy
+#| msgid "The content length is a maximum of 30."
+msgid "The content length is a maximum of 1000, minimum of 300."
+msgstr "Kontentin uzunluğu maksimum 30-dur."
+
+#: apps/service/models/service.py:48
+msgid "Background color"
+msgstr ""
+
+#: apps/service/models/service.py:51
+msgid "Slug"
+msgstr ""
+
+#: apps/service/models/service.py:54
+msgid "Leave blank to auto-generate."
+msgstr ""
+
+#: apps/service/models/service.py:59
+#, fuzzy
+#| msgid "Services"
+msgid "Service"
+msgstr "Xidmətlər"
+
+#: apps/service/models/service.py:60
+#: templates/components/footer/partials/quick-links.html:8
+#: templates/components/navbar/navbar.html:17
+#: templates/components/service/partials/subheader.html:10
+#: templates/components/service/partials/subheader.html:15
+#: templates/components/service/services.html:10
+msgid "Services"
+msgstr "Xidmətlər"
+
+#: apps/service/models/service.py:66
+msgid "Only PNG files are accepted."
+msgstr ""
+
+#: apps/user/api/serializers.py:35
 msgid "This field is required."
 msgstr "Bu sahə boş ola bilməz"
 
-#: apps/user/api/serializers.py:57
+#: apps/user/api/serializers.py:42
 msgid "Passwords do not match."
 msgstr "Şifrələr uyğun gəlmir"
 
-#: apps/user/models/user.py:15
+#: apps/user/manager/custom_user_manager.py:8
+msgid "The Email field must be set."
+msgstr ""
+
+#: apps/user/manager/custom_user_manager.py:20
+msgid "Superuser must have is_staff=True."
+msgstr ""
+
+#: apps/user/manager/custom_user_manager.py:22
+msgid "Superuser must have is_superuser=True."
+msgstr ""
+
+#: apps/user/models/user.py:19
 #: templates/components/contact/partials/contact-form.html:16
 msgid "First Name"
 msgstr "Adınız"
 
-#: apps/user/models/user.py:17 apps/user/models/user.py:22
-msgid "The content length is a maximum of 30."
-msgstr "Kontentin uzunluğu maksimum 30-dur."
-
-#: apps/user/models/user.py:20
+#: apps/user/models/user.py:24
 #: templates/components/contact/partials/contact-form.html:23
 msgid "Last Name"
 msgstr "Soyadınız"
 
-#: apps/user/models/user.py:25
+#: apps/user/models/user.py:29
 #: templates/components/contact/partials/contact-info.html:17
 #: templates/components/service/partials/contact.html:16
 #: templates/components/user/login/partials/form.html:15
@@ -71,15 +164,47 @@ msgid "Email"
 msgstr "Email"
 
 #: apps/user/models/user.py:32
+msgid "This email is already registered."
+msgstr "Bu epoçt-ünvanı artıq qeydiyyatdan keçib."
+
+#: apps/user/models/user.py:33
+#, fuzzy
+#| msgid "Email us"
+msgid "Enter a valid email address."
+msgstr "Bizə yazın"
+
+#: apps/user/models/user.py:37
 #: templates/components/user/register/partials/form.html:39
 msgid "Image"
 msgstr ""
 
 #: apps/user/models/user.py:49
+msgid "staff status"
+msgstr ""
+
+#: apps/user/models/user.py:51
+msgid "Designates whether the user can log into this admin site."
+msgstr ""
+
+#: apps/user/models/user.py:54
+msgid "active"
+msgstr ""
+
+#: apps/user/models/user.py:57
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+
+#: apps/user/models/user.py:61
+msgid "date joined"
+msgstr ""
+
+#: apps/user/models/user.py:69
 msgid "User"
 msgstr "İstifadəçi"
 
-#: apps/user/models/user.py:50
+#: apps/user/models/user.py:70
 msgid "Users"
 msgstr "İstifadəçilər"
 
@@ -270,32 +395,32 @@ msgstr "Əvvəlki"
 msgid "Next"
 msgstr "Sonrakı"
 
-#: templates/components/blog/blog-detail.html:146
+#: templates/components/blog/blog-detail.html:144
 #: templates/components/blog/blog-list.html:76
 msgid "Search"
 msgstr "Axtar"
 
-#: templates/components/blog/blog-detail.html:152
+#: templates/components/blog/blog-detail.html:150
 #: templates/components/blog/blog-list.html:82
 msgid "Search here"
 msgstr "Açar sözü yazın"
 
-#: templates/components/blog/blog-detail.html:161
+#: templates/components/blog/blog-detail.html:159
 #: templates/components/blog/blog-list.html:91
 msgid "Popular Posts"
 msgstr "Ən çox oxunan postlar"
 
-#: templates/components/blog/blog-detail.html:171
+#: templates/components/blog/blog-detail.html:169
 #: templates/components/blog/blog-list.html:101
 msgid "Categories"
 msgstr "Kateqoriyalar"
 
-#: templates/components/blog/blog-detail.html:181
+#: templates/components/blog/blog-detail.html:179
 #: templates/components/blog/blog-list.html:111
 msgid "Tags"
 msgstr "Teqlər"
 
-#: templates/components/blog/blog-detail.html:193
+#: templates/components/blog/blog-detail.html:191
 #: templates/components/blog/blog-list.html:123
 msgid "Follow Us"
 msgstr "Bizi izləyin"
@@ -511,14 +636,6 @@ msgstr "Xəbər bülleteni"
 #: templates/components/footer/footer.html:52
 msgid "Allrights Reserved"
 msgstr "Bütün haqlar qorunur"
-
-#: templates/components/footer/partials/quick-links.html:8
-#: templates/components/navbar/navbar.html:17
-#: templates/components/service/partials/subheader.html:10
-#: templates/components/service/partials/subheader.html:15
-#: templates/components/service/services.html:10
-msgid "Services"
-msgstr "Xidmətlər"
 
 #: templates/components/header/top-bar.html:18
 msgid "Mail us"
@@ -741,19 +858,22 @@ msgstr ""
 msgid "Login here"
 msgstr "Daxil ol"
 
-#: utils/validators/validate_image.py:9
+#: utils/validators/validate_image.py:8
 #, python-brace-format
 msgid "Image size should not exceed {max_size_mb} MB."
 msgstr ""
 
-#: utils/validators/validate_image.py:17
+#: utils/validators/validate_image.py:14
 msgid "Only JPG, PNG, and JPEG files are accepted."
 msgstr ""
 
 #, fuzzy
-#~| msgid "This email already exists."
-#~ msgid "A user with this email already exists."
-#~ msgstr "Bu email ilə istifadəçi artıq mövcuddur."
+#~| msgid "This field is required."
+#~ msgid "Email is required."
+#~ msgstr "Bu sahə boş ola bilməz"
+
+#~ msgid "A user with"
+#~ msgstr "istleeee"
 
 #, fuzzy
 #~ msgid "Email cannot be blank."

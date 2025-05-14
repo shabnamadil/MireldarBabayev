@@ -103,3 +103,22 @@ class BaseValidationTest(TestCase):
             setattr(instance, url_field, url)
             with self.assertRaises(ValidationError):
                 instance.full_clean()
+
+    def assert_required_field(self, instance, field):
+        """Test that a required field raises a validation error."""
+        setattr(instance, field, None)
+        with self.assertRaises(ValidationError):
+            instance.full_clean()
+
+    def assert_slug_auto_generation(self, instance, slug_field):
+        """Test that the slug is auto-generated."""
+        setattr(instance, slug_field, None)
+        instance.save()
+        self.assertIsNotNone(getattr(instance, slug_field))
+        self.assertNotEqual(getattr(instance, slug_field), '')
+
+    def assert_invalid_image(self, instance, image_field, fake_file):
+        """Test that an invalid image raises a validation error."""
+        setattr(instance, image_field, fake_file)
+        with self.assertRaises(ValidationError):
+            instance.full_clean()

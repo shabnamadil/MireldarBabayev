@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.utils.translation import activate
 
 from selenium.webdriver.common.by import By
-from tests.slow.web_ui.pages.base import BasePage
+from tests.slow.web_ui.pages import BasePage
 
 
 class LoginPage(BasePage):

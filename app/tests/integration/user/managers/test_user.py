@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 from django.db.utils import IntegrityError
 
-from tests.factories.user_factory import UserFactory
+from tests.utils.factories import UserFactory
 from utils.tests.base import BaseValidationTest
 
 User = get_user_model()

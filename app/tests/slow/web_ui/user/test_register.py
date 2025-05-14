@@ -1,10 +1,9 @@
-from tests.factories.user_factory import UserFactory
-from tests.slow.web_ui.helpers.base_test import BaseTest
-from tests.slow.web_ui.helpers.translations import TRANSLATIONS
-from tests.slow.web_ui.pages.register_page import RegisterPage
+from tests.slow.web_ui.pages import RegisterPage
+from tests.utils.factories import UserFactory
+from tests.utils.helpers import TRANSLATIONS, BaseUITest
 
 
-class RegisterPageTest(BaseTest):
+class RegisterPageTest(BaseUITest):
 
     def setUp(self):
         super().setUp()
@@ -186,7 +185,7 @@ class RegisterPageTest(BaseTest):
             'Jhon',
             'Doe',
             'jhon@gmail.com',
-            'empty.txt',
+            'empty.jpg',
             'jhondoe1234',
             'jhondoe1234',
         )

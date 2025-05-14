@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-30 13:46+0400\n"
+"POT-Creation-Date: 2025-05-13 15:57+0400\n"
 "PO-Revision-Date: 2025-04-28 21:50+0400\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,45 +19,128 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.10.1\n"
 
-#: apps/user/api/serializers.py:17
-msgid "Email is required."
+#: apps/blog/models/blog.py:98
+#, python-brace-format
+msgid "\"{self.title}\" article already exists."
 msgstr ""
 
-#: apps/user/api/serializers.py:18
-msgid "Enter a valid email address."
+#: apps/service/models/service.py:14
+msgid "yellow"
 msgstr ""
 
-#: apps/user/api/serializers.py:19
-msgid "A user with"
+#: apps/service/models/service.py:15
+msgid "green"
 msgstr ""
 
-#: apps/user/api/serializers.py:39 apps/user/models/user.py:28
-msgid "This email is already registered."
+#: apps/service/models/service.py:16
+msgid "blue"
 msgstr ""
 
-#: apps/user/api/serializers.py:50
+#: apps/service/models/service.py:19
+msgid "Service name"
+msgstr ""
+
+#: apps/service/models/service.py:22 apps/user/models/user.py:21
+#: apps/user/models/user.py:26
+msgid "The content length is a maximum of 30."
+msgstr ""
+
+#: apps/service/models/service.py:25
+msgid "Short description"
+msgstr ""
+
+#: apps/service/models/service.py:27
+msgid "The content length is a maximum of 160, minimum of 145."
+msgstr ""
+
+#: apps/service/models/service.py:30
+msgid "PNG file"
+msgstr ""
+
+#: apps/service/models/service.py:32
+msgid "Please upload a PNG file.(94x74px)"
+msgstr ""
+
+#: apps/service/models/service.py:34
+msgid "Main photo"
+msgstr ""
+
+#: apps/service/models/service.py:36
+msgid "Title"
+msgstr ""
+
+#: apps/service/models/service.py:40
+msgid "The content length is a maximum of 60, minimum of 30."
+msgstr ""
+
+#: apps/service/models/service.py:43
+msgid "Content"
+msgstr ""
+
+#: apps/service/models/service.py:44
+msgid "The content length is a maximum of 1000, minimum of 300."
+msgstr ""
+
+#: apps/service/models/service.py:48
+msgid "Background color"
+msgstr ""
+
+#: apps/service/models/service.py:51
+msgid "Slug"
+msgstr ""
+
+#: apps/service/models/service.py:54
+msgid "Leave blank to auto-generate."
+msgstr ""
+
+#: apps/service/models/service.py:59
+msgid "Service"
+msgstr ""
+
+#: apps/service/models/service.py:60
+#: templates/components/footer/partials/quick-links.html:8
+#: templates/components/navbar/navbar.html:17
+#: templates/components/service/partials/subheader.html:10
+#: templates/components/service/partials/subheader.html:15
+#: templates/components/service/services.html:10
+msgid "Services"
+msgstr ""
+
+#: apps/service/models/service.py:66
+msgid "Only PNG files are accepted."
+msgstr ""
+
+#: apps/user/api/serializers.py:35
 msgid "This field is required."
 msgstr ""
 
-#: apps/user/api/serializers.py:57
+#: apps/user/api/serializers.py:42
 msgid "Passwords do not match."
 msgstr ""
 
-#: apps/user/models/user.py:15
+#: apps/user/manager/custom_user_manager.py:8
+msgid "The Email field must be set."
+msgstr ""
+
+#: apps/user/manager/custom_user_manager.py:20
+msgid "Superuser must have is_staff=True."
+msgstr ""
+
+#: apps/user/manager/custom_user_manager.py:22
+msgid "Superuser must have is_superuser=True."
+msgstr ""
+
+#: apps/user/models/user.py:19
 #: templates/components/contact/partials/contact-form.html:16
 msgid "First Name"
 msgstr ""
 
-#: apps/user/models/user.py:17 apps/user/models/user.py:22
-msgid "The content length is a maximum of 30."
-msgstr ""
-
-#: apps/user/models/user.py:20
+#: apps/user/models/user.py:24
 #: templates/components/contact/partials/contact-form.html:23
 msgid "Last Name"
 msgstr ""
 
-#: apps/user/models/user.py:25
+#: apps/user/models/user.py:29
 #: templates/components/contact/partials/contact-info.html:17
 #: templates/components/service/partials/contact.html:16
 #: templates/components/user/login/partials/form.html:15
@@ -66,15 +149,45 @@ msgid "Email"
 msgstr ""
 
 #: apps/user/models/user.py:32
+msgid "This email is already registered."
+msgstr ""
+
+#: apps/user/models/user.py:33
+msgid "Enter a valid email address."
+msgstr ""
+
+#: apps/user/models/user.py:37
 #: templates/components/user/register/partials/form.html:39
 msgid "Image"
 msgstr ""
 
 #: apps/user/models/user.py:49
+msgid "staff status"
+msgstr ""
+
+#: apps/user/models/user.py:51
+msgid "Designates whether the user can log into this admin site."
+msgstr ""
+
+#: apps/user/models/user.py:54
+msgid "active"
+msgstr ""
+
+#: apps/user/models/user.py:57
+msgid ""
+"Designates whether this user should be treated as active. Unselect this "
+"instead of deleting accounts."
+msgstr ""
+
+#: apps/user/models/user.py:61
+msgid "date joined"
+msgstr ""
+
+#: apps/user/models/user.py:69
 msgid "User"
 msgstr ""
 
-#: apps/user/models/user.py:50
+#: apps/user/models/user.py:70
 msgid "Users"
 msgstr ""
 
@@ -265,32 +378,32 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: templates/components/blog/blog-detail.html:146
+#: templates/components/blog/blog-detail.html:144
 #: templates/components/blog/blog-list.html:76
 msgid "Search"
 msgstr ""
 
-#: templates/components/blog/blog-detail.html:152
+#: templates/components/blog/blog-detail.html:150
 #: templates/components/blog/blog-list.html:82
 msgid "Search here"
 msgstr ""
 
-#: templates/components/blog/blog-detail.html:161
+#: templates/components/blog/blog-detail.html:159
 #: templates/components/blog/blog-list.html:91
 msgid "Popular Posts"
 msgstr ""
 
-#: templates/components/blog/blog-detail.html:171
+#: templates/components/blog/blog-detail.html:169
 #: templates/components/blog/blog-list.html:101
 msgid "Categories"
 msgstr ""
 
-#: templates/components/blog/blog-detail.html:181
+#: templates/components/blog/blog-detail.html:179
 #: templates/components/blog/blog-list.html:111
 msgid "Tags"
 msgstr ""
 
-#: templates/components/blog/blog-detail.html:193
+#: templates/components/blog/blog-detail.html:191
 #: templates/components/blog/blog-list.html:123
 msgid "Follow Us"
 msgstr ""
@@ -500,14 +613,6 @@ msgstr ""
 msgid "Allrights Reserved"
 msgstr ""
 
-#: templates/components/footer/partials/quick-links.html:8
-#: templates/components/navbar/navbar.html:17
-#: templates/components/service/partials/subheader.html:10
-#: templates/components/service/partials/subheader.html:15
-#: templates/components/service/services.html:10
-msgid "Services"
-msgstr ""
-
 #: templates/components/header/top-bar.html:18
 msgid "Mail us"
 msgstr ""
@@ -706,12 +811,12 @@ msgstr ""
 msgid "Login here"
 msgstr ""
 
-#: utils/validators/validate_image.py:9
+#: utils/validators/validate_image.py:8
 #, python-brace-format
 msgid "Image size should not exceed {max_size_mb} MB."
 msgstr ""
 
-#: utils/validators/validate_image.py:17
+#: utils/validators/validate_image.py:14
 msgid "Only JPG, PNG, and JPEG files are accepted."
 msgstr ""
 

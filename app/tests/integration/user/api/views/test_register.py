@@ -1,29 +1,19 @@
-from io import BytesIO
-
 from django.contrib.auth import get_user_model
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.urls import reverse
 
-from PIL import Image
 from rest_framework import status
 from rest_framework.test import APITestCase
+from tests.utils.helpers import create_valid_test_image
 
 User = get_user_model()
-
-
-def create_test_image():
-    buffer = BytesIO()
-    image = Image.new('RGB', (100, 100), color='blue')
-    image.save(buffer, format='JPEG')
-    buffer.seek(0)
-    return SimpleUploadedFile('avatar.jpg', buffer.read(), content_type='image/jpeg')
 
 
 class TestRegisterAPI(APITestCase):
     @classmethod
     def setUpTestData(cls):
         cls.url = reverse('register_api')
-        cls.image = create_test_image()
+        cls.image = create_valid_test_image()
         cls.data = {
             "first_name": "John",
             "last_name": "Doe",
@@ -63,11 +53,60 @@ class TestRegisterAPI(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.assertIn('password', response.data)
 
-    def test_invalid_image_upload(self):
+    def test_image_upload_with_invalid_content_and_txt_extension(self):
         invalid_image = SimpleUploadedFile(
             name='test_image.txt',
-            content=b'not an image',  # Not valid image data
+            content=b'not an image',
             content_type='text/plain',
+        )
+        self.data["image"] = invalid_image
+
+        response = self.client.post(self.url, self.data, format='multipart')
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertIn('image', response.data)
+
+    def test_empty_image_upload(self):
+        empty_image = SimpleUploadedFile(
+            name='empty_image.jpg',
+            content=b'',
+            content_type='image/jpeg',
+        )
+        self.data["image"] = empty_image
+
+        response = self.client.post(self.url, self.data, format='multipart')
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertIn('image', response.data)
+
+    def test_large_image_upload(self):
+        large_image = SimpleUploadedFile(
+            name='large_image.jpg',
+            content=b'0' * (5 * 1024 * 1024),  # 5 MB
+            content_type='image/jpeg',
+        )
+        self.data["image"] = large_image
+
+        response = self.client.post(self.url, self.data, format='multipart')
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertIn('image', response.data)
+
+    def test_disallowed_image_extension_with_invalid_content(self):
+        invalid_image = SimpleUploadedFile(
+            name='test_image.webp',
+            content=b'not an image',
+            content_type='image/webp',
+        )
+        self.data["image"] = invalid_image
+
+        response = self.client.post(self.url, self.data, format='multipart')
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertIn('image', response.data)
+
+    def test_disallowed_image_extension_with_valid_image(self):
+        valid_image = create_valid_test_image()
+        invalid_image = SimpleUploadedFile(
+            name='test_image.webp',
+            content=valid_image.read(),
+            content_type='image/webp',
         )
         self.data["image"] = invalid_image
 

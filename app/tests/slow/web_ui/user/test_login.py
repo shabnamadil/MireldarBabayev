@@ -1,11 +1,9 @@
-from tests.factories import UserFactory
-from tests.slow.web_ui.helpers.base_test import BaseTest
-from tests.slow.web_ui.helpers.translations import TRANSLATIONS
-from tests.slow.web_ui.pages.base import BasePage
-from tests.slow.web_ui.pages.login_page import LoginPage
+from tests.slow.web_ui.pages import BasePage, LoginPage
+from tests.utils.factories import UserFactory
+from tests.utils.helpers import TRANSLATIONS, BaseUITest
 
 
-class LoginPageTest(BaseTest):
+class LoginPageTest(BaseUITest):
 
     def setUp(self):
         super().setUp()

@@ -2,7 +2,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from tests.slow.web_ui.helpers.image_handler import ImageInputHelper
+from tests.utils.helpers import ImageInputHelper
 
 
 class BasePage:

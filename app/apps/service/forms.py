@@ -21,4 +21,4 @@ class DownloadBaseForm(forms.ModelForm):
         if file:
             validate_extension(file.name)
             validate_type(file.name, file_type)
-        return cleaned_data
+        return file
