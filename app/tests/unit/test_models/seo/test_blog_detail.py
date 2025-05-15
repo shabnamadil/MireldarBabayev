@@ -32,9 +32,7 @@ class TestBlogDetailPageSeoModel(BaseValidationTest):
             "og_description": "This is a valid OG description for testing SEO constraints.",
         }
 
-        cls.instance, created = BlogDetailPageSeo.objects.get_or_create(
-            blog=cls.blog
-        )
+        cls.instance, created = BlogDetailPageSeo.objects.get_or_create(blog=cls.blog)
 
         for key, value in cls.valid_data.items():
             setattr(cls.instance, key, value)

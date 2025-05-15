@@ -3,14 +3,16 @@ import datetime
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
-from django.db.models.signals import post_delete, post_save
+from django.db.models.signals import post_delete, post_save, pre_save
 from django.dispatch import receiver
 from django.template.loader import render_to_string
+from django.utils import timezone
+from django.utils.text import slugify as custom_slugify
 
 from apps.blog.models import Blog, Comment
 from apps.core.models import SiteSettings
 from apps.seo.models import BlogDetailPageSeo
-from apps.user.middleware import get_current_user
+from crum import get_current_user
 
 User = get_user_model()
 
@@ -18,7 +20,8 @@ User = get_user_model()
 @receiver(post_delete, sender=Comment)
 def notify_user_on_comment_delete(sender, instance, **kwargs):
     current_user = get_current_user()
-    if instance.author.is_staff or instance.author == current_user:
+
+    if not current_user or current_user == instance.author or instance.author.is_staff:
         return
 
     subject = "Your comment has been deleted"
@@ -47,3 +50,14 @@ def notify_user_on_comment_delete(sender, instance, **kwargs):
 def create_blog_detail_page_object_seo(sender, instance, created, **kwargs):
     if created:
         BlogDetailPageSeo.objects.create(blog=instance)
+
+
+@receiver(pre_save, sender=Blog)
+def set_blog_slug_and_published_at(sender, instance, **kwargs):
+    if not instance.slug:
+        instance.slug = custom_slugify(instance.title)
+        while Blog.objects.filter(slug=instance.slug).exists():
+            instance.slug = f"{instance.slug}-{instance.pk}"
+
+    if instance.status == Blog.Status.PUBLISHED and instance.published_at is None:
+        instance.published_at = timezone.now()

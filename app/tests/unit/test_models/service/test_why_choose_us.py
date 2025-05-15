@@ -28,9 +28,7 @@ class TestWhyChooseUsModel(BaseValidationTest):
 
     def test_model(self):
         self.assert_model_instance(WhyChooseUs, 'title', 'Test object')
-        self.assert_model_instance(
-            WhyChooseUs, 'short_description', 'Test desc'
-        )
+        self.assert_model_instance(WhyChooseUs, 'short_description', 'Test desc')
         self.assertTrue(self.object.png.name.startswith('why_choose_us/'))
         self.assertTrue(self.object.png.name.endswith('png'))
 

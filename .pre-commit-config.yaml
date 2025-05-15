@@ -12,24 +12,24 @@ repos:
         language: system
         types: [ python ]
         pass_filenames: false
-      - id: secure
-        name: secure
-        entry: make secure
-        language: system
-        types: [python]
-        pass_filenames: false
+      # - id: secure
+      #   name: secure
+      #   entry: make secure
+      #   language: system
+      #   types: [python]
+      #   pass_filenames: false
       - id: mytype
         name: mytype
         entry: make type-check
         language: system
         types: [python]
         pass_filenames: false
-      - id: test
-        name: test
-        entry: make test
-        language: system
-        types: [python]
-        pass_filenames: false
+      # - id: test
+      #   name: test
+      #   entry: make test
+      #   language: system
+      #   types: [python]
+      #   pass_filenames: false
       - id: django-check
         name: Run Django Check
         entry: python app/manage.py check

@@ -45,7 +45,13 @@ class ContactAdmin(admin.ModelAdmin):
     list_filter = ('created_at',)
     date_hierarchy = 'created_at'
     list_per_page = 20
-    search_fields = ('first_name', 'last_name', 'email', 'message', 'subject')
+    search_fields = (
+        'first_name',
+        'last_name',
+        'email',
+        'message',
+        'subject',
+    )
 
     def full_name(self, obj):
         return f'{obj.first_name} {obj.last_name}'

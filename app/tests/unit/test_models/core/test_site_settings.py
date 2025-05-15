@@ -14,13 +14,11 @@ class TestSiteSettingsModel(BaseValidationTest):
             logo=SimpleUploadedFile(
                 "test1.png",
                 b"dummy png content",
-                content_type="image/png"
-            ),
+                content_type="image/png"),
             favicon=SimpleUploadedFile(
                 "test1.png",
                 b"dummy png content",
-                content_type="image/png"
-            ),
+                content_type="image/png"),
             location='Test location',
             number='+1234567890',
             email='test@gmail.com',
@@ -32,32 +30,46 @@ class TestSiteSettingsModel(BaseValidationTest):
             twitter='https://twitter.com/',
             linkedin='https://linkedin.com/',
             tiktok='https://tiktok.com/',
-            footer_description='Test footer description'
-        )
+            footer_description='Test footer description')
 
     def test_model(self):
         self.assert_model_instance(SiteSettings, 'site_name', 'a' * 30)
-        self.assert_model_instance(SiteSettings, 'location', 'Test location')
+        self.assert_model_instance(
+            SiteSettings, 'location', 'Test location')
         self.assert_model_instance(SiteSettings, 'number', '+1234567890')
         self.assert_model_instance(SiteSettings, 'email', 'test@gmail.com')
-        self.assert_model_instance(SiteSettings, 'work_hours', '09:00 - 18:00')
+        self.assert_model_instance(
+            SiteSettings, 'work_hours', '09:00 - 18:00')
         self.assert_model_instance(
             SiteSettings,
             'map_url',
             'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d...')
-        self.assert_model_instance(SiteSettings, 'facebook', 'https://facebook.com/')
-        self.assert_model_instance(SiteSettings, 'youtube', 'https://youtube.com/')
-        self.assert_model_instance(SiteSettings, 'instagram', 'https://instagram.com/')
-        self.assert_model_instance(SiteSettings, 'twitter', 'https://twitter.com/')
-        self.assert_model_instance(SiteSettings, 'linkedin', 'https://linkedin.com/')
-        self.assert_model_instance(SiteSettings, 'tiktok', 'https://tiktok.com/')
+        self.assert_model_instance(
+            SiteSettings,
+            'facebook',
+            'https://facebook.com/')
+        self.assert_model_instance(
+            SiteSettings, 'youtube', 'https://youtube.com/')
+        self.assert_model_instance(
+            SiteSettings,
+            'instagram',
+            'https://instagram.com/')
+        self.assert_model_instance(
+            SiteSettings, 'twitter', 'https://twitter.com/')
+        self.assert_model_instance(
+            SiteSettings,
+            'linkedin',
+            'https://linkedin.com/')
+        self.assert_model_instance(
+            SiteSettings, 'tiktok', 'https://tiktok.com/')
         self.assert_model_instance(
             SiteSettings,
             'footer_description',
             'Test footer description')
         self.assertTrue(self.site_settings.logo.name.startswith('logos/'))
         self.assertTrue(self.site_settings.logo.name.endswith('png'))
-        self.assertTrue(self.site_settings.favicon.name.startswith('favicons/'))
+        self.assertTrue(
+            self.site_settings.favicon.name.startswith('favicons/'))
         self.assertTrue(self.site_settings.favicon.name.endswith('png'))
 
     def str_method(self):
@@ -83,7 +95,9 @@ class TestSiteSettingsModel(BaseValidationTest):
         self.assert_max_length(self.site_settings, 'number', 17)
 
     def test_number(self):
-        self.assert_invalid_number(self.site_settings, number_field='number')
+        self.assert_invalid_number(
+            self.site_settings,
+            number_field='number')
 
     def test_email(self):
         self.assert_invalid_email(self.site_settings, email_field='email')
@@ -143,9 +157,14 @@ class TestSiteSettingsModel(BaseValidationTest):
 
     def test_invalid_soical_media_links(self):
         """Ensure valid URLs do not raise validation error"""
-        self.assert_invalid_social_media_urls(self.site_settings, 'facebook')
-        self.assert_invalid_social_media_urls(self.site_settings, 'instagram')
-        self.assert_invalid_social_media_urls(self.site_settings, 'twitter')
-        self.assert_invalid_social_media_urls(self.site_settings, 'linkedin')
-        self.assert_invalid_social_media_urls(self.site_settings, 'youtube')
+        self.assert_invalid_social_media_urls(
+            self.site_settings, 'facebook')
+        self.assert_invalid_social_media_urls(
+            self.site_settings, 'instagram')
+        self.assert_invalid_social_media_urls(
+            self.site_settings, 'twitter')
+        self.assert_invalid_social_media_urls(
+            self.site_settings, 'linkedin')
+        self.assert_invalid_social_media_urls(
+            self.site_settings, 'youtube')
         self.assert_invalid_social_media_urls(self.site_settings, 'tiktok')

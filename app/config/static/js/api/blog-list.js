@@ -8,12 +8,6 @@ const clearFilterButton = document.getElementById('clearfilter');
 const nextBlogs = document.getElementById('nextBlogs');
 const previousBlogs = document.getElementById('previousBlogs');
 
-const BlogListTranslations = {
-    en: "Read More",
-    az: "Daha çox",
-    ru: "Читать далее"
-};
-
 let currentPage = 1;
 let currentCategory = null;
 let currentTag = null;
@@ -211,10 +205,6 @@ function renderBlogs(blogs) {
     appendBlogs(blogs);
 }
 
-// Function to get the translation
-function translateBlogListLang(key, lang = 'en') {
-    return BlogListTranslations[lang] || BlogListTranslations['en'];
-}
 
 // Append blogs (adds more content to the existing list)
 function appendBlogs(blogs) {
@@ -242,7 +232,7 @@ function appendBlogs(blogs) {
                     </div>
                     <h3>${truncatedTitle}</h3>
                     <p>${blog.short_description}</p>
-                    <a href="${BLOG_PAGE_URL}${blog.slug}" class="btn btn-primary">${translateBlogListLang('read_more', userLang)}</a>
+                    <a href="${BLOG_PAGE_URL}${blog.slug}" class="btn btn-primary">${gettext('Read more')}</a>
                 </div>
             </div>
         `;
@@ -259,7 +249,7 @@ function truncateText(text, maxLength) {
 function displayFilterResults(query) {
     if (filterResults) {
         filterResults.classList.remove('d-none')
-        filterResults.innerHTML = `Results for <i>"${query}"</i>`;
+        filterResults.innerHTML = `${gettext('Results for')} <i>"${query}"</i>`;
     }
 }
 

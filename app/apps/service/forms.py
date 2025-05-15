@@ -1,6 +1,9 @@
 from django import forms
 
-from utils.helpers.validate_file import validate_extension, validate_type
+from utils.validators.validate_file import (
+    validate_extension,
+    validate_type,
+)
 
 from .models import Download
 
@@ -18,4 +21,4 @@ class DownloadBaseForm(forms.ModelForm):
         if file:
             validate_extension(file.name)
             validate_type(file.name, file_type)
-        return cleaned_data
+        return file

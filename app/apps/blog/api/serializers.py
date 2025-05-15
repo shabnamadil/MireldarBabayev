@@ -79,9 +79,7 @@ class CommentPostSerializer(serializers.ModelSerializer):
 
     def get_author_full_name(self, obj):
         return (
-            obj.author.get_full_name()
-            if obj.author.get_full_name()
-            else 'Admin User'
+            obj.author.get_full_name() if obj.author.get_full_name() else 'Admin User'
         )
 
     def get_author_photo(self, obj):
@@ -105,12 +103,8 @@ class CommentUpdateDestroySerializer(serializers.ModelSerializer):
 class BlogListSerializer(serializers.ModelSerializer):
     category = serializers.SerializerMethodField()
     tag = serializers.SerializerMethodField()
-    author = serializers.CharField(
-        source='author.get_full_name', default='Admin User'
-    )
-    comment_count = serializers.IntegerField(
-        source='comments.count', read_only=True
-    )
+    author = serializers.CharField(source='author.get_full_name', default='Admin User')
+    comment_count = serializers.IntegerField(source='comments.count', read_only=True)
     comments = CommentListSerializer(many=True, read_only=True)
     has_next = serializers.BooleanField(default=True)
 

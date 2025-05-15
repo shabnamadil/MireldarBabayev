@@ -39,9 +39,7 @@ class TestDownloadModel(BaseValidationTest):
         self.assert_model_instance(Download, 'title', 'Test download')
         self.assert_model_instance(Download, 'type', 'pdf')
         self.assert_model_instance(Download, 'service', self.service)
-        self.assertTrue(
-            self.object.file.name.startswith('services/downloads/test')
-        )
+        self.assertTrue(self.object.file.name.startswith('services/downloads/test'))
         self.assertTrue(self.object.file.name.endswith('pdf'))
 
     def test_unique_together(self):
@@ -122,14 +120,14 @@ class TestDownloadModel(BaseValidationTest):
             title="Test File",
             type="pdf",
             file=SimpleUploadedFile(
-                "test.pdf", self.file_content, content_type="application/pdf"
+                "test.pdf",
+                self.file_content,
+                content_type="application/pdf",
             ),
             service=self.service,
         )
 
-        expected_size_bytes = len(
-            self.file_content
-        )  # Get actual size in bytes
+        expected_size_bytes = len(self.file_content)  # Get actual size in bytes
         formatted_size = self.object.file_size_formatted
 
         if expected_size_bytes < 1024:

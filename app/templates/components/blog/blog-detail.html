@@ -3,7 +3,7 @@
 {% load i18n %}
 
 {% block title %}
-<title>{{blog.title|default:settings.site_name}}</title>
+<title>{{blog.title}}</title>
 {% endblock title %}
  
 {% block seo %}
@@ -14,7 +14,7 @@
     <meta property="og:description" content="{{seo.og_description|default:default_description}}">
 {% endwith %}
     <meta property="og:title" content="{{blog.title}}">
-    <meta property="og:image" content="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{blog.image.url|default:settings.logo.url}}">
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{blog.image.url}}">
 
 {% endblock seo %}
 
@@ -132,9 +132,7 @@
                         </div>
                     </div>
                 </div>
-                {% if request.user.is_authenticated %}
                 {% include 'components/blog/partials/comment-form.html' %}
-                {% endif %}
                 {% include 'components/blog/modals/delete-modal.html' %}
                 <div class="comment-wrap" id="comments">
 

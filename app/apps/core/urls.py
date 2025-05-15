@@ -1,6 +1,11 @@
 from django.urls import path
 
-from .views import AboutUsPageView, ContactPageView, FaqListView, HomePageView
+from .views import (
+    AboutUsPageView,
+    ContactPageView,
+    FaqListView,
+    HomePageView,
+)
 
 urlpatterns = [
     path('contact/', ContactPageView.as_view(), name='contact'),
