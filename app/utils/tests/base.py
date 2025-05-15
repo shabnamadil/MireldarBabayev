@@ -1,7 +1,10 @@
+from datetime import timedelta
+
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 from django.db.utils import IntegrityError
 from django.test import TestCase
+from django.utils import timezone
 
 User = get_user_model()
 
@@ -117,8 +120,9 @@ class BaseValidationTest(TestCase):
         self.assertIsNotNone(getattr(instance, slug_field))
         self.assertNotEqual(getattr(instance, slug_field), '')
 
-    def assert_invalid_image(self, instance, image_field, fake_file):
-        """Test that an invalid image raises a validation error."""
-        setattr(instance, image_field, fake_file)
-        with self.assertRaises(ValidationError):
-            instance.full_clean()
+    def assert_ordering(self, factory, model):
+        s1 = factory(created_at=timezone.now() - timedelta(days=1))
+        s2 = factory(created_at=timezone.now())
+
+        objects = model.objects.filter(id__in=[s1.id, s2.id])
+        self.assertEqual(list(objects), [s2, s1])

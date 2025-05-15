@@ -108,6 +108,7 @@ db.sqlite3
 
 # Ignore all migration folders
 **/migrations/**
+**/migrations/*.py
 
 # Static/Media
 app/tests/assets/

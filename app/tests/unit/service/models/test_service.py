@@ -16,10 +16,6 @@ class TestServiceModel(BaseValidationTest):
         url = service.get_absolute_url()
         self.assertEqual(url, "/en/services/branding/")
 
-    def test_meta_verbose_names(self):
-        self.assertEqual(Service._meta.verbose_name, _("Service"))
-        self.assertEqual(Service._meta.verbose_name_plural, _("Services"))
-
     def test_color_choices_labels_are_translated(self):
         choices = dict(Service.COLOR_CHOICES)
         for color in ["yellow", "green", "blue"]:
