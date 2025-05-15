@@ -9,8 +9,8 @@ class UserFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = User
 
-    email = "test@gmail.com"
+    email = factory.Faker('email')
     password = factory.PostGenerationMethodCall('set_password', 'testpassword')
-    first_name = "John"
-    last_name = "Doe"
+    first_name = factory.Faker('first_name')
+    last_name = factory.Faker('last_name')
     image = factory.django.ImageField(color='blue', width=100, height=100)

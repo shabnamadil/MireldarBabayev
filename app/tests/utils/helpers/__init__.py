@@ -1,5 +1,6 @@
 from .base_ui_test import BaseUITest
 from .download import download_image
+from .generate_content import generate_factory_content
 from .generate_image import (
     create_valid_test_image,
     generate_invalid_image,

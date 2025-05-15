@@ -1,4 +1,3 @@
-from django.core.exceptions import ValidationError
 from django.core.validators import MaxLengthValidator, MinLengthValidator
 from django.db import models
 from django.urls import reverse_lazy
@@ -14,6 +13,10 @@ from utils.validators.validate_image import (
     validate_image_extension as ImageExtensionValidator,
 )
 from utils.validators.validate_image import validate_image_size as ImageSizeValidator
+from utils.validators.validate_png import validate_png_content as PngContentValidator
+from utils.validators.validate_png import (
+    validate_png_extension as PngExtensionValidator,
+)
 
 
 class Service(BaseModel):  # type: ignore[django-manager-missing]
@@ -37,7 +40,7 @@ class Service(BaseModel):  # type: ignore[django-manager-missing]
         _('PNG file'),
         upload_to='services/png/',
         help_text=_('Please upload a PNG file.(94x74px)'),
-        validators=[ImageSizeValidator],
+        validators=[ImageSizeValidator, PngExtensionValidator, PngContentValidator],
     )
     image = models.ImageField(
         _('Main photo'),
@@ -73,11 +76,6 @@ class Service(BaseModel):  # type: ignore[django-manager-missing]
         verbose_name_plural = _('Services')
         ordering = ['-created_at']
         indexes = [models.Index(fields=['-created_at'])]
-
-    def clean(self) -> None:
-        if self.png and not self.png.name.lower().endswith('.png'):
-            raise ValidationError(_('Only PNG files are accepted.'))
-        super().clean()
 
     def save(self, *args, **kwargs):
         if not self.slug:

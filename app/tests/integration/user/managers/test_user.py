@@ -52,5 +52,5 @@ class TestCustomUserManager(BaseValidationTest):
     ):
         with self.assertRaises(IntegrityError):
             User.objects.create_superuser(
-                email='test@gmail.com', password='testpassword'
+                email=self.user.email, password='testpassword'
             )

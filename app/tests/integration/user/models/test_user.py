@@ -22,7 +22,7 @@ class TestCustomUserModelIntegration(BaseValidationTest):
         self.assert_max_length(self.user, 'last_name', 30)
 
     def test_email_unique(self):
-        self.assert_unique_field(User, 'email', 'test@gmail.com')
+        self.assert_unique_field(User, 'email', self.user.email)
 
     def test_invalid_email_raises_validation_error(self):
         self.assert_invalid_email(self.user)
@@ -46,13 +46,13 @@ class TestCustomUserModelIntegration(BaseValidationTest):
         self.assert_object_deleted(User)
 
     def test_user_first_name_saved_correctly(self):
-        self.assert_model_instance(self.user, 'first_name', 'John')
+        self.assert_model_instance(self.user, 'first_name', self.user.first_name)
 
     def test_user_last_name_saved_correctly(self):
-        self.assert_model_instance(self.user, 'last_name', 'Doe')
+        self.assert_model_instance(self.user, 'last_name', self.user.last_name)
 
     def test_user_email_saved_correctly(self):
-        self.assert_model_instance(self.user, 'email', 'test@gmail.com')
+        self.assert_model_instance(self.user, 'email', self.user.email)
 
     def test_user_image_saved_correctly(self):
         self.assertTrue(self.user.image.name.startswith('users/'))
@@ -122,9 +122,12 @@ class TestCustomUserModelIntegration(BaseValidationTest):
             self.assert_invalid_image(self.user, 'image', fake_file)
 
     def test_raises_validation_error_when_invalid_image_size(self):
+        image = create_valid_test_image()
+        content = image.read()
+        large_content = content * ((5 * 1024 * 1024) // len(content) + 1)
         fake_file = SimpleUploadedFile(
             name='large_image.jpg',
-            content=b'0' * (5 * 1024 * 1024 + 1),  # 5MB + 1 byte
+            content=large_content,
             content_type='image/jpeg',
         )
         self.assert_invalid_image(self.user, 'image', fake_file)
