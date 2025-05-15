@@ -106,9 +106,9 @@ local_settings.py
 celerybeat-schedule*
 db.sqlite3
 
-# Migrations
-*/migrations/
-!*/migrations/__init__.py
+# Ignore all migration folders
+**/migrations/
+!**/migrations/__init__.py
 
 # Static/Media
 app/tests/assets/
