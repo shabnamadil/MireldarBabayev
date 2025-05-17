@@ -126,3 +126,33 @@ class BaseValidationTest(TestCase):
 
         objects = model.objects.filter(id__in=[s1.id, s2.id])
         self.assertEqual(list(objects), [s2, s1])
+
+    def assert_status_code(self, url):
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+
+    def assert_template_used(self, url, template):
+        response = self.client.get(url)
+        self.assertTemplateUsed(response, template)
+
+    def assert_all_objects_in_context(self, url, context_key, objects):
+        response = self.client.get(url)
+        self.assertIn(context_key, response.context)
+
+        for obj in objects:
+            with self.subTest(obj=obj):
+                self.assertIn(obj, response.context[context_key])
+
+    def assert_view_returns_all_objects(self, url, context_key, model):
+        response = self.client.get(url)
+        self.assertQuerysetEqual(
+            response.context[context_key].order_by('id'),
+            model.objects.all().order_by('id'),
+            transform=lambda x: x,  # compare actual objects, not repr()
+        )
+
+    def assert_view_without_context_data(self, model, url, context_key):
+        model.objects.all().delete()
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+        self.assertQuerysetEqual(response.context[context_key], [])

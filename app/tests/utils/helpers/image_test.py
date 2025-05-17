@@ -1,9 +1,9 @@
 from django.core.files.uploadedfile import SimpleUploadedFile
 
-from tests.utils.helpers import BaseImageMixin, create_valid_test_image
+from tests.utils.helpers import BaseDataMixin, create_valid_test_image
 
 
-class _ImageValidationTest(BaseImageMixin):
+class _ImageValidationTest(BaseDataMixin):
     """
     Abstract class for IMAGE validation tests.
     Do not run directly.
@@ -17,19 +17,19 @@ class _ImageValidationTest(BaseImageMixin):
             content=b'not an image at all',
             content_type='text/plain',
         )
-        self.assert_invalid_image(self.object, 'image', fake_file)
+        self.assert_invalid_data(self.object, 'image', fake_file)
 
     def test_raises_validation_error_when_empty_txt_file_uploaded(self):
         fake_file = SimpleUploadedFile(
             name='empty_image.txt', content=b'', content_type='text/plain'
         )
-        self.assert_invalid_image(self.object, 'image', fake_file)
+        self.assert_invalid_data(self.object, 'image', fake_file)
 
     def test_raises_validation_error_when_empty_image_uploaded(self):
         fake_file = SimpleUploadedFile(
             name='empty_image.jpg', content=b'', content_type='image/jpeg'
         )
-        self.assert_invalid_image(self.object, 'image', fake_file)
+        self.assert_invalid_data(self.object, 'image', fake_file)
 
     def test_raises_validation_error_when_invalid_image_uploaded_with_valid_extension(
         self,
@@ -39,7 +39,7 @@ class _ImageValidationTest(BaseImageMixin):
             content=b'not an image at all',
             content_type='image/jpeg',
         )
-        self.assert_invalid_image(self.object, 'image', fake_file)
+        self.assert_invalid_data(self.object, 'image', fake_file)
 
     def test_raises_validation_error_when_valid_image_uploaded_with_disallowed_txt_extension(
         self,
@@ -48,7 +48,7 @@ class _ImageValidationTest(BaseImageMixin):
         fake_file = SimpleUploadedFile(
             name='valid_image.txt', content=image.read(), content_type='text/plain'
         )
-        self.assert_invalid_image(self.object, 'image', fake_file)
+        self.assert_invalid_data(self.object, 'image', fake_file)
 
     def test_raises_validation_error_when_valid_image_uploaded_with_disallowed_image_extensions(
         self,
@@ -61,7 +61,7 @@ class _ImageValidationTest(BaseImageMixin):
                 content=image.read(),
                 content_type=f'image/{ext}',
             )
-            self.assert_invalid_image(self.object, 'image', fake_file)
+            self.assert_invalid_data(self.object, 'image', fake_file)
 
     def test_raises_validation_error_when_invalid_image_size(self):
         image = create_valid_test_image()
@@ -72,4 +72,4 @@ class _ImageValidationTest(BaseImageMixin):
             content=large_content,
             content_type='image/jpeg',
         )
-        self.assert_invalid_image(self.object, 'image', fake_file)
+        self.assert_invalid_data(self.object, 'image', fake_file)

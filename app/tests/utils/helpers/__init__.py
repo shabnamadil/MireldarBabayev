@@ -1,7 +1,9 @@
-from .base_image_mixin import BaseImageMixin
+from .base_data_mixin import BaseDataMixin
 from .base_ui_test import BaseUITest
 from .download import download_image
+from .file_test import _FileValidationTest
 from .generate_content import generate_factory_content
+from .generate_file import generate_dummy_file, generate_empty_docx_file
 from .generate_image import (
     create_valid_test_image,
     generate_invalid_image,

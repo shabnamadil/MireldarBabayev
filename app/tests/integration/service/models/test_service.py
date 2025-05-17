@@ -1,5 +1,6 @@
 from django.core.exceptions import ValidationError
 
+from apps.seo.models import ServiceDetailPageSeo
 from apps.service.models import Service
 from tests.utils.factories import ServiceFactory
 from tests.utils.helpers import _ImageValidationTest, _PngValidationTest
@@ -110,3 +111,14 @@ class TestServiceModelIntegration(
 
     def test_services_are_ordered_by_created_at_desc(self):
         self.assert_ordering(ServiceFactory, Service)
+
+    def test_creating_service_also_creates_related_seo_instance(self):
+        seo_instance = ServiceDetailPageSeo.objects.filter(service=self.object)
+        self.assertTrue(seo_instance.exists())
+
+    def test_deleting_service_also_deletes_related_seo_instance(self):
+        deleted_service_object = self.object.delete()
+        seo_instance = ServiceDetailPageSeo.objects.filter(
+            service=deleted_service_object
+        ).first()
+        self.assertIsNone(seo_instance)
