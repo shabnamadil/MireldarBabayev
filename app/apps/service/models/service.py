@@ -19,7 +19,7 @@ from utils.validators.validate_png import (
 )
 
 
-class Service(BaseModel):  # type: ignore[django-manager-missing]
+class Service(BaseModel):
     COLOR_CHOICES = (
         ('yellow', _('yellow')),
         ('green', _('green')),

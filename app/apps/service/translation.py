@@ -1,16 +1,11 @@
 from modeltranslation.translator import TranslationOptions, register
 
-from .models import Coworker, Download, Service, WhyChooseUs
+from .models import Coworker, Service, WhyChooseUs
 
 
 @register(Coworker)
 class CoworkerTranslationOptions(TranslationOptions):
     fields = ('name',)
-
-
-@register(Download)
-class DownloadTranslationAdmin(TranslationOptions):
-    fields = ('title',)
 
 
 @register(Service)
