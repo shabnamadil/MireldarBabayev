@@ -13,6 +13,8 @@ class TestCustomUserModelIntegration(BaseValidationTest, _ImageValidationTest):
     @classmethod
     def setUpTestData(cls):
         cls.object = UserFactory()
+        cls.image_field = 'image'
+        cls.model = User
 
     def test_first_name_max_length(self):
         self.assert_max_length(self.object, 'first_name', 30)
@@ -21,7 +23,7 @@ class TestCustomUserModelIntegration(BaseValidationTest, _ImageValidationTest):
         self.assert_max_length(self.object, 'last_name', 30)
 
     def test_email_unique(self):
-        self.assert_unique_field(User, 'email', self.object.email)
+        self.assert_unique_field(self.model, 'email', self.object.email)
 
     def test_invalid_email_raises_validation_error(self):
         self.assert_invalid_email(self.object)
@@ -39,10 +41,10 @@ class TestCustomUserModelIntegration(BaseValidationTest, _ImageValidationTest):
         self.assert_required_field(self.object, 'password')
 
     def test_object_count(self):
-        self.assert_object_count(User, 1)
+        self.assert_object_count(self.model, 1)
 
     def test_object_deletion(self):
-        self.assert_object_deleted(User)
+        self.assert_object_deleted(self.model)
 
     def test_user_first_name_saved_correctly(self):
         self.assert_model_instance(self.object, 'first_name', self.object.first_name)
@@ -64,4 +66,4 @@ class TestCustomUserModelIntegration(BaseValidationTest, _ImageValidationTest):
         self.assertNotEqual(self.object.password, 'testpassword')
 
     def test_object_is_instance_of_user(self):
-        self.assertIsInstance(self.object, User)
+        self.assertIsInstance(self.object, self.model)

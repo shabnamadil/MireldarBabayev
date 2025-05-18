@@ -9,6 +9,8 @@ class _PngValidationTest(BaseDataMixin):
     Do not run directly.
     """
 
+    object = None
+
     def test_raises_validation_error_with_invalid_png_content_and_extension(self):
         fake_file = SimpleUploadedFile(
             name='invalid_png.jpg',

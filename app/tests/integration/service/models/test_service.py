@@ -12,7 +12,10 @@ class TestServiceModelIntegration(
 ):
     @classmethod
     def setUpTestData(cls):
-        cls.object = ServiceFactory()
+        cls.factory = ServiceFactory
+        cls.object = cls.factory()
+        cls.model = Service
+        cls.image_field = 'image'
 
     def test_name_max_length(self):
         self.assert_max_length(self.object, 'name', 30)
@@ -39,10 +42,10 @@ class TestServiceModelIntegration(
         self.assert_max_length(self.object, 'slug', 500)
 
     def test_title_unique(self):
-        self.assert_unique_field(Service, 'title', self.object.title)
+        self.assert_unique_field(self.model, 'title', self.object.title)
 
     def test_name_unique(self):
-        self.assert_unique_field(Service, 'name', self.object.name)
+        self.assert_unique_field(self.model, 'name', self.object.name)
 
     def test_name_required(self):
         self.assert_required_field(self.object, 'name')
@@ -66,15 +69,15 @@ class TestServiceModelIntegration(
         self.assert_required_field(self.object, 'background_color')
 
     def test_raises_validation_error_when_invalid_background_color_choices(self):
-        service = ServiceFactory.build(background_color='invalid_color')
+        service = self.factory.build(background_color='invalid_color')
         with self.assertRaises(ValidationError):
             service.full_clean()
 
     def test_object_count(self):
-        self.assert_object_count(Service, 1)
+        self.assert_object_count(self.model, 1)
 
     def test_object_deletion(self):
-        self.assert_object_deleted(Service)
+        self.assert_object_deleted(self.model)
 
     def test_service_name_saved_correctly(self):
         self.assert_model_instance(self.object, 'name', self.object.name)
@@ -107,10 +110,10 @@ class TestServiceModelIntegration(
         self.assert_slug_auto_generation(self.object, 'slug')
 
     def test_object_is_instance_of_service(self):
-        self.assertIsInstance(self.object, Service)
+        self.assertIsInstance(self.object, self.model)
 
     def test_services_are_ordered_by_created_at_desc(self):
-        self.assert_ordering(ServiceFactory, Service)
+        self.assert_ordering(self.factory, self.model)
 
     def test_creating_service_also_creates_related_seo_instance(self):
         seo_instance = ServiceDetailPageSeo.objects.filter(service=self.object)

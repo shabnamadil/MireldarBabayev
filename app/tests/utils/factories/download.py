@@ -6,7 +6,7 @@ from tests.utils.helpers import (
     generate_dummy_file,
 )
 
-from .service_factory import ServiceFactory
+from .service import ServiceFactory
 
 
 class DownloadFactory(factory.django.DjangoModelFactory):

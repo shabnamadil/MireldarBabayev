@@ -10,7 +10,12 @@ from utils.tests.base import BaseValidationTest
 class DownloadModelIntegration(BaseValidationTest, _FileValidationTest):
     @classmethod
     def setUpTestData(cls):
-        cls.object = DownloadFactory()
+        cls.model = Download
+        cls.factory = DownloadFactory
+        cls.object = cls.factory()
+
+    def test_type_max_length(self):
+        self.assert_max_length(self.object, 'type', 4)
 
     def test_title_required(self):
         self.assert_required_field(self.object, 'title')
@@ -22,17 +27,17 @@ class DownloadModelIntegration(BaseValidationTest, _FileValidationTest):
         self.assert_required_field(self.object, 'file')
 
     def test_object_count(self):
-        self.assert_object_count(Download, 1)
+        self.assert_object_count(self.model, 1)
 
     def test_object_deletion(self):
-        self.assert_object_deleted(Download)
+        self.assert_object_deleted(self.model)
 
     def test_download_title_saved_correctly(self):
         self.assert_model_instance(self.object, 'title', self.object.title)
 
     def test_download_title_gets_file_main_name(self):
         fake_file = generate_dummy_file('pdf')
-        download = DownloadFactory(file=fake_file)
+        download = self.factory(file=fake_file)
         self.assertTrue(fake_file.name, download.title)
 
     def test_download_file_type_saved_correctly(self):
@@ -42,26 +47,26 @@ class DownloadModelIntegration(BaseValidationTest, _FileValidationTest):
         self.assertTrue(self.object.file.name.startswith('services/downloads'))
 
     def test_raises_validation_error_when_invalid_file_type_choices(self):
-        download = DownloadFactory.build(type='invalid_choice')
+        download = self.factory(type='type')
         with self.assertRaises(ValidationError):
             download.full_clean()
 
     def test_file_pdf_extension_saved_correctly(self):
-        download = DownloadFactory.build(type='pdf')
+        download = self.factory(type='pdf')
         self.assertTrue(download.file.name.endswith('pdf'))
 
     def test_file_docx_extension_saved_correctly(self):
-        download = DownloadFactory.build(type='docx')
+        download = self.factory(type='docx')
         self.assertTrue(download.file.name.endswith('docx'))
 
     def test_object_is_instance_of_download(self):
-        self.assertIsInstance(self.object, Download)
+        self.assertIsInstance(self.object, self.model)
 
     def test_downloads_are_ordered_by_created_at_desc(self):
-        self.assert_ordering(DownloadFactory, Download)
+        self.assert_ordering(self.factory, self.model)
 
     def test_unique_together(self):
-        download = DownloadFactory.build(
+        download = self.factory.build(
             title=self.object.title,
             service=self.object.service,
         )
@@ -70,5 +75,5 @@ class DownloadModelIntegration(BaseValidationTest, _FileValidationTest):
             download.save()
 
     def test_service_returns_none_when_no_added(self):
-        download = DownloadFactory(service=None)
+        download = self.factory(service=None)
         self.assertIsNone(download.service)
