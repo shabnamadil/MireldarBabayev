@@ -5,6 +5,7 @@ from .contact_page_seo import ContactPageSeoFactory
 from .coworker import CoworkerFactory
 from .download import DownloadFactory
 from .faq_page_seo import FaqPageSeoFactory
+from .home_page_seo import HomePageSeoFactory
 from .service import ServiceFactory
 from .user import UserFactory
 from .why_choose_us import WhyChooseUsFactory

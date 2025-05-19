@@ -1,0 +1,14 @@
+from apps.seo.models import HomePageSeo
+from tests.utils.factories import HomePageSeoFactory
+from tests.utils.helpers import BasePageSeoTest, _ImageValidationTest
+from utils.tests.base import BaseValidationTest
+
+
+class TestHomePageSeoModelIntegration(
+    BaseValidationTest, _ImageValidationTest, BasePageSeoTest
+):
+    @classmethod
+    def setUpTestData(cls):
+        cls.object = HomePageSeoFactory()
+        cls.model = HomePageSeo
+        cls.image_field = 'og_image'
