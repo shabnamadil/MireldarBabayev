@@ -8,6 +8,7 @@ class RegisterPageTest(BaseUITest):
     def setUp(self):
         super().setUp()
         self.register_page = RegisterPage(self.browser)
+        self.page = RegisterPage
 
     def test_register_page_loads_in_multilinguage(self):
         for lang in TRANSLATIONS.keys():
@@ -32,7 +33,7 @@ class RegisterPageTest(BaseUITest):
             'jhondoe1234',
             'jhondoe1234',
         )
-        success_message = self.register_page.get_text(RegisterPage.success_message)
+        success_message = self.register_page.get_text(self.page.success_message)
         self.assertIn('You successfully registered.', success_message)
         self.register_page.wait_url_changes(self.browser.current_url)
         self.assertIn('Sign into your account', self.browser.page_source)
@@ -47,7 +48,7 @@ class RegisterPageTest(BaseUITest):
             'jhondoe1234',
             'jhondoe1234',
         )
-        success_message = self.register_page.get_text(RegisterPage.success_message)
+        success_message = self.register_page.get_text(self.page.success_message)
         self.assertIn('You successfully registered.', success_message)
         self.register_page.wait_url_changes(self.browser.current_url)
         self.assertIn('Sign into your account', self.browser.page_source)
@@ -76,7 +77,7 @@ class RegisterPageTest(BaseUITest):
             'jhondoe1234',
             'jhondoe1234',
         )
-        email_input = self.register_page.find_element(RegisterPage.email_input)
+        email_input = self.register_page.find_element(self.page.email_input)
         validation_message = self.browser.execute_script(
             "return arguments[0].validationMessage;", email_input
         )
@@ -90,9 +91,7 @@ class RegisterPageTest(BaseUITest):
         self.register_page.register(
             '', 'Doe', 'jhoingmail.com', None, 'jhondoe1234', 'jhondoe1234'
         )
-        first_name_input = self.register_page.find_element(
-            RegisterPage.first_name_input
-        )
+        first_name_input = self.register_page.find_element(self.page.first_name_input)
         validation_message = self.browser.execute_script(
             "return arguments[0].validationMessage;", first_name_input
         )
@@ -119,7 +118,7 @@ class RegisterPageTest(BaseUITest):
         self.register_page.register(
             'Jhon', 'Doe', '', None, 'jhondoe1234', 'jhondoe1234'
         )
-        email_input = self.register_page.find_element(RegisterPage.email_input)
+        email_input = self.register_page.find_element(self.page.email_input)
         validation_message = self.browser.execute_script(
             "return arguments[0].validationMessage;", email_input
         )
@@ -130,7 +129,7 @@ class RegisterPageTest(BaseUITest):
         self.register_page.register(
             'Jhon', 'Doe', 'jhon@gmail.com', None, '', 'jhondoe1234'
         )
-        password_input = self.register_page.find_element(RegisterPage.password_input)
+        password_input = self.register_page.find_element(self.page.password_input)
         validation_message = self.browser.execute_script(
             "return arguments[0].validationMessage;", password_input
         )
@@ -142,7 +141,7 @@ class RegisterPageTest(BaseUITest):
             'Jhon', 'Doe', 'jhon@gmail.com', None, 'jhondoe1234', ''
         )
         password_confirm_input = self.register_page.find_element(
-            RegisterPage.confirm_password_input
+            self.page.confirm_password_input
         )
         validation_message = self.browser.execute_script(
             "return arguments[0].validationMessage;",
@@ -269,6 +268,6 @@ class RegisterPageTest(BaseUITest):
     def test_password_field_is_masked(self):
         self.register_page.load(self.live_server_url)
         password_type = self.register_page.find_element(
-            RegisterPage.password_input
+            self.page.password_input
         ).get_attribute('type')
         self.assertEqual(password_type, 'password')

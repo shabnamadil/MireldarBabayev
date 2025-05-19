@@ -13,12 +13,13 @@ class TestCustomUserManager(BaseValidationTest):
     @classmethod
     def setUpTestData(cls):
         cls.user = UserFactory()
+        cls.model = User
 
     def test_custom_user_manager_creates_user(self):
-        self.assertIsInstance(self.user, User)
+        self.assertIsInstance(self.user, self.model)
 
     def test_custom_user_manager_creates_superuser(self):
-        superuser = User.objects.create_superuser(
+        superuser = self.model.objects.create_superuser(
             email='admin@example.com', password='adminpass'
         )
         self.assertTrue(superuser.is_superuser)
@@ -30,18 +31,18 @@ class TestCustomUserManager(BaseValidationTest):
 
     def test_create_super_user_raises_value_error_when_no_email(self):
         with self.assertRaises(ValueError):
-            User.objects.create_superuser(email=None)
+            self.model.objects.create_superuser(email=None)
 
     def test_create_super_user_raises_validation_error_when_invalid_email(
         self,
     ):
-        superuser = User.objects.create_superuser(email='test')
+        superuser = self.model.objects.create_superuser(email='test')
         self.assert_invalid_email(superuser)
 
     def test_create_super_user_raises_validation_error_when_no_password(
         self,
     ):
-        superuser = User.objects.create_superuser(
+        superuser = self.model.objects.create_superuser(
             email='testuser@gmail.com', password=None
         )
         with self.assertRaises(ValidationError):
@@ -51,6 +52,6 @@ class TestCustomUserManager(BaseValidationTest):
         self,
     ):
         with self.assertRaises(IntegrityError):
-            User.objects.create_superuser(
+            self.model.objects.create_superuser(
                 email=self.user.email, password='testpassword'
             )

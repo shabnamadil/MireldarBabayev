@@ -23,6 +23,8 @@ class TestRegisterSerializer(TestCase):
     @classmethod
     def setUpTestData(cls):
         cls.image = create_test_image()
+        cls.serializer = RegisterSerializer
+        cls.model = User
         cls.data = {
             "first_name": "John",
             "last_name": "Doe",
@@ -33,10 +35,10 @@ class TestRegisterSerializer(TestCase):
         }
 
     def test_valid_register_serializer_data_creates_user(self):
-        serializer = RegisterSerializer(data=self.data)
+        serializer = self.serializer(data=self.data)
         self.assertTrue(serializer.is_valid(), serializer.errors)
         user = serializer.save()
-        self.assertTrue(User.objects.filter(email="john@example.com").exists())
+        self.assertTrue(self.model.objects.filter(email="john@example.com").exists())
         self.assertTrue(user.check_password("StrongPass123!"))
 
     def test_invalid_image_upload_raises_error(self):
@@ -47,26 +49,26 @@ class TestRegisterSerializer(TestCase):
         )
         self.data["image"] = invalid_image
 
-        serializer = RegisterSerializer(data=self.data)
+        serializer = self.serializer(data=self.data)
         self.assertFalse(serializer.is_valid())
         self.assertIn('image', serializer.errors)
 
     def test_missing_password_confirm(self):
         self.data["password_confirm"] = None
-        serializer = RegisterSerializer(data=self.data)
+        serializer = self.serializer(data=self.data)
         self.assertFalse(serializer.is_valid())
         self.assertIn("password_confirm", serializer.errors)
 
     def test_passwords_do_not_match(self):
         self.data["password_confirm"] = "DifferentPass123!"
-        serializer = RegisterSerializer(data=self.data)
+        serializer = self.serializer(data=self.data)
         self.assertFalse(serializer.is_valid())
         self.assertIn("password_confirm", serializer.errors)
 
     def test_weak_password(self):
         self.data["password"] = "123"
         self.data["password_confirm"] = "123"
-        serializer = RegisterSerializer(data=self.data)
+        serializer = self.serializer(data=self.data)
         self.assertFalse(serializer.is_valid())
         self.assertIn("password", serializer.errors)
 
@@ -74,20 +76,22 @@ class TestRegisterSerializer(TestCase):
         self.data["first_name"] = None
         self.data["last_name"] = None
         self.data["email"] = None
-        serializer = RegisterSerializer(data=self.data)
+        serializer = self.serializer(data=self.data)
         self.assertFalse(serializer.is_valid())
         for field in ["first_name", "last_name", "email"]:
             with self.subTest(field=field):
                 self.assertIn(field, serializer.errors)
 
     def test_email_already_registered(self):
-        User.objects.create_user(email="john@example.com", password="SomePass123!")
-        serializer = RegisterSerializer(data=self.data)
+        self.model.objects.create_user(
+            email="john@example.com", password="SomePass123!"
+        )
+        serializer = self.serializer(data=self.data)
         self.assertFalse(serializer.is_valid())
         self.assertIn("email", serializer.errors)
 
     def test_password_confirm_not_saved_in_user_model(self):
-        serializer = RegisterSerializer(data=self.data)
+        serializer = self.serializer(data=self.data)
         self.assertTrue(serializer.is_valid(), serializer.errors)
         user = serializer.save()
         self.assertFalse(hasattr(user, "password_confirm"))

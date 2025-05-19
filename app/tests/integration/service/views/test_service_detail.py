@@ -13,6 +13,8 @@ class TestServiceDetailView(BaseValidationTest):
         cls.main_service = cls.other_services[0]
         cls.url = reverse_lazy('service-detail', kwargs={'slug': cls.main_service.slug})
         cls.download = DownloadFactory(service=cls.main_service)
+        cls.model = Service
+        cls.factory = ServiceFactory
 
     def test_response_status_code(self):
         self.assert_status_code(self.url)
@@ -29,9 +31,9 @@ class TestServiceDetailView(BaseValidationTest):
 
     def test_context_contains_correct_other_services(self):
         response = self.client.get(self.url)
-        expected_services = Service.objects.exclude(id=self.main_service.id).order_by(
-            'id'
-        )
+        expected_services = self.model.objects.exclude(
+            id=self.main_service.id
+        ).order_by('id')
         self.assertQuerysetEqual(
             response.context['services'].order_by('id'),
             expected_services,
@@ -59,7 +61,7 @@ class TestServiceDetailView(BaseValidationTest):
         self.assertContains(response, self.download.title)
 
     def test_context_not_contains_other_service_download(self):
-        unrelated_serive = ServiceFactory()
+        unrelated_serive = self.factory()
         unlrelated_download = DownloadFactory(service=unrelated_serive)
         context_downloads = self.main_service.downloads.all()
         self.assertNotIn(unlrelated_download, context_downloads)

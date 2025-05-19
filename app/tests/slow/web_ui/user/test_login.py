@@ -10,6 +10,7 @@ class LoginPageTest(BaseUITest):
 
         self.login_page = LoginPage(self.browser)
         self.user = UserFactory(email='selenium@gmail.com', password='Seleniumpass1234')
+        self.page = LoginPage
 
     def _successful_login(self, window_size):
         self.browser.set_window_size(*window_size)
@@ -44,13 +45,13 @@ class LoginPageTest(BaseUITest):
     def test_login_with_invalid_credentials(self):
         self.login_page.load(self.live_server_url)
         self.login_page.login('wronguser@gamil.com', 'wrongpass')
-        error_message = self.login_page.get_text(LoginPage.login_error_message)
+        error_message = self.login_page.get_text(self.page.login_error_message)
         self.assertIn('Invalid email or password. Please try again.', error_message)
 
     def test_login_with_invalid_email_format(self):
         self.login_page.load(self.live_server_url)
         self.login_page.login('invalidemail', 'Seleniumpass1234')
-        email_input = self.login_page.find_element(LoginPage.email_input)
+        email_input = self.login_page.find_element(self.page.email_input)
         validation_message = self.browser.execute_script(
             "return arguments[0].validationMessage;", email_input
         )
@@ -62,7 +63,7 @@ class LoginPageTest(BaseUITest):
     def test_login_with_empty_email(self):
         self.login_page.load(self.live_server_url)
         self.login_page.login('', 'Seleniumpass1234')
-        email_input = self.login_page.find_element(LoginPage.email_input)
+        email_input = self.login_page.find_element(self.page.email_input)
         validation_message = self.browser.execute_script(
             "return arguments[0].validationMessage;", email_input
         )
@@ -71,7 +72,7 @@ class LoginPageTest(BaseUITest):
     def test_login_with_empty_password(self):
         self.login_page.load(self.live_server_url)
         self.login_page.login('selenium@gmail.com', '')
-        password_input = self.login_page.find_element(LoginPage.password_input)
+        password_input = self.login_page.find_element(self.page.password_input)
         validation_message = self.browser.execute_script(
             "return arguments[0].validationMessage;", password_input
         )
@@ -80,8 +81,8 @@ class LoginPageTest(BaseUITest):
     def test_login_with_empty_email_and_password(self):
         self.login_page.load(self.live_server_url)
         self.login_page.submit_empty_login()
-        email_input = self.login_page.find_element(LoginPage.email_input)
-        password_input = self.login_page.find_element(LoginPage.password_input)
+        email_input = self.login_page.find_element(self.page.email_input)
+        password_input = self.login_page.find_element(self.page.password_input)
         email_validation_message = self.browser.execute_script(
             "return arguments[0].validationMessage;", email_input
         )
@@ -94,6 +95,6 @@ class LoginPageTest(BaseUITest):
     def test_password_field_is_masked(self):
         self.login_page.load(self.live_server_url)
         password_type = self.login_page.find_element(
-            LoginPage.password_input
+            self.page.password_input
         ).get_attribute('type')
         self.assertEqual(password_type, 'password')

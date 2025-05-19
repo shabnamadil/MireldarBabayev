@@ -11,6 +11,7 @@ class TestServiceListView(BaseValidationTest):
     def setUpTestData(cls):
         cls.url = reverse_lazy('services')
         cls.services = ServiceFactory.create_batch(6)
+        cls.model = Service
 
     def test_response_status_code(self):
         self.assert_status_code(self.url)
@@ -22,9 +23,9 @@ class TestServiceListView(BaseValidationTest):
         self.assert_all_objects_in_context(self.url, 'services', self.services)
 
     def test_view_returns_all_services(self):
-        self.assert_view_returns_all_objects(self.url, 'services', Service)
+        self.assert_view_returns_all_objects(self.url, 'services', self.model)
 
     def test_view_with_no_services(self):
-        self.assert_view_without_context_data(Service, self.url, 'services')
+        self.assert_view_without_context_data(self.model, self.url, 'services')
 
     # other model data context need to be added after testing
