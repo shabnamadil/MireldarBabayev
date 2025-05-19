@@ -1,11 +1,11 @@
 from apps.seo.models import HomePageSeo
 from tests.utils.factories import HomePageSeoFactory
-from tests.utils.helpers import BasePageSeoTest, _ImageValidationTest
+from tests.utils.helpers import BaseSeoPageTest, _ImageValidationTest
 from utils.tests.base import BaseValidationTest
 
 
 class TestHomePageSeoModelIntegration(
-    BaseValidationTest, _ImageValidationTest, BasePageSeoTest
+    BaseValidationTest, _ImageValidationTest, BaseSeoPageTest
 ):
     @classmethod
     def setUpTestData(cls):

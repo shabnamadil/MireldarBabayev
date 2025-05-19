@@ -1,4 +1,4 @@
-from django.core.validators import MaxLengthValidator, MinLengthValidator
+from django.core.validators import MinLengthValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -11,10 +11,11 @@ from utils.validators.validate_image import (
 )
 from utils.validators.validate_image import validate_image_size as ImageSizeValidator
 
+from .base_seo_detail import BaseSeoDetailModel
 from .singleton import SingletonModel
 
 
-class BaseSeoModel(SingletonModel):
+class BaseSeoModel(SingletonModel, BaseSeoDetailModel):
     """All seo models inherit this model"""
 
     meta_title = models.CharField(
@@ -25,26 +26,11 @@ class BaseSeoModel(SingletonModel):
         ],
         help_text=_('The content length must be between 30 and 60 characters.'),
     )
-    meta_description = models.TextField(
-        _('Meta description'),
-        validators=[MaxLengthValidator(160), MinLengthValidator(50)],
-        help_text=_('The content length must be between 50 and 160 characters.'),
-    )
-    meta_keywords = models.TextField(
-        _('Meta keywords'),
-        validators=[MaxLengthValidator(160), MinLengthValidator(50)],
-        help_text=_('The content length must be between 50 and 160 characters.'),
-    )
     og_title = models.CharField(
         _('Og title'),
         max_length=60,
         validators=[MinLengthValidator(30)],
         help_text=_('The content length must be between 30 and 60 characters.'),
-    )
-    og_description = models.TextField(
-        _('Og description'),
-        validators=[MaxLengthValidator(160), MinLengthValidator(50)],
-        help_text=_('The content length must be between 50 and 160 characters.'),
     )
     og_image = models.ImageField(
         _('Og image'),

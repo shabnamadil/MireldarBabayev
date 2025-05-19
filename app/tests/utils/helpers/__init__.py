@@ -1,5 +1,6 @@
 from .base_data_mixin import BaseDataMixin
-from .base_seo_test import BasePageSeoTest
+from .base_seo_detail_test import BaseSeoDetailPageTest
+from .base_seo_test import BaseSeoPageTest
 from .base_ui_test import BaseUITest
 from .download import download_image
 from .file_test import _FileValidationTest

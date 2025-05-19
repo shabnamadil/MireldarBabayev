@@ -1,4 +1,5 @@
 from django.core.exceptions import ValidationError
+from django.db import IntegrityError
 
 from apps.seo.models import ServiceDetailPageSeo
 from apps.service.models import Service
@@ -118,6 +119,10 @@ class TestServiceModelIntegration(
     def test_creating_service_also_creates_related_seo_instance(self):
         seo_instance = ServiceDetailPageSeo.objects.filter(service=self.object)
         self.assertTrue(seo_instance.exists())
+
+    def test_creating_second_service_detail_page_seo_raises_integrity_error(self):
+        with self.assertRaises(IntegrityError):
+            ServiceDetailPageSeo.objects.create(service=self.object)
 
     def test_deleting_service_also_deletes_related_seo_instance(self):
         deleted_service_object = self.object.delete()

@@ -1,5 +1,6 @@
 from .about_us_page_seo import AboutUsPageSeoFactory
 from .appintment_page_seo import AppointmentPageSeoFactory
+from .blog_detail_page_seo import BlogDetailPageSeoFactory
 from .blogs_page_seo import BlogsPageSeoFactory
 from .contact_page_seo import ContactPageSeoFactory
 from .coworker import CoworkerFactory
@@ -7,6 +8,7 @@ from .download import DownloadFactory
 from .faq_page_seo import FaqPageSeoFactory
 from .home_page_seo import HomePageSeoFactory
 from .service import ServiceFactory
+from .service_detail_page_seo import ServiceDetailPageSeoFactory
 from .services_page_seo import ServicesPageSeoFactory
 from .user import UserFactory
 from .why_choose_us import WhyChooseUsFactory
