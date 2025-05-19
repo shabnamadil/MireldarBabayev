@@ -1,14 +1,14 @@
-from apps.seo.models import AboutUsPageSeo
-from tests.utils.factories import AboutUsPageSeoFactory
+from apps.seo.models import AppointmentPageSeo
+from tests.utils.factories import AppointmentPageSeoFactory
 from tests.utils.helpers import BasePageSeoTest, _ImageValidationTest
 from utils.tests.base import BaseValidationTest
 
 
-class TestAboutUsPageSeoModelIntegration(
+class TestAppointmentPageSeoModelIntegration(
     BaseValidationTest, _ImageValidationTest, BasePageSeoTest
 ):
     @classmethod
     def setUpTestData(cls):
-        cls.object = AboutUsPageSeoFactory()
-        cls.model = AboutUsPageSeo
+        cls.object = AppointmentPageSeoFactory()
+        cls.model = AppointmentPageSeo
         cls.image_field = 'og_image'
