@@ -17,6 +17,7 @@ class TestServiceModelIntegration(
         cls.object = cls.factory()
         cls.model = Service
         cls.image_field = "image"
+        cls.png_field = "png"
 
     def test_name_max_length(self):
         self.assert_max_length(self.object, "name", 30)

@@ -10,6 +10,7 @@ class TestWhyChooseUsModelIntegration(BaseValidationTest, _PngValidationTest):
         cls.factory = WhyChooseUsFactory
         cls.object = cls.factory()
         cls.model = WhyChooseUs
+        cls.png_field = "png"
 
     def test_title_max_length(self):
         self.assert_max_length(self.object, "title", 30)

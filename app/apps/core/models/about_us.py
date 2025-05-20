@@ -34,6 +34,7 @@ class AboutUs(SingletonModel):
             'Example: From the link "https://www.youtube.com/watch?v=MKG_6BqnhpI", only "MKG_6BqnhpI" should be entered.'
         ),
         max_length=11,
+        unique=True,
         validators=[VideoIdValidator],
     )
     content = RichTextUploadingField(_("About Us"), help_text=_("About Us content"))

@@ -10,6 +10,7 @@ class _PngValidationTest(BaseDataMixin):
     """
 
     object = None
+    png_field = None
 
     def test_raises_validation_error_with_invalid_png_content_and_extension(
         self,
@@ -19,7 +20,7 @@ class _PngValidationTest(BaseDataMixin):
             content=b"not an png at all",
             content_type="image/jpeg",
         )
-        self.assert_invalid_data(self.object, "png", fake_file)
+        self.assert_invalid_data(self.object, self.png_field, fake_file)
 
     def test_raises_validation_error_with_invalid_png_content_valid_extension(
         self,
@@ -29,7 +30,7 @@ class _PngValidationTest(BaseDataMixin):
             content=b"not an png at all",
             content_type="image/png",
         )
-        self.assert_invalid_data(self.object, "png", fake_file)
+        self.assert_invalid_data(self.object, self.png_field, fake_file)
 
     def test_raises_validation_error_with_valid_data_invalid_png_extension(
         self,
@@ -40,7 +41,7 @@ class _PngValidationTest(BaseDataMixin):
             content=png_file.read(),
             content_type="image/jpeg",
         )
-        self.assert_invalid_data(self.object, "png", fake_file)
+        self.assert_invalid_data(self.object, self.png_field, fake_file)
 
     def test_raises_validation_error_with_empty_png(self):
         fake_file = SimpleUploadedFile(
@@ -48,7 +49,7 @@ class _PngValidationTest(BaseDataMixin):
             content=b"",
             content_type="image/png",
         )
-        self.assert_invalid_data(self.object, "png", fake_file)
+        self.assert_invalid_data(self.object, self.png_field, fake_file)
 
     def test_raises_validation_error_with_empty_data_invalid_extension(self):
         fake_file = SimpleUploadedFile(
@@ -56,7 +57,7 @@ class _PngValidationTest(BaseDataMixin):
             content=b"",
             content_type="image/jpeg",
         )
-        self.assert_invalid_data(self.object, "png", fake_file)
+        self.assert_invalid_data(self.object, self.png_field, fake_file)
 
     def test_raises_validation_error_when_invalid_png_size(self):
         png_file = generate_png_file()
@@ -67,4 +68,4 @@ class _PngValidationTest(BaseDataMixin):
             content=large_content,
             content_type="image/png",
         )
-        self.assert_invalid_data(self.object, "png", fake_file)
+        self.assert_invalid_data(self.object, self.png_field, fake_file)

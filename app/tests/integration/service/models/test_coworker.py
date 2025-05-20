@@ -10,6 +10,7 @@ class TestCoworkerModelIntegration(BaseValidationTest, _PngValidationTest):
         cls.factory = CoworkerFactory
         cls.object = CoworkerFactory()
         cls.model = Coworker
+        cls.png_field = "png"
 
     def test_name_max_length(self):
         self.assert_max_length(self.object, "name", 100)
@@ -40,4 +41,4 @@ class TestCoworkerModelIntegration(BaseValidationTest, _PngValidationTest):
         self.assertIsInstance(self.object, self.model)
 
     def test_coworkers_are_ordered_by_created_at_desc(self):
-        self.assert_ordering(CoworkerFactory, self.model)
+        self.assert_ordering(self.factory, self.model)

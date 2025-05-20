@@ -12,6 +12,7 @@ from .generate_image import (
     generate_valid_image_with_disallowed_extension,
 )
 from .generate_png import generate_png_file
+from .generate_video import generate_video_id
 from .image_handler import ImageInputHelper
 from .image_test import _ImageValidationTest
 from .png_test import _PngValidationTest

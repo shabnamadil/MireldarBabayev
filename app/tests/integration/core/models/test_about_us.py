@@ -36,6 +36,9 @@ class TestAboutUsModelIntegration(
     def test_value_required(self):
         self.assert_required_field(self.object, "value")
 
+    def test_video_id_unique(self):
+        self.assert_unique_field(self.model, "video_id", self.object.video_id)
+
     def test_object_count(self):
         self.assert_object_count(self.model, 1)
 
@@ -61,7 +64,7 @@ class TestAboutUsModelIntegration(
     def test_vision_saved_correctly(self):
         self.assert_model_instance(self.object, "vision", self.object.vision)
 
-    def test_value_background_color_saved_correctly(self):
+    def test_value_saved_correctly(self):
         self.assert_model_instance(self.object, "value", self.object.value)
 
     def test_object_is_instance_of_about_us(self):
