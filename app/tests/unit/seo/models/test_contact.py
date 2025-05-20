@@ -1,5 +1,5 @@
 from apps.seo.models import ContactPageSeo
-from utils.tests.base import BaseValidationTest
+from tests.utils.helpers import BaseValidationTest
 
 
 class TestContactPageSeoModel(BaseValidationTest):

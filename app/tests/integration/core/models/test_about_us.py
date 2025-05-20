@@ -1,7 +1,10 @@
 from apps.core.models import AboutUs
 from tests.utils.factories import AboutUsFactory
-from tests.utils.helpers import _ImageValidationTest, _VideoIdValidationtest
-from utils.tests.base import BaseValidationTest
+from tests.utils.helpers import (
+    BaseValidationTest,
+    _ImageValidationTest,
+    _VideoIdValidationtest,
+)
 
 
 class TestAboutUsModelIntegration(

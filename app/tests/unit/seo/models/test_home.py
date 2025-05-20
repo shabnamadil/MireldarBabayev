@@ -1,5 +1,5 @@
 from apps.seo.models import HomePageSeo
-from utils.tests.base import BaseValidationTest
+from tests.utils.helpers import BaseValidationTest
 
 
 class TestHomePageSeoModel(BaseValidationTest):

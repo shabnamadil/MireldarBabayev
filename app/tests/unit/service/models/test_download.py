@@ -1,7 +1,7 @@
 from unittest.mock import Mock, PropertyMock, patch
 
 from apps.service.models import Download
-from utils.tests.base import BaseValidationTest
+from tests.utils.helpers import BaseValidationTest
 
 
 class TestDownloadModel(BaseValidationTest):

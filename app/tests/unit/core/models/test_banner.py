@@ -1,5 +1,5 @@
 from apps.core.models import Banner
-from utils.tests.base import BaseValidationTest
+from tests.utils.helpers import BaseValidationTest
 
 
 class TestBannerModel(BaseValidationTest):

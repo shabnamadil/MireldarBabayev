@@ -3,7 +3,7 @@ from django.core.exceptions import ValidationError
 from django.db.utils import IntegrityError
 
 from tests.utils.factories import UserFactory
-from utils.tests.base import BaseValidationTest
+from tests.utils.helpers import BaseValidationTest
 
 User = get_user_model()
 

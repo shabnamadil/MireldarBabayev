@@ -2,7 +2,7 @@ from django.urls import reverse_lazy
 
 from apps.service.models import Service
 from tests.utils.factories import ServiceFactory
-from utils.tests.base import BaseValidationTest
+from tests.utils.helpers import BaseValidationTest
 
 
 class TestServiceListView(BaseValidationTest):

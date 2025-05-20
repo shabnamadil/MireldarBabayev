@@ -2,8 +2,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import check_password
 
 from tests.utils.factories import UserFactory
-from tests.utils.helpers import _ImageValidationTest
-from utils.tests.base import BaseValidationTest
+from tests.utils.helpers import BaseValidationTest, _ImageValidationTest
 
 User = get_user_model()
 

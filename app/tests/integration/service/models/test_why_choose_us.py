@@ -1,7 +1,6 @@
 from apps.service.models import WhyChooseUs
 from tests.utils.factories import WhyChooseUsFactory
-from tests.utils.helpers import _PngValidationTest
-from utils.tests.base import BaseValidationTest
+from tests.utils.helpers import BaseValidationTest, _PngValidationTest
 
 
 class TestWhyChooseUsModelIntegration(BaseValidationTest, _PngValidationTest):

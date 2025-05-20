@@ -1,7 +1,6 @@
 from apps.service.models import Coworker
 from tests.utils.factories import CoworkerFactory
-from tests.utils.helpers import _PngValidationTest
-from utils.tests.base import BaseValidationTest
+from tests.utils.helpers import BaseValidationTest, _PngValidationTest
 
 
 class TestCoworkerModelIntegration(BaseValidationTest, _PngValidationTest):

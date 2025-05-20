@@ -2,6 +2,7 @@ from .base_data_mixin import BaseDataMixin
 from .base_seo_detail_test import BaseSeoDetailPageTest
 from .base_seo_test import BaseSeoPageTest
 from .base_ui_test import BaseUITest
+from .base_validation_test import BaseValidationTest
 from .download import download_image
 from .file_test import _FileValidationTest
 from .generate_content import generate_factory_content

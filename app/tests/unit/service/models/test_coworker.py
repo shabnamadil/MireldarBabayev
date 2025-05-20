@@ -1,5 +1,5 @@
 from apps.service.models import Coworker
-from utils.tests.base import BaseValidationTest
+from tests.utils.helpers import BaseValidationTest
 
 
 class TestCoworkerModel(BaseValidationTest):

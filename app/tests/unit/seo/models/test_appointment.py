@@ -1,5 +1,5 @@
 from apps.seo.models import AppointmentPageSeo
-from utils.tests.base import BaseValidationTest
+from tests.utils.helpers import BaseValidationTest
 
 
 class TestAppointmentPageSeoModel(BaseValidationTest):

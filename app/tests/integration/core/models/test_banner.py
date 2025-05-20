@@ -1,7 +1,10 @@
 from apps.core.models import Banner
 from tests.utils.factories import BannerFactory
-from tests.utils.helpers import _PngValidationTest, _VideoIdValidationtest
-from utils.tests.base import BaseValidationTest
+from tests.utils.helpers import (
+    BaseValidationTest,
+    _PngValidationTest,
+    _VideoIdValidationtest,
+)
 
 
 class TestAboutUsModelIntegration(

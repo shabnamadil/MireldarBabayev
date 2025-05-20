@@ -2,7 +2,7 @@ from django.utils.translation import activate
 from django.utils.translation import gettext as _
 
 from apps.service.models import Service
-from utils.tests.base import BaseValidationTest
+from tests.utils.helpers import BaseValidationTest
 
 
 class TestServiceModel(BaseValidationTest):

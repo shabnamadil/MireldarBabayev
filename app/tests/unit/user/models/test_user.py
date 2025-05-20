@@ -1,6 +1,6 @@
 from django.contrib.auth import get_user_model
 
-from utils.tests.base import BaseValidationTest
+from tests.utils.helpers import BaseValidationTest
 
 User = get_user_model()
 

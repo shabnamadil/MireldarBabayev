@@ -3,8 +3,11 @@ from django.db import IntegrityError
 
 from apps.service.models import Download
 from tests.utils.factories import DownloadFactory
-from tests.utils.helpers import _FileValidationTest, generate_dummy_file
-from utils.tests.base import BaseValidationTest
+from tests.utils.helpers import (
+    BaseValidationTest,
+    _FileValidationTest,
+    generate_dummy_file,
+)
 
 
 class DownloadModelIntegration(BaseValidationTest, _FileValidationTest):

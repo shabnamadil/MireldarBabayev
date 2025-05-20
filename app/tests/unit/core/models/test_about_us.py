@@ -1,7 +1,7 @@
 from django.utils.translation import gettext_lazy as _
 
 from apps.core.models import AboutUs
-from utils.tests.base import BaseValidationTest
+from tests.utils.helpers import BaseValidationTest
 
 
 class TestAboutUsModel(BaseValidationTest):

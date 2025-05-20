@@ -4,8 +4,11 @@ from django.db import IntegrityError
 from apps.seo.models import ServiceDetailPageSeo
 from apps.service.models import Service
 from tests.utils.factories import ServiceFactory
-from tests.utils.helpers import _ImageValidationTest, _PngValidationTest
-from utils.tests.base import BaseValidationTest
+from tests.utils.helpers import (
+    BaseValidationTest,
+    _ImageValidationTest,
+    _PngValidationTest,
+)
 
 
 class TestServiceModelIntegration(

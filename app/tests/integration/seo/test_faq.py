@@ -1,7 +1,10 @@
 from apps.seo.models import FaqPageSeo
 from tests.utils.factories import FaqPageSeoFactory
-from tests.utils.helpers import BaseSeoPageTest, _ImageValidationTest
-from utils.tests.base import BaseValidationTest
+from tests.utils.helpers import (
+    BaseSeoPageTest,
+    BaseValidationTest,
+    _ImageValidationTest,
+)
 
 
 class TestFaqPageSeoModelIntegration(
