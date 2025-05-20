@@ -12,31 +12,31 @@ class BaseSeoDetailPageTest:
     object = None
 
     def test_meta_description_max_length(self):
-        self.assert_max_length(self.object, 'meta_description', 160)
+        self.assert_max_length(self.object, "meta_description", 160)
 
     def test_meta_keywords_max_length(self):
-        self.assert_max_length(self.object, 'meta_keywords', 160)
+        self.assert_max_length(self.object, "meta_keywords", 160)
 
     def test_og_description_max_length(self):
-        self.assert_max_length(self.object, 'og_description', 160)
+        self.assert_max_length(self.object, "og_description", 160)
 
     def test_meta_description_min_length(self):
-        self.assert_min_length(self.object, 'meta_description', 50)
+        self.assert_min_length(self.object, "meta_description", 50)
 
     def test_meta_keywords_min_length(self):
-        self.assert_min_length(self.object, 'meta_keywords', 50)
+        self.assert_min_length(self.object, "meta_keywords", 50)
 
     def test_og_description_min_length(self):
-        self.assert_min_length(self.object, 'og_description', 50)
+        self.assert_min_length(self.object, "og_description", 50)
 
     def test_meta_description_required(self):
-        self.assert_required_field(self.object, 'meta_description')
+        self.assert_required_field(self.object, "meta_description")
 
     def test_meta_keywords_required(self):
-        self.assert_required_field(self.object, 'meta_keywords')
+        self.assert_required_field(self.object, "meta_keywords")
 
     def test_og_description_required(self):
-        self.assert_required_field(self.object, 'og_description')
+        self.assert_required_field(self.object, "og_description")
 
     def test_object_count(self):
         self.assert_object_count(self.model, 1)
@@ -49,15 +49,15 @@ class BaseSeoDetailPageTest:
 
     def test_meta_description_saved_correctly(self):
         self.assert_model_instance(
-            self.object, 'meta_description', self.object.meta_description
+            self.object, "meta_description", self.object.meta_description
         )
 
     def test_meta_keywords_saved_correctly(self):
         self.assert_model_instance(
-            self.object, 'meta_keywords', self.object.meta_keywords
+            self.object, "meta_keywords", self.object.meta_keywords
         )
 
     def test_og_description_saved_correctly(self):
         self.assert_model_instance(
-            self.object, 'og_description', self.object.og_description
+            self.object, "og_description", self.object.og_description
         )

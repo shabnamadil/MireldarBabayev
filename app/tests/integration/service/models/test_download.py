@@ -15,16 +15,16 @@ class DownloadModelIntegration(BaseValidationTest, _FileValidationTest):
         cls.object = cls.factory()
 
     def test_type_max_length(self):
-        self.assert_max_length(self.object, 'type', 4)
+        self.assert_max_length(self.object, "type", 4)
 
     def test_title_required(self):
-        self.assert_required_field(self.object, 'title')
+        self.assert_required_field(self.object, "title")
 
     def test_type_required(self):
-        self.assert_required_field(self.object, 'type')
+        self.assert_required_field(self.object, "type")
 
     def test_file_required(self):
-        self.assert_required_field(self.object, 'file')
+        self.assert_required_field(self.object, "file")
 
     def test_object_count(self):
         self.assert_object_count(self.model, 1)
@@ -33,31 +33,31 @@ class DownloadModelIntegration(BaseValidationTest, _FileValidationTest):
         self.assert_object_deleted(self.model)
 
     def test_download_title_saved_correctly(self):
-        self.assert_model_instance(self.object, 'title', self.object.title)
+        self.assert_model_instance(self.object, "title", self.object.title)
 
     def test_download_title_gets_file_main_name(self):
-        fake_file = generate_dummy_file('pdf')
+        fake_file = generate_dummy_file("pdf")
         download = self.factory(file=fake_file)
         self.assertTrue(fake_file.name, download.title)
 
     def test_download_file_type_saved_correctly(self):
-        self.assert_model_instance(self.object, 'type', self.object.type)
+        self.assert_model_instance(self.object, "type", self.object.type)
 
     def test_download_file_saved_correctly(self):
-        self.assertTrue(self.object.file.name.startswith('services/downloads'))
+        self.assertTrue(self.object.file.name.startswith("services/downloads"))
 
     def test_raises_validation_error_when_invalid_file_type_choices(self):
-        download = self.factory(type='type')
+        download = self.factory(type="type")
         with self.assertRaises(ValidationError):
             download.full_clean()
 
     def test_file_pdf_extension_saved_correctly(self):
-        download = self.factory(type='pdf')
-        self.assertTrue(download.file.name.endswith('pdf'))
+        download = self.factory(type="pdf")
+        self.assertTrue(download.file.name.endswith("pdf"))
 
     def test_file_docx_extension_saved_correctly(self):
-        download = self.factory(type='docx')
-        self.assertTrue(download.file.name.endswith('docx'))
+        download = self.factory(type="docx")
+        self.assertTrue(download.file.name.endswith("docx"))
 
     def test_object_is_instance_of_download(self):
         self.assertIsInstance(self.object, self.model)

@@ -1,36 +1,55 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 from ckeditor_uploader.fields import RichTextUploadingField
 from utils.models.singleton import SingletonModel
+from utils.validators.validate_image import (
+    validate_image_content as ImageContentValidator,
+)
+from utils.validators.validate_image import (
+    validate_image_extension as ImageExtensionValidator,
+)
+from utils.validators.validate_image import validate_image_size as ImageSizeValidator
+from utils.validators.validate_social_media import (
+    validate_youtube_video_id as VideoIdValidator,
+)
 
 
 class AboutUs(SingletonModel):
     image = models.ImageField(
-        'Foto',
-        upload_to='about/',
-        help_text='Haqqımızda səhifəsində göstərilməsi üçün foto yükləyin',
+        _("Image"),
+        upload_to="about/",
+        validators=[
+            ImageSizeValidator,
+            ImageContentValidator,
+            ImageExtensionValidator,
+        ],
+        help_text=_(
+            "Kindly upload a photo for the About page. Image size shoud not exceed 2mb."
+        ),
     )
     video_id = models.CharField(
-        'Video link id',
-        help_text='Nümunə: "https://www.youtube.com/watch?v=MKG_6BqnhpI" linkindən  "MKG_6BqnhpI" daxil edilməlidir',
+        _("Video ID"),
+        help_text=_(
+            'Example: From the link "https://www.youtube.com/watch?v=MKG_6BqnhpI", only "MKG_6BqnhpI" should be entered.'
+        ),
         max_length=11,
+        validators=[VideoIdValidator],
     )
-    content = RichTextUploadingField(
-        'Haqqımızda məlumat', help_text='Haqqımızda səhifəsi üçün kontent'
-    )
+    content = RichTextUploadingField(_("About Us"), help_text=_("About Us content"))
     mission = models.TextField(
-        'Missiyamız',
+        _("Mission"),
     )
     vision = models.TextField(
-        'Görüşümüz',
+        _("Vision"),
     )
     value = models.TextField(
-        'Dəyərlərimiz',
+        _("Values"),
     )
 
     class Meta:
-        verbose_name = 'Haqqımızda'
-        verbose_name_plural = 'Haqqımızda'
+        verbose_name = _("About Us")
+        verbose_name_plural = _("About Us")
 
     def __str__(self) -> str:
-        return 'Haqqımızda məlumat'
+        return str(_("About Us Information"))

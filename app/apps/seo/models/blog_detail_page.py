@@ -8,11 +8,11 @@ from utils.models.base_seo_detail import BaseSeoDetailModel
 class BlogDetailPageSeo(BaseSeoDetailModel):
     blog = models.OneToOneField(
         Blog,
-        related_name='detail_page_seo',
+        related_name="detail_page_seo",
         on_delete=models.CASCADE,
-        verbose_name=_('Blog'),
+        verbose_name=_("Blog"),
     )
 
     class Meta:
-        verbose_name = _('BlogDetailPageSeo')
-        verbose_name_plural = _('BlogDetailPageSeos')
+        verbose_name = _("BlogDetailPageSeo")
+        verbose_name_plural = _("BlogDetailPageSeos")

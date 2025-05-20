@@ -11,4 +11,4 @@ class TestAppointmentPageSeoModelIntegration(
     def setUpTestData(cls):
         cls.object = AppointmentPageSeoFactory()
         cls.model = AppointmentPageSeo
-        cls.image_field = 'og_image'
+        cls.image_field = "og_image"

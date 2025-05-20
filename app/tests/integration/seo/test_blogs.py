@@ -11,4 +11,4 @@ class TestBlogsPageSeoModelIntegration(
     def setUpTestData(cls):
         cls.object = BlogsPageSeoFactory()
         cls.model = BlogsPageSeo
-        cls.image_field = 'og_image'
+        cls.image_field = "og_image"

@@ -10,7 +10,7 @@ from .service import ServiceFactory
 
 
 class DownloadFactory(factory.django.DjangoModelFactory):
-    type = factory.LazyFunction(lambda: random.choice(['pdf', 'docx']))
+    type = factory.LazyFunction(lambda: random.choice(["pdf", "docx"]))
     file = factory.LazyAttribute(lambda o: generate_dummy_file(o.type))
     service = factory.SubFactory(ServiceFactory)
 

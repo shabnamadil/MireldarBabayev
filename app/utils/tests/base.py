@@ -11,17 +11,17 @@ User = get_user_model()
 
 class BaseValidationTest(TestCase):
 
-    def assert_invalid_email(self, instance, email_field='email'):
+    def assert_invalid_email(self, instance, email_field="email"):
         """Test that an invalid email raises a validation error."""
         invalid_emails = [
-            'invalid_email',
-            'user@.com',
-            '@gmail.com',
-            'test',
-            'test@',
-            'test.com',
-            'test@.com',
-            'test@com',
+            "invalid_email",
+            "user@.com",
+            "@gmail.com",
+            "test",
+            "test@",
+            "test.com",
+            "test@.com",
+            "test@com",
         ]
         for email in invalid_emails:
             setattr(instance, email_field, email)
@@ -31,11 +31,11 @@ class BaseValidationTest(TestCase):
     def assert_invalid_number(self, instance, number_field=None):
         """Test that an invalid number raises a validation error."""
         invalid_numbers = [
-            '123',
-            '-1234567890',
-            'asdfgh',
-            '12345678ty',
-            '12345678901234567890',
+            "123",
+            "-1234567890",
+            "asdfgh",
+            "12345678ty",
+            "12345678901234567890",
         ]
         for number in invalid_numbers:
             setattr(instance, number_field, number)
@@ -68,13 +68,13 @@ class BaseValidationTest(TestCase):
 
     def assert_max_length(self, instance, field, length):
         """Test that invalid length raises a validation error."""
-        setattr(instance, field, 'a' * (length + 1))
+        setattr(instance, field, "a" * (length + 1))
         with self.assertRaises(ValidationError):
             instance.full_clean()
 
     def assert_min_length(self, instance, field, length):
         """Test that invalid length raises a validation error."""
-        setattr(instance, field, 'a' * (length - 1))
+        setattr(instance, field, "a" * (length - 1))
         with self.assertRaises(ValidationError):
             instance.full_clean()
 
@@ -97,10 +97,10 @@ class BaseValidationTest(TestCase):
     def assert_invalid_social_media_urls(self, instance, url_field):
         """Test that invalid URL raises a validation error."""
         invalid_urls = [
-            'invalid_url',  # Not a URL
-            'www.invalid.com',  # Missing scheme (http:// or https://)
-            'http://invalid.com',  # Not a social media link
-            'https://invalid.com',  # Not a social media link
+            "invalid_url",  # Not a URL
+            "www.invalid.com",  # Missing scheme (http:// or https://)
+            "http://invalid.com",  # Not a social media link
+            "https://invalid.com",  # Not a social media link
         ]
         for url in invalid_urls:
             setattr(instance, url_field, url)
@@ -118,7 +118,7 @@ class BaseValidationTest(TestCase):
         setattr(instance, slug_field, None)
         instance.save()
         self.assertIsNotNone(getattr(instance, slug_field))
-        self.assertNotEqual(getattr(instance, slug_field), '')
+        self.assertNotEqual(getattr(instance, slug_field), "")
 
     def assert_ordering(self, factory, model):
         s1 = factory(created_at=timezone.now() - timedelta(days=1))
@@ -146,8 +146,8 @@ class BaseValidationTest(TestCase):
     def assert_view_returns_all_objects(self, url, context_key, model):
         response = self.client.get(url)
         self.assertQuerysetEqual(
-            response.context[context_key].order_by('id'),
-            model.objects.all().order_by('id'),
+            response.context[context_key].order_by("id"),
+            model.objects.all().order_by("id"),
             transform=lambda x: x,  # compare actual objects, not repr()
         )
 

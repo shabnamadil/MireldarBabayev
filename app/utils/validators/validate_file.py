@@ -13,10 +13,10 @@ def validate_extension(file_name, allowed_extensions=[".pdf", ".docx"]):
 
 
 def validate_type(file_name, file_type):
-    if file_name.lower().endswith('.pdf') and file_type != 'pdf':
-        raise ValidationError(_('File type does not match: expected PDF.'))
-    elif file_name.lower().endswith('.docx') and file_type != 'docx':
-        raise ValidationError(_('File type does not match: expected DOCX.'))
+    if file_name.lower().endswith(".pdf") and file_type != "pdf":
+        raise ValidationError(_("File type does not match: expected PDF."))
+    elif file_name.lower().endswith(".docx") and file_type != "docx":
+        raise ValidationError(_("File type does not match: expected DOCX."))
 
 
 def validate_pdf_content(file):
@@ -40,15 +40,15 @@ def validate_docx_content(file):
 
 
 def validate_file_content(file, expected_type):
-    ext = file.name.lower().split('.')[-1]
+    ext = file.name.lower().split(".")[-1]
 
     # Ensure we reset the file pointer before reading
     file.seek(0)
 
-    if ext == 'pdf' and expected_type == 'pdf':
+    if ext == "pdf" and expected_type == "pdf":
         validate_pdf_content(file)
 
-    elif ext == 'docx' and expected_type == 'docx':
+    elif ext == "docx" and expected_type == "docx":
         validate_docx_content(file)
 
     else:

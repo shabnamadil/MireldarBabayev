@@ -12,7 +12,7 @@ class TestServiceModel(BaseValidationTest):
         cls.model = Service
 
     def test_service_str_returns_name(self):
-        self.assert_str_output(self.model, 'name', 'Test service')
+        self.assert_str_output(self.model, "name", "Test service")
 
     def test_get_absolute_url_returns_correct_path(self):
         service = self.model(slug="branding")

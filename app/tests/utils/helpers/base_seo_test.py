@@ -12,38 +12,38 @@ class BaseSeoPageTest(BaseSeoDetailPageTest):
     """
 
     def test_meta_title_max_length(self):
-        self.assert_max_length(self.object, 'meta_title', 60)
+        self.assert_max_length(self.object, "meta_title", 60)
 
     def test_og_title_max_length(self):
-        self.assert_max_length(self.object, 'og_title', 60)
+        self.assert_max_length(self.object, "og_title", 60)
 
     def test_meta_title_min_length(self):
-        self.assert_min_length(self.object, 'meta_title', 30)
+        self.assert_min_length(self.object, "meta_title", 30)
 
     def test_og_title_min_length(self):
-        self.assert_min_length(self.object, 'og_title', 30)
+        self.assert_min_length(self.object, "og_title", 30)
 
     def test_singleton(self):
         self.assert_singleton(self.model)
 
     def test_meta_title_required(self):
-        self.assert_required_field(self.object, 'meta_title')
+        self.assert_required_field(self.object, "meta_title")
 
     def test_og_title_required(self):
-        self.assert_required_field(self.object, 'og_title')
+        self.assert_required_field(self.object, "og_title")
 
     def test_og_description_required(self):
-        self.assert_required_field(self.object, 'og_description')
+        self.assert_required_field(self.object, "og_description")
 
     def test_meta_title_saved_correctly(self):
-        self.assert_model_instance(self.object, 'meta_title', self.object.meta_title)
+        self.assert_model_instance(self.object, "meta_title", self.object.meta_title)
 
     def test_og_title_saved_correctly(self):
-        self.assert_model_instance(self.object, 'og_title', self.object.og_title)
+        self.assert_model_instance(self.object, "og_title", self.object.og_title)
 
     def test_og_image_saved_correctly(self):
-        self.assertTrue(self.object.og_image.name.startswith('seo-images/'))
-        self.assertTrue(self.object.og_image.name.endswith('.jpg'))
+        self.assertTrue(self.object.og_image.name.startswith("seo-images/"))
+        self.assertTrue(self.object.og_image.name.endswith(".jpg"))
 
     def test_object_saved_without_image_correctly(self):
         self.object.og_image = None

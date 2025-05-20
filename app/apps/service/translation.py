@@ -5,14 +5,14 @@ from .models import Coworker, Service, WhyChooseUs
 
 @register(Coworker)
 class CoworkerTranslationOptions(TranslationOptions):
-    fields = ('name',)
+    fields = ("name",)
 
 
 @register(Service)
 class ServiceTranslationAdmin(TranslationOptions):
-    fields = ('name', 'short_description', 'title', 'content')
+    fields = ("name", "short_description", "title", "content")
 
 
 @register(WhyChooseUs)
 class WhyChooseUsTranslationAdmin(TranslationOptions):
-    fields = ('title', 'short_description')
+    fields = ("title", "short_description")

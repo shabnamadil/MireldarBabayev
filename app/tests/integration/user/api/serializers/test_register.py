@@ -12,10 +12,10 @@ User = get_user_model()
 
 def create_test_image():
     buffer = BytesIO()
-    image = Image.new('RGB', (100, 100), color='red')
-    image.save(buffer, format='JPEG')
+    image = Image.new("RGB", (100, 100), color="red")
+    image.save(buffer, format="JPEG")
     buffer.seek(0)
-    return SimpleUploadedFile('test.jpg', buffer.read(), content_type='image/jpeg')
+    return SimpleUploadedFile("test.jpg", buffer.read(), content_type="image/jpeg")
 
 
 class TestRegisterSerializer(TestCase):
@@ -43,15 +43,15 @@ class TestRegisterSerializer(TestCase):
 
     def test_invalid_image_upload_raises_error(self):
         invalid_image = SimpleUploadedFile(
-            name='test_image.txt',
-            content=b'not an image',  # Not valid image data
-            content_type='text/plain',
+            name="test_image.txt",
+            content=b"not an image",  # Not valid image data
+            content_type="text/plain",
         )
         self.data["image"] = invalid_image
 
         serializer = self.serializer(data=self.data)
         self.assertFalse(serializer.is_valid())
-        self.assertIn('image', serializer.errors)
+        self.assertIn("image", serializer.errors)
 
     def test_missing_password_confirm(self):
         self.data["password_confirm"] = None

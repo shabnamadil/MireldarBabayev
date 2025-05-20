@@ -11,4 +11,4 @@ class TestFaqPageSeoModelIntegration(
     def setUpTestData(cls):
         cls.object = FaqPageSeoFactory()
         cls.model = FaqPageSeo
-        cls.image_field = 'og_image'
+        cls.image_field = "og_image"

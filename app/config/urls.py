@@ -34,46 +34,46 @@ from .sitemaps import BlogSitemap, ServiceSitemap, StaticSitemap
 handler404 = custom_404
 handler500 = custom_500
 
-languages = ['en', 'az', 'ru']
+languages = ["en", "az", "ru"]
 sitemaps: Dict[str, Sitemap] = {}
 
 for lang in languages:
-    sitemaps[f'blog-{lang}'] = BlogSitemap(language=lang)
-    sitemaps[f'service-{lang}'] = ServiceSitemap(language=lang)
-    sitemaps[f'static-{lang}'] = StaticSitemap(language=lang)
+    sitemaps[f"blog-{lang}"] = BlogSitemap(language=lang)
+    sitemaps[f"service-{lang}"] = ServiceSitemap(language=lang)
+    sitemaps[f"static-{lang}"] = StaticSitemap(language=lang)
 
 urlpatterns = [
-    path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('api/', include('apps.blog.api.urls')),
-    path('api/', include('apps.core.api.urls')),
-    path('api/', include('apps.appointment.api.urls')),
+    path("ckeditor/", include("ckeditor_uploader.urls")),
+    path("api/", include("apps.blog.api.urls")),
+    path("api/", include("apps.core.api.urls")),
+    path("api/", include("apps.appointment.api.urls")),
     path(
-        'robots.txt',
+        "robots.txt",
         TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),
     ),
     path(
-        'sitemap.xml',
+        "sitemap.xml",
         sitemap,
-        {'sitemaps': sitemaps, 'template_name': 'custom_sitemap.xml'},
-        name='django.contrib.sitemaps.views.sitemap',
+        {"sitemaps": sitemaps, "template_name": "custom_sitemap.xml"},
+        name="django.contrib.sitemaps.views.sitemap",
     ),
     path("django-check-seo/", include("django_check_seo.urls")),
 ]
 
 urlpatterns += i18n_patterns(
-    path('set_language/', include('django.conf.urls.i18n')),
-    path('', include('apps.blog.urls')),
-    path('', include('apps.core.urls')),
-    path('', include('apps.service.urls')),
-    path('', include('apps.appointment.urls')),
-    path('', include('apps.user.urls')),
-    path('admin/', admin.site.urls),
-    path('api/', include('apps.user.api.urls')),
-    path('jsi18n/', JavaScriptCatalog.as_view(), name='javascript-catalog'),
+    path("set_language/", include("django.conf.urls.i18n")),
+    path("", include("apps.blog.urls")),
+    path("", include("apps.core.urls")),
+    path("", include("apps.service.urls")),
+    path("", include("apps.appointment.urls")),
+    path("", include("apps.user.urls")),
+    path("admin/", admin.site.urls),
+    path("api/", include("apps.user.api.urls")),
+    path("jsi18n/", JavaScriptCatalog.as_view(), name="javascript-catalog"),
 )
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-if 'rosetta' in settings.INSTALLED_APPS:
-    urlpatterns += [re_path(r'^rosetta/', include('rosetta.urls'))]
+if "rosetta" in settings.INSTALLED_APPS:
+    urlpatterns += [re_path(r"^rosetta/", include("rosetta.urls"))]

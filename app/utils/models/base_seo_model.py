@@ -19,25 +19,29 @@ class BaseSeoModel(SingletonModel, BaseSeoDetailModel):
     """All seo models inherit this model"""
 
     meta_title = models.CharField(
-        _('Meta title'),
+        _("Meta title"),
         max_length=60,
         validators=[
             MinLengthValidator(30),
         ],
-        help_text=_('The content length must be between 30 and 60 characters.'),
+        help_text=_("The content length must be between 30 and 60 characters."),
     )
     og_title = models.CharField(
-        _('Og title'),
+        _("Og title"),
         max_length=60,
         validators=[MinLengthValidator(30)],
-        help_text=_('The content length must be between 30 and 60 characters.'),
+        help_text=_("The content length must be between 30 and 60 characters."),
     )
     og_image = models.ImageField(
-        _('Og image'),
+        _("Og image"),
         null=True,
         blank=True,
-        upload_to='seo-images/',
-        validators=[ImageSizeValidator, ImageContentValidator, ImageExtensionValidator],
+        upload_to="seo-images/",
+        validators=[
+            ImageSizeValidator,
+            ImageContentValidator,
+            ImageExtensionValidator,
+        ],
     )
 
     class Meta:

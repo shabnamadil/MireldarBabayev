@@ -12,29 +12,33 @@ from utils.validators.validate_png import (
 
 class WhyChooseUs(BaseModel):
     title = models.CharField(
-        _('Title'),
+        _("Title"),
         max_length=30,
         unique=True,
-        help_text=_('The content length is a maximum of 30.'),
+        help_text=_("The content length is a maximum of 30."),
     )
     short_description = models.TextField(
-        _('Short description'),
+        _("Short description"),
         unique=True,
         validators=[MinLengthValidator(50), MaxLengthValidator(60)],
-        help_text=_('The content length is a maximum of 60, minimum of 30.'),
+        help_text=_("The content length is a maximum of 60, minimum of 30."),
     )
     png = models.FileField(
-        _('PNG file'),
-        upload_to='why_choose_us/',
-        validators=[ImageSizeValidator, PngContentValidator, PngExtensionValidator],
-        help_text=_('Please upload a PNG file.'),
+        _("PNG file"),
+        upload_to="why_choose_us/",
+        validators=[
+            ImageSizeValidator,
+            PngContentValidator,
+            PngExtensionValidator,
+        ],
+        help_text=_("Please upload a PNG file."),
     )
 
     class Meta:
-        verbose_name = _('Why Choose Us')
-        verbose_name_plural = _('Why Choose Us')
-        ordering = ['-created_at']
-        indexes = [models.Index(fields=['-created_at'])]
+        verbose_name = _("Why Choose Us")
+        verbose_name_plural = _("Why Choose Us")
+        ordering = ["-created_at"]
+        indexes = [models.Index(fields=["-created_at"])]
 
     def __str__(self) -> str:
         return self.title

@@ -25,7 +25,6 @@ format:
 	$(PYTHON) -m isort $(PROJECT_DIR) --settings $(SETTINGS_FILE)
 	$(PYTHON) -m autoflake $(PROJECT_DIR) --config $(SETTINGS_FILE)
 	$(PYTHON) -m black $(PROJECT_DIR) --config $(SETTINGS_FILE)
-	$(PYTHON) -m autopep8 $(PROJECT_DIR) --global-config $(SETTINGS_FILE)
 
 lint:
 	$(PYTHON) -m flake8 --config $(SETTINGS_FILE) $(PROJECT_DIR)

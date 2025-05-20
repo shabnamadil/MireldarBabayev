@@ -11,4 +11,4 @@ class TestHomePageSeoModelIntegration(
     def setUpTestData(cls):
         cls.object = HomePageSeoFactory()
         cls.model = HomePageSeo
-        cls.image_field = 'og_image'
+        cls.image_field = "og_image"

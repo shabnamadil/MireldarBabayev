@@ -17,3 +17,4 @@ from .image_test import _ImageValidationTest
 from .png_test import _PngValidationTest
 from .retry import RetryTestCase
 from .translations import TRANSLATIONS
+from .video_id_test import _VideoIdValidationtest

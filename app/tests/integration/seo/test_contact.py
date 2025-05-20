@@ -11,4 +11,4 @@ class TestContactPageSeoModelIntegration(
     def setUpTestData(cls):
         cls.object = ContactPageSeoFactory()
         cls.model = ContactPageSeo
-        cls.image_field = 'og_image'
+        cls.image_field = "og_image"

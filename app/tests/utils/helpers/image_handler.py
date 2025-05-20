@@ -22,29 +22,29 @@ class ImageInputHelper:
     def __init__(self):
         self.handlers = [
             ImageHandler(
-                condition=lambda name: name == '',
+                condition=lambda name: name == "",
                 generate_path=lambda _: download_image(),
             ),
             ImageHandler(
-                condition=lambda name: 'invalid' in name,
+                condition=lambda name: "invalid" in name,
                 generate_path=lambda name: self._generate_asset_path(
                     generate_invalid_image(name)
                 ),
             ),
             ImageHandler(
-                condition=lambda name: 'disallowed' in name,
+                condition=lambda name: "disallowed" in name,
                 generate_path=lambda name: self._generate_asset_path(
                     generate_valid_image_with_disallowed_extension(name)
                 ),
             ),
             ImageHandler(
-                condition=lambda name: 'exceed' in name,
+                condition=lambda name: "exceed" in name,
                 generate_path=lambda name: self._generate_asset_path(
                     generate_invalid_image(name, size_mb=3)
                 ),
             ),
             ImageHandler(
-                condition=lambda name: 'empty' in name,
+                condition=lambda name: "empty" in name,
                 generate_path=lambda name: self._generate_asset_path(
                     create_empty_image(name)
                 ),

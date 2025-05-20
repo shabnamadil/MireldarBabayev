@@ -1,0 +1,11 @@
+from django.utils.translation import gettext_lazy as _
+
+from apps.core.models import AboutUs
+from utils.tests.base import BaseValidationTest
+
+
+class TestAboutUsModel(BaseValidationTest):
+
+    def test_about_us_str_returns_name(self):
+        instance = AboutUs()
+        self.assertEqual(str(instance), str(_("About Us Information")))

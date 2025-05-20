@@ -6,5 +6,5 @@ from utils.models.base_seo_model import BaseSeoModel
 class AppointmentPageSeo(BaseSeoModel):
 
     class Meta:
-        verbose_name = _('AppointmentPageSeo')
-        verbose_name_plural = _('AppointmentPageSeos')
+        verbose_name = _("AppointmentPageSeo")
+        verbose_name_plural = _("AppointmentPageSeos")
