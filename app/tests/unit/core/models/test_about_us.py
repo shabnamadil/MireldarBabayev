@@ -6,6 +6,6 @@ from tests.utils.helpers import BaseValidationTest
 
 class TestAboutUsModel(BaseValidationTest):
 
-    def test_about_us_str_returns_name(self):
+    def test_about_us_str_returns_valid_string(self):
         instance = AboutUs()
         self.assertEqual(str(instance), str(_("About Us Information")))

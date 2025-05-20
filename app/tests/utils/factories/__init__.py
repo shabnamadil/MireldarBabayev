@@ -1,5 +1,6 @@
 from .core.about_us import AboutUsFactory
 from .core.banner import BannerFactory
+from .core.contact import ContactFactory
 from .seo.about_us_page_seo import AboutUsPageSeoFactory
 from .seo.appintment_page_seo import AppointmentPageSeoFactory
 from .seo.blog_detail_page_seo import BlogDetailPageSeoFactory
