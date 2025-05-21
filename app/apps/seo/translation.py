@@ -15,16 +15,16 @@ from .models import (
 
 class SeoSingletonTranslationOptions(TranslationOptions):
     fields = (
-        'meta_title',
-        'meta_description',
-        'meta_keywords',
-        'og_title',
-        'og_description',
+        "meta_title",
+        "meta_description",
+        "meta_keywords",
+        "og_title",
+        "og_description",
     )
 
 
 class SeoDetailPageTranslationOptions(TranslationOptions):
-    fields = ('meta_description', 'meta_keywords', 'og_description')
+    fields = ("meta_description", "meta_keywords", "og_description")
 
 
 @register(HomePageSeo)

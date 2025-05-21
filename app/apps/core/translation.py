@@ -13,34 +13,34 @@ from .models import (
 
 @register(AboutUs)
 class AboutUsTranslationOptions(TranslationOptions):
-    fields = ('content', 'mission', 'vision', 'value')
+    fields = ("content", "mission", "vision", "value")
 
 
 @register(Banner)
 class BannerTranslationAdmin(TranslationOptions):
-    fields = ('title', 'subtitle', 'description')
+    fields = ("title", "subtitle", "description")
 
 
 @register(Faq)
 class FaqTranslationAdmin(TranslationOptions):
-    fields = ('question', 'response')
+    fields = ("question", "response")
 
 
 @register(SiteSettings)
 class SiteSettingsTranslationAdmin(TranslationOptions):
-    fields = ('location', 'footer_description')
+    fields = ("location", "footer_description")
 
 
 @register(StatisticalIndicator)
 class StatisticalIndicatorSettingsTranslationAdmin(TranslationOptions):
-    fields = ('name',)
+    fields = ("name",)
 
 
 @register(Testimoinal)
 class TestimonialTranslationAdmin(TranslationOptions):
-    fields = ('client_profession', 'client_comment')
+    fields = ("client_profession", "client_comment")
 
 
 @register(WhoWeAre)
 class WhoWeAreTranslationAdmin(TranslationOptions):
-    fields = ('title', 'content')
+    fields = ("title", "content")

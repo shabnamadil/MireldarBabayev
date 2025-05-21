@@ -7,11 +7,11 @@ from .views import (
 )
 
 urlpatterns = [
-    path('blogs/', BlogListAPIView.as_view()),
-    path('comment/', CommentListPostAPIView.as_view(), name='comment'),
+    path("blogs/", BlogListAPIView.as_view()),
+    path("comment/", CommentListPostAPIView.as_view(), name="comment"),
     path(
-        'comment/<int:pk>/',
+        "comment/<int:pk>/",
         CommentRetrieveUpdateDestroyAPIView.as_view(),
-        name='comment-update-destroy',
+        name="comment-update-destroy",
     ),
 ]

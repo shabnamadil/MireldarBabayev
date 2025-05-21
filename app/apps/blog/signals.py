@@ -26,14 +26,14 @@ def notify_user_on_comment_delete(sender, instance, **kwargs):
 
     subject = "Your comment has been deleted"
     context = {
-        'author_name': instance.author.get_full_name(),
-        'blog_title': instance.blog.title,
-        'comment_content': instance.content,
-        'current_year': datetime.datetime.now().year,
-        'settings': SiteSettings.objects.first(),
+        "author_name": instance.author.get_full_name(),
+        "blog_title": instance.blog.title,
+        "comment_content": instance.content,
+        "current_year": datetime.datetime.now().year,
+        "settings": SiteSettings.objects.first(),
     }
     message = render_to_string(
-        'components/email/blog/comment_author_send_email.html', context
+        "components/email/blog/comment_author_send_email.html", context
     )
     recipient_list = [instance.author.email]
     send_mail(

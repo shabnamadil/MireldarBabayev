@@ -11,23 +11,27 @@ from utils.validators.validate_png import (
 
 class Coworker(BaseModel):
     name = models.CharField(
-        _('Company name'),
+        _("Company name"),
         max_length=100,
         unique=True,
-        help_text=_('The content length is a maximum of 100.'),
+        help_text=_("The content length is a maximum of 100."),
     )
     png = models.FileField(
-        _('Logo'),
-        upload_to='coworkers/',
-        help_text=_('Please upload a PNG file.'),
-        validators=[ImageSizeValidator, PngContentValidator, PngExtensionValidator],
+        _("Logo"),
+        upload_to="coworkers/",
+        help_text=_("Please upload a PNG file."),
+        validators=[
+            ImageSizeValidator,
+            PngContentValidator,
+            PngExtensionValidator,
+        ],
     )
 
     class Meta:
-        verbose_name = _('Coworker')
-        verbose_name_plural = _('Coworkers')
-        ordering = ['-created_at']
-        indexes = [models.Index(fields=['-created_at'])]
+        verbose_name = _("Coworker")
+        verbose_name_plural = _("Coworkers")
+        ordering = ["-created_at"]
+        indexes = [models.Index(fields=["-created_at"])]
 
     def __str__(self) -> str:
         return self.name

@@ -6,19 +6,19 @@ from django.utils import timezone
 
 def validate_time_format(value):
     """Validates that the time format is HH:MM - HH:MM."""
-    pattern = r'^(\d{2}):(\d{2}) - (\d{2}):(\d{2})$'
+    pattern = r"^(\d{2}):(\d{2}) - (\d{2}):(\d{2})$"
     match = re.match(pattern, value)
     if not match:
-        raise ValidationError(f'{value} is not a valid work hour format.')
+        raise ValidationError(f"{value} is not a valid work hour format.")
     return match.groups()  # Return groups instead of match object
 
 
 def validate_hour_minute(hour, minute):
     """Ensures hours (00-23) and minutes (00-59) are valid."""
     if not (0 <= hour <= 23):
-        raise ValidationError('Hours must be between 00 and 23.')
+        raise ValidationError("Hours must be between 00 and 23.")
     elif not (0 <= minute <= 59):
-        raise ValidationError('Minutes must be between 00 and 59.')
+        raise ValidationError("Minutes must be between 00 and 59.")
 
 
 def validate_time_order(start_hour, start_minute, end_hour, end_minute):
@@ -28,7 +28,7 @@ def validate_time_order(start_hour, start_minute, end_hour, end_minute):
 
     if start_time >= end_time:
         raise ValidationError(
-            f'Start time must be before end time: {start_time} - {end_time}'
+            f"Start time must be before end time: {start_time} - {end_time}"
         )
 
 

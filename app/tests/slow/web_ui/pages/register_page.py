@@ -11,18 +11,18 @@ class RegisterPage(BasePage):
     """Page object for the register page."""
 
     # Locators for the register page elements
-    first_name_input = (By.NAME, 'first_name')
-    last_name_input = (By.NAME, 'last_name')
-    email_input = (By.NAME, 'email')
-    image_input = (By.NAME, 'image')
-    password_input = (By.NAME, 'password')
-    confirm_password_input = (By.NAME, 'password_confirm')
-    success_message = (By.ID, 'successRegisterMessage')
+    first_name_input = (By.NAME, "first_name")
+    last_name_input = (By.NAME, "last_name")
+    email_input = (By.NAME, "email")
+    image_input = (By.NAME, "image")
+    password_input = (By.NAME, "password")
+    confirm_password_input = (By.NAME, "password_confirm")
+    success_message = (By.ID, "successRegisterMessage")
     register_button = (By.XPATH, '//button[@type="submit"]')
 
-    def load(self, live_server_url, lang='en'):
+    def load(self, live_server_url, lang="en"):
         activate(lang)
-        login_url = urljoin(live_server_url, reverse('register'))
+        login_url = urljoin(live_server_url, reverse("register"))
         self.open(login_url, lang)
 
     def register(
