@@ -27,7 +27,7 @@ class Banner(BaseModel):
     )
     description = models.TextField(_("Short description"), unique=True)
     png = models.ImageField(
-        "Banner foto",
+        _("Banner photo"),
         upload_to="banner/",
         help_text=_("Please upload a PNG file.(720x726px)"),
         validators=[

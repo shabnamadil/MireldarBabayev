@@ -2,6 +2,7 @@ from .core.about_us import AboutUsFactory
 from .core.banner import BannerFactory
 from .core.contact import ContactFactory
 from .core.faq import FaqFactory
+from .core.indicator import StatisticalIndicatorFactory
 from .core.newsletter import NewsletterFactory
 from .seo.about_us_page_seo import AboutUsPageSeoFactory
 from .seo.appintment_page_seo import AppointmentPageSeoFactory
