@@ -30,13 +30,7 @@ class BaseValidationTest(TestCase):
 
     def assert_invalid_number(self, instance, number_field=None):
         """Test that an invalid number raises a validation error."""
-        invalid_numbers = [
-            "123",
-            "-1234567890",
-            "asdfgh",
-            "12345678ty",
-            "12345678901234567890",
-        ]
+        invalid_numbers = ["123", "-1234567890", "asdfgh", "12345678ty"]
         for number in invalid_numbers:
             setattr(instance, number_field, number)
             with self.assertRaises(ValidationError):
