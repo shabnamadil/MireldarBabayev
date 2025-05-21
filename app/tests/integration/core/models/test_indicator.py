@@ -50,3 +50,6 @@ class TestStatisticalIndicatorModelIntegration(BaseValidationTest, _PngValidatio
 
     def test_indicators_are_ordered_by_created_at_desc(self):
         self.assert_ordering(self.factory, self.model)
+
+    def test_statistical_indicator_value_type(self):
+        self.assert_field_type(self.object, "value", "a")

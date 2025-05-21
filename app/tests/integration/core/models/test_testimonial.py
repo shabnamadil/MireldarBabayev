@@ -102,3 +102,6 @@ class TestTestimonialModelIntegration(BaseValidationTest, _ImageValidationTest):
         self.object.star = 3
         expected_range = range(3)
         self.assertEqual(list(self.object.star_range), list(expected_range))
+
+    def test_testimonial_star_type(self):
+        self.assert_field_type(self.object, "star", "a")

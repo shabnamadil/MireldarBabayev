@@ -20,6 +20,13 @@ recursive = true
 in-place = true
 exclude = ["__init__.py", "settings", "migrations", "apps.py"]
 
+[tool.autopep8]
+max_line_length = 90
+in-place = true
+recursive = true
+aggressive = 2
+exclude = "__init__.py,settings,migrations,apps.py"
+
 [tool.flake8]
 max-line-length = 88
 select = ["C", "E226", "F", "W", "B", "B9"]

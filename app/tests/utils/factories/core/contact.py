@@ -9,7 +9,7 @@ class ContactFactory(factory.django.DjangoModelFactory):
     first_name = factory.LazyFunction(lambda: generate_factory_content(1, 20))
     last_name = factory.LazyFunction(lambda: generate_factory_content(1, 20))
     email = factory.Faker("email")
-    phone = factory.Faker("phone_number")
+    phone = factory.LazyFunction(lambda: "+12025550173")
     message = factory.Faker("sentence", nb_words=10)
 
     class Meta:

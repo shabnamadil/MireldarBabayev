@@ -55,8 +55,4 @@ def validate_tiktok(value):
 def validate_youtube_video_id(value):
     pattern = r"^[a-zA-Z0-9_-]{11}$"
     if not re.match(pattern, value):
-        raise ValidationError(
-            _(
-                "Enter a valid YouTube video ID (11 characters, alphanumeric with _ or -)."
-            )
-        )
+        raise ValidationError(_("Enter a valid YouTube video ID."))

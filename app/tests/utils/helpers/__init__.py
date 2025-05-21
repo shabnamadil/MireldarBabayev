@@ -16,7 +16,9 @@ from .generate_png import generate_png_file
 from .generate_video import generate_video_id
 from .image_handler import ImageInputHelper
 from .image_test import _ImageValidationTest
+from .map_url import _MapUrlValidationTest
 from .png_test import _PngValidationTest
 from .retry import RetryTestCase
 from .translations import TRANSLATIONS
 from .video_id_test import _VideoIdValidationtest
+from .work_hour_test import _WorkHourValidationTest
