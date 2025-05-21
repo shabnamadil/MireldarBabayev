@@ -4,6 +4,7 @@ from .core.contact import ContactFactory
 from .core.faq import FaqFactory
 from .core.indicator import StatisticalIndicatorFactory
 from .core.newsletter import NewsletterFactory
+from .core.testimonial import TestimonialFactory
 from .seo.about_us_page_seo import AboutUsPageSeoFactory
 from .seo.appintment_page_seo import AppointmentPageSeoFactory
 from .seo.blog_detail_page_seo import BlogDetailPageSeoFactory

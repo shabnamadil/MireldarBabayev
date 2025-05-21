@@ -14,7 +14,7 @@ class TestContactModelIntegration(BaseValidationTest):
         cls.object = cls.factory()
         cls.model = Contact
 
-    def test_contact_str_returns_translated_name(self):
+    def test_contact_str_returns_valid_string(self):
         expected = _("Message from %(first_name)s %(last_name)s") % {
             "first_name": self.object.first_name,
             "last_name": self.object.last_name,
