@@ -114,9 +114,9 @@ class BaseValidationTest(TestCase):
         self.assertIsNotNone(getattr(instance, slug_field))
         self.assertNotEqual(getattr(instance, slug_field), "")
 
-    def assert_ordering(self, factory, model):
-        s1 = factory(created_at=timezone.now() - timedelta(days=1))
-        s2 = factory(created_at=timezone.now())
+    def assert_ordering(self, factory, model, field_name="created_at"):
+        s1 = factory(**{field_name: timezone.now() - timedelta(days=1)})
+        s2 = factory(**{field_name: timezone.now()})
 
         objects = model.objects.filter(id__in=[s1.id, s2.id])
         self.assertEqual(list(objects), [s2, s1])
