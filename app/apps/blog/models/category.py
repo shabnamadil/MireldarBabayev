@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 from utils.helpers.slugify import custom_slugify
 from utils.models.base_model import BaseModel
@@ -6,22 +7,22 @@ from utils.models.base_model import BaseModel
 
 class Category(BaseModel):
     name = models.CharField(
-        "Kateqoriya adı",
+        _("Category name"),
         max_length=150,
         unique=True,
-        help_text="Kontentin uzunluğu maksimum 150-dir.",
+        help_text=_("The content length is a maximum of 150."),
     )
     slug = models.SlugField(
-        "Link adı",
+        _("Slug"),
         null=True,
         blank=True,
-        help_text="Bu qismi boş buraxın. Avtomatik doldurulacaq.",
+        help_text=_("Leave blank to auto-generate."),
         max_length=500,
     )
 
     class Meta:
-        verbose_name = "Məqalə kateqoriyası"
-        verbose_name_plural = "Məqalə kateqoriyaları"
+        verbose_name = _("Category")
+        verbose_name_plural = _("Categories")
 
     def __str__(self) -> str:
         return self.name

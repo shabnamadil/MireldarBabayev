@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 from utils.models.base_model import BaseModel
 
@@ -9,23 +10,23 @@ User = get_user_model()
 
 
 class Comment(BaseModel):
-    content = models.TextField("Bloq rəyi")
+    content = models.TextField(_("Comment content"))
     blog = models.ForeignKey(
         Blog,
         on_delete=models.CASCADE,
         related_name="comments",
-        verbose_name="Bloq",
+        verbose_name=_("Blog"),
     )
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
         related_name="comments",
-        verbose_name="Rəy müəllifi",
+        verbose_name=_("Comment author"),
     )
 
     class Meta:
-        verbose_name = "Məqalə rəyi"
-        verbose_name_plural = "Məqalə rəyləri"
+        verbose_name = _("Article comment")
+        verbose_name_plural = _("Article comments")
         ordering = ["-created_at"]
         indexes = [models.Index(fields=["-created_at"])]
 

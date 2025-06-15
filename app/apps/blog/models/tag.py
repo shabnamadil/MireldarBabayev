@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 from utils.helpers.slugify import custom_slugify
 from utils.models.base_model import BaseModel
@@ -6,22 +7,22 @@ from utils.models.base_model import BaseModel
 
 class Tag(BaseModel):
     name = models.CharField(
-        "Tag",
+        _("Tag name"),
         max_length=80,
         unique=True,
-        help_text="Kontentin uzunluğu maksimum 80-dir.",
+        help_text=_("The content length is a maximum of 80."),
     )
     slug = models.SlugField(
-        "Link adı",
+        _("Slug"),
         null=True,
         blank=True,
-        help_text="Bu qismi boş buraxın. Avtomatik doldurulacaq.",
+        help_text=_("Leave this field blank. It will be filled automatically."),
         max_length=500,
     )
 
     class Meta:
-        verbose_name = "Məqalə teqi"
-        verbose_name_plural = "Məqalə teqləri"
+        verbose_name = _("Tag")
+        verbose_name_plural = _("Tags")
 
     def __str__(self) -> str:
         return self.name
