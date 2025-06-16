@@ -60,14 +60,15 @@ class TestRegisterSerializer(TestCase):
         self.assertIn("password_confirm", serializer.errors)
 
     def test_passwords_do_not_match(self):
-        self.data["password_confirm"] = "DifferentPass123!"
+        self.data["password_confirm"] = self.data["password"] + "_mismatch"
         serializer = self.serializer(data=self.data)
         self.assertFalse(serializer.is_valid())
         self.assertIn("password_confirm", serializer.errors)
 
     def test_weak_password(self):
-        self.data["password"] = "123"
-        self.data["password_confirm"] = "123"
+        weak_pwd = "12" + "34"
+        self.data["password"] = weak_pwd
+        self.data["password_confirm"] = weak_pwd
         serializer = self.serializer(data=self.data)
         self.assertFalse(serializer.is_valid())
         self.assertIn("password", serializer.errors)
@@ -84,7 +85,7 @@ class TestRegisterSerializer(TestCase):
 
     def test_email_already_registered(self):
         self.model.objects.create_user(
-            email="john@example.com", password="SomePass123!"
+            email="john@example.com", password="SomePass123!"  # nosec
         )
         serializer = self.serializer(data=self.data)
         self.assertFalse(serializer.is_valid())

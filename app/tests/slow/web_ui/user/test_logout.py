@@ -12,7 +12,8 @@ class LogoutFunctionalityTest(BaseUITest):
 
         self.logout = LogoutFunctionality(self.browser)
         self.login_page = LoginPage(self.browser)
-        self.user = UserFactory(email="selenium@gmail.com", password="Seleniumpass1234")
+        self.TEST_PASSWORD = "P@ssw0rd"  # nosec
+        self.user = UserFactory(email="selenium@gmail.com", password=self.TEST_PASSWORD)
 
     def _logout(self, window_size):
         # Set the window size
@@ -20,7 +21,7 @@ class LogoutFunctionalityTest(BaseUITest):
 
         # Step 1: Log in to the application
         self.login_page.load(self.live_server_url)
-        self.login_page.login("selenium@gmail.com", "Seleniumpass1234")
+        self.login_page.login("selenium@gmail.com", self.TEST_PASSWORD)
         self.login_page.wait_url_changes(self.browser.current_url)
         BasePage(self.browser)._set_user_info_available()
 

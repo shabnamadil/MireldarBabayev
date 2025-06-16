@@ -1,5 +1,7 @@
 import tempfile
 
+from django.conf import settings
+
 import requests
 
 
@@ -8,7 +10,7 @@ def download_image():
     image_url = "https://picsum.photos/200/300"
 
     # Download the image content
-    response = requests.get(image_url)
+    response = requests.get(image_url, timeout=settings.DEFAULT_REQUEST_TIMEOUT)
 
     try:
         if response.status_code == 200:
