@@ -20,7 +20,7 @@ class TestCustomUserManager(BaseValidationTest):
 
     def test_custom_user_manager_creates_superuser(self):
         superuser = self.model.objects.create_superuser(
-            email="admin@example.com", password="adminpass"
+            email="admin@example.com", password="test_password"  # nosec
         )
         self.assertTrue(superuser.is_superuser)
         self.assertTrue(superuser.is_staff)
@@ -53,5 +53,5 @@ class TestCustomUserManager(BaseValidationTest):
     ):
         with self.assertRaises(IntegrityError):
             self.model.objects.create_superuser(
-                email=self.user.email, password="testpassword"
+                email=self.user.email, password="testpassword"  # nosec
             )
