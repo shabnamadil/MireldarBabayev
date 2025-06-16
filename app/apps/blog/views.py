@@ -20,7 +20,7 @@ class BlogListView(TemplateView):
                 "blogs", filter=Q(blogs__status=Blog.Status.PUBLISHED)
             )
         )
-        cx["tags"] = (Tag.objects.all(),)
+        cx["tags"] = Tag.objects.all()
         cx["seo"] = BlogsPageSeo.objects.first()
         return cx
 
