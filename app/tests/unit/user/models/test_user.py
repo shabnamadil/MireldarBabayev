@@ -31,7 +31,7 @@ class TestCustomUserModel(BaseValidationTest):
         self.assertEqual(user.full_name, "Doe")
 
     def test_username_field_is_email(self):
-        assert self.model.USERNAME_FIELD == "email"
+        self.assertEqual(self.model.USERNAME_FIELD, "email")
 
     def test_required_fields_are_empty(self):
-        assert self.model.REQUIRED_FIELDS == []
+        self.assertEqual(self.model.REQUIRED_FIELDS, [])
