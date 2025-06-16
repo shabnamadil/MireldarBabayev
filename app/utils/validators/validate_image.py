@@ -7,13 +7,13 @@ from PIL import Image
 def validate_image_size(value):
     max_size_mb = 2
     if value.size > max_size_mb * 1024 * 1024:
-        raise ValidationError(_(f'Image size should not exceed {max_size_mb} MB.'))
+        raise ValidationError(_(f"Image size should not exceed {max_size_mb} MB."))
 
 
 def validate_image_extension(file, allowed_extensions=[".jpg", ".png", ".jpeg"]):
     file_name = file.name  # Get filename from file object
     if not any(file_name.lower().endswith(ext) for ext in allowed_extensions):
-        raise ValidationError(_('Only JPG, PNG, and JPEG files are accepted.'))
+        raise ValidationError(_("Only JPG, PNG, and JPEG files are accepted."))
 
 
 def validate_image_content(file):
@@ -21,4 +21,4 @@ def validate_image_content(file):
         image = Image.open(file)
         image.verify()  # Verify that it is an image
     except Exception:
-        raise ValidationError(_('Upload a valid image'))
+        raise ValidationError(_("Upload a valid image"))

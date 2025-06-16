@@ -17,7 +17,7 @@ class BasePage:
 
     def open(self, url, lang):
         self.browser.get(url)
-        self.browser.add_cookie({'name': 'django_language', 'value': lang})
+        self.browser.add_cookie({"name": "django_language", "value": lang})
         self.browser.refresh()
 
     def find_element(self, locator):
@@ -53,7 +53,7 @@ class BasePage:
 
     def get_error_message(self, field_name):
         """Get the error locator for a specific field."""
-        locator = (By.ID, f'{field_name}_error')
+        locator = (By.ID, f"{field_name}_error")
         return self.find_visible_element(locator).text
 
     def wait_url_changes(self, old_url, timeout=15):

@@ -3,7 +3,6 @@ line-length = 88
 target-version = ['py312']
 include = '\.pyi?$'
 exclude = "(migrations|settings|__init__\\.py)"
-skip-string-normalization = true  # Skip string normalization (to keep quotes as you wrote them)
 
 [tool.isort]
 profile = "black"
@@ -22,7 +21,7 @@ in-place = true
 exclude = ["__init__.py", "settings", "migrations", "apps.py"]
 
 [tool.autopep8]
-max_line_length = 88
+max_line_length = 90
 in-place = true
 recursive = true
 aggressive = 2

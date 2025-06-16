@@ -30,28 +30,28 @@ def make_published(self, request, queryset):
 @admin.register(Blog)
 class BlogAdmin(TranslationAdmin):
     list_display = (
-        'title',
-        'display_blog_img',
-        'display_blog_author',
-        'view_count',
-        'display_blog_cats',
-        'show_comment_count',
-        'status',
-        'created_date',
+        "title",
+        "display_blog_img",
+        "display_blog_author",
+        "view_count",
+        "display_blog_cats",
+        "show_comment_count",
+        "status",
+        "created_date",
     )
-    list_filter = ('created_at', 'status', 'category', 'tag')
+    list_filter = ("created_at", "status", "category", "tag")
     search_fields = (
-        'title',
-        'content',
-        'short_description',
-        'category__name',
-        'tag__name',
+        "title",
+        "content",
+        "short_description",
+        "category__name",
+        "tag__name",
     )
-    ordering = ('-updated_at', 'title')
-    date_hierarchy = 'created_at'
+    ordering = ("-updated_at", "title")
+    date_hierarchy = "created_at"
     list_per_page = 20
     actions = (make_draft, make_published)
-    readonly_fields = ('author', 'slug', 'published_at')
+    readonly_fields = ("author", "slug", "published_at")
 
     def save_model(self, request, obj, form, change):
         if not obj.pk:
@@ -60,7 +60,7 @@ class BlogAdmin(TranslationAdmin):
 
     def display_blog_author(self, obj):
         author_name = (
-            obj.author.get_full_name() if obj.author.get_full_name() else 'Admin'
+            obj.author.get_full_name() if obj.author.get_full_name() else "Admin"
         )
         url = reverse("admin:user_customuser_change", args=[obj.author.id])
         link = '<a style="color: red;" href="%s">%s</a>' % (
@@ -69,7 +69,7 @@ class BlogAdmin(TranslationAdmin):
         )
         return format_html(link)
 
-    display_blog_author.short_description = 'Müəllif'  # type: ignore[attr-defined]
+    display_blog_author.short_description = "Müəllif"  # type: ignore[attr-defined]
 
     def display_blog_img(self, obj):
         image = obj.image.url
@@ -77,45 +77,45 @@ class BlogAdmin(TranslationAdmin):
             raw_html = f'<img style="width:70px;height:auto;" src="{image}">'
             return format_html(raw_html)
 
-    display_blog_img.short_description = 'Cover foto'  # type: ignore[attr-defined]
+    display_blog_img.short_description = "Cover foto"  # type: ignore[attr-defined]
 
     def display_blog_cats(self, obj):
         return ", ".join(category.name for category in obj.category.all())
 
-    display_blog_cats.short_description = 'Kateqoriya'  # type: ignore[attr-defined]
+    display_blog_cats.short_description = "Kateqoriya"  # type: ignore[attr-defined]
 
     def show_comment_count(self, obj):
         result = Comment.objects.filter(blog=obj).count()
         return result
 
-    show_comment_count.short_description = 'RƏYLƏRİN SAYI'  # type: ignore[attr-defined]
+    show_comment_count.short_description = "RƏYLƏRİN SAYI"  # type: ignore[attr-defined]
 
     class Media:
         js = (
-            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
-            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
-            'modeltranslation/js/tabbed_translation_fields.js',
+            "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+            "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js",
+            "modeltranslation/js/tabbed_translation_fields.js",
         )
         css = {
-            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
+            "screen": ("modeltranslation/css/tabbed_translation_fields.css",),
         }
 
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     list_display = (
-        'get_comment',
-        'display_blog',
-        'display_comment_author',
-        'created_date',
+        "get_comment",
+        "display_blog",
+        "display_comment_author",
+        "created_date",
     )
-    list_filter = ('created_at',)
-    search_fields = ('content',)
-    ordering = ('-updated_at', 'content')
-    date_hierarchy = 'created_at'
+    list_filter = ("created_at",)
+    search_fields = ("content",)
+    ordering = ("-updated_at", "content")
+    date_hierarchy = "created_at"
     list_per_page = 20
-    readonly_fields = ('author',)
-    autocomplete_fields = ('blog',)
+    readonly_fields = ("author",)
+    autocomplete_fields = ("blog",)
 
     def save_model(self, request, obj, form, change):
         if not obj.pk:
@@ -130,11 +130,11 @@ class CommentAdmin(admin.ModelAdmin):
         )
         return format_html(link)
 
-    display_blog.short_description = 'Bloq'  # type: ignore[attr-defined]
+    display_blog.short_description = "Bloq"  # type: ignore[attr-defined]
 
     def display_comment_author(self, obj):
         author_name = (
-            obj.author.get_full_name() if obj.author.get_full_name() else 'Admin'
+            obj.author.get_full_name() if obj.author.get_full_name() else "Admin"
         )
         url = reverse("admin:user_customuser_change", args=[obj.author.id])
         link = '<a style="color: red;" href="%s">%s</a>' % (
@@ -143,12 +143,12 @@ class CommentAdmin(admin.ModelAdmin):
         )
         return format_html(link)
 
-    display_comment_author.short_description = 'Müəllif'  # type: ignore[attr-defined]
+    display_comment_author.short_description = "Müəllif"  # type: ignore[attr-defined]
 
     def get_comment(self, obj):
         return obj.truncated_comment
 
-    get_comment.short_description = 'Comment'  # type: ignore[attr-defined]
+    get_comment.short_description = "Comment"  # type: ignore[attr-defined]
 
     def has_change_permission(self, request, obj=None):
         if obj is None:
@@ -160,12 +160,12 @@ class CommentAdmin(admin.ModelAdmin):
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    readonly_fields = ('slug',)
+    readonly_fields = ("slug",)
 
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
-    readonly_fields = ('slug',)
+    readonly_fields = ("slug",)
 
 
 @admin.register(IP)

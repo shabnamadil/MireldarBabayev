@@ -7,15 +7,15 @@ from ..models import Contact, Newsletter
 class NewsletterPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Newsletter
-        fields = ('id', 'email')
+        fields = ("id", "email")
 
 
 class ContactPostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
-        fields = ('first_name', 'last_name', 'email', 'phone', 'message')
+        fields = ("first_name", "last_name", "email", "phone", "message")
 
     def validate(self, attrs):
-        phone = attrs.get('phone', '')
+        phone = attrs.get("phone", "")
         validate_phone_value(phone)
         return super().validate(attrs)
