@@ -11,7 +11,7 @@ class BaseUITest(StaticLiveServerTestCase, RetryTestCase):
     def setUp(self):
         super().setUp()
         chrome_options = webdriver.ChromeOptions()
-        # chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--headless")
         chrome_options.add_argument("--disable-application-cache")
         chrome_options.add_argument("--disk-cache-size=0")
         chrome_options.add_argument("--disable-cache")
