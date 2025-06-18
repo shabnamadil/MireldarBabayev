@@ -113,9 +113,6 @@ db.sqlite3
 # Static/Media
 app/static/
 media/
-*.png
-*.jpg
-*.mp4
 
 # Translations
 *.pot
