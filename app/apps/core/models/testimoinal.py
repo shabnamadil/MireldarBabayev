@@ -5,45 +5,60 @@ from django.core.validators import (
     MinValueValidator,
 )
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 from utils.models.base_model import BaseModel
+from utils.validators.validate_image import (
+    validate_image_content as ImageContentValidator,
+)
+from utils.validators.validate_image import (
+    validate_image_extension as ImageExtensionValidator,
+)
+from utils.validators.validate_image import validate_image_size as ImageSizeValidator
 
 
 class Testimoinal(BaseModel):
     client_image = models.ImageField(
-        'Müştəri fotosu',
-        upload_to='testimonials/',
-        help_text="Foto '170x170px' ölçüsündə olmalıdır. ",
+        _("Client image"),
+        upload_to="testimonials/",
+        help_text="Kindly upload a photo for the About page. Image size shoud not exceed 2mb. (170x170px)",
+        validators=[
+            ImageSizeValidator,
+            ImageContentValidator,
+            ImageExtensionValidator,
+        ],
     )
     client_full_name = models.CharField(
-        'Müştərinin ad, soyadı',
+        _("Client full name"),
         max_length=20,
-        help_text='Kontentin uzunluğu maksimum 20-dir.',
+        help_text=_("The content length is a maximum of 20."),
     )
     client_profession = models.CharField(
-        'Müştərinin peşəsi',
+        _("Client profession"),
         max_length=100,
-        help_text='Kontentin uzunluğu maksimum 200-dür.',
+        help_text=_("The content length is a maximum of 100."),
     )
     client_comment = models.TextField(
-        'Müştəri rəyi',
+        _("Comment"),
         validators=[MinLengthValidator(150), MaxLengthValidator(155)],
     )
     star = models.IntegerField(
-        'Müştərinin verdiyi qiymət',
-        help_text='5 ballıq sistem üzərindən dəyərləndirmə',
+        _("Stars given by client"),
+        help_text=_("Points between 1 and 5"),
         validators=[MinValueValidator(1), MaxValueValidator(5)],
     )
 
     class Meta:
-        verbose_name = 'Müştəri rəyi'
-        verbose_name_plural = 'Müştəri rəyləri'
-        indexes = [models.Index(fields=['created_at'])]
-        ordering = ('-created_at',)
+        verbose_name = _("Testimonial")
+        verbose_name_plural = _("Testimonials")
+        indexes = [models.Index(fields=["created_at"])]
+        ordering = ("-created_at",)
 
     @property
     def star_range(self):
         return range(self.star)
 
     def __str__(self) -> str:
-        return f'{self.client_full_name}-in rəyi'
+        return _("Comment by %(client_full_name)s") % {
+            "client_full_name": self.client_full_name
+        }

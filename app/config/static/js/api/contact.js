@@ -25,7 +25,7 @@ async function contact() {
         }
     } catch (error) {
         console.error('An error occurred:', error);
-        displayContactErrors({ error: 'An unexpected error occurred. Please try again.' });
+        displayContactErrors({ error: gettext('An unexpected error occurred. Please try again.') });
     }
 }
 

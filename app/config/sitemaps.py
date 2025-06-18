@@ -8,7 +8,7 @@ from apps.service.models import Service
 class StaticSitemap(Sitemap):
     changefreq = "weekly"
     priority = 0.8
-    protocol = 'https'
+    protocol = "https"
     i18n = True
     limit = 1000
 
@@ -17,12 +17,12 @@ class StaticSitemap(Sitemap):
 
     def items(self):
         return [
-            'home',
-            'about',
-            'contact',
-            'faq',
-            'services',
-            'blogs',
+            "home",
+            "about",
+            "contact",
+            "faq",
+            "services",
+            "blogs",
         ]
 
     def location(self, item):
@@ -32,7 +32,7 @@ class StaticSitemap(Sitemap):
 class BlogSitemap(Sitemap):
     changefreq = "daily"
     priority = 0.9
-    protocol = 'https'
+    protocol = "https"
     i18n = True
     limit = 1000
 

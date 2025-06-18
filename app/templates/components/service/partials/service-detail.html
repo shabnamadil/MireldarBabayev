@@ -3,7 +3,7 @@
 {% load i18n %}
 
 {% block title %}
-    <title>{{service.title|default:settings.site_name}}</title>
+    <title>{{service.title}}</title>
 {% endblock title %}
  
 {% block seo %}
@@ -14,7 +14,7 @@
     <meta property="og:description" content="{{seo.og_description|default:default_description}}">
 {% endwith %}
     <meta property="og:title" content="{{service.title}}">
-    <meta property="og:image" content="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{service.image.url|default:settings.logo.url}}">
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{service.image.url}}">
 
 {% endblock seo %}
 

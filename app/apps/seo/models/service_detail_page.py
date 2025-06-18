@@ -1,30 +1,21 @@
-from django.core.validators import MaxLengthValidator, MinLengthValidator
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 from apps.service.models import Service
-from utils.models.base_model import BaseModel
+from utils.models.base_seo_detail import BaseSeoDetailModel
 
 
-class ServiceDetailPageSeo(BaseModel):
-    meta_description = models.TextField(
-        validators=[MaxLengthValidator(160), MinLengthValidator(50)],
-        help_text='Kontentin uzunluğu maksimum 50-160 aralığındadır.',
-    )
-    meta_keywords = models.TextField(
-        validators=[MaxLengthValidator(160), MinLengthValidator(50)],
-        help_text='Kontentin uzunluğu maksimum 50-160 aralığındadır.',
-    )
-    og_description = models.TextField(
-        validators=[MaxLengthValidator(160), MinLengthValidator(50)],
-        help_text='Kontentin uzunluğu maksimum 50-160 aralığındadır.',
-    )
+class ServiceDetailPageSeo(BaseSeoDetailModel):
     service = models.OneToOneField(
-        Service, related_name='detail_page_seo', on_delete=models.CASCADE
+        Service,
+        related_name="detail_page_seo",
+        on_delete=models.CASCADE,
+        verbose_name=_("Service"),
     )
-
-    def __str__(self):
-        return f'SEO ==> {self.service}'
 
     class Meta:
-        verbose_name = 'Service Detail Page SEO'
-        verbose_name_plural = 'Service Detail Page SEO'
+        verbose_name = _("ServiceDetailPageSeo")
+        verbose_name_plural = _("ServiceDetailPageSeos")
+
+    def __str__(self):
+        return f"SEO ==> {self.service}"

@@ -1,13 +1,12 @@
 [tool.black]
-line-length = 79
+line-length = 88
 target-version = ['py312']
 include = '\.pyi?$'
 exclude = "(migrations|settings|__init__\\.py)"
-skip-string-normalization = true  # Skip string normalization (to keep quotes as you wrote them)
 
 [tool.isort]
 profile = "black"
-line_length = 79
+line_length = 88
 multi_line_output = 3
 force_grid_wrap = 0
 skip = ["migrations", "env", "settings"]
@@ -29,7 +28,7 @@ aggressive = 2
 exclude = "__init__.py,settings,migrations,apps.py"
 
 [tool.flake8]
-max-line-length = 79
+max-line-length = 88
 select = ["C", "E226", "F", "W", "B", "B9"]
 exclude = [".git", "__pycache__", ".venv", "migrations", "__init__.py", "settings", "apps.py"]
 ignore = ["E203", "E501", "W503", "C812", "E731", "F811"]
@@ -44,9 +43,14 @@ skips = ["B311", "B404"]
 [tool.mypy]
 plugins = ["mypy_django_plugin.main"]
 mypy_path = "app"
-exclude = ["app/.*/migrations/.*"]  # Exclude all migrations folders
+exclude = ["app/.*/migrations/.*"]
+python_version = "3.12"
+warn_unused_ignores = true
+warn_return_any = true
+show_error_codes = true
+warn_unused_configs = true
 ignore_missing_imports = true
-no_site_packages = true
+no_site_packages = false
 
 [tool.django-stubs]
 django_settings_module = "config.settings.dev"

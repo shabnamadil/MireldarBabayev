@@ -18,37 +18,43 @@ from .models import (
 class MediaAdmin(TranslationAdmin):
     class Media:
         js = (
-            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
-            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
-            'modeltranslation/js/tabbed_translation_fields.js',
+            "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+            "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js",
+            "modeltranslation/js/tabbed_translation_fields.js",
         )
         css = {
-            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
+            "screen": ("modeltranslation/css/tabbed_translation_fields.css",),
         }
 
 
 @admin.register(Newsletter)
 class NewsletterAdmin(admin.ModelAdmin):
-    list_filter = ('created_at',)
+    list_filter = ("created_at",)
     list_per_page = 20
 
 
 @admin.register(Faq)
 class FaqAdmin(MediaAdmin):
-    list_filter = ('created_at',)
+    list_filter = ("created_at",)
     list_per_page = 20
 
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ('full_name', 'email', 'phone', 'created_date')
-    list_filter = ('created_at',)
-    date_hierarchy = 'created_at'
+    list_display = ("full_name", "email", "phone", "created_date")
+    list_filter = ("created_at",)
+    date_hierarchy = "created_at"
     list_per_page = 20
-    search_fields = ('first_name', 'last_name', 'email', 'message', 'subject')
+    search_fields = (
+        "first_name",
+        "last_name",
+        "email",
+        "message",
+        "subject",
+    )
 
     def full_name(self, obj):
-        return f'{obj.first_name} {obj.last_name}'
+        return f"{obj.first_name} {obj.last_name}"
 
 
 class SingletonModelAdmin(TranslationAdmin):
@@ -62,12 +68,12 @@ class SingletonModelAdmin(TranslationAdmin):
 
     class Media:
         js = (
-            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
-            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
-            'modeltranslation/js/tabbed_translation_fields.js',
+            "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+            "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js",
+            "modeltranslation/js/tabbed_translation_fields.js",
         )
         css = {
-            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
+            "screen": ("modeltranslation/css/tabbed_translation_fields.css",),
         }
 
 
@@ -78,11 +84,11 @@ class SiteSettingsAdmin(SingletonModelAdmin):
 
 @admin.register(StatisticalIndicator)
 class StatisticsAdmin(MediaAdmin):
-    list_display = ('name', 'value')
-    list_filter = ('created_at',)
+    list_display = ("name", "value")
+    list_filter = ("created_at",)
     list_per_page = 20
-    date_hierarchy = 'created_at'
-    search_fields = ('name', 'value')
+    date_hierarchy = "created_at"
+    search_fields = ("name", "value")
 
 
 @admin.register(AboutUs)

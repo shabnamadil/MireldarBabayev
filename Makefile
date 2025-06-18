@@ -5,7 +5,7 @@ SETTINGS_FILE = pyproject.toml
 
 SUBDIRS := '_development'
 
-.PHONY: format lint secure type-check test enable-pre-commit-hooks dev-build dev-install dev-run dev-setup help
+.PHONY: format lint secure type-check test enable-pre-commit-hooks dev-build dev-install dev-run dev-setup coverage help
 
 help:
 	@echo "Available commands:"
@@ -55,5 +55,13 @@ dev-run:
 
 dev-setup: dev-install dev-build
 
+coverage:
+	cd ${PROJECT_DIR} && coverage run --rcfile=../.coveragerc manage.py test
+	cd ${PROJECT_DIR} && coverage report --rcfile=../.coveragerc
+	cd ${PROJECT_DIR} && coverage html --rcfile=../.coveragerc
+
 migrate-all:
 	cd ${PROJECT_DIR} && python3 manage.py makemigrations appointment blog core seo service user --noinput && python3 manage.py migrate --noinput
+
+compile:
+	cd ${PROJECT_DIR} && python3 manage.py compilemessages

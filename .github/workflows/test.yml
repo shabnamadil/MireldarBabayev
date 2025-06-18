@@ -53,6 +53,12 @@ jobs:
       - name: Run Migrations inside Django container
         run: make migrate-all
 
+      - name: Install gettext
+        run: sudo apt-get update && sudo apt-get install -y gettext
+
+      - name: Compile Django messages
+        run: make compile
+
       - name: Run Django unit tests
         env:
           DJANGO_SECRET_KEY: ${{ secrets.MIRELDAR_BABAYEV_SECRET_KEY }}
