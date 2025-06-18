@@ -62,3 +62,6 @@ coverage:
 
 migrate-all:
 	cd ${PROJECT_DIR} && python3 manage.py makemigrations appointment blog core seo service user --noinput && python3 manage.py migrate --noinput
+
+compile:
+	cd ${PROJECT_DIR} && python3 manage.py compilemessages
