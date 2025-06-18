@@ -36,7 +36,7 @@ class CustomTokenObtainPairView(TokenObtainPairView):
             key="refresh_token",
             value=refresh_token,
             httponly=True,
-            secure=True,  # Only over HTTPS
+            secure=False,  # Only over HTTPS set to True
             samesite="Lax",  # Use 'Strict' or 'None' based on frontend setup
             max_age=7 * 24 * 60 * 60,  # 7 days
         )
