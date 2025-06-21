@@ -17,10 +17,11 @@ services:
     build: .
     env_file:
       - .env
+    user: "${UID}:${GID}"
     volumes:
       - ./app:/code
       - ./app/static:/code/static
-      - ./app/media:/code/media
+      - media_data:/code/media
     ports:
       - "8000:8000"
     depends_on:
@@ -34,7 +35,7 @@ services:
       - ./nginx/sites/mireldar.com.conf:/etc/nginx/conf.d/default.conf
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - ./app/static:/code/static
-      - ./app/media:/code/media
+      - media_data:/code/media
     ports:
       - "80:80"
     depends_on:
@@ -42,6 +43,7 @@ services:
 
 volumes:
   db:
+  media_data:
 
 networks:
   nginx-proxy:
