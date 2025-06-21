@@ -32,8 +32,8 @@ services:
     image: jwilder/nginx-proxy
     container_name: mireldar_nginx
     volumes:
-      - ./nginx/sites/mireldar.com.conf:/etc/nginx/conf.d/default.conf
       - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./nginx/sites/mireldar.com.conf:/etc/nginx/conf.d/default.conf
       - ./app/static:/code/static
       - media_data:/code/media
     ports:
