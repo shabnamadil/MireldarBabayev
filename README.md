@@ -58,10 +58,8 @@ Follow these steps to set up the project locally:
 
 2. Create a Virtual Environment (Recommended)
 
-| **Platform** | **Command**                                        |
-| ------------ | -------------------------------------------------- |
-| Windows      | `python -m venv env`<br>`.\env\Scripts\activate`   |
-| macOS/Linux  | `python3 -m venv env`<br>`source env/bin/activate` |
+    - Windows      | `python -m venv env`<br>`.\env\Scripts\activate`   |
+    - macOS/Linux  | `python3 -m venv env`<br>`source env/bin/activate` |
 
 
 3. Setup project
