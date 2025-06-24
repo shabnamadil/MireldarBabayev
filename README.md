@@ -88,7 +88,7 @@ This project is containerized and deployed to production using Docker and AWS EC
 
 - Environment Variables managed securely.
 
-🔄 Continuous Integration & Deployment (CI/CD)
+# 🔄 Continuous Integration & Deployment (CI/CD)
 
 This project includes a basic CI/CD pipeline using GitHub Actions, configured to:
 
