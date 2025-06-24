@@ -7,7 +7,9 @@ Welcome to the Mireldar Blog Website, a comprehensive platform powered by Python
 1. Features
 2. Installation
 3. Usage
-4. Technologies Used
+4. Deployment
+5. CI/CD
+6. Technologies Used
 
 
 # 🚀 Features
@@ -35,7 +37,7 @@ Welcome to the Mireldar Blog Website, a comprehensive platform powered by Python
 
 ## Appointment with Doctor
 
-- Book Appointments: Users can schedule appointments with doctors.
+- Book Appointments: Users can schedule appointments with doctor.
 
 ## User Authentication
 
@@ -57,22 +59,44 @@ Follow these steps to set up the project locally:
 2. Create a Virtual Environment (Recommended)
 
     python3 -m venv env
-    .\env\Scripts\activate
+    .\env\Scripts\activate(Windows)
+    source env/bin/activate(MacOs, Ubuntu)
 
-3. Install Dependencies
+3. Setup project
 
-    pip install -r requirements.txt
+    make dev-setup
 
 4. Run Migrations
 
-    cd app
-    python3 manage.py makemigrations
-    py manage.py migrate
+    make migrate-all
 
 5. Start the Development Server
 
-    python3 manage.py runserver
+    make dev-run
 
+# 🚀 Deployment
+
+This project is containerized and deployed to production using Docker and AWS EC2. Below are the key deployment features.
+
+- Dockerized Application for consistent environments across dev and production.
+
+- Uwsgi as the WSGI server.
+
+- NGINX as a reverse proxy and static file server.
+
+- AWS EC2 as the cloud host.
+
+- Environment Variables managed securely.
+
+🔄 Continuous Integration & Deployment (CI/CD)
+
+This project includes a basic CI/CD pipeline using GitHub Actions, configured to:
+
+- Lint the code using flake8, black, and isort.
+
+- Run tests on every push to main.
+
+- Build and push Docker image to Docker Hub if tests pass.
 
 # 📖 Usage
 
@@ -94,7 +118,7 @@ Follow these steps to set up the project locally:
 
 - Backend: Python, Django, Django REST Framework
 - Frontend: HTML, CSS, JavaScript
-- Database: SQLite
+- Database: PostgreSql
 
 
 Explore, engage, and elevate your experience with Mireldar Blog Website! ✨
