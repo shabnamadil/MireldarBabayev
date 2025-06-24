@@ -60,8 +60,8 @@ function createCommentHTML(comment) {
             </div>
             <div class="media-body">
                 <div class="comment-header">
-                    <p class="comment-author-name">
-                        <i class="fas fa-user-circle"></i> ${comment.author_full_name}
+                    <p class="comment-author-name"> 
+                        ${comment.author_full_name}
                     </p>
                     <p class="comment-date">${comment.created_date}</p>
                 </div>
@@ -69,12 +69,8 @@ function createCommentHTML(comment) {
                 ${
                     isAuthor
                         ? `<div class="comment-actions">
-                               <button class="edit" onclick="editComment(${comment.id})">
-                                   <i class="fas fa-edit"></i> ${gettext('Edit')}
-                               </button>
-                               <button class="delete" onclick="deleteComment(${comment.id})">
-                                   <i class="fas fa-trash-alt"></i> ${gettext('Delete')}
-                               </button>
+                                <i class="fas fa-edit edit-btn" onclick="editComment(${comment.id})"></i>
+                                <i class="fas fa-trash-alt del-btn" onclick="deleteComment(${comment.id})"></i>
                            </div>`
                         : ''
                 }
@@ -241,12 +237,8 @@ function updateCommentInDOM(commentId, comment) {
 
     const actions = commentElement.querySelector('.comment-actions');
     actions.innerHTML = `
-        <button class="edit" onclick="editComment(${commentId})">
-            <i class="fas fa-edit"></i> ${gettext('Edit')}
-        </button>
-        <button class="delete" onclick="deleteComment(${commentId})">
-            <i class="fas fa-trash-alt"></i> ${gettext('Delete')}
-        </button>
+        <i class="fas fa-edit edit-btn" onclick="editComment(${comment.id})"></i>
+        <i class="fas fa-trash-alt del-btn" onclick="deleteComment(${comment.id})"></i>
     `;
 }
 
@@ -262,12 +254,8 @@ function cancelEditComment(commentId, originalContent) {
 
     const actions = commentElement.querySelector('.comment-actions');
     actions.innerHTML = `
-        <button class="edit" onclick="editComment(${commentId})">
-            <i class="fas fa-edit"></i> ${gettext('Edit')}
-        </button>
-        <button class="delete" onclick="deleteComment(${commentId})">
-            <i class="fas fa-trash-alt"></i> ${gettext('Delete')}
-        </button>
+        <i class="fas fa-edit edit-btn" onclick="editComment(${commentId})"></i>
+        <i class="fas fa-trash-alt del-btn" onclick="deleteComment(${commentId})"></i>
     `;
 }
 
