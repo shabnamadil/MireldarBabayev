@@ -4074,8 +4074,6 @@ BLOG DETAIL
 }
 .comment-wrap .media img {
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
 }
 .comment-wrap .media-body p {
   font-size: 14px;
@@ -4331,16 +4329,6 @@ SERVICE DETAIL
   align-items: flex-start;
   padding: 20px;
   background: #ffffff;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  gap: 15px;
-}
-
-.comment:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Profile Image */
@@ -4351,21 +4339,25 @@ SERVICE DETAIL
   object-fit: cover;
   border: 2px solid #e0e0e0;
   margin-right: 15px;
-  transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
-.comment-author-img:hover {
-  border-color: #6c63ff;
-  transform: scale(1.1);
+.edit-btn {
+  color: #5bc198;
+  cursor: pointer;
+}
+
+.del-btn {
+  color: #ff4d4f;
+  cursor: pointer;
 }
 
 /* Comment Header */
 .comment-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
-  margin-bottom: 10px;
+  gap: 10px;
 }
 
 .comment-author-name {
@@ -4392,7 +4384,6 @@ SERVICE DETAIL
   font-size: 1.05rem;
   color: #444;
   line-height: 1.5;
-  margin-bottom: 15px;
 }
 
 /* Action Buttons */
@@ -4409,7 +4400,7 @@ SERVICE DETAIL
   color: #6c63ff;
   font-size: 1rem;
   cursor: pointer;
-  padding: 8px 15px;
+  padding: 4px 10px;
   border-radius: 25px;
   display: flex;
   align-items: center;
@@ -4418,7 +4409,7 @@ SERVICE DETAIL
 }
 
 .comment-actions button i {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .comment-actions button:hover {
@@ -4450,17 +4441,15 @@ SERVICE DETAIL
 /* Responsive Design */
 @media (max-width: 768px) {
   .comment {
-      flex-direction: column;
       gap: 15px;
   }
 
   .comment-header {
-      flex-direction: column;
       gap: 8px;
   }
 
   .comment-actions {
-      flex-direction: column;
+
       gap: 12px;
   }
 
