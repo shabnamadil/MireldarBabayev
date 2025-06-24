@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-13 15:57+0400\n"
+"POT-Creation-Date: 2025-06-24 17:02+0400\n"
 "PO-Revision-Date: 2025-04-28 21:46+0400\n"
 "Last-Translator:   <admin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,100 +19,736 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.10.1\n"
 
-#: apps/blog/models/blog.py:98
+#: apps/blog/models/blog.py:29
+msgid "Draft"
+msgstr ""
+
+#: apps/blog/models/blog.py:30
+msgid "Published"
+msgstr ""
+
+#: apps/blog/models/blog.py:33 apps/core/models/banner.py:17
+#: apps/core/models/who_we_are.py:13 apps/service/models/download.py:20
+#: apps/service/models/service.py:60 apps/service/models/why_choose_us.py:15
+msgid "Title"
+msgstr ""
+
+#: apps/blog/models/blog.py:36 apps/core/models/banner.py:20
+#: apps/core/models/banner.py:26 apps/core/models/site_settings.py:56
+#: apps/core/models/testimoinal.py:39 apps/service/models/coworker.py:17
+#, fuzzy
+#| msgid "The content length is a maximum of 30."
+msgid "The content length is a maximum of 100."
+msgstr "Kontentin uzunluğu maksimum 30-dur."
+
+#: apps/blog/models/blog.py:39 apps/core/models/banner.py:28
+#: apps/service/models/service.py:35 apps/service/models/why_choose_us.py:21
+msgid "Short description"
+msgstr ""
+
+#: apps/blog/models/blog.py:41
+#, fuzzy
+#| msgid "The content length is a maximum of 30."
+msgid "The content length is a maximum of 200."
+msgstr "Kontentin uzunluğu maksimum 30-dur."
+
+#: apps/blog/models/blog.py:43
+msgid "Article content"
+msgstr ""
+
+#: apps/blog/models/blog.py:45
+msgid "Cover photo"
+msgstr ""
+
+#: apps/blog/models/blog.py:52
+msgid "Image size shoud not exceed 2mb."
+msgstr ""
+
+#: apps/blog/models/blog.py:55 apps/blog/models/category.py:24
+#, fuzzy
+#| msgid "Categories"
+msgid "Category"
+msgstr "Kateqoriyalar"
+
+#: apps/blog/models/blog.py:58 apps/blog/models/tag.py:24
+#, fuzzy
+#| msgid "Tags"
+msgid "Tag"
+msgstr "Teqlər"
+
+#: apps/blog/models/blog.py:61 apps/blog/models/category.py:16
+#: apps/blog/models/tag.py:16 apps/service/models/service.py:78
+msgid "Slug"
+msgstr ""
+
+#: apps/blog/models/blog.py:64
+msgid "Leave it blank. This field will be filled automatically."
+msgstr ""
+
+#: apps/blog/models/blog.py:71
+msgid "Author"
+msgstr ""
+
+#: apps/blog/models/blog.py:76
+msgid "Viewed IP addresses"
+msgstr ""
+
+#: apps/blog/models/blog.py:79
+msgid "View count"
+msgstr ""
+
+#: apps/blog/models/blog.py:81
+msgid "Status"
+msgstr ""
+
+#: apps/blog/models/blog.py:83
+msgid "Published date"
+msgstr ""
+
+#: apps/blog/models/blog.py:88
+msgid "Article"
+msgstr ""
+
+#: apps/blog/models/blog.py:89
+msgid "Articles"
+msgstr ""
+
+#: apps/blog/models/blog.py:114
 #, fuzzy, python-brace-format
 #| msgid "This email already exists."
 msgid "\"{self.title}\" article already exists."
 msgstr "Bu email ilə istifadəçi artıq mövcuddur."
 
-#: apps/service/models/service.py:14
-#, fuzzy
-#| msgid "Hello"
-msgid "yellow"
-msgstr "Salam"
-
-#: apps/service/models/service.py:15
-msgid "green"
+#: apps/blog/models/blog.py:116
+msgid "At least one category is required."
 msgstr ""
 
-#: apps/service/models/service.py:16
-msgid "blue"
-msgstr "mavi"
+#: apps/blog/models/category.py:10
+#, fuzzy
+#| msgid "Categories"
+msgid "Category name"
+msgstr "Kateqoriyalar"
 
-#: apps/service/models/service.py:19
+#: apps/blog/models/category.py:13
+#, fuzzy
+#| msgid "The content length is a maximum of 30."
+msgid "The content length is a maximum of 150."
+msgstr "Kontentin uzunluğu maksimum 30-dur."
+
+#: apps/blog/models/category.py:19 apps/service/models/service.py:81
+msgid "Leave blank to auto-generate."
+msgstr ""
+
+#: apps/blog/models/category.py:25
+#: templates/components/blog/blog-detail.html:169
+#: templates/components/blog/blog-list.html:101
+msgid "Categories"
+msgstr "Kateqoriyalar"
+
+#: apps/blog/models/comment.py:13
+#, fuzzy
+#| msgid "Comment Notification"
+msgid "Comment content"
+msgstr "Rəy Bildirişi"
+
+#: apps/blog/models/comment.py:18 apps/seo/models/blog_detail_page.py:13
+#: templates/components/blog/partials/subheader.html:15
+#: templates/components/home/index.html:152
+msgid "Blog"
+msgstr "Bloq"
+
+#: apps/blog/models/comment.py:24
+#, fuzzy
+#| msgid "Comment Notification"
+msgid "Comment author"
+msgstr "Rəy Bildirişi"
+
+#: apps/blog/models/comment.py:28
+msgid "Article comment"
+msgstr ""
+
+#: apps/blog/models/comment.py:29
+msgid "Article comments"
+msgstr ""
+
+#: apps/blog/models/ip.py:9 apps/blog/models/ip.py:12
+msgid "IP address"
+msgstr ""
+
+#: apps/blog/models/ip.py:13
+msgid "IP addresses"
+msgstr ""
+
+#: apps/blog/models/ip.py:20
+msgid "The 'view_ip' field cannot be changed."
+msgstr ""
+
+#: apps/blog/models/tag.py:10
+#, fuzzy
+#| msgid "Last Name"
+msgid "Tag name"
+msgstr "Soyadınız"
+
+#: apps/blog/models/tag.py:13
+#, fuzzy
+#| msgid "The content length is a maximum of 30."
+msgid "The content length is a maximum of 80."
+msgstr "Kontentin uzunluğu maksimum 30-dur."
+
+#: apps/blog/models/tag.py:19
+msgid "Leave this field blank. It will be filled automatically."
+msgstr ""
+
+#: apps/blog/models/tag.py:25 templates/components/blog/blog-detail.html:179
+#: templates/components/blog/blog-list.html:111
+msgid "Tags"
+msgstr "Teqlər"
+
+#: apps/core/models/about_us.py:20 apps/user/models/user.py:40
+#: templates/components/user/register/partials/form.html:39
+msgid "Image"
+msgstr ""
+
+#: apps/core/models/about_us.py:28
+msgid ""
+"Kindly upload a photo for the About page. Image size shoud not exceed 2mb."
+msgstr ""
+
+#: apps/core/models/about_us.py:32 apps/core/models/banner.py:40
+#: apps/core/models/who_we_are.py:18
+msgid "Video ID"
+msgstr ""
+
+#: apps/core/models/about_us.py:34 apps/core/models/banner.py:42
+#: apps/core/models/who_we_are.py:20
+msgid ""
+"Example: From the link \"https://www.youtube.com/watch?v=MKG_6BqnhpI\", only "
+"\"MKG_6BqnhpI\" should be entered."
+msgstr ""
+
+#: apps/core/models/about_us.py:40 apps/core/models/about_us.py:52
+#: apps/core/models/about_us.py:53 templates/components/about/about-us.html:10
+#: templates/components/about/partials/subheader.html:10
+#: templates/components/about/partials/subheader.html:15
+#: templates/components/footer/partials/quick-links.html:11
+msgid "About Us"
+msgstr "Haqqımızda"
+
+#: apps/core/models/about_us.py:40
+#, fuzzy
+#| msgid "About Us"
+msgid "About Us content"
+msgstr "Haqqımızda"
+
+#: apps/core/models/about_us.py:42
+#, fuzzy
+#| msgid "Our Mission"
+msgid "Mission"
+msgstr "Missiyamız"
+
+#: apps/core/models/about_us.py:45
+#, fuzzy
+#| msgid "Our Vision"
+msgid "Vision"
+msgstr "Görüşlərimiz"
+
+#: apps/core/models/about_us.py:48
+#, fuzzy
+#| msgid "Our Values"
+msgid "Values"
+msgstr "Dəyərlərimiz"
+
+#: apps/core/models/about_us.py:56 tests/unit/core/models/test_about_us.py:11
+#, fuzzy
+#| msgid "Contact Information"
+msgid "About Us Information"
+msgstr "Əlaqə"
+
+#: apps/core/models/banner.py:23
+msgid "Subtitle"
+msgstr ""
+
+#: apps/core/models/banner.py:30
+msgid "Banner photo"
+msgstr ""
+
+#: apps/core/models/banner.py:32
+msgid "Please upload a PNG file.(720x726px)"
+msgstr ""
+
+#: apps/core/models/banner.py:50
+msgid "Banner"
+msgstr ""
+
+#: apps/core/models/banner.py:51
+msgid "Banners"
+msgstr ""
+
+#: apps/core/models/contact.py:10
+#: templates/components/user/register/partials/form.html:18
+msgid "First name"
+msgstr "Adınız"
+
+#: apps/core/models/contact.py:12 apps/core/models/contact.py:17
+#: apps/core/models/testimoinal.py:34
+#, fuzzy
+#| msgid "The content length is a maximum of 30."
+msgid "The content length is a maximum of 20."
+msgstr "Kontentin uzunluğu maksimum 30-dur."
+
+#: apps/core/models/contact.py:15
+#: templates/components/user/register/partials/form.html:25
+#, fuzzy
+#| msgid "Last Name"
+msgid "Last name"
+msgstr "Soyadınız"
+
+#: apps/core/models/contact.py:20 apps/core/models/newsletter.py:8
+#: apps/core/models/site_settings.py:65 apps/user/models/user.py:32
+#: templates/components/contact/partials/contact-info.html:17
+#: templates/components/service/partials/contact.html:16
+#: templates/components/user/login/partials/form.html:15
+#: templates/components/user/register/partials/form.html:32
+msgid "Email"
+msgstr "Email"
+
+#: apps/core/models/contact.py:22 apps/user/models/user.py:36
+#, fuzzy
+#| msgid "Email us"
+msgid "Enter a valid email address."
+msgstr "Bizə yazın"
+
+#: apps/core/models/contact.py:26 apps/core/models/site_settings.py:59
+#, fuzzy
+#| msgid "Your Phone Number"
+msgid "Phone number"
+msgstr "Əlaqə nömrəniz"
+
+#: apps/core/models/contact.py:28 apps/core/models/site_settings.py:61
+#, fuzzy
+#| msgid "Our Values"
+msgid "Only numeric values"
+msgstr "Dəyərlərimiz"
+
+#: apps/core/models/contact.py:31
+#, fuzzy
+msgid "Message"
+msgstr "Mesaj"
+
+#: apps/core/models/contact.py:34 templates/components/contact/contact.html:10
+#: templates/components/contact/partials/subheader.html:10
+#: templates/components/contact/partials/subheader.html:15
+#: templates/components/navbar/navbar.html:32
+msgid "Contact"
+msgstr "Əlaqə"
+
+#: apps/core/models/contact.py:35
+#, fuzzy
+#| msgid "Contact"
+msgid "Contacts"
+msgstr "Əlaqə"
+
+#: apps/core/models/contact.py:40
+#: tests/integration/core/models/test_contact.py:18
+#, python-format
+msgid "Message from %(first_name)s %(last_name)s"
+msgstr ""
+
+#: apps/core/models/faq.py:9
+#, fuzzy
+msgid "Question"
+msgstr "Ünvan"
+
+#: apps/core/models/faq.py:10
+msgid "Response"
+msgstr ""
+
+#: apps/core/models/faq.py:13 templates/components/core/faq.html:44
+#: templates/components/core/partials/faq-subheader.html:10
+#: templates/components/core/partials/faq-subheader.html:15
+msgid "Faq"
+msgstr ""
+
+#: apps/core/models/faq.py:14
+msgid "Faqs"
+msgstr ""
+
+#: apps/core/models/newsletter.py:11 templates/components/footer/footer.html:42
+msgid "Newsletter"
+msgstr "Xəbər bülleteni"
+
+#: apps/core/models/newsletter.py:12
+#, fuzzy
+#| msgid "Newsletter"
+msgid "Newsletters"
+msgstr "Xəbər bülleteni"
+
+#: apps/core/models/site_settings.py:28
 #, fuzzy
 #| msgid "Services"
-msgid "Service name"
+msgid "Site name"
 msgstr "Xidmətlər"
 
-#: apps/service/models/service.py:22 apps/user/models/user.py:21
-#: apps/user/models/user.py:26
-msgid "The content length is a maximum of 30."
-msgstr "Kontentin uzunluğu maksimum 30-dur."
-
-#: apps/service/models/service.py:25
-msgid "Short description"
-msgstr ""
-
-#: apps/service/models/service.py:27
+#: apps/core/models/site_settings.py:31
 #, fuzzy
 #| msgid "The content length is a maximum of 30."
-msgid "The content length is a maximum of 160, minimum of 145."
+msgid "The content length is a maximum of 100, minimum of 30."
 msgstr "Kontentin uzunluğu maksimum 30-dur."
 
-#: apps/service/models/service.py:30
-msgid "PNG file"
+#: apps/core/models/site_settings.py:34 apps/service/models/coworker.py:20
+#, fuzzy
+#| msgid "Logout"
+msgid "Logo"
+msgstr "Çıxış"
+
+#: apps/core/models/site_settings.py:36 apps/core/models/site_settings.py:46
+#: apps/core/models/statistics.py:16 apps/service/models/coworker.py:22
+#: apps/service/models/why_choose_us.py:34
+msgid "Please upload a PNG file."
 msgstr ""
 
-#: apps/service/models/service.py:32
-msgid "Please upload a PNG file.(94x74px)"
+#: apps/core/models/site_settings.py:44
+msgid "Favicon"
 msgstr ""
 
-#: apps/service/models/service.py:34
-msgid "Main photo"
+#: apps/core/models/site_settings.py:54
+#: templates/components/contact/partials/contact-info.html:28
+#: templates/components/service/partials/contact.html:23
+msgid "Location"
+msgstr "Ünvan"
+
+#: apps/core/models/site_settings.py:68
+msgid "Work hours"
 msgstr ""
 
-#: apps/service/models/service.py:36
-msgid "Title"
+#: apps/core/models/site_settings.py:74
+msgid "Map"
 msgstr ""
 
-#: apps/service/models/service.py:40
+#: apps/core/models/site_settings.py:80
+msgid "Facebook link"
+msgstr ""
+
+#: apps/core/models/site_settings.py:85
+msgid "Youtube link"
+msgstr ""
+
+#: apps/core/models/site_settings.py:90
+msgid "Twitter link"
+msgstr ""
+
+#: apps/core/models/site_settings.py:95
+msgid "Instagram link"
+msgstr ""
+
+#: apps/core/models/site_settings.py:100
+msgid "Linkedin link"
+msgstr ""
+
+#: apps/core/models/site_settings.py:105
+msgid "Tiktok link"
+msgstr ""
+
+#: apps/core/models/site_settings.py:110
+msgid "Footer description"
+msgstr ""
+
+#: apps/core/models/site_settings.py:115
+msgid "Site Setting"
+msgstr ""
+
+#: apps/core/models/site_settings.py:116
+msgid "Site Settings"
+msgstr ""
+
+#: apps/core/models/statistics.py:14
+#, fuzzy
+msgid "Indicator png"
+msgstr "Ünvan"
+
+#: apps/core/models/statistics.py:24
+msgid "Statistical indicator value"
+msgstr ""
+
+#: apps/core/models/statistics.py:27
+msgid "Statistical indicator name"
+msgstr ""
+
+#: apps/core/models/statistics.py:30 apps/core/models/who_we_are.py:15
 #, fuzzy
 #| msgid "The content length is a maximum of 30."
-msgid "The content length is a maximum of 60, minimum of 30."
+msgid "The content length is a maximum of 50."
 msgstr "Kontentin uzunluğu maksimum 30-dur."
 
-#: apps/service/models/service.py:43
+#: apps/core/models/statistics.py:34
+msgid "Statistical Indicator"
+msgstr ""
+
+#: apps/core/models/statistics.py:35
+msgid "Statistical Indicators"
+msgstr ""
+
+#: apps/core/models/testimoinal.py:22
+msgid "Client image"
+msgstr ""
+
+#: apps/core/models/testimoinal.py:32
+msgid "Client full name"
+msgstr ""
+
+#: apps/core/models/testimoinal.py:37
+msgid "Client profession"
+msgstr ""
+
+#: apps/core/models/testimoinal.py:42
+#, fuzzy
+#| msgid "Comment Notification"
+msgid "Comment"
+msgstr "Rəy Bildirişi"
+
+#: apps/core/models/testimoinal.py:46
+msgid "Stars given by client"
+msgstr ""
+
+#: apps/core/models/testimoinal.py:47
+msgid "Points between 1 and 5"
+msgstr ""
+
+#: apps/core/models/testimoinal.py:52
+#, fuzzy
+#| msgid "Testimonials"
+msgid "Testimonial"
+msgstr "Müştəri rəyləri"
+
+#: apps/core/models/testimoinal.py:53
+#: templates/components/about/partials/testimonial.html:8
+msgid "Testimonials"
+msgstr "Müştəri rəyləri"
+
+#: apps/core/models/testimoinal.py:62
+#: tests/integration/core/models/test_testimonial.py:21
+#, python-format
+msgid "Comment by %(client_full_name)s"
+msgstr ""
+
+#: apps/core/models/who_we_are.py:26 apps/service/models/service.py:67
 #, fuzzy
 #| msgid "Contact"
 msgid "Content"
 msgstr "Əlaqə"
 
-#: apps/service/models/service.py:44
+#: apps/core/models/who_we_are.py:26
+msgid "Content for the Who We Are section."
+msgstr ""
+
+#: apps/core/models/who_we_are.py:30 apps/core/models/who_we_are.py:31
 #, fuzzy
-#| msgid "The content length is a maximum of 30."
-msgid "The content length is a maximum of 1000, minimum of 300."
-msgstr "Kontentin uzunluğu maksimum 30-dur."
+#| msgid "Who we are"
+msgid "Who We Are"
+msgstr "Biz kimik"
 
-#: apps/service/models/service.py:48
-msgid "Background color"
+#: apps/core/models/who_we_are.py:34
+#: tests/unit/core/models/test_who_we_are.py:11
+msgid "Biz kimik?"
 msgstr ""
 
-#: apps/service/models/service.py:51
-msgid "Slug"
+#: apps/seo/models/about_us_page.py:8
+#, fuzzy
+#| msgid "About Us"
+msgid "AboutUsPageSeo"
+msgstr "Haqqımızda"
+
+#: apps/seo/models/about_us_page.py:9
+#, fuzzy
+#| msgid "About Us"
+msgid "AboutUsPageSeos"
+msgstr "Haqqımızda"
+
+#: apps/seo/models/appointment_page.py:9
+#, fuzzy
+#| msgid "Appointment"
+msgid "AppointmentPageSeo"
+msgstr "Qəbula yazıl"
+
+#: apps/seo/models/appointment_page.py:10
+#, fuzzy
+#| msgid "Appointment"
+msgid "AppointmentPageSeos"
+msgstr "Qəbula yazıl"
+
+#: apps/seo/models/blog_detail_page.py:17
+msgid "BlogDetailPageSeo"
 msgstr ""
 
-#: apps/service/models/service.py:54
-msgid "Leave blank to auto-generate."
+#: apps/seo/models/blog_detail_page.py:18
+msgid "BlogDetailPageSeos"
 msgstr ""
 
-#: apps/service/models/service.py:59
+#: apps/seo/models/blogs_page.py:8
+msgid "BlogsPageSeo"
+msgstr ""
+
+#: apps/seo/models/blogs_page.py:9
+msgid "BlogsPageSeos"
+msgstr ""
+
+#: apps/seo/models/contact_page.py:8
+#, fuzzy
+#| msgid "Contact"
+msgid "ContactPageSeo"
+msgstr "Əlaqə"
+
+#: apps/seo/models/contact_page.py:9
+#, fuzzy
+#| msgid "Contact Us"
+msgid "ContactPageSeos"
+msgstr "Bizimlə əlaqə"
+
+#: apps/seo/models/faq_page.py:9
+msgid "FaqPageSeo"
+msgstr ""
+
+#: apps/seo/models/faq_page.py:10
+msgid "FaqPageSeos"
+msgstr ""
+
+#: apps/seo/models/home_page.py:8
+msgid "HomePageSeo"
+msgstr ""
+
+#: apps/seo/models/home_page.py:9
+msgid "HomePageSeos"
+msgstr ""
+
+#: apps/seo/models/service_detail_page.py:13 apps/service/models/download.py:36
+#: apps/service/models/service.py:86
 #, fuzzy
 #| msgid "Services"
 msgid "Service"
 msgstr "Xidmətlər"
 
-#: apps/service/models/service.py:60
+#: apps/seo/models/service_detail_page.py:17
+msgid "ServiceDetailPageSeo"
+msgstr ""
+
+#: apps/seo/models/service_detail_page.py:18
+msgid "ServiceDetailPageSeos"
+msgstr ""
+
+#: apps/seo/models/services_page.py:9
+#, fuzzy
+#| msgid "Services"
+msgid "ServicesPageSeo"
+msgstr "Xidmətlər"
+
+#: apps/seo/models/services_page.py:10
+#, fuzzy
+#| msgid "Services"
+msgid "ServicesPageSeos"
+msgstr "Xidmətlər"
+
+#: apps/service/models/coworker.py:14
+msgid "Company name"
+msgstr ""
+
+#: apps/service/models/coworker.py:31
+msgid "Coworker"
+msgstr ""
+
+#: apps/service/models/coworker.py:32
+msgid "Coworkers"
+msgstr ""
+
+#: apps/service/models/download.py:21
+msgid "Leave it blank. It will be filled automatically."
+msgstr ""
+
+#: apps/service/models/download.py:27
+#, fuzzy
+#| msgid "File Size"
+msgid "File type"
+msgstr "Fayl ölçüsü"
+
+#: apps/service/models/download.py:29
+#, fuzzy
+msgid "File"
+msgstr "Fayllar"
+
+#: apps/service/models/download.py:40
+#: templates/components/service/modals/download-modal.html:10
+msgid "Download"
+msgstr "Yüklə"
+
+#: apps/service/models/download.py:41
+#, fuzzy
+#| msgid "Download"
+msgid "Downloads"
+msgstr "Yüklə"
+
+#: apps/service/models/service.py:24
+#, fuzzy
+#| msgid "Hello"
+msgid "yellow"
+msgstr "Salam"
+
+#: apps/service/models/service.py:25
+msgid "green"
+msgstr ""
+
+#: apps/service/models/service.py:26
+msgid "blue"
+msgstr "mavi"
+
+#: apps/service/models/service.py:29
+#, fuzzy
+#| msgid "Services"
+msgid "Service name"
+msgstr "Xidmətlər"
+
+#: apps/service/models/service.py:32 apps/service/models/why_choose_us.py:18
+#: apps/user/models/user.py:24 apps/user/models/user.py:29
+msgid "The content length is a maximum of 30."
+msgstr "Kontentin uzunluğu maksimum 30-dur."
+
+#: apps/service/models/service.py:37
+#, fuzzy
+#| msgid "The content length is a maximum of 30."
+msgid "The content length is a maximum of 160, minimum of 145."
+msgstr "Kontentin uzunluğu maksimum 30-dur."
+
+#: apps/service/models/service.py:40 apps/service/models/why_choose_us.py:27
+msgid "PNG file"
+msgstr ""
+
+#: apps/service/models/service.py:42
+msgid "Please upload a PNG file.(94x74px)"
+msgstr ""
+
+#: apps/service/models/service.py:50
+msgid "Main photo"
+msgstr ""
+
+#: apps/service/models/service.py:57
+msgid "Please upload a PNG or JPG file"
+msgstr ""
+
+#: apps/service/models/service.py:64 apps/service/models/why_choose_us.py:24
+#, fuzzy
+#| msgid "The content length is a maximum of 30."
+msgid "The content length is a maximum of 60, minimum of 30."
+msgstr "Kontentin uzunluğu maksimum 30-dur."
+
+#: apps/service/models/service.py:68
+#, fuzzy
+#| msgid "The content length is a maximum of 30."
+msgid "The content length is a maximum of 1000, minimum of 300."
+msgstr "Kontentin uzunluğu maksimum 30-dur."
+
+#: apps/service/models/service.py:72
+msgid "Background color"
+msgstr ""
+
+#: apps/service/models/service.py:87
 #: templates/components/footer/partials/quick-links.html:8
 #: templates/components/navbar/navbar.html:17
 #: templates/components/service/partials/subheader.html:10
@@ -121,9 +757,13 @@ msgstr "Xidmətlər"
 msgid "Services"
 msgstr "Xidmətlər"
 
-#: apps/service/models/service.py:66
-msgid "Only PNG files are accepted."
-msgstr ""
+#: apps/service/models/why_choose_us.py:38
+#: apps/service/models/why_choose_us.py:39
+#: templates/components/appointment/appointment.html:67
+#: templates/components/home/index.html:119
+#: templates/components/service/services.html:83
+msgid "Why Choose Us"
+msgstr "Nə üçün biz"
 
 #: apps/user/api/serializers.py:35
 msgid "This field is required."
@@ -145,66 +785,51 @@ msgstr ""
 msgid "Superuser must have is_superuser=True."
 msgstr ""
 
-#: apps/user/models/user.py:19
+#: apps/user/models/user.py:22
 #: templates/components/contact/partials/contact-form.html:16
 msgid "First Name"
 msgstr "Adınız"
 
-#: apps/user/models/user.py:24
+#: apps/user/models/user.py:27
 #: templates/components/contact/partials/contact-form.html:23
 msgid "Last Name"
 msgstr "Soyadınız"
 
-#: apps/user/models/user.py:29
-#: templates/components/contact/partials/contact-info.html:17
-#: templates/components/service/partials/contact.html:16
-#: templates/components/user/login/partials/form.html:15
-#: templates/components/user/register/partials/form.html:32
-msgid "Email"
-msgstr "Email"
-
-#: apps/user/models/user.py:32
+#: apps/user/models/user.py:35
 msgid "This email is already registered."
 msgstr "Bu epoçt-ünvanı artıq qeydiyyatdan keçib."
 
-#: apps/user/models/user.py:33
-#, fuzzy
-#| msgid "Email us"
-msgid "Enter a valid email address."
-msgstr "Bizə yazın"
-
-#: apps/user/models/user.py:37
-#: templates/components/user/register/partials/form.html:39
-msgid "Image"
-msgstr ""
-
 #: apps/user/models/user.py:49
-msgid "staff status"
-msgstr ""
-
-#: apps/user/models/user.py:51
-msgid "Designates whether the user can log into this admin site."
+msgid "Please upload a PNG or JPG file."
 msgstr ""
 
 #: apps/user/models/user.py:54
+msgid "staff status"
+msgstr ""
+
+#: apps/user/models/user.py:56
+msgid "Designates whether the user can log into this admin site."
+msgstr ""
+
+#: apps/user/models/user.py:59
 msgid "active"
 msgstr ""
 
-#: apps/user/models/user.py:57
+#: apps/user/models/user.py:62
 msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr ""
 
-#: apps/user/models/user.py:61
+#: apps/user/models/user.py:66
 msgid "date joined"
 msgstr ""
 
-#: apps/user/models/user.py:69
+#: apps/user/models/user.py:74
 msgid "User"
 msgstr "İstifadəçi"
 
-#: apps/user/models/user.py:70
+#: apps/user/models/user.py:75
 msgid "Users"
 msgstr "İstifadəçilər"
 
@@ -219,13 +844,6 @@ msgstr ""
 #: config/settings/base.py:146
 msgid "English"
 msgstr ""
-
-#: templates/components/about/about-us.html:10
-#: templates/components/about/partials/subheader.html:10
-#: templates/components/about/partials/subheader.html:15
-#: templates/components/footer/partials/quick-links.html:11
-msgid "About Us"
-msgstr "Haqqımızda"
 
 #: templates/components/about/partials/about.html:17
 msgid "PLAY VIDEO"
@@ -287,10 +905,6 @@ msgstr "Sizin sağlamlığınız, bizim öncəliyimizdir"
 msgid "Home"
 msgstr "Ana səhifə"
 
-#: templates/components/about/partials/testimonial.html:8
-msgid "Testimonials"
-msgstr "Müştəri rəyləri"
-
 #: templates/components/about/partials/testimonial.html:9
 #: templates/components/about/partials/testimonial.html:26
 msgid "What Our Clients Say"
@@ -317,12 +931,6 @@ msgstr "Qəbula yazıl"
 #: templates/components/home/index.html:118
 #: templates/components/service/services.html:82
 msgid "Why Us"
-msgstr "Nə üçün biz"
-
-#: templates/components/appointment/appointment.html:67
-#: templates/components/home/index.html:119
-#: templates/components/service/services.html:83
-msgid "Why Choose Us"
 msgstr "Nə üçün biz"
 
 #: templates/components/appointment/appointment.html:68
@@ -410,16 +1018,6 @@ msgstr "Açar sözü yazın"
 msgid "Popular Posts"
 msgstr "Ən çox oxunan postlar"
 
-#: templates/components/blog/blog-detail.html:169
-#: templates/components/blog/blog-list.html:101
-msgid "Categories"
-msgstr "Kateqoriyalar"
-
-#: templates/components/blog/blog-detail.html:179
-#: templates/components/blog/blog-list.html:111
-msgid "Tags"
-msgstr "Teqlər"
-
 #: templates/components/blog/blog-detail.html:191
 #: templates/components/blog/blog-list.html:123
 msgid "Follow Us"
@@ -462,18 +1060,6 @@ msgid ""
 "inform."
 msgstr "Bir-birindən faydalı bloqlar səni gözləyir."
 
-#: templates/components/blog/partials/subheader.html:15
-#: templates/components/home/index.html:152
-msgid "Blog"
-msgstr "Bloq"
-
-#: templates/components/contact/contact.html:10
-#: templates/components/contact/partials/subheader.html:10
-#: templates/components/contact/partials/subheader.html:15
-#: templates/components/navbar/navbar.html:32
-msgid "Contact"
-msgstr "Əlaqə"
-
 #: templates/components/contact/partials/contact-form.html:4
 msgid "Get in Touch with Us"
 msgstr "Bizimlə əlaqə"
@@ -510,11 +1096,6 @@ msgstr "Telefon"
 #: templates/components/contact/partials/contact-info.html:25
 msgid "Head Office"
 msgstr "Baş ofis"
-
-#: templates/components/contact/partials/contact-info.html:28
-#: templates/components/service/partials/contact.html:23
-msgid "Location"
-msgstr "Ünvan"
 
 #: templates/components/contact/partials/subheader.html:8
 msgid "CONTACT"
@@ -558,12 +1139,6 @@ msgstr "Ooops...Server xətası"
 #: templates/components/core/errors/500.html:31
 msgid "A server error occurred. Please contact service administration."
 msgstr "Server xətası. Zəhmət olmasa adminstrativ rəhbərliklə əlaqə saxlayın"
-
-#: templates/components/core/faq.html:44
-#: templates/components/core/partials/faq-subheader.html:10
-#: templates/components/core/partials/faq-subheader.html:15
-msgid "Faq"
-msgstr ""
 
 #: templates/components/core/faq.html:45
 msgid "Frequently Asked Questions"
@@ -629,10 +1204,6 @@ msgstr "Qısa yollar"
 msgid "Our Services"
 msgstr "Xidmətlərimiz"
 
-#: templates/components/footer/footer.html:42
-msgid "Newsletter"
-msgstr "Xəbər bülleteni"
-
 #: templates/components/footer/footer.html:52
 msgid "Allrights Reserved"
 msgstr "Bütün haqlar qorunur"
@@ -645,12 +1216,6 @@ msgstr "Bizə yazın"
 #: templates/components/home/partials/emergency.html:9
 msgid "Call anytime"
 msgstr "Zəng et"
-
-#: templates/components/header/top-bar.html:30
-#: templates/components/home/partials/banner.html:14
-#: templates/components/navbar/partials/icons.html:51
-msgid "Make Appointment"
-msgstr "Qəbula yazıl"
 
 #: templates/components/home/index.html:73
 #: templates/components/service/services.html:54
@@ -677,6 +1242,11 @@ msgstr "Ən son bloqlar"
 #: templates/components/home/partials/about.html:27
 msgid "Read more"
 msgstr "Daha çox"
+
+#: templates/components/home/partials/banner.html:14
+#: templates/components/navbar/partials/icons.html:51
+msgid "Make Appointment"
+msgstr "Qəbula yazıl"
 
 #: templates/components/home/partials/emergency.html:4
 msgid "Emergency? Contact Us Now."
@@ -743,10 +1313,6 @@ msgstr "Bloq"
 msgid "Do you want to download this file?"
 msgstr "Bu rəyi silməkdən əminsən?"
 
-#: templates/components/service/modals/download-modal.html:10
-msgid "Download"
-msgstr "Yüklə"
-
 #: templates/components/service/partials/service-detail.html:39
 msgid "Files"
 msgstr "Fayllar"
@@ -801,21 +1367,11 @@ msgstr "Hesab Yaradın"
 msgid "You successfully registered."
 msgstr ""
 
-#: templates/components/user/register/partials/form.html:18
-msgid "First name"
-msgstr "Adınız"
-
 #: templates/components/user/register/partials/form.html:20
 #, fuzzy
 #| msgid "Enter Your Name, Surname"
 msgid "Enter your first name"
 msgstr "Ad, Soyad"
-
-#: templates/components/user/register/partials/form.html:25
-#, fuzzy
-#| msgid "Last Name"
-msgid "Last name"
-msgstr "Soyadınız"
 
 #: templates/components/user/register/partials/form.html:27
 #, fuzzy
@@ -858,14 +1414,125 @@ msgstr ""
 msgid "Login here"
 msgstr "Daxil ol"
 
-#: utils/validators/validate_image.py:8
+#: utils/models/base_seo_detail.py:12
+msgid "Meta description"
+msgstr ""
+
+#: utils/models/base_seo_detail.py:14 utils/models/base_seo_detail.py:19
+#: utils/models/base_seo_detail.py:24
+msgid "The content length must be between 50 and 160 characters."
+msgstr ""
+
+#: utils/models/base_seo_detail.py:17
+msgid "Meta keywords"
+msgstr ""
+
+#: utils/models/base_seo_detail.py:22
+msgid "Og description"
+msgstr ""
+
+#: utils/models/base_seo_model.py:22
+msgid "Meta title"
+msgstr ""
+
+#: utils/models/base_seo_model.py:27 utils/models/base_seo_model.py:33
+msgid "The content length must be between 30 and 60 characters."
+msgstr ""
+
+#: utils/models/base_seo_model.py:30
+msgid "Og title"
+msgstr ""
+
+#: utils/models/base_seo_model.py:36
+msgid "Og image"
+msgstr ""
+
+#: utils/validators/validate_file.py:12
+msgid "Only PDF and DOCX files are accepted."
+msgstr ""
+
+#: utils/validators/validate_file.py:17
+msgid "File type does not match: expected PDF."
+msgstr ""
+
+#: utils/validators/validate_file.py:19
+msgid "File type does not match: expected DOCX."
+msgstr ""
+
+#: utils/validators/validate_file.py:27
+msgid "The uploaded PDF file is empty."
+msgstr ""
+
+#: utils/validators/validate_file.py:29
+msgid "The uploaded file is not a valid PDF."
+msgstr ""
+
+#: utils/validators/validate_file.py:37
+msgid "The uploaded DOCX file is empty."
+msgstr ""
+
+#: utils/validators/validate_file.py:39
+msgid "The uploaded file is not a valid DOCX document."
+msgstr ""
+
+#: utils/validators/validate_file.py:56
+msgid "Unsupported file type or mismatch with selected type."
+msgstr ""
+
+#: utils/validators/validate_image.py:10
 #, python-brace-format
 msgid "Image size should not exceed {max_size_mb} MB."
 msgstr ""
 
-#: utils/validators/validate_image.py:14
+#: utils/validators/validate_image.py:16
 msgid "Only JPG, PNG, and JPEG files are accepted."
 msgstr ""
+
+#: utils/validators/validate_image.py:24
+#, fuzzy
+msgid "Upload a valid image"
+msgstr "Uyğun tarixi seçin"
+
+#: utils/validators/validate_png.py:10
+msgid "Only PNG files are accepted."
+msgstr ""
+
+#: utils/validators/validate_png.py:20
+msgid "Uploaded file is not a valid PNG image."
+msgstr ""
+
+#: utils/validators/validate_png.py:22
+msgid "Upload a valid PNG image."
+msgstr ""
+
+#: utils/validators/validate_social_media.py:11
+msgid "Invalid Facebook URL. Please enter a valid Facebook link."
+msgstr ""
+
+#: utils/validators/validate_social_media.py:19
+msgid "Invalid YouTube URL. Please enter a valid YouTube link."
+msgstr ""
+
+#: utils/validators/validate_social_media.py:27
+msgid "Invalid Twitter URL. Please enter a valid Twitter link."
+msgstr ""
+
+#: utils/validators/validate_social_media.py:35
+msgid "Invalid Instagram URL. Please enter a valid Instagram link."
+msgstr ""
+
+#: utils/validators/validate_social_media.py:43
+msgid "Invalid LinkedIn URL. Please enter a valid LinkedIn link."
+msgstr ""
+
+#: utils/validators/validate_social_media.py:51
+msgid "Invalid TikTok URL. Please enter a valid TikTok link."
+msgstr ""
+
+#: utils/validators/validate_social_media.py:58
+#, fuzzy
+msgid "Enter a valid YouTube video ID."
+msgstr "Uyğun tarixi seçin"
 
 #, fuzzy
 #~| msgid "This field is required."
@@ -884,14 +1551,6 @@ msgstr ""
 #~ msgstr "Açar sözü yazın"
 
 #, fuzzy
-#~ msgid "Messages"
-#~ msgstr "Mesaj"
-
-#, fuzzy
-#~ msgid "Syndication"
-#~ msgstr "Ünvan"
-
-#, fuzzy
 #~ msgid "Enter a valid value."
 #~ msgstr "Uyğun tarixi seçin"
 
@@ -900,24 +1559,12 @@ msgstr ""
 #~ msgstr "Əlaqə nömrəsi"
 
 #, fuzzy
-#~ msgid "Duration"
-#~ msgstr "Ünvan"
-
-#, fuzzy
 #~ msgid "Floating point number"
 #~ msgstr "Əlaqə nömrəsi"
 
 #, fuzzy
-#~ msgid "File"
-#~ msgstr "Fayllar"
-
-#, fuzzy
 #~ msgid "Enter a whole number."
 #~ msgstr "Əlaqə nömrəsi"
-
-#, fuzzy
-#~ msgid "Enter a valid time."
-#~ msgstr "Uyğun tarixi seçin"
 
 #, fuzzy
 #~ msgid "Enter a valid date/time."
@@ -949,9 +1596,6 @@ msgstr ""
 #~ msgid "March"
 #~ msgstr "Axtar"
 
-#~ msgid "Logout"
-#~ msgstr "Çıxış"
-
 #~ msgid "Welcome, Guest!"
 #~ msgstr "Xoş gəlmisiniz!"
 
@@ -973,9 +1617,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "About us"
 #~ msgstr "Haqqımızda"
-
-#~ msgid "File Size"
-#~ msgstr "Fayl ölçüsü"
 
 #~ msgid "Close"
 #~ msgstr "Bağla"
