@@ -1,10 +1,9 @@
 name: Pytest Coverage Check
 
 on:
-  pull_request:
+  push:
     branches:
-      - push
-    types: [opened, synchronize, reopened, edited]
+      - dev
 
 permissions:
   checks: write
