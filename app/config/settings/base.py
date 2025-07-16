@@ -205,8 +205,8 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    # 'ROTATE_REFRESH_TOKENS': True,  # ✅ Enable rotation
-    # 'BLACKLIST_AFTER_ROTATION': True,  # ✅ Invalidate old refresh token
+    'ROTATE_REFRESH_TOKENS': True,  # ✅ Enable rotation
+    'BLACKLIST_AFTER_ROTATION': True,  # ✅ Invalidate old refresh token
     'AUTH_COOKIE': 'refresh_token',
     'AUTH_COOKIE_HTTP_ONLY': True,
     'AUTH_COOKIE_SECURE': True,

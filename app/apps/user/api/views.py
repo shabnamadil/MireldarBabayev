@@ -25,19 +25,19 @@ class CustomTokenObtainPairView(TokenObtainPairView):
     def post(self, request, *args, **kwargs):
         response = super().post(request, *args, **kwargs)
 
-        # Extract refresh token
+        access_token = response.data.get("access")
         refresh_token = response.data.get("refresh")
 
-        # Create new response without any data
-        res = Response()
+        # Build new response
+        res = Response({"access": access_token}, status=status.HTTP_200_OK)
 
-        # Set refresh token in secure HttpOnly cookie
+        # Set refresh token as HttpOnly cookie
         res.set_cookie(
             key="refresh_token",
             value=refresh_token,
             httponly=True,
-            secure=False,  # Only over HTTPS set to True
-            samesite="Lax",  # Use 'Strict' or 'None' based on frontend setup
+            secure=False,  # Set to True in production
+            samesite="Lax",
             max_age=7 * 24 * 60 * 60,  # 7 days
         )
 
@@ -46,7 +46,6 @@ class CustomTokenObtainPairView(TokenObtainPairView):
 
 class CustomTokenRefreshView(TokenRefreshView):
     def post(self, request, *args, **kwargs):
-        # Get the refresh token from the cookie
         refresh_token = request.COOKIES.get("refresh_token")
 
         if not refresh_token:
@@ -55,7 +54,6 @@ class CustomTokenRefreshView(TokenRefreshView):
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
-        # Inject the refresh token into the data
         serializer = self.get_serializer(data={"refresh": refresh_token})
 
         try:
@@ -66,7 +64,23 @@ class CustomTokenRefreshView(TokenRefreshView):
                 status=status.HTTP_401_UNAUTHORIZED,
             )
 
-        return Response(serializer.validated_data, status=status.HTTP_200_OK)
+        access_token = serializer.validated_data.get("access")
+        new_refresh_token = serializer.validated_data.get("refresh")
+
+        res = Response({"access": access_token}, status=status.HTTP_200_OK)
+
+        # Only set a new cookie if rotation is enabled and token is returned
+        if new_refresh_token:
+            res.set_cookie(
+                key="refresh_token",
+                value=new_refresh_token,
+                httponly=True,
+                secure=False,  # Set to True in production
+                samesite="Lax",
+                max_age=7 * 24 * 60 * 60,
+            )
+
+        return res
 
 
 class UserMeAPIView(APIView):
