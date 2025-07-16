@@ -11,3 +11,6 @@ exclude_lines =
     pragma: no cover
     def __str__
     if self\.debug
+show_missing = True
+skip_covered = True
+fail_under = 96
